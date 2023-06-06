@@ -1,0 +1,2471 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bibliotecas de front-end: tecnologias, aplicabilidade e jQuery</title>
+
+    <!-- Bootstrap -->
+    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+    <link href="../template/css/cores.css" rel="stylesheet">
+      <!--Extras - novas classes para facilitar-->
+      <link rel="stylesheet" href="../template/css/extras.css">
+    <link href="../template/css/sncload.css" rel="stylesheet">
+    <link href="../template/css/magnific-popup.css" rel="stylesheet">
+    <link href="../template/css/devibeans.min.css" rel="stylesheet">
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <!-- css necessario para o print -->
+    <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+    <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+        	  <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+            <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet">
+        <header class="no-print container">
+          <!-- BTO IMPRIMIR -->
+          <div class="grupo-imprimir no-print">
+            <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                <span class="fa fa-print"></span> <span>Imprimir</span>
+            </button>
+          </div>
+          <!-- /BTO IMPRIMIR -->
+        </header>
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <div class="pagina">
+
+            <!-- Menu -->
+            <div class="bg-fundo"></div>
+            <input type="checkbox" id="menu" name="menu" class="menu-checkbox no-print">
+            <label class="menu-toggle no-print" for="menu"><span>Toggle</span></label>
+            <div class="menu no-print" aria-hidden="true">
+              <div id="style-2" class="scroll-bar">
+                <div class="force-overflow">
+                  <ul class="eng-item-menu">
+                    <li class="item1">
+                      <a href="#t1" class="fundo-item">Tecnologias</a>
+                      <hr>
+                    </li>
+                    <li class="item2">
+                      <a href="#t2" class="fundo-item">Aplicabilidade: jQuery na prática</a>
+                      <hr>
+                    </li>
+                    <li class="item3">
+                      <a href="#t3" class="fundo-item">Animações e efeitos especiais</a>
+                      <hr>
+                    </li>
+                    <li class="item4">
+                      <a href="#t4" class="fundo-item">Função de busca: each()</a>
+                      <hr>
+                    </li>
+                    <li class="item5">
+                      <a href="#t5" class="fundo-item">AJAX</a>
+                      <hr>
+                    </li>
+                    <li class="item6">
+                      <a href="#t6" class="fundo-item">Outras tecnologias</a>
+                      <hr>
+                    </li>
+                    <li class="item7">
+                      <a href="#t7" class="fundo-item">Encerramento</a>
+                      <hr>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="bloco-azul">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-8"><h2>Bibliotecas de <i>front-end</i>: tecnologias, aplicabilidade e jQuery</h2></div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <p>Em <i>front-end</i>, é possível utilizar diversas bibliotecas, que são coleções de recursos usados por programa de computador. Pode-se dizer que, quando se está utilizando uma linguagem de programação e aplica-se uma biblioteca, tem-se acesso a um conjunto de funções que já foram escritas por desenvolvedores.</p>
+                    <p>As principais vantagens de utilizar biblioteca são: funções predefinidas; mais agilidade, pois é possível usar programas distintos; códigos menores e mais organizados, o que reduz as chances de erros de códigos; e facilidade de atualização de programas diversos.</p>
+                    <p>Merecem destaque as bibliotecas Bootstrap, jQuery, Angular e React, porém existem diversas outras.</p>
+                  </div>
+                  <div class="col-lg-6 visible-lg">
+                    <img src="imgs/img_lateral.png">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="parallax" data-parallax="scroll" data-image-src="imgs/paralaxe.png"></div>
+            <div class="bloco-branco">
+              <div class="container">
+                <h3 id="t1">Tecnologias</h3>
+                <h4>Bootstrap</h4>
+                <div class="row">
+                  <div class="col-lg-3">
+                    <img src="imgs/figura_1.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                    <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                    <a href="imgs/figura_1.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_1.png" class="center-block img-responsive"></a>
+                    <p class="legenda-imagem">
+                      Figura 1 – Logo do Bootstrap<br>
+                      Fonte: Bootstrap ([s. d.])
+                    </p>
+                    <p class="acessivel no-print">Uma forma com o fundo azul e um “B” dentro.</p>
+                  </div>
+                  <div class="col-lg-9">
+                    <p>Bootstrap é uma coleção gratuita e <i>open-source</i> de ferramentas para criação de <i>websites</i> e aplicações <i>web</i>. Ele contém modelos de <i>design</i> baseados em CSS (<i>cascading style sheets</i>) e HTML (<i>hyper text markup language</i>) para tipografia, formulários, botões, navegação e outros componentes de interface, bem como extensões opcionais JavaScript. Seu objetivo é facilitar o desenvolvimento de <i>websites</i> dinâmicos e aplicações <i>web</i>. </p>
+                  </div>
+                </div>
+                <p>O Bootstrap, originalmente chamado Twitter Blueprint, foi desenvolvido por Mark Otto e Jacob Thornton no Twitter, como um <i>framework</i> para encorajar consistência entre os projetos internos da empresa. Antes do Bootstrap, muitas bibliotecas foram usadas no desenvolvimento da interface, o que levou a inconsistências e alto custo de manutenção.</p>
+                <p>O Bootstrap é compatível com as últimas versões dos navegadores Google Chrome, Firefox, Internet Explorer, Opera e Safari. Desde a versão 2.0 tem <i>design</i> responsivo, e a partir da versão 3.0 adotou a filosofia <i>mobile-first</i>, que prioriza a construção de aplicações <i>web</i> e <i>sites</i> com boa aparência mesmo em dispositivos móveis.</p>
+              
+                <h4>jQuery</h4>
+                <div class="row">
+                  <div class="col-lg-3">
+                    <img src="imgs/figura_2.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                    <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                    <a href="imgs/figura_2.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_2.png" class="center-block img-responsive"></a>
+                    <p class="legenda-imagem">
+                      Figura 2 – Logo do jQuery<br>
+                      Fonte: jQuery (c2023)
+                    </p>
+                    <p class="acessivel no-print">Na esquerda, há algumas formas e, ao lado, a palavra jQuery. Abaixo, tem uma frase em inglês “write less, do more”, que significa “escreva menos, faça mais”.</p>
+                  </div>
+                  <div class="col-lg-9">
+                    <p>O jQuery é uma biblioteca gratuita que oferece um conjunto de funcionalidades que simplificam bastante a programação JavaScript, deixando-a mais intuitiva, clara e fácil. É importante destacar que o jQuery não é uma linguagem, na realidade ele é um conjunto de funções em JavaScript. </p>
+                  </div>
+                </div>
+                <p>O jQuery conta com uma API (<i>application programming interface</i>) intuitiva e de fácil leitura (o que torna a curva de aprendizado da linguagem mais suave), que executa em qualquer <i>browser</i> sem a necessidade de <i>hacks</i> em JavaScript para adaptar o código para cada navegador. Além disso, os usuários da API se beneficiam também com a liberação de novas versões do jQuery, pois a cada novo <i>release</i>, seu <i>site</i> é automaticamente atualizado, bastando apenas a substituição do arquivo de importação do jQuery. </p>
+                <p>Antes de seguir adiante, veja um comparativo simples de uma funcionalidade em JavaScript puro e em jQuery. O código a seguir captura um elemento de uma página que tenha o atributo <strong>id</strong> igual a <strong>"menu"</strong>.</p>
+                <pre>
+                  <code class="language-js">
+      // JavaScript 
+      var menu = document.getElementById("menu");   
+      // jQuery 
+      var menu = $("#menu");
+                  </code>
+                </pre>
+                <p>Como é possível ver no exemplo, o jQuery consegue executar a mesma funcionalidade do JavaScript com menos código e ainda consegue deixar mais claro e legível o código. Em resumo, o jQuery possibilita:</p>
+                <div class="caixa-destaque-livre">
+                  <img src="imgs/img_checklist.png" class="no-print destaque-cheklist" aria-hidden="true">
+                  <ul class="checklist">
+                    <li>Manipular facilmente o conteúdo de uma página <i>web</i>.</li>
+                    <li>Trabalhar com eventos de maneira bastante clara e intuitiva.</li>
+                    <li>Adicionar efeitos especiais.</li>
+                    <li>Manipular um conjunto de elementos de uma página com apenas uma linha de código.</li>
+                    <li>Utilizar uma grande quantidade de <i>plugins</i> disponíveis para diversos tipos de necessidades de desenvolvimento <i>web</i>, tais como: <i>menus</i>, <i>slides</i>, animações, gráficos etc.</li>
+                  </ul>
+                </div>
+                <p>A filosofia do jQuery sintetiza o que se observa nos exemplos anteriores, ou seja: “escreva menos, faça mais”. A economia de linhas de código é ainda mais significativa em <i>sites</i> profissionais, quando arquivos <i>scripts</i> chegam à casa dos milhares de linhas de código.</p>
+
+                <h4>Realizando o <i>download</i> da biblioteca do jQuery</h4>
+                <p>O primeiro passo é fazer <i>download</i> da biblioteca do jQuery no <i>site</i> oficial (para isso, basta digitar <i>“Download</i> jQuery” em seu buscador). Aqui, será usada a versão <i>uncompressed</i> do jQuery. Essa versão é geralmente utilizada para a fase de desenvolvimento de <i>sites</i>, pois permite ler o código do jQuery caso haja necessidade. A versão <i>compressed</i> é uma versão compactada, com remoção dos espaços em branco. Deve ser utilizada quando o <i>site</i> é publicado, pois seu tamanho é menor, o que torna o <i>download</i> da página mais rápido.</p>
+                <img src="imgs/figura_3.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                <a href="imgs/figura_3.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_3.png" class="center-block img-responsive"></a>
+                <p class="legenda-imagem">
+                  Figura 3 – Página de <i>downloads</i> do jQuery<br>
+                  Fonte: Senac EAD (2023)
+                </p>
+                <p class="acessivel no-print">Página mostra, no topo, logo do jQuery. Abaixo, links e texto explicativo. Mais abaixo, mostra links “Download the compressed, production jQuery 3.6.4” e “Download the uncompressed, development jQuery 3.6.4”. Este último destacado e de onde sai um menu de contexto com a opção “Salvar link como...”.</p>
+                <p>Para baixar o arquivo, clique com o botão direto no <i>link</i> e escolha <strong>Salvar conteúdo do link como</strong>.</p>
+                <p>Com o arquivo baixado (<strong>jquery-3.x.x.js</strong>, por exemplo), renomeie ele para <strong>jquery.js</strong> para manter a simplicidade dos exemplos. Para incorporar o jQuery em sua página HTML, é preciso realizar a importação da biblioteca <strong>jquery.js</strong> com o seguinte comando:</p>
+                <pre>
+                  <code class="language-html">
+      &lt;script src="jquery.js"> &gt;/script>
+                  </code>
+                </pre>
+                <p>Observação: é importante salientar que o arquivo <strong>jquery.js</strong> deve estar na mesma pasta onde está o seu arquivo HTML. Caso contrário, o comando acima precisará ser adaptado para conter o caminho do arquivo. Sugere-se que siga esse passo a passo até conseguir a confirmação de que o jQuery está sendo executado corretamente.</p>
+                <p>Outra alternativa ao <i>download</i> da biblioteca é usar um servidor CDN (<i>content discovery network</i>). Com o CDN, é possível carregar a biblioteca do jQuery diretamente da Internet por meio dos servidores que hospedam o <i>script</i>, sem a necessidade de baixar o arquivo <strong>JS (.js)</strong> para a pasta do seu projeto ou <i>site</i>. Observe o código a seguir:</p>
+                <pre>
+                  <code class="language-html">
+      &lt;script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"> &lt;/script>
+                  </code>
+                </pre>
+                <p>Nesse caso, a biblioteca do jQuery será baixada do <i>site</i> &lt;code.jquery.com>. A biblioteca é apenas um arquivo <strong>JS (.js)</strong>. A vantagem do uso do CDN é que os servidores estão distribuídos por várias regiões do mundo, o que torna mais eficiente o seu <i>download</i> por usuários de diferentes países.</p>
+                <div class="caixa-destaque-livre icone-importante">
+                  <p>O código acima pode ser copiado em &lt;thttps://releases.jquery.com>, clicando na versão do jQuery que deseja em <i>uncompressed</i>.</p>
+                  <p>É recomendado colocar os <i>scripts</i> antes do fechamento da <i>tag</i> <strong>&lt;body></strong>, conforme o exemplo:</p>
+                  <div class="table-responsive">
+                    <table class="senac">
+                      <thead>
+                        <th>jQuery via CDN</th>
+                        <th>jQuery com arquivo local</th>
+                      </thead>
+                      <tbody>
+                        <td>
+                          <pre>
+                            <code class="language-html">
+      &lt;script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"> &lt;/script>
+      &lt;/body>
+    &lt;/html>
+                            </code>
+                          </pre>
+                        </td>
+                        <td>
+                          <pre>
+                            <code class="language-html">
+        &lt;script src="jquery.js"> 
+        &lt;/script>
+      &lt;/body>
+    &lt;/html>                    
+                            </code>
+                          </pre>
+                        </td>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bloco-azul">
+              <div class="container">
+                <h3 id="t2">Aplicabilidade: jQuery na prática</h3>
+                <p>O jQuery tem apenas uma função de entrada que você precisará chamar toda vez que necessitar algum recurso da API. O nome dessa função é jQuery. Porém, em uma página <i>web</i>, é comum chamar essa função dezenas ou centenas de vezes. Pensando nisso, foi criado um <strong>álias</strong> para essa função, por meio do símbolo <strong>$</strong>, a fim de economizar código. Observe o código a seguir:</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8">
+          &lt;meta http-equiv="X-UA-Compatible" content="IE=edge">
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+          &lt;title>Alerta da Versão do jQuery&lt;/title>
+        &lt;/head>
+        &lt;body>
+          &lt;h3>Aparecerão dois pop-ups no topo da tela informando a versão do jQuery! &lt;/h3>
+          
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;!--
+            As duas linhas abaixo são equivalentes, 
+            a única diferença é que a primeira usa a função jQuery
+            e a segunda usa o seu álias.
+          --&gt;
+          &lt;script>
+            alert('versão do jQuery: ' + jQuery().jquery)
+            alert('versão do jQuery: ' + $().jquery)
+          &lt;/script>    
+        &lt;/body>
+      &lt;/html>                
+                  </code>
+                </pre>
+                <p>As duas chamadas – <strong>jQuery().jquery</strong> e <strong>$().jquery</strong> – são equivalentes, a única diferença é que a primeira usa a função jQuery e a segunda usa o seu álias.</p>
+                <p>Uma típica declaração, ou comando, do jQuery é composta de quatro partes:</p>
+                <div class="caixa-destaque-livre">
+                  <ol>
+                    <li>A função jQuery ou seu álias</li>
+                    <li>O(s) seletor(es)</li>
+                    <li>A(s) ação(ões) </li>
+                    <li>O(s) parâmetro(s)</li>
+                  </ol>
+                  <p>Exemplo:</p>
+                  <pre>
+                    <code class="language-js">
+      $("p").css("background-color","#FFFFFF");
+                    </code>
+                  </pre>
+                  <p>É possível dividir nas seguintes partes:</p>
+                  <div class="table-responsive">
+                    <table class="senac">
+                      <thead>
+                        <th>Função jQuery</th>
+                        <th>Seletor</th>
+                        <th>Ação</th>
+                        <th>Parâmetros</th>
+                      </thead>
+                      <tbody>
+                        <td>$</td>
+                        <td>(“p”)</td>
+                        <td>.css()</td>
+                        <td>"background-color","#FFFFFF"</td>
+                      </tbody>
+                    </table>
+                  </div>
+                  <ul>
+                    <li>A função jQuery é necessária para as funcionalidades. </li>
+                    <li>O seletor permite definir quais elementos serão selecionados. </li>
+                    <li>A ação aplica algum método ou função do jQuery sobre os elementos selecionados.</li>
+                    <li>Os parâmetros definem as propriedades que serão aplicadas na ação.</li>
+                  </ul>
+                </div>
+                <p>A partir de agora, sempre que você usar o símbolo <strong>$()</strong>, estará, na realidade, chamando a principal função da API, que é a função <strong>jQuery()</strong>. </p>
+                <p>Na maioria das vezes em que se usa jQuery, elementos HTML serão manipulados. Para garantir que todo o código HTML e CSS tenha sido completamente carregado antes de executar uma função jQuery, é uma boa prática usar a função <strong>ready()</strong> do jQuery para garantir que o código poderá manipular qualquer elemento HTML carregado na árvore DOM (<i>document object model</i>). Caso uma manipulação de elementos seja executada antes do carregamento total, é possível que se depare com erros.</p>
+                <p>No exemplo a seguir, depois de carregada a página, invoca-se a função <strong>alert()</strong> para imprimir uma mensagem assim que a página estiver carregada:</p>
+                <pre>
+                  <code class="language-html">
+    &lt;!DOCTYPE html>
+    &lt;html lang="pt-br">
+      &lt;head>
+        &lt;meta charset="UTF-8" />
+        &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        &lt;title>Funcionamento do jQuery&lt;/title>
+      &lt;/head>
+      &lt;body>
+
+        &lt;script src="jquery.js">&lt;/script>
+        &lt;script>
+          $(document).ready(function () {
+            alert('jQuery funcionando corretamente!')
+          })
+        &lt;/script>
+      &lt;/body>
+    &lt;/html>
+                  </code>
+                </pre>
+                <p>Se uma janela de alerta apareceu no seu navegador, então você executou seu exemplo jQuery. Caso não apareça nenhuma janela, algo está errado com o arquivo <strong>jquery.js</strong>.</p>
+                <p>Em vários exemplos presentes neste conteúdo será usado um recurso do JavaScript chamado <strong>função anônima</strong>. Observe quando se usa a função <strong>ready()</strong>. O que foi passado como parâmetro? Veja, no exemplo a seguir, o trecho destacado:</p>
+                <pre class="codigo-destaque">
+    <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-br"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Função anônima<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"jquery.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+          $(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">ready</span><span class="code-destaque">(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+            <span class="hljs-title function_">alert</span>(<span class="hljs-string">'Esta é uma função anônima!!'</span>)
+          })</span>
+        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+                </pre>
+                <p>A função <strong>ready()</strong> está recebendo uma função como parâmetro. O escopo dessa função existe apenas dentro da chamada da função <strong>ready()</strong>. Essa função não tem um nome ou identificador. Seu propósito é existir apenas quando a função <strong>ready()</strong> for chamada. Esse tipo de função é chamado de função anônima. O uso de função anônima é bem comum no jQuery, mas não necessariamente obrigatório. O mesmo código acima poderia ser escrito como:</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          &lt;title>Função anônima&lt;/title>
+        &lt;/head>
+        &lt;body>
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(teste)
+            function teste() {
+              alert('Esta é uma função normal do JavaScript!')
+            }
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                  </code>
+                </pre>
+
+                <h4>Seletores</h4>
+                <p>Antes de realizar alguma operação no jQuery, é preciso selecionar quais são os elementos ou as <i>tags</i> alvos, aos quais serão aplicadas as funções do jQuery. Para selecionar essas <i>tags</i> ou esses elementos, usam-se seletores que têm uma sintaxe semelhante ao CSS. Passa-se como argumento à função <strong>$()</strong> o nome da <i>tag</i>, da classe ou do <strong>id</strong> que se deseja selecionar. </p>
+                <p>Veja alguns exemplos:</p>
+                <ol>
+                  <li>
+                    Como selecionar <strong>todas as <i>tags</i> &lt;p></strong> de uma página? Basta passar como parâmetro para a função <strong>$()</strong> o nome da <i>tag</i>, sem os sinais <strong>&lt; ></strong>:<br>
+                    <pre><code class="language-js"> $("p")</code></pre>
+                  </li>
+                  <li>
+                    Como selecionar todas as <strong><i>tags</i> cuja classe</strong> é <strong>"destaque"</strong>? Passa-se como parâmetro o nome da classe CSS, lembrando que toda classe começa com um ponto (.).<br>
+                    <pre><code class="language-js"> $(".destaque")</code></pre>
+                  </li>
+                  <li>
+                    Como selecionar a <strong><i>tag</i> cujo id</strong> é <strong>"menu"</strong>? Passando o nome do <strong>id</strong> da <i>tag</i> como parâmetro. Todo <strong>id</strong> inicia com o sinal de <i>hash</i> ou cerquilha (#). Pela especificação do HTML, o <strong>id</strong> não pode se repetir; espera-se que a chamada retorne apenas um elemento. É muito importante que essa regra seja respeitada para o funcionamento correto do jQuery e do CSS.<br>
+                    <pre><code class="language-js"> $("#menu")</code></pre>
+                  </li>
+                  <li>
+                    Como selecionar apenas os <strong><i>links</i> que estão dentro do menu cujo id</strong> é <strong>"menu"</strong>? Usando o mesmo conceito do CSS, definindo primeiro o elemento <strong>menu</strong>, seguido de um espaço e do nome da <i>tag</i>. A leitura que se faz do seletor a seguir é: retorna todas as <i>tags</i> <strong>&lt;></strong> contidas no elemento cujo <strong>id</strong> é <strong>"menu"</strong>.<br>
+                    <pre><code class="language-js"> $("#menu a")</code></pre>
+                  </li>
+                </ol>
+                <p>O exemplo anterior pode ser ampliado para selecionar qualquer elemento na árvore DOM. Por exemplo, suponha que você precisa selecionar apenas as <strong>spans</strong> que estão contidas em um parágrafo localizado dentro de uma <strong>div</strong> que está localizada na <i>tag</i> <strong>header</strong>:</p>
+                <pre><code class="language-js"> $("header div p span")</code></pre>
+                <p>Exemplo: usando seletor de classe para esconder elementos assim que a página é carregada.</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          &lt;title>Seletores&lt;/title>
+        &lt;/head>
+        &lt;body>
+          &lt;h2 class="testeClasse">Este é um título&lt;/h2>
+          &lt;p class="testeClasse">Este é um parágrafo&lt;/p>
+          &lt;p id="">Este é outro parágrafo&lt;/p>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+                $('.testeClasse').hide();
+            });
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                  </code>
+                </pre>
+                <p>Note que, no código dentro do <i>tag</i> <strong>&lt;script></strong>, estão sendo selecionando os elementos <strong>&lt;h2></strong> e <strong>&lt;p></strong> que têm classe <strong>testeClasse</strong>. A ação <strong>hide()</strong> será aplicada a cada um desses elementos. Ao abrir a página, o resultado deve ser apenas a frase “Este é outro parágrafo” na tela.</p>
+                <p>Exemplo: usando seletor de <strong>id</strong> para esconder elementos específicos ao clicar em um botão.</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          &lt;title>Seletores&lt;/title>
+        &lt;/head>
+        &lt;body>
+          &lt;h2>Este é um título&lt;/h2>
+          &lt;p>Este é um parágrafo&lt;/p>
+          &lt;p id="testeId">Este é outro parágrafo&lt;/p>
+
+          &lt;button>Clique aqui para ocultar segundo parágrafo&lt;/button>
+          &lt;p>Selecionamos o segundo parágrafo (tag p) através do seletor, usando o id.&lt;/p>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+          $(document).ready(function(){
+            $("button").click(function(){
+                $("#testeId").hide();
+            });
+          });
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                  </code>
+                </pre>
+                <p>Note, pelo código entre os <i>tags</i> <strong>&lt;script></strong>, alguns pontos:</p>
+                <ol>
+                  <li>O código será executado apenas após o carregamento da página, já que se está usando uma função anônima para <strong>ready()</strong>.</li>
+                  <li>O código está definindo um evento para o botão presente na tela. Mais adiante, serão abordados os eventos, mas agora observe que se está selecionando o elemento por meio do nome de <i>tag</i> <strong>($("button"))</strong>.</li>
+                  <li>Na função anônima passada ao <strong>click()</strong>, define-se o que será executado quando o clique no botão acontecer. Nesse trecho, seleciona-se o parágrafo com <strong>id “testeId” ($("#testeId"))</strong> e aplica-se a ação de escondê-lo <strong>(hide())</strong>.</li>
+                </ol>
+                <p>Exemplo: usando seletor de <i>tag</i> para esconder todos os parágrafos da página.</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          &lt;title>Seletores&lt;/title>
+        &lt;/head>
+        &lt;body>
+          &lt;h2>Este é um título&lt;/h2>
+          &lt;p>Este é um parágrafo&lt;/p>
+          &lt;p>Este é outro parágrafo&lt;/p>
+
+          &lt;button>Clique aqui os parágrafos&lt;/button>
+          &lt;span>(note que até a observação abaixo irá ser ocultada, devido a estar em uma tag p)&lt;/span>
+          &lt;p>Selecionamos os dois parágrafos (tag P) e ocultamos diretamente pela tag.&lt;/p>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+          $(document).ready(function(){
+            $("button").click(function(){
+                $("p").hide();
+            });
+          });
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                  </code>
+                </pre>
+                <p>O código é semelhante ao exemplo anterior, com a diferença de que a chamada <strong>$("p")</strong> é usada para retornar todos as <i>tags</i> de parágrafo.</p>
+
+                <h4>Manipulando estilos</h4>
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingOne">
+                        <h4 class="panel-title">
+                          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Função CSS()
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                          <p>A função <strong>css()</strong> permite definir uma ou mais propriedades CSS para um elemento. No exemplo a seguir, define-se a propriedade <strong>background-color</strong> com valor <strong>#CCC</strong> para todos os parágrafos (<strong>p</strong>).</p>
+                          <pre>
+                            <code class="language-js">
+      $(document).ready(function(){
+        $("p").css("background-color", "#CCC");
+      })                        
+                            </code>
+                          </pre>
+                          <p>Além de definir uma propriedade CSS, é possível obter o valor da propriedade CSS que já foi aplicada ao elemento. No exemplo a seguir, quando se usa a função <strong>css()</strong> passando apenas um parâmetro, ela funcionará como um método <strong>get()</strong> e retornará o valor daquela propriedade, neste caso, o tamanho da fonte:</p>
+                          <pre>
+                            <code class="language-js">
+      $(document).ready(function(){
+        var fontSize = $("p").css("font-size");
+        alert(fontSize);
+      });                                                  
+                            </code>
+                          </pre>
+                          <p>Também é possível alterar mais de uma propriedade CSS em uma só chamada da função <strong>css()</strong>. Basta passar como parâmetro para a função um conjunto de propriedades-valor no formato:</p>
+                          <code>{"propriedade":"valor", "propriedade":"valor", ...}</code>
+                          <pre>
+                            <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>&lt;/title>
+          &lt;style>
+            fundo-e-borda {
+              background-color: red;
+              border: 5px solid yellow;
+            }
+          &lt;/style>
+        &lt;/head>
+        &lt;body>
+          &lt;p class="fundo-e-borda">
+            Este texto terá um background da cor "Aqua" e borda de 2px, sólida e
+            vermelha.
+          &lt;/p>
+          &lt;p>
+              Foi definido um estilo para a classe "fundo-e-borda", porém, a mesma foi alterada usando a função .CSS
+          &lt;/p>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('.fundo-e-borda').css({ 'background-color': 'aqua', border: '2px solid red' })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Função addClass()
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                          <p>A função <strong>addClass</strong> permite adicionar uma classe CSS a um determinado elemento. É importante destacar que essa classe deve existir no arquivo CSS ou na seção <strong>style</strong>, caso contrário a função não terá nenhum efeito. No exemplo a seguir, todos os parágrafos da página terão associação à classe <strong>"destaque"</strong>:</p>
+                          <pre>
+                            <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>Função addClass()&lt;/title>
+        &lt;/head>
+        &lt;body>
+          &lt;!--CSS--&gt;
+          &lt;style>
+            .destaque {
+              color: blue;
+              background-color: #f6d8ce;
+            }
+          &lt;/style>
+
+          &lt;p>
+            Esse trecho terá uma cor clara de fundo e cor da letra azul, devido a função addClass() adicionar a tag "p" para a classe destaque.
+          &lt;/p>
+          &lt;!--Arquivo com os códigos padrão do jQuery--&gt;
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;!--Função addClass--&gt;
+          &lt;script>
+          $(document).ready(function(){
+              $('p').addClass('destaque');
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                            </code>
+                          </pre>
+                          <p>Observe que a função <strong>addClass</strong> recebe o nome da classe, sem o sinal de ponto na frente.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Função hasClass()
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                        <div class="panel-body">
+                          <p>Essa função permite verificar se determinado elemento tem uma classe CSS:</p>
+                          <pre>
+                            <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          &lt;title>Função hasClass()&lt;/title>
+          &lt;style>
+            .destaque {
+              color: red;
+              background-color: #f6d8ce;
+            }
+          &lt;/style>
+        &lt;/head>
+        &lt;body>
+          &lt;p class="destaque">Tag com a classe "destaque"&lt;/p>
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              var possuiDestaque = $('p').hasClass('destaque');
+              if (possuiDestaque) alert('parágrafo possui destaque');
+              else alert('classe destaque não detectada');
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                            </code>
+                          </pre>
+                          <p>Resultado:</p>
+                          <img src="imgs/figura_4.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                          <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                          <a href="imgs/figura_4.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_4.png" class="center-block img-responsive"></a>
+                          <p class="legenda-imagem">
+                            Figura 4 – Mensagem do resultado esperado do exemplo<br>
+                            Fonte: Senac EAD (2023)
+                          </p>
+                          <p class="acessivel no-print">Caixa de diálogo com a frase “parágrafo possui destaque”. E no canto direito, há um botão de OK.</p>
+                          <p>Aparecerá a mensagem “parágrafo possui destaque” em razão da classe <strong>destaque</strong> e da utilização dela na <i>tag</i> <strong>&lt;p></strong>.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading4">
+                        <h4 class="panel-title">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            Função removeClass()
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                        <div class="panel-body">
+                          <p>A função <strong>removeClass()</strong> faz exatamente o oposto da função <strong>addClass()</strong>, ou seja, remove uma classe de determinado elemento:</p>
+                          <pre>
+                            <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          &lt;title>Função removeClass()&lt;/title>
+          &lt;style>
+            .destaque {
+              color: red;
+              background-color: #f6d8ce;
+            }
+          &lt;/style>
+        &lt;/head>
+        &lt;body>
+          &lt;p class="destaque">Tag com a classe "destaque"&lt;/p>
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              alert("A seguir vamos remover a classe 'destaque'.");
+              $('p').removeClass('destaque');
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                            </code>
+                          </pre>
+                          <p>No exemplo, remove-se a classe <strong>destaque</strong> do elemento <strong>&lt;p></strong> após o usuário dispensar a caixa de alerta que aparece ao carregar a página. Se a classe não estiver associada a <strong>&lt;p></strong>, então o código acima não terá nenhum efeito.</p>
+                          <div class="row">
+                            <div class="col-lg-6 col-xs-12">
+                              <img src="imgs/figura_5.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                              <a href="imgs/figura_5.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_5.png" class="center-block img-responsive"></a>
+                              <p class="legenda-imagem">
+                                Figura 5 – Resultado do exemplo antes de executar <strong>removeClass()</strong><br>
+                                Fonte: Senac EAD (2023)
+                              </p>
+                              <p class="acessivel no-print">A imagem mostra a frase “Tag com a classe Destaque”, com fundo em tom de laranja e fonte vermelha.</p>
+                            </div>
+                            <div class="col-lg-6 col-xs-12">
+                              <img src="imgs/figura_6.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                              <a href="imgs/figura_6.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_6.png" class="center-block img-responsive"></a>
+                              <p class="legenda-imagem">
+                                Figura 6 – Resultado após executar <strong>removeClass()</strong><br>
+                                Fonte: Senac EAD (2023)
+                              </p>
+                              <p class="acessivel no-print">A imagem mostra a frase “Tag com a classe Destaque”, sem nenhuma formatação.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading5">
+                        <h4 class="panel-title">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            Função toggleClass()
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                        <div class="panel-body">
+                          <p>A operação de adicionar e remover classes CSS é algo bem comum no jQuery. Um exemplo típico é quando o usuário clica em um elemento e necessita dar um destaque a ele, como mudar a cor de fundo desse elemento. Nesse caso, seria possível adicionar uma classe CSS que realiza a formatação de destaque, e, quando o usuário clica novamente no elemento, teria de remover essa classe CSS. Porém isso pode ser redundante e trabalhoso, pois seria preciso fazer um <strong>if</strong> para testar se a classe existe ou não, para decidir antes se usará o método <strong>addClass()</strong> ou o <strong>removeClass()</strong>. A função <strong>toggleClass()</strong> faz esse controle sem a necessidade de <strong>if</strong>, em uma só linha. Por exemplo:</p>
+                          <pre>
+                            <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>Função toggleClass()&lt;/title>
+          &lt;style>
+            .destaque {
+              color: aquamarine;
+              background-color: #561702;
+            }
+          &lt;/style>
+        &lt;/head>
+        &lt;body>
+          &lt;p id="manchete">
+            Clique na linha para adicionar ou remover a sua classe!
+          &lt;/p>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('#manchete').click(function () {
+                $(this).toggleClass('destaque');
+              })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading6">
+                        <h4 class="panel-title">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                            Referência this
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+                        <div class="panel-body">
+                          <p>No exemplo do <strong>toggleClass</strong>, tem-se a palavra <strong>this</strong> e agora você entenderá o funcionamento dela. Considere outro exemplo que associa uma função que monitora eventos do tipo <strong>click</strong> em todos os parágrafos da página:</p>
+                          <pre>
+                            <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>Referência this&lt;/title>
+          &lt;style>
+            .destaque {
+              color: aquamarine;
+              background-color: #561702;
+            }
+          &lt;/style>
+        &lt;/head>
+        &lt;body>
+          &lt;p id="manchete">
+            Clique na linha para adicionar ou remover a sua classe!
+          &lt;/p>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('p').click(function () {
+                $(this).toggleClass('destaque');
+              })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                            </code>
+                          </pre>
+                          <p>Nesse exemplo, toda vez que houver um clique em um parágrafo, a classe <strong>destaque</strong> será adicionada ao parágrafo, caso ainda não exista, ou removida, caso já esteja presente. Mas e o <strong>this</strong> nessa história toda? Observe que, no momento em que se escreve o código jQuery, não há como saber quantos parágrafos existem na página. É provável que exista mais de um parágrafo, ou até dezenas ou centenas. Portanto, se o código for rodado com o <i>script</i> da maneira como se mostra a seguir, estaria sendo feito um método que, quando recebesse um clique em <strong>p</strong>, aplicaria a classe <strong>destaque</strong> em todos os parágrafos!</p>
+                          <pre>
+                            <code class="language-html">
+      &lt;script>
+        $(document).ready(function () {
+          $('p').click(function () {
+            $('p').toggleClass('destaque');
+          })
+        })
+      &lt;/script>                      
+                            </code>
+                          </pre>
+                          <p>Contudo, não é isso que se quer. O objetivo é aplicar apenas no <strong>p</strong> que recebeu o clique. E é exatamente isso que o comando <strong>this</strong> faz: definir que o <strong>&lt;p></strong> que terá o <strong>toggleClass</strong> aplicado é apenas aquele que recebeu o clique.</p>
+                          <p>A referência <strong>this</strong> deixa o código mais genérico, pois permite trabalhar com uma grande quantidade de elementos, sem que se saiba, a princípio, determinar qual é o elemento.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="acessivel print">
+                  <h4>Função CSS()</h4>
+                  <p>A função <strong>css()</strong> permite definir uma ou mais propriedades CSS para um elemento. No exemplo a seguir, define-se a propriedade <strong>background-color</strong> com valor <strong>#CCC</strong> para todos os parágrafos (<strong>p</strong>).</p>
+                  <pre>
+                    <code class="language-js">
+      $(document).ready(function(){
+        $("p").css("background-color", "#CCC");
+      })                        
+                    </code>
+                  </pre>
+                  <p>Além de definir uma propriedade CSS, é possível obter o valor da propriedade CSS que já foi aplicada ao elemento. No exemplo a seguir, quando se usa a função <strong>css()</strong> passando apenas um parâmetro, ela funcionará como um método <strong>get()</strong> e retornará o valor daquela propriedade, neste caso, o tamanho da fonte:</p>
+                  <pre>
+                    <code class="language-js">
+      $(document).ready(function(){
+        var fontSize = $("p").css("font-size");
+        alert(fontSize);
+      });                                                  
+                    </code>
+                  </pre>
+                  <p>Também é possível alterar mais de uma propriedade CSS em uma só chamada da função <strong>css()</strong>. Basta passar como parâmetro para a função um conjunto de propriedades-valor no formato:</p>
+                  <code>{"propriedade":"valor", "propriedade":"valor", ...}</code>
+                  <pre>
+                    <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>&lt;/title>
+          &lt;style>
+            fundo-e-borda {
+              background-color: red;
+              border: 5px solid yellow;
+            }
+          &lt;/style>
+        &lt;/head>
+        &lt;body>
+          &lt;p class="fundo-e-borda">
+            Este texto terá um background da cor "Aqua" e borda de 2px, sólida e
+            vermelha.
+          &lt;/p>
+          &lt;p>
+            Foi definido um estilo para a classe "fundo-e-borda", porém, a mesma foi alterada usando a função .CSS
+          &lt;/p>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('.fundo-e-borda').css({ 'background-color': 'aqua', border: '2px solid red' })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                    </code>
+                  </pre>
+                  <h4>Função addClass()</h4>
+                  <p>A função <strong>addClass</strong> permite adicionar uma classe CSS a um determinado elemento. É importante destacar que essa classe deve existir no arquivo CSS ou na seção <strong>style</strong>, caso contrário a função não terá nenhum efeito. No exemplo a seguir, todos os parágrafos da página terão associação à classe <strong>"destaque"</strong>:</p>
+                  <pre>
+                    <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>Função addClass()&lt;/title>
+        &lt;/head>
+        &lt;body>
+          &lt;!--CSS--&gt;
+          &lt;style>
+            .destaque {
+              color: blue;
+              background-color: #f6d8ce;
+            }
+          &lt;/style>
+
+          &lt;p>
+            Esse trecho terá uma cor clara de fundo e cor da letra azul, devido a função addClass() adicionar a tag "p" para a classe destaque.
+          &lt;/p>
+          &lt;!--Arquivo com os códigos padrão do jQuery--&gt;
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;!--Função addClass--&gt;
+          &lt;script>
+            $(document).ready(function(){
+              $('p').addClass('destaque');
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                    </code>
+                  </pre>
+                  <p>Observe que a função <strong>addClass</strong> recebe o nome da classe, sem o sinal de ponto na frente.</p>
+                  <h4>Função hasClass()</h4>
+                  <p>Essa função permite verificar se determinado elemento tem uma classe CSS:</p>
+                  <pre>
+                    <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          &lt;title>Função hasClass()&lt;/title>
+          &lt;style>
+            .destaque {
+              color: red;
+              background-color: #f6d8ce;
+            }
+          &lt;/style>
+        &lt;/head>
+        &lt;body>
+          &lt;p class="destaque">Tag com a classe "destaque"&lt;/p>
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              var possuiDestaque = $('p').hasClass('destaque');
+              if (possuiDestaque) alert('parágrafo possui destaque');
+              else alert('classe destaque não detectada');
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                    </code>
+                  </pre>
+                  <p>Resultado:</p>
+                  <img src="imgs/figura_4.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                  <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                  <a href="imgs/figura_4.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_4.png" class="center-block img-responsive"></a>
+                  <p class="legenda-imagem">
+                    Figura 4 – Mensagem do resultado esperado do exemplo<br>
+                    Fonte: Senac EAD (2023)
+                  </p>
+                  <p class="acessivel no-print">Caixa de diálogo com a frase “parágrafo possui destaque”. E no canto direito, há um botão de OK.</p>
+                  <p>Aparecerá a mensagem “parágrafo possui destaque” em razão da classe <strong>destaque</strong> e da utilização dela na <i>tag</i> <strong>&lt;p></strong>.</p>
+                  <h4>Função removeClass()</h4>
+                  <p>A função <strong>removeClass()</strong> faz exatamente o oposto da função <strong>addClass()</strong>, ou seja, remove uma classe de determinado elemento:</p>
+                  <pre>
+                    <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          &lt;title>Função removeClass()&lt;/title>
+          &lt;style>
+            .destaque {
+              color: red;
+              background-color: #f6d8ce;
+            }
+          &lt;/style>
+        &lt;/head>
+        &lt;body>
+          &lt;p class="destaque">Tag com a classe "destaque"&lt;/p>
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              alert("A seguir vamos remover a classe 'destaque'.");
+              $('p').removeClass('destaque');
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                    </code>
+                  </pre>
+                  <p>No exemplo, remove-se a classe <strong>destaque</strong> do elemento <strong>&lt;p></strong> após o usuário dispensar a caixa de alerta que aparece ao carregar a página. Se a classe não estiver associada a <strong>&lt;p></strong>, então o código acima não terá nenhum efeito.</p>
+                  <div class="row">
+                    <div class="col-lg-6 col-xs-12">
+                      <img src="imgs/imagem.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/imagem.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/imagem.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 5 – Resultado do exemplo antes de executar <strong>removeClass()</strong><br>
+                        Fonte: Senac EAD (2023)
+                      </p>
+                      <p class="acessivel no-print">A imagem mostra a frase “Tag com a classe Destaque”, com fundo em tom de laranja e fonte vermelha.</p>
+                    </div>
+                    <div class="col-lg-6 col-xs-12">
+                      <img src="imgs/imagem.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/imagem.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/imagem.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 6 – Resultado após executar <strong>removeClass()</strong><br>
+                        Fonte: Senac EAD (2023)
+                      </p>
+                      <p class="acessivel no-print">A imagem mostra a frase “Tag com a classe Destaque”, sem nenhuma formatação.</p>
+                    </div>
+                  </div>
+                  <h4>Função toggleClass()</h4>
+                  <p>A operação de adicionar e remover classes CSS é algo bem comum no jQuery. Um exemplo típico é quando o usuário clica em um elemento e necessita dar um destaque a ele, como mudar a cor de fundo desse elemento. Nesse caso, seria possível adicionar uma classe CSS que realiza a formatação de destaque, e, quando o usuário clica novamente no elemento, teria de remover essa classe CSS. Porém isso pode ser redundante e trabalhoso, pois seria preciso fazer um <strong>if</strong> para testar se a classe existe ou não, para decidir antes se usará o método <strong>addClass()</strong> ou o <strong>removeClass()</strong>. A função <strong>toggleClass()</strong> faz esse controle sem a necessidade de <strong>if</strong>, em uma só linha. Por exemplo:</p>
+                  <pre>
+                    <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>Função toggleClass()&lt;/title>
+          &lt;style>
+            .destaque {
+              color: aquamarine;
+              background-color: #561702;
+            }
+          &lt;/style>
+        &lt;/head>
+        &lt;body>
+          &lt;p id="manchete">
+            Clique na linha para adicionar ou remover a sua classe!
+          &lt;/p>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('#manchete').click(function () {
+                $(this).toggleClass('destaque');
+              })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                    </code>
+                  </pre>
+                  <h4>Referência this</h4>
+                  <p>No exemplo do <strong>toggleClass</strong>, tem-se a palavra <strong>this</strong> e agora você entenderá o funcionamento dela. Considere outro exemplo que associa uma função que monitora eventos do tipo <strong>click</strong> em todos os parágrafos da página:</p>
+                  <pre>
+                    <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>Referência this&lt;/title>
+          &lt;style>
+            .destaque {
+              color: aquamarine;
+              background-color: #561702;
+            }
+          &lt;/style>
+        &lt;/head>
+        &lt;body>
+          &lt;p id="manchete">
+            Clique na linha para adicionar ou remover a sua classe!
+          &lt;/p>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('p').click(function () {
+                $(this).toggleClass('destaque');
+              })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                    </code>
+                  </pre>
+                  <p>Nesse exemplo, toda vez que houver um clique em um parágrafo, a classe <strong>destaque</strong> será adicionada ao parágrafo, caso ainda não exista, ou removida, caso já esteja presente. Mas e o <strong>this</strong> nessa história toda? Observe que, no momento em que se escreve o código jQuery, não há como saber quantos parágrafos existem na página. É provável que exista mais de um parágrafo, ou até dezenas ou centenas. Portanto, se o código for rodado com o <i>script</i> da maneira como se mostra a seguir, estaria sendo feito um método que, quando recebesse um clique em <strong>p</strong>, aplicaria a classe <strong>destaque</strong> em todos os parágrafos!</p>
+                  <pre>
+                    <code class="language-html">
+      &lt;script>
+        $(document).ready(function () {
+          $('p').click(function () {
+            $('p').toggleClass('destaque');
+          })
+        })
+      &lt;/script>                      
+                    </code>
+                  </pre>
+                  <p>Contudo, não é isso que se quer. O objetivo é aplicar apenas no <strong>p</strong> que recebeu o clique. E é exatamente isso que o comando <strong>this</strong> faz: definir que o <strong>&lt;p></strong> que terá o <strong>toggleClass</strong> aplicado é apenas aquele que recebeu o clique.</p>
+                  <p>A referência <strong>this</strong> deixa o código mais genérico, pois permite trabalhar com uma grande quantidade de elementos, sem que se saiba, a princípio, determinar qual é o elemento.</p>
+                </div>
+                <div class="caixa-destaque-livre icone-desafio">
+                  <p>Monte uma página HTML com elementos de texto, duas classes css, uma chamada <strong>“tema-claro”</strong>, definindo fundo branco e letras pretas, e outra chamada <strong>“tema-escuro”</strong>, definindo fundo preto e letras brancas. Inclua na página dois botões, um para acionar via jQuery o tema branco e outro para o tema escuro. A classe deve ser aplicada a <strong>&lt;body></strong>.</p>
+                  <div class="table-responsive">
+                    <table class="senac">
+                      <tbody>
+                        <tr>
+                          <td>Função <strong>hide()</strong></td>
+                          <td>Essa função esconde/oculta um elemento. No exemplo ao lado, quando o usuário clicar no parágrafo, este é ocultado. O usuário não enxergará mais esse parágrafo, entretanto ele continua presente na página e poderá tornar-se visível usando a função <strong>show()</strong>.</td>
+                          <td>
+                            <pre>
+                              <code class="language-js"> 
+      $('p').click(function(){    
+        $(this).hide(); 
+      });
+                              </code>
+                            </pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Função <strong>show()</strong></td>
+                          <td>Essa função faz o oposto de <strong>hide()</strong>. Se um elemento está escondido, é possível torná-lo visível chamando a função <strong>show()</strong>.</td>
+                          <td>
+                            <pre>
+                              <code class="language-js"> 
+      $('#botao').click(function(){ 
+        $("p").show(); 
+      });
+                              </code>
+                            </pre>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Função <strong>attr()</strong></td>
+                          <td>Essa função permite alterar um atributo de um elemento. No exemplo ao lado, usou-se a função <strong>attr</strong> para alterar a largura da imagem toda vez que o <i>mouse</i> passa sobre ela. Quando sai de cima da imagem, altera-se a largura para o tamanho original.</td>
+                          <td>
+                            <pre>
+                              <code class="language-js"> 
+      $(document).ready(function () {
+        $('#photo').mouseover(function () {
+          $(this).attr('width', 650)
+        })
+        $('#photo').mouseout(function () {
+          $(this).attr('width', 620)
+        })
+      })                    
+                              </code>
+                            </pre>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <p class="legenda-imagem">
+                    Tabela 1 – Funções<br>
+                    Fonte: Senac EAD (2023)
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="bloco-branco">
+              <div class="container">
+                <h3 id="t3">Animações e efeitos especiais</h3>
+                <p>O jQuery tem diversas funções que permitem realizar animações básicas com elementos HTML. Essas animações operam sobre propriedades do CSS variando seus valores de modo a criar um efeito de transição entre dois estados, por exemplo, entre um estado visível e outro oculto.</p>
+                <p><strong>fadeIn()</strong> e <strong>fadeOut()</strong></p>
+                <p>Essas funções permitem efetuar a animação entre dois estados: 1 – totalmente visível; e 2 – totalmente invisível. Ambas as funções operam sobre a propriedade <strong>opacity</strong> do CSS. A diferença é que a função <strong>fadeIn()</strong> ajusta o nível de opacidade de 0 para 1, de modo gradual, o que simula o efeito de aparecimento. Já a função <strong>fadeOut()</strong> faz exatamente o oposto: ela ajusta a opacidade de 1 para 0, de modo gradual, simulando o efeito de desaparecimento.</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('#desaparecer').click(function () {
+                $('#foto').fadeOut()
+              })
+              $('#aparecer').click(function () {
+                $('#foto').fadeIn()
+              })
+            })
+          &lt;/script>
+        &lt;/head>
+        &lt;body>
+          &lt;button id="desaparecer">Desaparecer&lt;/button>
+          &lt;button id="aparecer">Aparecer&lt;/button>
+          &lt;br />
+          &lt;img id="foto" src="carro01.jpg" />
+        &lt;/body>
+      &lt;/html>
+                  </code>
+                </pre>
+                <p><strong>slideUp()</strong> e <strong>slideDown()</strong></p>
+                <p>A função <strong>slideUp()</strong> esconde um elemento diminuindo o seu tamanho até desaparecer. A função <strong>slideDown()</strong> faz o contrário, torna o elemento visível aumentando seu tamanho progressivamente até atingir o tamanho original. No exemplo, a imagem <strong>#foto</strong> é submetida à função <strong>slideUp()</strong> ou <strong>slideDown()</strong> sempre que um dos botões é pressionado:</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;style>
+            #foto {
+              border: 1px solid black;
+            }
+          &lt;/style>
+          &lt;script>
+            $(document).ready(function () {
+              // reduz em 50% a opacidade:
+              $('#slideup').click(function () {
+                $('#foto').slideUp('slow')
+              })
+              $('#slidedown').click(function () {
+                $('#foto').slideDown('slow')
+              })
+            })
+          &lt;/script>
+        &lt;/head>
+        &lt;body>
+          &lt;button id="slideup">SlideUp&lt;/button>
+          &lt;button id="slidedown">SlideDown&lt;/button>
+          &lt;br />
+          &lt;img id="foto" src="carro02.jpg" />
+        &lt;/body>
+      &lt;/html>
+                  </code>
+                </pre>
+              </div>
+            </div>
+            <div class="bloco-azul">
+              <div class="container">
+                <h3 id="t4">Função de busca: each()</h3>
+                <p>A função <strong>each</strong> permite navegar por cada um dos elementos do DOM, verificando ou alterando suas propriedades de modo individual, se assim necessário. </p>
+                <p>Considere o código a seguir, que permite ao usuário digitar um nome, e, à medida que as teclas são digitadas, a função <strong>each</strong> é chamada para percorrer cada <strong>&lt;li></strong> verificando se o conteúdo dessa <strong>&lt;li></strong> tem o texto informado pelo usuário:</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html>
+        &lt;head>
+          &lt;meta charset="utf-8" />
+          &lt;title>Função Each&lt;/title>
+          &lt;style>
+            .off {
+              background-color: #ccc;
+            }
+            .on {
+              background-color: red;
+            }
+            li {
+              border-radius: 4px;
+              padding: 8px;
+              background-color: navy;
+              color: white;
+              display: inline;
+            }
+            ul {
+              list-style: none;
+            }
+            input.busca {
+              margin-left: 40px;
+              width: 350px;
+              height: 25px;
+              font-size: 16px;
+              padding: 4px;
+            }
+          &lt;/style>
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('#filtro').keyup(function () {
+                var termo = $('#filtro').val().toLowerCase()
+                $('ul.nomes li').each(function (index) {
+                  $(this).addClass('off')
+                  $(this).removeClass('on')
+                  var li_texto = $(this).text().toLowerCase()
+                  if (li_texto.search(termo) != -1 && termo.length > 1) {
+                    $(this).removeClass('off')
+                    $(this).addClass('on')
+                  }
+                })
+              })
+            })
+          &lt;/script>
+        &lt;/head>
+        &lt;body>
+          &lt;input type="text" id="filtro" class="busca" />
+          &lt;ul class="nomes">
+            &lt;li>Adriana&lt;/li>
+            &lt;li>Alice&lt;/li>
+            &lt;li>Daltron&lt;/li>
+            &lt;li>Fabiano&lt;/li>
+            &lt;li>Fernando&lt;/li>
+            &lt;li>Fabrício&lt;/li>
+            &lt;li>Lucas&lt;/li>
+            &lt;li>Gustavo&lt;/li>
+            &lt;li>Mauro&lt;/li>
+            &lt;li>Ronald&lt;/li>
+          &lt;/ul>
+        &lt;/body>
+      &lt;/html>
+                  </code>
+                </pre>
+
+                <h4>Modificando o conteúdo</h4>
+                <p>As funções <strong>text()</strong>, <strong>html()</strong> e <strong>val()</strong> permitem obter e alterar o conteúdo de um elemento. A seguir, você verá a diferença entre cada um.</p>
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Função text()</a></li>
+                    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Função html()</a></li>
+                    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Função val()</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="home">
+                      <p>Essa função permite obter o texto dentro de uma <i>tag</i> ou colocar um outro texto dentro dela. A seguir, 
+                        veja um exemplo de uma função que copia o texto do segundo parágrafo para o primeiro. Veja que o comando 
+                        <strong>$("#p2").text()</strong> usa a função <strong>text()</strong> sem passar nenhum parâmetro, o que significa que se deseja que ele 
+                        retorne o conteúdo daquele elemento. Logo na sequência, o conteúdo de <strong>p2</strong> é salvo na variável <strong>"p2Texto"</strong>. 
+                        Na próxima linha, <strong>$("#p1").text(p2Texto)</strong>, está sendo usada a mesma função <strong>text()</strong>, mas agora passando um parâmetro. 
+                        Aqui a função <strong>text()</strong> se comporta de maneira diferente, pois quando se define um parâmetro, o jQuery 
+                        entende que se deseja alterar o conteúdo do elemento para aquele especificado no argumento do método. 
+                        Então é nessa linha que o conteúdo de <strong>p2</strong> é copiado para <strong>p1</strong>.
+                      </p>
+                      <pre class="codigo-destaque">
+      <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-br"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"p1"</span>&gt;</span>
+            Este texto está dentro de uma tag "p" e o seu id é "p1"
+          <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"copiar"</span>&gt;</span>Copiar texto de p2 para p1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"p2"</span>&gt;</span>
+            Este texto está está dentro de uma tag "p" e o seu id é "p2"
+          <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"jquery.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+          $(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">ready</span>( <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
+              $(<span class="hljs-string">'#copiar'</span>).<span class="hljs-title function_">click</span>( <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+                <span class="hljs-comment">// Salva conteúdo de p2 em uma variavel:</span>
+                <span class="hljs-keyword">var</span> p2Texto = <span class="code-destaque">$(<span class="hljs-string">'#p2'</span>).<span class="hljs-title function_">text</span>()</span>;
+                <span class="hljs-comment">// Atribui a p1 o conteúdo de p2:</span>
+                <span class="code-destaque">$(<span class="hljs-string">'#p1'</span>).<span class="hljs-title function_">text</span>(p2Texto);</span>
+              })
+            })
+          </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+                      </pre>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="profile">
+                      <p>Similar à função <strong>text()</strong>, a função <strong>html()</strong> permite copiar tanto o texto contido dentro da <i>tag</i> como também todo o código HTML. No exemplo a seguir, o conteúdo do segundo parágrafo é copiado para o primeiro parágrafo, substituindo seu conteúdo original.</p>
+                      <pre class="codigo-destaque">
+                        <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-br"</span>&gt;</span>
+                          <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span> /&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
+                              <span class="hljs-selector-tag">b</span> {
+                                <span class="hljs-attribute">color</span>: red;
+                              }
+                              <span class="hljs-selector-tag">i</span> {
+                                <span class="hljs-attribute">color</span>: blue;
+                              }
+                            </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+                          <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+                          <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"p1"</span>&gt;</span> Este texto está dentro de uma tag "p" e o seu id é "p1"<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"copiar"</span>&gt;</span>Copiar texto de p2 para p1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"p2"</span>&gt;</span>
+                              Este texto está está dentro de uma tag "p" e o seu id é "p2".
+                              <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Este trecho está em negrito!<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+                              <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>Este trecho está em itálico!<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                      
+                            <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"jquery.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+                            $(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">ready</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
+                                $(<span class="hljs-string">'#copiar'</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+                                  <span class="hljs-keyword">var</span> p2_conteudo = <span class="code-destaque">$(<span class="hljs-string">'#p2'</span>).<span class="hljs-title function_">html</span>();
+                                  $(<span class="hljs-string">'#p1'</span>).<span class="hljs-title function_">html</span>(p2_conteudo);</span>
+                                })
+                              })
+                            </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+                          <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+                      </pre>
+                      <p>Nesse exemplo, o conteúdo de <strong>p2</strong>, incluindo o código HTML interno (com as <i>tags</i> <strong>&lt;b></strong> e <strong>&lt;i></strong>), será copiado para <strong>p1</strong>, ficando ambos exatamente idênticos.</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="messages">
+                      <p>A função <strong>val()</strong> é utilizada para as <i>tags</i> <strong>input</strong> e <strong>select</strong>. Ela permite definir um valor para <strong>input</strong> ou retornar o valor contido dentro de <strong>input</strong>. A função <strong>val()</strong> funciona como <strong>get</strong>, quando não se passa nenhum valor como parâmetro. Por outro lado, quando o parâmetro é especificado, a função <strong>val()</strong> funciona como um método <strong>set()</strong>. Esse comportamento se repete em várias outras funções do jQuery.</p>
+                      <pre>
+                        <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" /> 
+        &lt;/head>
+        &lt;body>
+          &lt;b>Digite o nome de uma cor:&lt;/b>
+          &lt;input type="text" id="nome" name="nome" />
+          &lt;button id="confirmar">Aplicar&lt;/button>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+          $(document).ready(function(){
+              $('#confirmar').click(function () {
+                var novaCor = $('#nome').val()
+                $('body').css('background-color', novaCor)
+              })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                        </code>
+                      </pre>
+                      <p>Nesse caso, usa-se a função <strong>val()</strong> como <strong>get</strong> para obter o valor digitado pelo usuário no <strong>input #nome</strong> e, em seguida, aplica-se esse valor como cor de fundo na <i>tag</i> <strong>body</strong>.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="acessivel print">
+                  <h4>Função text()</h4>
+                  <p>Essa função permite obter o texto dentro de uma <i>tag</i> ou colocar um outro texto dentro dela. A seguir, 
+                    veja um exemplo de uma função que copia o texto do segundo parágrafo para o primeiro. Veja que o comando 
+                    <strong>$("#p2").text()</strong> usa a função <strong>text()</strong> sem passar nenhum parâmetro, o que significa que se deseja que ele 
+                    retorne o conteúdo daquele elemento. Logo na sequência, o conteúdo de <strong>p2</strong> é salvo na variável <strong>"p2Texto"</strong>. 
+                    Na próxima linha, <strong>$("#p1").text(p2Texto)</strong>, está sendo usada a mesma função <strong>text()</strong>, mas agora passando um parâmetro. 
+                    Aqui a função <strong>text()</strong> se comporta de maneira diferente, pois quando se define um parâmetro, o jQuery 
+                    entende que se deseja alterar o conteúdo do elemento para aquele especificado no argumento do método. 
+                    Então é nessa linha que o conteúdo de <strong>p2</strong> é copiado para <strong>p1</strong>.
+                  </p>
+                  <pre class="codigo-destaque">
+      <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-br"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"p1"</span>&gt;</span>
+            Este texto está dentro de uma tag "p" e o seu id é "p1"
+          <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"copiar"</span>&gt;</span>Copiar texto de p2 para p1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"p2"</span>&gt;</span>
+            Este texto está está dentro de uma tag "p" e o seu id é "p2"
+          <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"jquery.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+          $(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">ready</span>( <span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
+              $(<span class="hljs-string">'#copiar'</span>).<span class="hljs-title function_">click</span>( <span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+                <span class="hljs-comment">// Salva conteúdo de p2 em uma variavel:</span>
+                <span class="hljs-keyword">var</span> p2Texto = <span class="code-destaque">$(<span class="hljs-string">'#p2'</span>).<span class="hljs-title function_">text</span>()</span>;
+                <span class="hljs-comment">// Atribui a p1 o conteúdo de p2:</span>
+                <span class="code-destaque">$(<span class="hljs-string">'#p1'</span>).<span class="hljs-title function_">text</span>(p2Texto);</span>
+              })
+            })
+          </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+                  </pre>
+
+                  <h4>Função html()</h4>
+                  <p>Similar à função <strong>text()</strong>, a função <strong>html()</strong> permite copiar tanto o texto contido dentro da <i>tag</i> como também todo o código HTML. No exemplo a seguir, o conteúdo do segundo parágrafo é copiado para o primeiro parágrafo, substituindo seu conteúdo original.</p>
+                  <pre class="codigo-destaque">
+                    <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"pt-br"</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span> /&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="language-css">
+                          <span class="hljs-selector-tag">b</span> {
+                            <span class="hljs-attribute">color</span>: red;
+                          }
+                          <span class="hljs-selector-tag">i</span> {
+                            <span class="hljs-attribute">color</span>: blue;
+                          }
+                        </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+                      <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"p1"</span>&gt;</span> Este texto está dentro de uma tag "p" e o seu id é "p1"<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"copiar"</span>&gt;</span>Copiar texto de p2 para p1<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"p2"</span>&gt;</span>
+                          Este texto está está dentro de uma tag "p" e o seu id é "p2".
+                          <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>Este trecho está em negrito!<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+                          <span class="hljs-tag">&lt;<span class="hljs-name">i</span>&gt;</span>Este trecho está em itálico!<span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                  
+                        <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"jquery.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+                        $(<span class="hljs-variable language_">document</span>).<span class="hljs-title function_">ready</span>(<span class="hljs-keyword">function</span>(<span class="hljs-params"></span>){
+                            $(<span class="hljs-string">'#copiar'</span>).<span class="hljs-title function_">click</span>(<span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) {
+                              <span class="hljs-keyword">var</span> p2_conteudo = <span class="code-destaque">$(<span class="hljs-string">'#p2'</span>).<span class="hljs-title function_">html</span>();
+                              $(<span class="hljs-string">'#p1'</span>).<span class="hljs-title function_">html</span>(p2_conteudo);</span>
+                            })
+                          })
+                        </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+                      <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+                  </pre>
+                  <p>Nesse exemplo, o conteúdo de <strong>p2</strong>, incluindo o código HTML interno (com as <i>tags</i> <strong>&lt;b></strong> e <strong>&lt;i></strong>), será copiado para <strong>p1</strong>, ficando ambos exatamente idênticos.</p>
+
+                  <h4>Função val()</h4>
+                  <p>A função <strong>val()</strong> é utilizada para as <i>tags</i> <strong>input</strong> e <strong>select</strong>. Ela permite definir um valor para <strong>input</strong> ou retornar o valor contido dentro de <strong>input</strong>. A função <strong>val()</strong> funciona como <strong>get</strong>, quando não se passa nenhum valor como parâmetro. Por outro lado, quando o parâmetro é especificado, a função <strong>val()</strong> funciona como um método <strong>set()</strong>. Esse comportamento se repete em várias outras funções do jQuery.</p>
+                  <pre>
+                    <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" /> 
+        &lt;/head>
+        &lt;body>
+          &lt;b>Digite o nome de uma cor:&lt;/b>
+          &lt;input type="text" id="nome" name="nome" />
+          &lt;button id="confirmar">Aplicar&lt;/button>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+          $(document).ready(function(){
+              $('#confirmar').click(function () {
+                var novaCor = $('#nome').val()
+                $('body').css('background-color', novaCor)
+              })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                    </code>
+                  </pre>
+                  <p>Nesse caso, usa-se a função <strong>val()</strong> como <strong>get</strong> para obter o valor digitado pelo usuário no <strong>input #nome</strong> e, em seguida, aplica-se esse valor como cor de fundo na <i>tag</i> <strong>body</strong>.</p>
+                </div>
+                <div class="caixa-destaque-livre icone-desafio">
+                  <p>Partindo do exemplo anterior, inclua o seguinte parágrafo (<strong>&lt;p></strong>) após a <i>tag</i> <strong>&lt;input></strong>.</p>
+                  <code>&lt;p> Olá &lt;span id=”spnNome”> [seu nome] &lt;span>, tudo bem?&lt;/p></code>
+                  <p>Ao clicar no botão, substitua o conteúdo do <strong>span</strong> com <strong>id "spnNome"</strong> pelo conteúdo digitado pelo usuário.</p>
+                </div>
+
+                <h4>Tratamento de eventos</h4>
+                <p>Existem diversos tipos de eventos que ocorrem em uma página <i>web</i> durante a interação do usuário. Por exemplo, quando o usuário move o <i>mouse</i>, clica sobre um elemento, seleciona um texto, digita um texto, seleciona uma opção etc. O jQuery oferece várias funções para lidar com esses eventos, possibilitando capturá-los para disparar rotinas de tratamento de eventos associados a uma ação desejada.</p>
+                <p>Por exemplo, toda vez que o usuário passar o <i>mouse</i> sobre uma imagem, esta poderia ser aumentada para facilitar a visualização de seus detalhes. Para tornar isso possível, seriam programadas algumas algumas etapas: 1) associar o evento do <i>“mouse</i> sobre” a aquela imagem específica; 2) monitorar quando esse evento é disparado; 3) tomar uma ação para realizar o resultado desejado. Todas essas etapas são realizadas com o tratamento de eventos que o jQuery oferece em sua API.</p>
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading7">
+                        <h4 class="panel-title">
+                          <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse7" aria-expanded="true" aria-controls="collapse7">
+                            Evento click
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse7" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading7">
+                        <div class="panel-body">
+                          <p>Talvez um dos eventos mais comuns. Ocorre quando o usuário efetua um clique do <i>mouse</i> sobre algum elemento. Veja um exemplo de como associar um evento <strong>click</strong> a um botão HTML:</p>
+                          <pre>
+                            <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+        &lt;/head>
+        &lt;body>
+          &lt;button id="botao">Clique aqui!&lt;/button>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+          $(document).ready(function(){
+              $('#botao').click(function () {
+                alert('O botão foi clicado!')
+              })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                            </code>
+                          </pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading8">
+                        <h4 class="panel-title">
+                          <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse8" aria-expanded="true" aria-controls="collapse8">
+                            Evento mouseover
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+                        <div class="panel-body">
+                          <p>Ocorre quando o usuário passa o cursor do <i>mouse</i> sobre determinado elemento. Veja o exemplo a seguir, que modifica a cor de fundo de uma <strong>div</strong> com <strong>id #texto</strong> toda vez que o <i>mouse</i> passa sobre ela:</p>
+                          <pre>
+                            <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+        &lt;/head>
+        &lt;body>
+          &lt;div id="texto">
+            &lt;p>Ao passar o cursor sobre esse texto, a cor de fundo ficará vermelha!&lt;/p>
+          &lt;/div>
+      
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function(){
+              $('#texto').mouseover(function () {
+                $(this).css('background-color', 'red')
+              })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>                          
+                            </code>
+                          </pre>
+                          <p>Observe o uso do <strong>this</strong>. É comum o seu uso quando se trabalha com eventos, pois geralmente quando se captura um evento sobre um determinado elemento, o próprio elemento é o alvo da ação que se realizará logo a seguir. Portanto, nesse caso, o <strong>this</strong> se refere ao elemento <strong>#texto</strong>, que é a <strong>div</strong>.</p>
+                          <div class="caixa-destaque-livre icone-nota">
+                            <p>Avalie com atenção quando é mais vantajoso usar um evento <strong>mouseover()</strong> ou quando usar um seletor <strong>:hover</strong> de CSS. O evento é útil quando há mais ações a serem realizadas no evento, como a ativação de um elemento HTML, por exemplo, enquanto o <strong>:hover</strong> é preferível se a questão for apenas uma alteração de estilo. Eventos em CSS são bem menos custosos computacionalmente do que código JavaScript.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading9">
+                        <h4 class="panel-title">
+                          <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse9" aria-expanded="true" aria-controls="collapse9">
+                            Evento change
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9">
+                        <div class="panel-body">
+                          <p>Esse evento pode ser bastante útil para capturar quando o estado de um elemento é alterado. Considere que é preciso alterar o atributo <strong>src</strong> de uma imagem de acordo com a opção selecionada em um elemento <strong>select</strong>. Usando o evento <strong>change</strong>, fica fácil fazer isso:</p>
+                          <pre>
+                            <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>Evento Change&lt;/title>
+        &lt;/head>
+        &lt;body>
+          Selecione o modelo de carro:
+          &lt;select id="modelos">
+            &lt;option>&lt;/option>
+
+            &lt;option value="carro01.jpg">Carro 01&lt;/option>
+            &lt;option value="carro02.jpg">Carro 02&lt;/option>
+            &lt;option value="carro03.jpg">Carro 03&lt;/option>
+          &lt;/select>
+          &lt;img src="" id="foto" />
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('#foto').hide();
+              $('#modelos').change(function () {
+                $('#foto').attr('src', $(this).val());
+                $('#foto').show();
+              });
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                            </code>
+                          </pre>
+                          <p>Nesse exemplo, a função <strong>change</strong> só é disparada quando o <strong>select</strong> tem seu valor modificado. Assim, basta usar a função <strong>attr()</strong> para modificar o atributo <strong>src</strong> da imagem.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading10">
+                        <h4 class="panel-title">
+                          <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse10" aria-expanded="true" aria-controls="collapse10">
+                            Evento keypress
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+                        <div class="panel-body">
+                          <p>O evento <strong>keypress</strong> pertence à outra categoria de eventos associados a ações que o usuário realiza por meio do uso do teclado. A função <strong>keypress</strong> permite monitorar quando uma tecla é pressionada e, assim, realizar algum tipo de ação. Considere o código a seguir:</p>
+                          <pre>
+                            <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>Evento Keypress&lt;/title>
+        &lt;/head>
+        &lt;body>
+          Digite seu nome:
+          &lt;input type="text" id="nome" />
+          &lt;div id="exibe">&lt;/div>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('#nome').keypress(function (evento) {
+                $('#exibe').append(
+                  'Código ascii da tecla digitada: ' + evento.keyCode + '&lt;br>',
+                )
+              })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                            </code>
+                          </pre>
+                          <p>Nesse exemplo, é associado um tratador de eventos do tipo <strong>"tecla pressionada"</strong> ao input <strong>#nome</strong>. Assim, toda vez que a tecla é pressionada, esse tratador é chamado. Nesse caso, a função de tratamento recebe como parâmetro um objeto chamado <strong>"evento"</strong>, que tem informações sobre o evento da tecla pressionada. Com isso, é possível saber exatamente qual foi a tecla pressionada por meio do atributo <strong>keyCode</strong>.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="acessivel print">
+                  <h4>Evento click</h4>
+                  <p>Talvez um dos eventos mais comuns. Ocorre quando o usuário efetua um clique do <i>mouse</i> sobre algum elemento. Veja um exemplo de como associar um evento <strong>click</strong> a um botão HTML:</p>
+                  <pre>
+                    <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+        &lt;/head>
+        &lt;body>
+          &lt;button id="botao">Clique aqui!&lt;/button>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+          $(document).ready(function(){
+              $('#botao').click(function () {
+                alert('O botão foi clicado!')
+              })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                    </code>
+                  </pre>
+                  <h4>Evento mouseover</h4>
+                  <p>Ocorre quando o usuário passa o cursor do <i>mouse</i> sobre determinado elemento. Veja o exemplo a seguir, que modifica a cor de fundo de uma <strong>div</strong> com <strong>id #texto</strong> toda vez que o <i>mouse</i> passa sobre ela:</p>
+                  <pre>
+                    <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+        &lt;/head>
+        &lt;body>
+          &lt;div id="texto">
+            &lt;p>Ao passar o cursor sobre esse texto, a cor de fundo ficará vermelha!&lt;/p>
+          &lt;/div>
+      
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function(){
+              $('#texto').mouseover(function () {
+                $(this).css('background-color', 'red')
+              })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>                          
+                    </code>
+                  </pre>
+                  <p>Observe o uso do <strong>this</strong>. É comum o seu uso quando se trabalha com eventos, pois geralmente quando se captura um evento sobre um determinado elemento, o próprio elemento é o alvo da ação que se realizará logo a seguir. Portanto, nesse caso, o <strong>this</strong> se refere ao elemento <strong>#texto</strong>, que é a <strong>div</strong>.</p>
+                  <div class="caixa-destaque-livre icone-nota">
+                    <p>Avalie com atenção quando é mais vantajoso usar um evento <strong>mouseover()</strong> ou quando usar um seletor <strong>:hover</strong> de CSS. O evento é útil quando há mais ações a serem realizadas no evento, como a ativação de um elemento HTML, por exemplo, enquanto o <strong>:hover</strong> é preferível se a questão for apenas uma alteração de estilo. Eventos em CSS são bem menos custosos computacionalmente do que código JavaScript.</p>
+                  </div>
+                  <h4>Evento change</h4>
+                  <p>Esse evento pode ser bastante útil para capturar quando o estado de um elemento é alterado. Considere que é preciso alterar o atributo <strong>src</strong> de uma imagem de acordo com a opção selecionada em um elemento <strong>select</strong>. Usando o evento <strong>change</strong>, fica fácil fazer isso:</p>
+                  <pre>
+                    <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>Evento Change&lt;/title>
+        &lt;/head>
+        &lt;body>
+          Selecione o modelo de carro:
+          &lt;select id="modelos">
+            &lt;option>&lt;/option>
+
+            &lt;option value="carro01.jpg">Carro 01&lt;/option>
+            &lt;option value="carro02.jpg">Carro 02&lt;/option>
+            &lt;option value="carro03.jpg">Carro 03&lt;/option>
+          &lt;/select>
+          &lt;img src="" id="foto" />
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('#foto').hide();
+              $('#modelos').change(function () {
+                $('#foto').attr('src', $(this).val());
+                $('#foto').show();
+              });
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                    </code>
+                  </pre>
+                  <p>Nesse exemplo, a função <strong>change</strong> só é disparada quando o <strong>select</strong> tem seu valor modificado. Assim, basta usar a função <strong>attr()</strong> para modificar o atributo <strong>src</strong> da imagem.</p>
+                  <h4>Evento keypress</h4>
+                  <p>O evento <strong>keypress</strong> pertence à outra categoria de eventos associados a ações que o usuário realiza por meio do uso do teclado. A função <strong>keypress</strong> permite monitorar quando uma tecla é pressionada e, assim, realizar algum tipo de ação. Considere o código a seguir:</p>
+                  <pre>
+                    <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>Evento Keypress&lt;/title>
+        &lt;/head>
+        &lt;body>
+          Digite seu nome:
+          &lt;input type="text" id="nome" />
+          &lt;div id="exibe">&lt;/div>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('#nome').keypress(function (evento) {
+                $('#exibe').append(
+                  'Código ascii da tecla digitada: ' + evento.keyCode + '&lt;br>',
+                )
+              })
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                    </code>
+                  </pre>
+                  <p>Nesse exemplo, é associado um tratador de eventos do tipo <strong>"tecla pressionada"</strong> ao input <strong>#nome</strong>. Assim, toda vez que a tecla é pressionada, esse tratador é chamado. Nesse caso, a função de tratamento recebe como parâmetro um objeto chamado <strong>"evento"</strong>, que tem informações sobre o evento da tecla pressionada. Com isso, é possível saber exatamente qual foi a tecla pressionada por meio do atributo <strong>keyCode</strong>.</p>
+                </div>
+
+                <h4>Lista de eventos</h4>
+                <p>A tabela a seguir apresenta uma lista resumida de eventos separados por tipos de eventos: (1) eventos de <i>mouse</i>; (2) eventos de teclado e (3) eventos do <i>browser</i>. Todos esses eventos podem ser mapeados no jQuery e os devidos tratamentos podem ser realizados.</p>
+                <div class="table-responsive">
+                  <table class="senac">
+                    <tr>
+                      <th>Função</th>
+                      <th>Descrição</th>
+                    </tr>
+                    <tr>
+                      <th colspan="2">Eventos de <i>mouse</i></th>
+                    </tr>
+                    <tr>
+                      <td><strong>.change()</strong></td>
+                      <td>Ocorre toda vez que o valor do elemento é alterado.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.click()</strong></td>
+                      <td>Ocorre quando um <i>click</i> do <i>mouse</i> é detectado em um elemento.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.dbclick()</strong></td>
+                      <td>É um evento de clique duplo sobre um elemento.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.focus()</strong></td>
+                      <td>Ocorre quando um elemento recebe o foco.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.blur()</strong></td>
+                      <td>Ocorre quando um elemento perde o foco.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.hover()</strong></td>
+                      <td>Ocorre quando o <i>mouse</i> passa sobre um elemento.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.mousedown()</strong></td>
+                      <td>É disparado quando o botão do <i>mouse</i> é apertado.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.mousemove()</strong></td>
+                      <td>É acionado toda vez que o <i>mouse</i> se movimento dentro de um elemento.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.mouseout()</strong></td>
+                      <td>É acionado toda vez que o <i>mouse</i> sai de cima de um elemento.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.mouseover()</strong></td>
+                      <td>É acionado toda vez que o <i>mouse</i> passa sobre o elemento.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.mouseup()</strong></td>
+                      <td>É acionado toda vez que o botão do <i>mouse</i> é clicado e liberado.</td>
+                    </tr>
+                    <tr>
+                      <th colspan="2">Eventos de teclado</th>
+                    </tr>
+                    <tr>
+                      <td><strong>.keydown()</strong></td>
+                      <td>É acionado quando uma tecla é apertada.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.keyup()</strong></td>
+                      <td>É acionado quando uma tecla é liberada.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.keypress()</strong></td>
+                      <td>É acionado quando uma tecla é pressionada.</td>
+                    </tr>
+                    <tr>
+                      <th colspan="2">Eventos do browser</th>
+                    </tr>
+                    <tr>
+                      <td><strong>.ready()</strong></td>
+                      <td>É acionado indicando que todo o código HTML foi lido e a árvore DOM está pronta.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>.resize()</strong></td>
+                      <td>É acionado quando o tamanho da janela do <i>browser</i> é alterado.</td>
+                    </tr>
+                  </table>
+                </div>
+                <p class="legenda-imagem">
+                  Tabela 2 – Lista resumida de eventos<br>
+                  Fonte: Senac EAD (2023)
+                </p>
+                <p>Exemplo: página para definição de senha com um campo para a nova senha e outro para a confirmação da nova senha. Quando se altera o valor do primeiro campo, a página mostra uma dica informando que ela deve ter seis caracteres caso o usuário tenha digitado menos que isso. Ao clicar no botão, valida se a senha tem tamanho mínimo e se está idêntica nos dois campos.</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;title>Evento Keypress&lt;/title>
+        &lt;/head>
+        &lt;body>
+          &lt;div>
+              Digite a senha: &lt;input type="password" id="txtSenha" />
+              &lt;span id="spnDica" style="font-size: smaller; color: red;">A senha deve ter ao menos 6 caracteres&lt;/span>
+          &lt;/div>
+          &lt;div>
+              Repita a senha: &lt;input type="password" id="txtSenhaRepete" />
+          &lt;/div>
+          &lt;div>
+              &lt;button id="btnOk">Definir Senha&lt;/button>
+              &lt;span id="spnResultado">&lt;/span>
+          &lt;/div>
+
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              //ao iniciar a página, esconte a dica
+              $("#spnDica").hide();
+
+              //evento dispara ao alterar valor e sair do campo
+              $("#txtSenha").change(function(){
+                  let senha = $("#txtSenha").val();
+                  if(senha.length &lt; 6){
+                      $("#spnDica").show();
+                  }else{
+                      $("#spnDica").hide();
+                  }
+              });
+
+              //evento dispara ao clique do botão
+              $("#btnOk").click(function(){
+                  let senha = $("#txtSenha").val(),
+                      senha2 = $("#txtSenhaRepete").val();
+
+                  if(senha.length >= 6 && senha == senha2){
+                      //ações encadeadas: primeiro altera conteúdo depois altera cor
+                      $("#spnResultado").text("Senha Válida!").css("color", "green");
+                  }else{
+                      $("#spnResultado").text("Senha Inválida!").css("color", "red");
+                  }
+              });
+              
+            })
+          &lt;/script>
+        &lt;/body>
+      &lt;/html>
+                  </code>
+                </pre>
+                <div class="caixa-destaque-livre icone-desafio">
+                  <p>Monte uma página que contenha um campo de texto (<strong>&lt;input></strong>) e implemente eventos para:</p>
+                  <ul>
+                    <li>Tornar o texto digitado no campo sempre maiúsculo.</li>
+                    <li>Quando o usuário digitar <strong>Enter</strong> (código 13), mostrar uma caixa <i>alert</i> com o conteúdo do campo de texto e apagar o texto presente nesse campo.</li>
+                  </ul>
+                </div>
+                <h4>Manipulação dinâmica do DOM</h4>
+                <p>Veja, a seguir, funções para a alteração dinâmica do DOM, seja removendo, seja adicionando ou alterando a hierarquia de elementos da árvore DOM.</p>
+                <p><strong>insertBefore</strong> e <strong>insertAfter</strong></p>
+                <p>A função <strong>insertBefore</strong> permite anexar um elemento no DOM, exatamente antes de um determinado elemento. A função <strong>insertAfter</strong> faz o oposto, ela permite anexar um elemento logo depois de um determinado elemento. No exemplo a seguir, existem dois botões. O primeiro insere um elemento <strong>p</strong>, criado dinamicamente antes do elemento <strong>#menu</strong>. O segundo botão insere um elemento <strong>p</strong> depois do elemento <strong>#menu</strong>:</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;style>
+            div,
+            p {
+              border: 1px solid black;
+              margin: 10px;
+            }
+            #menu {
+              background-color: lightgreen;
+            }
+          &lt;/style>
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;script>
+            $(document).ready(function () {
+              $('#insertB').click(function () {
+                $('&lt;p>elemento inserido antes&lt;/p>').insertBefore('#menu')
+              })
+              $('#insertA').click(function () {
+                $('&lt;p>elemento inserido depois&lt;/p>').insertAfter('#menu')
+              })
+            })
+          &lt;/script>
+        &lt;/head>
+        &lt;body>
+          &lt;button id="insertB">InsertBefore P (Inserir antes)&lt;/button>
+          &lt;button id="insertA">InsertAfter P(Inserir depois)&lt;/button>
+          &lt;h1>Título principal&lt;/h1>
+          &lt;div id="menu">Porções: arroz, salada e carne.&lt;/div>
+          &lt;div id="artigos">Conheça mais sobre o restaurante&lt;/div>
+        &lt;/body>
+      &lt;/html>
+                  </code>
+                </pre>
+                <p><strong>parent()</strong></p>
+                <p>Essa função retorna o elemento pai de um dado elemento.</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;style>
+            div.destaque {
+              background-color: lightblue;
+            }
+          &lt;/style>
+          &lt;script>
+            $(document).ready(function () {
+              $('.seleciona').click(function () {
+                $(this).parent().toggleClass('destaque')
+              })
+            })
+          &lt;/script>
+        &lt;/head>
+        &lt;body>
+          &lt;h4>Escolha seu destino&lt;/h4>
+
+          &lt;div class="destino">
+            &lt;input class="seleciona" type="checkbox" />
+            &lt;span>Porto Alegre&lt;/span>
+          &lt;/div>
+          &lt;div class="destino">
+            &lt;input class="seleciona" type="checkbox" />
+            &lt;span>Florianópolis&lt;/span>
+          &lt;/div>
+          &lt;div class="destino">
+            &lt;input class="seleciona" type="checkbox" />
+            &lt;span>Curitiba&lt;/span>
+          &lt;/div>
+        &lt;/body>
+      &lt;/html>
+                  </code>
+                </pre>
+                <p>Toda vez que um <i>click</i> ocorrer na <strong>input "seleciona"</strong>, a função <strong>parent()</strong> busca o ancestral direto da <strong>input</strong>, que, no exemplo, é a div <strong>"destino"</strong>.</p>
+                <p><strong>children()</strong></p>
+                <p>Essa função retorna todos os nodos filhos de um elemento.</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;style>
+            span.destaque {
+              color: red;
+            }
+          &lt;/style>
+          &lt;script>
+            $(document).ready(function () {
+              $('.destino').bind('mouseover mouseout', function () {
+                $(this).children().toggleClass('destaque')
+              })
+            })
+          &lt;/script>
+        &lt;/head>
+        &lt;body>
+          &lt;h4>Escolha seu destino&lt;/h4>
+          &lt;div class="destino">
+            &lt;span>São Paulo&lt;/span>
+            &lt;span>&lt;b>|+| Mais informações&lt;/b>&lt;/span>
+          &lt;/div>
+          &lt;div class="destino">
+            &lt;span>Rio de Janeiro&lt;/span>
+            &lt;span>&lt;b>|+| Mais informações&lt;/b>&lt;/span>
+          &lt;/div>
+        &lt;/body>
+      &lt;/html>
+                  </code>
+                </pre>
+                <p>Nesse exemplo, foram associados dois eventos, <strong>mouseover</strong> e <strong>mouseout</strong>, às <strong>divs</strong> com classe <strong>".destino"</strong>. Quando o evento é disparado, todos os nodos filhos, no caso <strong>&lt;span></strong>, <strong>&lt;span></strong> e <strong>&lt;b></strong>, são formatados com a classe <strong>"destaque"</strong>. Essa função permite, em uma só linha de comando, atingir todos os nodos filhos de uma só vez, o que pode ser bastante útil quando não se sabe exatamente quantos nodos filhos existem.</p>
+              </div>
+            </div>
+            <div class="bloco-branco">
+              <div class="container">
+                <h3 id="t5">AJAX</h3>
+                <p>AJAX (acrônimo em inglês de <i>asynchronous JavaScript and XML</i>, em português JavaScript e XML assíncronos) é o uso metodológico de tecnologias como JavaScript e XML (<i>extensible markup language</i>), providas por navegadores, para tornar páginas <i>web</i> mais interativas com o usuário, utilizando-se de solicitações assíncronas de informações. </p>
+                <p>XML foi inicialmente desenvolvida pelo estudioso Jessé James Garret e em seguida por diversas associações. Apesar do nome, a sua utilização não é obrigatória (JSON, ou <i>JavaScript object notation</i>, é frequentemente utilizado), e as solicitações também não precisam, obrigatoriamente, ser assíncronas.</p>
+                <p>Quando se submete um formulário ao servidor, seja via GET, seja via POST, você acaba enviando junto muito mais informações do que gostaria (geralmente a página inteira é enviada), bem como direcionando a resposta do usuário para longe da página atual. Muitas vezes, você gostaria de consumir conteúdo do servidor sem ter de trocar de página, e, mesmo que a tecnologia de <i>back-end</i> permita redirecionar o fluxo novamente para a mesma tela, há aquelas “piscadas” inconvenientes no navegador, que fazem com que todos os dados que estavam na página se percam. Essa é a motivação por trás do AJAX: economia de dados trafegados e melhor experiência para o usuário.</p>
+                <p>A respeito da função <strong>ajax()</strong>, esta permite gerar requisições do tipo GET ou POST para um servidor de forma assíncrona, isto é, sem a necessidade de bloquear a interface do usuário até o retorno da resposta. Para fazer uma chamada assíncrona, é preciso definir alguns parâmetros, os quais você verá a seguir.</p>
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#url" aria-controls="url" role="tab" data-toggle="tab">URL</a></li>
+                    <li role="presentation"><a href="#contexto" aria-controls="contexto" role="tab" data-toggle="tab">Contexto</a></li>
+                    <li role="presentation"><a href="#type" aria-controls="type" role="tab" data-toggle="tab">Type</a></li>
+                    <li role="presentation"><a href="#success" aria-controls="success" role="tab" data-toggle="tab">Success</a></li>
+                  </ul>
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="url">
+                      <p>Define o endereço da página ou o arquivo a ser requisitado. </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="contexto">
+                      <p>Define o elemento que será vinculado à requisição, geralmente aquele que receberá os dados retornados pelo servidor.</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="type">
+                      <p>Define o método de requisição que será utilizado, geralmente GET ou POST.</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="success">
+                      <p>Define a função <strong>callback</strong>, que é executada após a resposta do servidor. </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="acessivel print">
+                  <h4>URL</h4>
+                  <p>Define o endereço da página ou o arquivo a ser requisitado. </p>
+                  <h4>Contexto</h4>
+                  <p>Define o elemento que será vinculado à requisição, geralmente aquele que receberá os dados retornados pelo servidor.</p>
+                  <h4>Type</h4>
+                  <p>Define o método de requisição que será utilizado, geralmente GET ou POST.</p>
+                  <h4>Success</h4>
+                  <p>Define a função <strong>callback</strong>, que é executada após a resposta do servidor. </p>
+                </div>
+                <p>A seguir, veja um exemplo de requisição assíncrona que solicita o arquivo <strong>tabela.txt</strong>, sem bloquear a navegação do usuário. Caso a resposta seja confirmada (com sucesso), uma função anônima é declarada, cujo parâmetro <strong>data</strong> encapsula os dados retornados pelo servidor. Nesse caso, a operação se completa fazendo um <strong>append()</strong> desses dados ao elemento <strong>#lista</strong>.</p>
+                <pre>
+                  <code class="language-html">
+      &lt;!DOCTYPE html>
+      &lt;html lang="pt-br">
+        &lt;head>
+          &lt;meta charset="UTF-8" />
+          &lt;script src="jquery.js">&lt;/script>
+          &lt;style>
+            ul {
+              font-family: monospace;
+            }
+            button {
+              display: block;
+              margin: 20px 0px;
+            }
+          &lt;/style>
+          &lt;script>
+            $(document).ready(function () {
+              $('#carregar').click(function () {
+                $.ajax({
+                  url: 'tabela.txt',
+                  context: $('#lista'),
+                  type: 'GET',
+                  success: function (data) {
+                    this.append(data)
+                  },
+                })
+              })
+            })
+          &lt;/script>
+        &lt;/head>
+        &lt;body>
+          &lt;h4>Melhores destinos&lt;/h4>
+          &lt;button id="carregar">Carregar lista&lt;/button>
+          &lt;ul id="lista">&lt;/ul>
+        &lt;/body>
+      &lt;/html>
+                  </code>
+                </pre>
+                <p>Para conseguir testar essa função, é necessário que ela esteja dentro de um servidor <i>web</i> como o Apache, ou executar a página HTML por meio da extensão “Live Server”, do Visual Studio Code. Você também deverá criar um arquivo no bloco de notas com o nome <strong>tabela.txt</strong> e colocar na mesma pasta em que está o arquivo HTML.</p>
+                <img src="imgs/figura_7.gif" class="center-block img-responsive hidden-sm hidden-xs print">
+                <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                <a href="imgs/figura_7.gif" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_7.gif" class="center-block img-responsive"></a>
+                <p class="legenda-imagem">
+                  Figura 7 – Estrutura da pasta com os arquivos para testar o exemplo<br>
+                  Fonte: Senac EAD (2023)
+                </p>
+                <p class="acessivel no-print">GIF animado que mostra a estrutura da pasta com os arquivos para testar o exemplo. Dentro da pasta deve ter o arquivo HTML com o código do exemplo, o arquivo “jquery.js” e uma tabela com nomes de algumas cidades, com nome de “tabela.txt”. Ao executar o arquivo por meio do VS CODE, utilizar a extensão “Live Server”.</p>
+              </div>
+            </div>
+            <div class="bloco-azul">
+              <div class="container">
+                <h3 id="t6">Outras tecnologias</h3>
+                <p>É possível citar outras bibliotecas, como React e Angular, as quais você conhecerá a seguir.</p>
+                <h4>React</h4>
+                <p>O React é uma biblioteca do JavaScript para o desenvolvimento de interfaces de usuário (UIs). Ele é gerenciado pela equipe do Facebook e por uma comunidade de desenvolvedores de código aberto. O <i>framework</i> veio a público em maio de 2013.</p>
+                <p>O React é uma biblioteca que auxilia na construção de interfaces. Se comparado com um modelo MVC (<i>Model – View – Controller</i>), ele é o V, responsável apenas pela <i>view</i>.</p>
+                <p>É possível destacar algumas vantagens, como: facilidade de aprendizado, reaproveitamento de código, comunidade ativa em fóruns, sintaxe amigável na construção de componentes, utilização por grandes empresas e biblioteca rápida.</p>
+                <p>Para acessar o <i>site</i> oficial, pesquise em seu buscador “React, uma biblioteca JavaScript para criar interfaces de usuário”.</p>
+                <h4>Angular</h4>
+                <p>O Angular é um <i>framework</i> de JavaScript em código aberto de desenvolvimento para <i>web</i> e dispositivos móveis. Ele tem como base o TypeScript e é gerenciado pela equipe do Angular do Google, assim como pela comunidade de desenvolvedores do Angular.</p>
+                <p>Lançado em setembro de 2016, o Angular (também conhecido como Angular 2.0) é uma reinterpretação completa do AngularJS (Angular 1.0), que foi lançado em 2010.</p>
+                <p>Também usa a arquitetura MVC, encaixando-se como o “M” (<i>model</i>/modelo). O HTML se encarrega da <i>view</i> (visão), e o controle (<i>controller</i>) fica por conta do JavaScript.</p>
+                <p>É possível destacar algumas vantagens, como: bastante tempo de mercado, ferramenta potente e TypeScript nativo. Para acessar o <i>site</i> oficial, digite “Angular” em seu buscador.</p>
+              </div>
+            </div>
+            <div class="bloco-branco">
+              <div class="container">
+                <h3 id="t7">Encerramento</h3>
+                <p class="icone-concluindo">O uso de bibliotecas <i>front-end</i> é essencial em qualquer projeto, pois elas auxiliam de diversas formas, por exemplo: redução no tamanho do código e melhor organização, uso de funções predefinidas e maior agilidade na hora do desenvolvimento dos códigos.</p>
+                <p>Existe uma gama muito grande de bibliotecas disponíveis, cabendo ao programador selecionar a que melhor se encaixa em seu projeto e pesquisar como é o seu uso em sua documentação, que sempre é disponibilizada no <i>site</i> oficial.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+        <footer class="text-center no-print">
+          <ul class="pagination">
+
+          </ul>
+        </footer>
+
+      </div>
+
+    </div>
+
+
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+<!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+<div class="ico-div-loader">
+	<img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../template/js/jquery.min.js"></script>
+<script src="../template/js/bootstrap.min.js"></script>
+<script src="../template/js/jquery.magnific-popup.min.js"></script>
+<script src="../template/js/print.js"></script>
+<script src="../template/js/template.config.js"></script>
+<script src="../template/js/images.loader.js"></script>
+<script src="../template/js/highlight.min.js"></script>
+<script src="js/parallax.min.js"></script>
+<script src="js/custom.js"></script>
+<noscript>
+  <style media="screen">
+    .over-loader { display: none;}    
+  </style>
+</noscript>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  });
+
+	//inicializa zoom na imagem
+	$('.zoom-imagem').magnificPopup({
+	 type: 'image',
+  	 mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+ 	 zoom: {
+		enabled: true, // By default it's false, so don't forget to enable it
+
+		duration: 300, // duration of the effect, in milliseconds
+		easing: 'ease-in-out', // CSS transition easing function
+
+		// The "opener" function should return the element from which popup will be zoomed in
+		// and to which popup will be scaled down
+		// By defailt it looks for an image tag:
+		opener: function(openerElement) {
+		  // openerElement is the element on which popup was initialized, in this case its <a> tag
+		  // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+		  return openerElement.is('img') ? openerElement : openerElement.find('img');
+		}
+	  },
+	   image: {
+		  markup: '<div class="mfp-figure">'+
+					'<div class="mfp-close"></div>'+
+					'<div class="mfp-img"></div>'+ // Floated left
+					'<div class="mfp-bottom-bar">'+'<figcaption>'+'<div class="mfp-title" style="text-align:center"></div>'+
+					  '<div class="mfp-counter"></div>'+'</figcaption>'+
+					'</div>'+
+				  '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+		  cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+		  tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+	   }
+	});
+
+	//inicializa popover
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
+	//inicializa tooltip
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+
+
+  $(function() {
+    $(".card").click(function() {
+      if ($(this).hasClass("exibe-frente")) {
+        $(this)
+          .children()
+          .first()
+          .hide();
+        $(this)
+          .children()
+          .last()
+          .show();
+        $(this).removeClass("exibe-frente");
+      } else {
+        $(".card .verso").hide();
+        $(".card .frente").show();
+        $(this).addClass("exibe-frente");
+      }
+    });
+  });
+
+  $( document ).ready(function() {
+    $(".card .verso").hide();
+  });
+
+
+
+
+  /*------- Script de animação do botão -------*/
+  var root = document.documentElement;
+  root.className += ' js';
+
+  function boxTop(idBox) {
+    var boxOffset = $(idBox).offset().top;
+    return boxOffset;
+  }
+
+  $(document).ready(function() {
+    var $target = $('.animeStart'),
+        $target2 = $('.animeStop'),
+        targetBox = $('.box'),
+        animationClass = 'anime-init',
+        windowHeight = $(window).height(),
+        offset = windowHeight - (windowHeight / 4);
+
+    function animeScroll() {
+      var documentTop = $(document).scrollTop();
+      $target.each(function() {
+        if (documentTop > boxTop(this) - offset) {
+          targetBox.addClass(animationClass);
+        } else {
+          targetBox.removeClass(animationClass);
+        }
+        if (documentTop > boxTop($target2) - offset) {
+          targetBox.removeClass(animationClass);
+        } 
+      });
+    }
+    animeScroll();
+
+    $(document).scroll(function() {
+      animeScroll();
+    });
+  });
+
+
+</script>
+
+<!-- Versao atual do handtalk -->
+<script>
+  var scriptElem=document.createElement("script");
+  scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+  scriptElem.charset="UTF-8",
+  scriptElem.onload=function(){
+        window.ht = new HT({
+            token:"bf5b7efb148a829a126a0e0c9fd533bf",
+            align:"top",
+            videoEnabled: true,
+            ytEmbedReplace: true,           
+            mobileConfig:{align:"right",
+                          actionsAlign:"top",
+                          customButtonStyle:{
+                                borderRadius:"6px",
+                                size:"38px",
+                                horizontalMargin:"13px",
+                                bottomMargin:"140px",
+                                rightMargin:"40px"}
+                          }
+          });        
+      $('.ht-skip').attr("aria-hidden","true")
+    },
+  document.body.appendChild(scriptElem);
+
+</script>
+</body>
+</html>

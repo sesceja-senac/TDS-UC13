@@ -1,0 +1,29 @@
+$(document).ready(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('#btn-topo').addClass('show');
+        } else {
+            $('#btn-topo').removeClass('show');
+        }
+    });
+    
+    $('#btn-topo').click(function() {
+        $('html, body').animate({scrollTop : 0}, 800);
+        return false;
+    });
+});
+
+$(document).ready(function() {
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('#btn-topomobile').addClass('show');
+        } else {
+            $('#btn-topomobile').removeClass('show');
+        }
+    });
+    
+    $('#btn-topomobile').click(function() {
+        $('html, body').animate({scrollTop : 0}, 800);
+        return false;
+    });
+});

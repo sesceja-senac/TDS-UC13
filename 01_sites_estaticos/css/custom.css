@@ -1,0 +1,151 @@
+body {
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.fundo-tecnicos{
+  border-bottom: none !important;
+}
+
+p{
+  color:#ffff;
+}
+
+h1 i,
+h2 i,
+h3 i,
+h4 i {
+  font-weight: bold;
+  color:#ffff;
+}
+
+h2{
+margin-top: 20px;
+margin-bottom: 10px;
+color:#ffff;
+}
+h3{
+margin-top: 50px;
+color:#ffff;
+}
+
+h4{
+margin-top: 40px;
+color:#ffff;
+}
+.fundo-tecnicos{
+  background: #4170b5 !important;
+}
+
+.caixa-destaque-livre{
+  font-size: 1.2em;
+}
+
+body{ 
+  background: url('../objetos/bg_esquerda.png') no-repeat left center / 20%, url('../objetos/bg_direita.png') no-repeat right center / 20%;
+  background-attachment: fixed;
+  background-color:  #4170B5;
+}
+
+.bordabranca{
+  border: #fff solid 3px;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.espacamento{
+  padding:10px
+}
+
+.espacomargin{
+  margin-top: 40px;
+}
+.espacomargin1{
+  margin-top: 20px;
+}
+
+.textocaixa{
+  color:#000;
+  font-size: 1.2em !important;
+}
+
+.justify-center {
+  display: flex;
+  align-items: center;
+}
+
+.iconeusuario_cliente{
+background-image: url('../objetos/info_usuario_cliente.png');
+background-position: left 5px center;
+background-repeat: no-repeat;
+background-size: 132px 77px;
+padding-left: 150px;
+}
+.iconecliente-servidor{
+background-image: url('../objetos/info_cliente_servidor.png');
+background-position: left 5px center;
+background-repeat: no-repeat;
+background-size: 132px 77px;
+padding-left: 150px;
+}
+.iconecliente-usuario{
+background-image: url('../objetos/info_cliente_usuario.png');
+background-position: left 5px center;
+background-repeat: no-repeat;
+background-size: 132px 77px;
+padding-left: 150px;
+}
+.iconeservidor-cliente{
+background-image: url('../objetos/info_cliente_usuario.png');
+background-position: left 5px center;
+background-repeat: no-repeat;
+background-size: 132px 77px;
+padding-left: 150px;
+}
+
+
+.icone-saibamais{
+  background-image: url('../objetos/ico_saibamais.png');
+  background-position: left 5px center;
+  background-repeat: no-repeat;
+  background-size: 132px 77px;
+  padding-left: 150px;
+}
+.textmobile
+{
+  color:#fff;
+  font-family:'robotoregular', Arial , Verdana, Helvetica;
+  line-height: 1.2em;
+  font-size: 1.1em;
+}
+
+@media screen and (max-width: 1024px){
+
+  .internet01{
+    flex-wrap: wrap;
+  }
+  .internet01 img{display: none;}
+  body{ background: unset;}
+}
+
+@media screen and (max-width: 480px){
+  .caixa-destaque-livre .icone-saibamais, .iconeusuario_cliente, .iconecliente-servidor,.iconecliente-usuario,.iconeservidor-cliente{
+    word-break: break-word;
+  }
+}
+@media screen and (max-width: 980px){
+  .icone-saibamais, .iconeusuario_cliente, .iconecliente-servidor,.iconecliente-usuario,.iconeservidor-cliente {
+    background-position: top 10px center;
+    padding-top: 100px;
+    padding-left: 5px;
+  }}
+
+  @media screen and (max-width: 450px){
+    .infografico{
+        display: none;
+    }}
+
+    @media screen and (min-width: 451px){
+      .versaomobile{
+          display: none;
+      }}

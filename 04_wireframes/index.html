@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Wireframes: conceitos e utilização</title>
+
+    <!-- Bootstrap -->
+    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+    <link href="../template/css/cores.css" rel="stylesheet">
+    <link href="../template/css/modal-100.css" rel="stylesheet">
+    <link href="../template/css/devibeans.min.css" rel="stylesheet">
+      <!--Extras - novas classes para facilitar-->
+      <link rel="stylesheet" href="../template/css/extras.css">
+    <link href="../template/css/sncload.css" rel="stylesheet">
+    <link href="../template/css/magnific-popup.css" rel="stylesheet">
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <!-- css necessario para o print -->
+    <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+    <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+        	  <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+            <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet">
+        <header class="no-print container">
+          <!-- BTO IMPRIMIR -->
+          <div class="grupo-imprimir no-print">
+            <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                <span class="fa fa-print"></span> <span>Imprimir</span>
+            </button>
+          </div>
+          <!-- /BTO IMPRIMIR -->
+        </header>
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <div class="pagina">
+            <p class="acessivel no-print">Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau máximo de leitura, a fim de que os códigos disponibilizados neste material sejam lidos corretamente. No caso do NVDA (NonVisual Desktop Access), para localizar a opção Grau de pontuação/símbolos, acesse Preferências – Configurações – Fala. Altere o padrão Pouco para Tudo. Dessa forma, o leitor passará a ler os segmentos de código em sua totalidade. </p>
+            <div class="elementos-esquerda no-print" aria-hidden="true">
+              <span class="linha"></span>
+              <img src="imgs/img1.png" class="img1 img-responsive">
+              <img src="imgs/img2.png" class="img2 img-responsive">
+            </div>
+            <div class="elementos-direita no-print" aria-hidden="true">
+              <span class="linha"></span>
+              <img src="imgs/img3.png" class="img3 img-responsive">
+              <img src="imgs/img4.png" class="img4 img-responsive">
+            </div>
+            <div class="bloco-azul">
+              <div class="container">
+                <h2 class="acessivel print"><i>Wireframes</i>: conceitos e utilização</h2>
+                <img src="imgs/titulo.png" class="img-responsive">
+                <h3>Conceitos</h3>
+                <p>O <i>wireframe</i> de <i>website</i> é o protótipo visual de uma página da <i>web</i> que se concentra no conteúdo, no <i>layout</i> e no comportamento.</p>
+                <p>Tipicamente não inclui nada de estilo, cores ou gráficos. Pode-se imaginar como a planta baixa de uma casa, que mostra todo o projeto de encanamento e de eletricidade, mas sem o projeto do seu interior. </p>
+                <p>O <i>wireframe</i> de <i>website</i> também pode mostrar a relação entre as páginas, permitindo que você navegue entre uma série de modelos, recursos e disposições com componentes clicáveis.</p>
+                <p>Conforme já discutido em outras unidades curriculares, o <i>wireframe</i> é construído usando caixas básicas, linhas e outras formas para criar um esboço das partes funcionais de uma página da <i>web</i>. Muito costumeiramente, é o primeiro passo no processo de <i>design</i> e desenvolvimento do <i>website</i>, ajudando a comunicar os conceitos de <i>design</i> para a equipe, os clientes e/ou o gerenciamento.</p>
+                <p>Um <i>wireframe</i> permitirá que você ilustre aos seus clientes ou às partes interessadas o que você quer dizer, por exemplo, com uma imagem de herói, uma caixa de luz, uma navegação, e como esses elementos serão unidos em uma página.</p>
+                <img src="imgs/-01.png" class="img-responsive center-block mt-40 imprime-menor">
+                <p class="legenda-imagem">
+                  Figura 1 – <i>Wireframe</i> para um <i>blog</i> <br>
+                  Fonte: Oliver (2022)
+                </p>
+                <p class="acessivel no-print">Página de wireframe com uma caixa no topo e 3 links. Abaixo, uma grande imagem e três blocos de texto embaixo. Mais abaixo, caixas representando imagens e textos enfileirados.</p>
+              </div>
+            </div>
+            <div class="bloco-branco">
+              <div class="container">
+                <h3>Por que fazer <i>wireframes?</i></h3>
+                <p>Pode ser tentador e desafiador tentar pular a etapa do desenvolvimento do <i>wireframe</i> e fornecer aos clientes modelos de alta fidelidade do <i>website</i>, entretanto esse desenvolvimento oferece alguns benefícios importantes:</p>
+                <div class="caixa-destaque-livre mt-40">
+                  <ul class="checklist">
+                    <li><i> Brainstorming</i> de ideias de <i>design</i> e iteração rápida</li>
+                    <li><i> Feedback</i> de todas as partes interessadas, como membros da equipe e clientes, antes de dedicar recursos a um esforço de <i>design</i> mais refinado</li>
+                    <li> Garantia de que todos estejam na mesma página e compartilhem a mesma visão</li>
+                    <li> Tradução da arquitetura de informações do <i>site</i> em caminhos de <i>design</i> visual, definindo elementos de navegação como cabeçalhos, barras laterais, rodapés e botões</li>
+                    <li> Destaque de quaisquer problemas e falhas potenciais antes que eles possam se tornar obstáculos maiores</li>
+                    <li> Escopo do esforço de desenvolvimento</li>
+                    <li> Colaboração para manter os projetos no caminho certo</li>
+                    <li> Validação de conteúdo e navegação</li>
+                    <li> Foco na interação do usuário, na usabilidade e na experiência do usuário</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="parallax" data-parallax="scroll" data-image-src="imgs/paralaxe_1.png"></div>
+            <div class="bloco-branco">
+              <div class="container">
+                <h3>Construindo um <i>wireframe</i></h3>
+                <p>Antes de começar a desenvolver o <i>wireframe</i>, é aconselhável que você já tenha realizado algumas reuniões e sessões de <i>brainstorming</i> para discutir os requisitos de negócios e as necessidades do usuário.</p>
+                <p>Nesta etapa, você poderá criar um mapa do <i>site</i> existente ou projetar uma nova arquitetura de informações, discutir a estratégia de conteúdo e criar personas. O mais importante para você e a equipe é o entendimento de qual deve ser o objetivo principal de cada página.</p>
+                <p>A seguir, é possível visualizar sete atividades que devem ser desenvolvidas para criar um <i>wireframe</i> da melhor forma.</p>
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Identifique o objetivo do <i>site</i>
+                    </a>
+                    </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                        Pense naquilo que deseja que todos os visitantes vejam e façam enquanto você chama a atenção deles. O objetivo pode ser uma venda, um <i>download</i> ou uma visita a uma página específica Certifique-se de que sua equipe esteja alinhada em torno do objetivo para que as etapas subsequentes fluam sem problemas até que você coloque seu <i>site</i> em produção.
+                    </div>
+                    </div>
+                    </div>
+                    <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Entenda o fluxo do usuário
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                      Os <i>wireframes</i> ajudam a comunicar um fluxo esperado de ações do usuário na página. É interessante descrever o ponto de entrada de um visitante, as páginas pelas quais ele normalmente passaria e outros pontos principais que ele acessaria. Vale a pena descrever esse fluxo textualmente antes de desenhar em <i>wireframe</i> para evitar retrabalho.
+                    </div>
+                    </div>
+                    </div>
+                    <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Determine o tamanho do <i>wireframe</i> do seu <i>website</i>
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                      Geralmente, recomenda-se considerar as dimensões, em <i>pilxels</i>, de 1080 x 1920 para simular uma tela de <i>smartphone</i>; 1200 x 1920 para <i>tablet</i>; e 768 x 7366 para <i>desktop</i>.
+                    </div>
+                    </div>
+                    </div>
+                    <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading4">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        Comece o <i>design</i> do <i>wireframe</i> do seu <i>site</i>
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                    <div class="panel-body">
+                      Se você estiver usando caneta e papel físicos, recomenda-se o uso de papel pontilhado ou papel quadriculado para manter as coisas alinhadas. Se você está usando uma plataforma digital, escolha uma ferramenta que funcione melhor para as suas necessidades de fidelidade de wireframe. 
+                    </div>
+                    </div>
+                    </div>
+                    <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading5">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        Determine os pontos de conversão
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                    <div class="panel-body">
+                      Nesta fase, você determinará quais botões, <i>hiperlinks</i>, imagens ou outros elementos na página guiarão o leitor para a próxima etapa até atingir o objetivo final que discutimos na primeira etapa.
+                    </div>
+                    </div>
+                    </div>
+                    <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading6">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                        Remova etapas redundantes
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+                    <div class="panel-body">
+                      Nesta etapa, são revistos os <i>wireframes</i> e corrigidos os elementos percebidos com a construção do esqueleto do <i>site</i>, como páginas redundantes ou navegação inconsistente. Sempre que houver uma oportunidade de simplificar seu <i>wireframe</i>, faça-o.
+                    </div>
+                    </div>
+                    </div>
+                    <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="heading7">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        Obtenha <i>feedback</i> sobre o <i>wireframe</i>
+                      </a>
+                    </h4>
+                    </div>
+                    <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                    <div class="panel-body">
+                      Seu <i>site</i> passará por várias rodadas de testes e revisões antes de entrar no ar, mas ainda é uma boa ideia obter <i>feedback</i> sobre seus <i>wireframes</i> nos estágios iniciais. Considere observar criticamente esse trabalho sob a visão de UX (<i>user experience</i>) e UI (<i>user interface</i>).
+                    </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="acessivel print">
+                  <p>Identifique o objetivo do <i>site</i></p>
+                  <p>Pense naquilo que deseja que todos os visitantes vejam e façam enquanto você chama a atenção deles. O objetivo pode ser uma venda, um <i>download</i> ou uma visita a uma página específica Certifique-se de que sua equipe esteja alinhada em torno do objetivo para que as etapas subsequentes fluam sem problemas até que você coloque seu <i>site</i> em produção.</p>
+                  <p>Entenda o fluxo do usuário</p>
+                  <p>Os <i>wireframes</i> ajudam a comunicar um fluxo esperado de ações do usuário na página. É interessante descrever o ponto de entrada de um visitante, as páginas pelas quais ele normalmente passaria e outros pontos principais que ele acessaria. Vale a pena descrever esse fluxo textualmente antes de desenhar em <i>wireframe</i> para evitar retrabalho.</p>
+                  <p>Determine o tamanho do <i>wireframe</i> do seu <i>website</i></p>
+                  <p>Geralmente, recomenda-se considerar as dimensões, em <i>pilxels</i>, de 1080 x 1920 para simular uma tela de <i>smartphone</i>; 1200 x 1920 para <i>tablet</i>; e 768 x 7366 para <i>desktop</i>.</p>
+                  <p>Comece o <i>design</i> do <i>wireframe</i> do seu <i>site</i></p>
+                  <p>Se você estiver usando caneta e papel físicos, recomenda-se o uso de papel pontilhado ou papel quadriculado para manter as coisas alinhadas. Se você está usando uma plataforma digital, escolha uma ferramenta que funcione melhor para as suas necessidades de fidelidade de wireframe. </p>
+                  <p>Determine os pontos de conversão</p>
+                  <p>Nesta fase, você determinará quais botões, <i>hiperlinks</i>, imagens ou outros elementos na página guiarão o leitor para a próxima etapa até atingir o objetivo final que discutimos na primeira etapa.</p>
+                  <p>Remova etapas redundantes</p>
+                  <p>Nesta etapa, são revistos os <i>wireframes</i> e corrigidos os elementos percebidos com a construção do esqueleto do <i>site</i>, como páginas redundantes ou navegação inconsistente. Sempre que houver uma oportunidade de simplificar seu <i>wireframe</i>, faça-o.</p>
+                  <p>Obtenha <i>feedback</i> sobre o <i>wireframe</i></p>
+                  <p>Seu <i>site</i> passará por várias rodadas de testes e revisões antes de entrar no ar, mas ainda é uma boa ideia obter <i>feedback</i> sobre seus <i>wireframes</i> nos estágios iniciais. Considere observar criticamente esse trabalho sob a visão de UX (<i>user experience</i>) e UI (<i>user interface</i>).</p>
+                </div>
+                <p>É importante lembrar que, na criação <i>wireframe</i>, deve-se evitar o uso de cores ou imagens que desfoquem a ideia principal. O principal desejo é que o <i>wireframe</i> se concentre no <i>layout</i> e no comportamento. Até mesmo a fonte que você usará deve ser genérica. As imagens devem ser representadas com uma caixa com um X através delas.</p>
+                <img src="../04_wireframes/imgs/-02.png" class="img-responsive center-block mt-40 imprime-menor">
+                <p class="legenda-imagem">
+                  Figura 2 – <i>Wireframe</i> para página de vídeos on-line <br>
+                  Fonte: Visual Paradigm ([s. d.])
+                </p>
+                <p class="acessivel no-print">No topo, uma caixa de X que representa imagem à esquerda. Ao lado, uma barra de pesquisa e 3 botões no canto direito. Abaixo, à esquerda, um menu com vários botões. Na área central da página, caixas de X representando imagens e, abaixo, trechos em cinza representando textos.</p>
+              </div>
+            </div>
+            <div class="parallax" data-parallax="scroll" data-image-src="imgs/paralaxe_2.png"></div>
+            <div class="bloco-branco">
+              <div class="container">
+                <h3>Ferramentas de construção de <i>wireframe</i></h3>
+                <p>Existem diversas ferramentas que auxiliam na construção do wireframe disponíveis, e elas podem ser utilizadas diretamente no navegador ou serem instaladas na sua máquina.</p>
+                <p>A seguir, veja algumas ferramentas utilizadas que podem ser testadas e estudas.</p>
+                <div class="no-print" aria-hidden="true">
+                  <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading8">
+                        <h4 class="panel-title">
+                          <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse8" aria-expanded="true" aria-controls="collapse8">
+                            Adobe XD
+                        </a>
+                        </h4>
+                      </div>
+                      <div id="collapse8" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading8">
+                        <div class="panel-body">
+                          O Adobe XD é uma ferramenta de <i>design</i> baseada em vetores e serve para qualquer pessoa que precise criar interfaces de usuário intuitivas e <i>wireframes</i> interativos. Ela traz uma enorme quantidade de componentes de interface embutidos que ajudam os <i>designers</i> a criar <i>wireframes</i>, sendo possível testá-los em diversos tipos de dispositivos.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading9">
+                        <h4 class="panel-title">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                            Figma
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9">
+                        <div class="panel-body">
+                          Esta ferramenta foi estudada em unidades curriculares anteriores e é uma poderosa ferramenta de <i>design</i> baseada na nuvem. Sua interface, com gestos simples de arrastar e soltar, permite que você faça rapidamente projetos de <i>design</i> e protótipos de aplicativos. Ela tem um <i>layout</i> intuitivo e expansivo, que ajuda o usuário a construir múltiplos <i>designs</i> dentro de um mesmo projeto, tornando-o especialmente adequado para trabalho em equipe.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading10">
+                        <h4 class="panel-title">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                            Wireframe.cc                  
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+                        <div class="panel-body">
+                          É uma das melhores opções caso você precise de uma ferramenta simples e eficiente para criar maquetes de <i>sites</i> ou aplicativos móveis. Essa ferramenta de <i>wireframes</i> baseada na <i>web</i> tem uma interface amigável e sem complicações.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading" role="tab" id="heading11">
+                        <h4 class="panel-title">
+                          <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                            Balsamiq                  
+                          </a>
+                        </h4>
+                      </div>
+                      <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
+                        <div class="panel-body">
+                          É uma ferramenta que permite aos usuários criar facilmente protótipos de baixa fidelidade. Em vez de focar detalhes complexos, essa ferramenta simplifica o processo de criação com <i>wireframes</i> em estilo de rascunho, que dão mais ênfase ao conteúdo e à estrutura do seu projeto.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="acessivel print">
+                  <p>Adobe XD</p>
+                  <p>O Adobe XD é uma ferramenta de <i>design</i> baseada em vetores e serve para qualquer pessoa que precise criar interfaces de usuário intuitivas e <i>wireframes</i> interativos. Ela traz uma enorme quantidade de componentes de interface embutidos que ajudam os <i>designers</i> a criar <i>wireframes</i>, sendo possível testá-los em diversos tipos de dispositivos.</p>
+                  <p>Figma</p>
+                  <p>Esta ferramenta foi estudada em unidades curriculares anteriores e é uma poderosa ferramenta de <i>design</i> baseada na nuvem. Sua interface, com gestos simples de arrastar e soltar, permite que você faça rapidamente projetos de <i>design</i> e protótipos de aplicativos. Ela tem um <i>layout</i> intuitivo e expansivo, que ajuda o usuário a construir múltiplos <i>designs</i> dentro de um mesmo projeto, tornando-o especialmente adequado para trabalho em equipe.</p>
+                  <p>Wireframe.cc</p>
+                  <p>É uma das melhores opções caso você precise de uma ferramenta simples e eficiente para criar maquetes de <i>sites</i> ou aplicativos móveis. Essa ferramenta de <i>wireframes</i> baseada na <i>web</i> tem uma interface amigável e sem complicações.</p>
+                  <p>Balsamiq </p>
+                  <p>É uma ferramenta que permite aos usuários criar facilmente protótipos de baixa fidelidade. Em vez de focar detalhes complexos, essa ferramenta simplifica o processo de criação com <i>wireframes</i> em estilo de rascunho, que dão mais ênfase ao conteúdo e à estrutura do seu projeto.</p>
+                </div>
+                <p>Ainda existem muitas outras ferramentas que podem ser utilizadas na construção de <i>wireframes</i>. Se quiser conhecer mais ferramentas disponíveis, basta fazer uma procura no seu buscador preferido.</p>
+                <h4>Usando o Wireframe.cc</h4>
+                <p>Após digitar no seu navegador o endereço do Wireframe.cc, você será direcionado à página na qual poderá, então, construir seus <i>wireframes</i>.</p>
+                <img src="../04_wireframes/imgs/03.png" class="img-responsive center-block mt-40 imprime-menor">
+                <p class="legenda-imagem">
+                  Figura 3 – Página inicial do Wireframe.cc <br>
+                  Fonte: Senac EAD (2023)              
+                </p>
+                <p class="acessivel no-print">Página da Internet onde se pode visualizar um quadrado contendo linhas verticais e horizontais formando grids que formam várias tabelas.</p>
+                <p>No topo da página inicial à esquerda, pode-se escolher o <i>layout</i> do dispositivo com que se pretende trabalhar e fazer a construção. Existe a opção para documento em branco, <i>sites</i>, <i>tablets</i> e dispositivos móveis, conforme mostra a figura a seguir:</p>
+                <img src="../04_wireframes/imgs/04.png" class="img-responsive center-block mt-40 imprime-menor">
+                <p class="legenda-imagem">
+                  Figura 4 – Escolhendo o tipo de dispositivo <br>
+                  Fonte: Senac EAD (2023)     
+                </p>
+                <p class="acessivel no-print">Imagem retangular com botões nos quais se pode escolher um entre quatro dispositivos disponíveis, sendo eles em branco, <i>site</i>, <i>tablet</i> e dispositivo móvel.</p>
+                <p>Para inserir os objetos na área destinada, basta você clicar com o <i>mouse</i> e arrastar. Logo que soltar o <i>mouse</i>, o espaço selecionado ficará em evidência e abrirá uma guia com os componentes que poderão ser utilizados no espaço, conforme mostra a figura a seguir:</p>
+                <img src="../04_wireframes/imgs/05.png" class="img-responsive center-block mt-40 imprime-menor">
+                <p class="legenda-imagem">
+                  Figura 5 – Inserindo objetos na tela <br>
+                    Fonte: Senac EAD (2023)
+                </p>
+                <p class="acessivel no-print">Página da Internet na qual se pode visualizar um quadrado contendo linhas verticais e horizontais formando grids que formam várias tabelas. Espaço sobre as linhas e colunas selecionado e nova guia com opções de elementos para serem adicionados na tela.</p>
+                <p>Veja, a seguir, os elementos da guia.</p>
+                  <div class="row caixa-destaque-livre info">
+                    <div class="col-lg-1 col-sm-1 col-xs-2">
+                      <img src="../04_wireframes/imgs/icone1.png" class="img-responsive center-block no-print" aria-hidden="true">
+                    </div>
+                    <div class="col-lg-11 col-sm-11 col-xs-10">
+                      <p>O objeto da tela do <i>wireframe</i> será um quadrado.</p>
+                    </div>
+                    <div class="col-lg-1 col-sm-1 col-xs-2">
+                      <img src="../04_wireframes/imgs/icone2.png" class="img-responsive center-block no-print" aria-hidden="true">
+                    </div>
+                    <div class="col-lg-11 col-sm-11 col-xs-10">
+                      <p>O objeto da tela do <i>wireframe</i> será um círculo.</p>
+                    </div>
+                    <div class="col-lg-1 col-sm-1 col-xs-2">
+                      <img src="../04_wireframes/imgs/icone3.png" class="img-responsive center-block no-print" aria-hidden="true">
+                    </div>
+                    <div class="col-lg-11 col-sm-11 col-xs-10">
+                      <p>Utilizado para escolher ícones.</p>
+                    </div>
+                    <div class="col-lg-1 col-sm-1 col-xs-2">
+                      <img src="../04_wireframes/imgs/icone4.png" class="img-responsive center-block no-print" aria-hidden="true">
+                    </div>
+                    <div class="col-lg-11 col-sm-11 col-xs-10">
+                      <p> Utilizado para inserir uma imagem na tela do <i>wireframe</i></p>
+                    </div>
+                    <div class="col-lg-1 col-sm-1 col-xs-2">
+                      <img src="../04_wireframes/imgs/icone5.png" class="img-responsive center-block no-print" aria-hidden="true">
+                    </div>
+                    <div class="col-lg-11 col-sm-11 col-xs-10">
+                      <p> Utilizado para adicionar textos na tela do <i>wireframe</i>.</p>
+                    </div>
+                    <div class="col-lg-1 col-sm-1 col-xs-2">
+                      <img src="../04_wireframes/imgs/icone7.png" class="img-responsive center-block no-print" aria-hidden="true">
+                    </div>
+                    <div class="col-lg-11 col-sm-11 col-xs-10">
+                      <p> Utilizado para alinhar textos.</i>.</p>
+                    </div>
+                    <div class="col-lg-1 col-sm-1 col-xs-2">
+                      <img src="../04_wireframes/imgs/icone8.png" class="img-responsive center-block no-print" aria-hidden="true">
+                    </div>
+                    <div class="col-lg-11 col-sm-11 col-xs-10">
+                      <p> Utilizado para fazer listas.</i>.</p>
+                    </div>
+                    <div class="col-lg-1 col-sm-1 col-xs-2">
+                      <img src="../04_wireframes/imgs/icone9.png" class="img-responsive center-block no-print" aria-hidden="true">
+                    </div>
+                    <div class="col-lg-11 col-sm-11 col-xs-10">
+                      <p> Utilizado para criar tópicos.</i>.</p>
+                    </div>
+                    <div class="col-lg-1 col-sm-1 col-xs-2">
+                      <img src="../04_wireframes/imgs/icone10.png" class="img-responsive center-block no-print" aria-hidden="true">
+                    </div>
+                    <div class="col-lg-11 col-sm-11 col-xs-10">
+                      <p> Utilizado para caixas de texto.</i>.</p>
+                    </div>
+                    <div class="col-lg-1 col-sm-1 col-xs-2">
+                      <img src="../04_wireframes/imgs/icone11.png" class="img-responsive center-block no-print" aria-hidden="true">
+                    </div>
+                    <div class="col-lg-11 col-sm-11 col-xs-10">
+                      <p> Utilizado para comentários.</i>.</p>
+                    </div>
+                  </div>
+                <p>Esses são os principais recursos de utilização no Wireframe.cc, e a ferramenta é intuitiva e de fácil utilização.</p>
+                <p>Você montará, agora, o seguinte wireframe para uma página empresarial:</p>
+                <img src="../04_wireframes/imgs/figura_6.png" class="img-responsive center-block mt-40 imprime-menor">
+                <p class="legenda-imagem">
+                  Figura 6 – Wireframe de página empresarial <br>
+                  Fonte: Senac EAD (2023)                     
+                </p>
+                <p class="acessivel no-print">Um texto “Logo” no topo e 3 links à direita. Abaixo, em destaque, um texto de título e, mais abaixo, um texto menor e um botão retangular. À direita disso, uma imagem grande simbolizada por um retângulo com X. Abaixo, uma fileira de 5 elementos com uma imagem em um quadrado com X, um subtítulo em negrito e um texto abaixo de cada um.</p>
+                <p>Veja, na animação a seguir, o passo a passo da construção desse <i>wireframe</i>. É importante notar que os passos são simples e consistem basicamente em arrastar e clicar à direita para criar uma nova forma e selecionar que tipo de elemento quer representar. Usa-se clicar e arrastar à esquerda para selecionar itens. É possível copiar e colar um ou vários itens no <i>wireframe</i>. É possível, ainda, usar as linhas de guia que surgem na tela para alinhar elementos. Note que os elementos de texto vêm com frases em latim, muito usadas para <i>wireframes</i> e testes em programação com a intenção de apenas representar uma área textual para a qual ainda não se tem o conteúdo real.</p>
+                <img src="../04_wireframes/imgs/animacao1.gif" class="img-responsive center-block mt-40 imprime-menor">
+                <p class="acessivel no-print">Inicia com tela em branco estilo desktop. Cria-se “logo” no topo esquerdo ajustando sua dimensão, um elemento com texto “Link 1” com a mesma dimensão de “Logo” e copia-se e cola-se mais duas cópias desse elemento, renomeando com “Link 2” e “Link 3”. Selecionam-se esses três últimos elementos, os quais são alinhados à direita da tela. Cria-se novo texto e ajusta-se para tamanho grande, depois outro abaixo com o tamanho normal. Cria-se uma caixa com X para representar uma imagem grande à direita desses elementos. Cria-se um retângulo vazio abaixo desse texto e rotula-se com “Botão”. Abaixo, cria-se um quadrado com X, um texto de uma linha em negrito abaixo e um texto de duas linhas abaixo deste com tamanho mínimo. Copia-se e cola-se quatro vezes esses itens, deixando-os um ao lado do outro.</p>
+                <div class="caixa-destaque-livre icone-desafio mt-40">
+                  <p>Utilizando a ferramenta Wireframe.cc, construa um protótipo do <i>site</i> do Senac EAD (< https://www.ead.senac.br/>).</p>
+                  <p>Lembre-se de utilizar UI e UX e foque no principal objetivo do <i>site</i>.</p>
+                </div>
+              </div>
+            </div>
+            <div class="bloco-azul">
+              <div class="container pb-60">
+                <img src="imgs/img5.png" class="img-encerramento">
+                <h3>Encerramento</h3>
+                <p>Neste material, você estudou que o <i>wireframe</i> é uma ferramenta muito importante para o desenvolvimento de <i>websites</i> e aplicações e que, por meio dele, é possível iniciar a fase de elaboração e construção do seu projeto já pensando e identificando todas as telas, interações e disposições de objetos. </p>
+              </div>
+            </div>
+          </div>
+
+        </section>
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+        <footer class="text-center no-print">
+          <!--
+          <ul class="pagination">
+
+          </ul>
+          -->
+        </footer>
+
+    </div>
+
+
+    <!-- Modais -->
+
+    
+    <!-- Modais 100% -->
+
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+<!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+<div class="ico-div-loader">
+	<img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../template/js/jquery.min.js"></script>
+<script src="../template/js/bootstrap.min.js"></script>
+<script src="../template/js/jquery.magnific-popup.min.js"></script>
+<script src="../template/js/print.js"></script>
+<script src="../template/js/template.config.js"></script>
+<script src="../template/js/images.loader.js"></script>
+<script src="../template/js/highlight.min.js"></script>
+<script src="js/parallax.min.js"></script>
+<noscript>
+  <style media="screen">
+    .over-loader { display: none;}    
+  </style>
+</noscript>
+</body>
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  });
+	//inicializa zoom na imagem
+	$('.zoom-imagem').magnificPopup({
+	 type: 'image',
+  	 mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+ 	 zoom: {
+		enabled: true, // By default it's false, so don't forget to enable it
+
+		duration: 300, // duration of the effect, in milliseconds
+		easing: 'ease-in-out', // CSS transition easing function
+
+		// The "opener" function should return the element from which popup will be zoomed in
+		// and to which popup will be scaled down
+		// By defailt it looks for an image tag:
+		opener: function(openerElement) {
+		  // openerElement is the element on which popup was initialized, in this case its <a> tag
+		  // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+		  return openerElement.is('img') ? openerElement : openerElement.find('img');
+		}
+	  },
+	   image: {
+		  markup: '<div class="mfp-figure">'+
+					'<div class="mfp-close"></div>'+
+					'<div class="mfp-img"></div>'+ // Floated left
+					'<div class="mfp-bottom-bar">'+'<figcaption>'+'<div class="mfp-title" style="text-align:center"></div>'+
+					  '<div class="mfp-counter"></div>'+'</figcaption>'+
+					'</div>'+
+				  '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+		  cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+		  tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+	   }
+	});
+
+	//inicializa popover
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
+	//inicializa tooltip
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+
+  /*------- Script de animação do botão -------*/
+  var root = document.documentElement;
+  root.className += ' js';
+
+  function boxTop(idBox) {
+    var boxOffset = $(idBox).offset().top;
+    return boxOffset;
+  }
+
+  $(document).ready(function() {
+    var $target = $('.animeStart'),
+        $target2 = $('.animeStop'),
+        targetBox = $('.box'),
+        animationClass = 'anime-init',
+        windowHeight = $(window).height(),
+        offset = windowHeight - (windowHeight / 4);
+
+    function animeScroll() {
+      var documentTop = $(document).scrollTop();
+      $target.each(function() {
+        if (documentTop > boxTop(this) - offset) {
+          targetBox.addClass(animationClass);
+        } else {
+          targetBox.removeClass(animationClass);
+        }
+        if (documentTop > boxTop($target2) - offset) {
+          targetBox.removeClass(animationClass);
+        } 
+      });
+    }
+    animeScroll();
+
+    $(document).scroll(function() {
+      animeScroll();
+    });
+  });
+
+
+</script>
+
+<script>
+  var scriptElem=document.createElement("script");
+  scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+  scriptElem.charset="UTF-8",
+  scriptElem.onload=function(){
+        window.ht = new HT({
+            token:"bf5b7efb148a829a126a0e0c9fd533bf",
+            align:"top",
+            videoEnabled: true,
+            ytEmbedReplace: true,           
+            mobileConfig:{align:"right",
+                          actionsAlign:"top",
+                          customButtonStyle:{
+                                borderRadius:"6px",
+                                size:"38px",
+                                horizontalMargin:"13px",
+                                bottomMargin:"140px",
+                                rightMargin:"40px"}
+                          }
+          });        
+      $('.ht-skip').attr("aria-hidden","true")
+    },
+  document.body.appendChild(scriptElem);
+</script>

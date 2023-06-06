@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office"
+  xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Testes de software</title>
+
+  <!-- Bootstrap -->
+  <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+  <link href="../template/css/cores.css" rel="stylesheet">
+  <!--Extras - novas classes para facilitar-->
+  <link rel="stylesheet" href="../template/css/extras.css">
+  <link href="../template/css/sncload.css" rel="stylesheet">
+  <link href="../template/css/magnific-popup.css" rel="stylesheet">
+  <!-- referencia ao arquivo css com estilos especificos da pagina -->
+  <link href="css/custom.css" type="text/css" rel="stylesheet">
+  <!-- css necessario para o print -->
+  <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+  <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+  <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+  <!-- MARCA D´ÁGUA -->
+  <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+  <!-- /MARCA D´ÁGUA -->
+
+  <div id='sncloader' class='over-loader'>
+    <div class="over-cell">
+      <div id="sncload"></div>
+    </div>
+  </div>
+  <header id="topo" class="senac no-print">
+    <div class="header-tecnicos container">
+      <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+      <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+    </div>
+    <div id="sombra"></div>
+  </header>
+
+  <div id="booklet" class="container fundo-tecnicos">
+    <header class="no-print">
+      <!-- BTO IMPRIMIR -->
+      <div class="grupo-imprimir no-print">
+        <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+          <span class="fa fa-print"></span> <span>Imprimir</span>
+        </button>
+      </div>
+      <!-- /BTO IMPRIMIR -->
+    </header>
+    <!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+    <section class="paginas">
+
+      <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+      <div class="pagina">
+        <div class="row internet01">
+        <div class="col-lg-7 col-sm-12 col-xs-12 textointernet">
+        <h2>Testes de página <i>web</i>: ferramentas de depuração </h2>
+        <h3>Introdução</h3>
+        <p>Neste conteúdo, a discussão sobre as ferramentas de desenvolvedor disponíveis nos navegadores Chrome e Firefox será aprofundada. Inicialmente, serão explorados os recursos específicos de cada navegador, desde o inspetor de elementos e o console de depuração do Chrome até o modo de desenvolvedor e os painéis de ferramentas do Firefox.  </p>
+        <p>Serão explorados também os benefícios que cada ferramenta oferece aos desenvolvedores <i>web</i>. Por último, você verá como usar essas ferramentas para melhorar a <i>performance</i> de uma página <i>web</i>. Além disso, serão fornecidos alguns exemplos de como depurar código e encontrar elementos HTML (<i>hyper text markup language</i>).  </p>
+        </div>
+        <div class="col-lg-5">
+          <img src="../12_ferramentas_depuracao/img/img.png" class="mt-60 no-print">
+        </div>
+        </div>
+        <h3>Ferramentas de depuração e teste de páginas <i>web</i> do Google Chrome</h3>
+        <p>O Google Chrome, lançado em 2008, é um dos navegadores mais populares do mundo. Ele oferece suporte a diversas extensões e <i>plugins</i>, além de oferecer ferramentas de desenvolvedor para os desenvolvedores <i>web</i>, que permitem a depuração de código e a otimização de <i>performance</i>. </p>
+        <p>O Google Chrome dispõe de diversas ferramentas de desenvolvedor que podem ser acessadas pelo <i>menu</i> <strong>hamburger</strong> (três traços ou três pontos alinhados horizontalmente), que fica no canto superior direito do navegador, e depois clicando em <strong>Mais ferramentas</strong> e em <strong>Ferramentas do desenvolvedor</strong>. Outra opção é usar a combinação de teclas <strong>Ctrl + Shift + i</strong>.  </p>
+        <img src="../12_ferramentas_depuracao/img/01.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 1 – Acessando <strong>Ferramentas do desenvolvedor</strong> no Google Chrome <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print"> A imagem mostra o canto superior direito do navegador Google Chrome com o botão no menu Hamburger pressionado e o cursor sobre a opção “Mais ferramentas” e “Ferramentas do desenvolvedor”.</p>
+        <p>Isso abrirá a janela das ferramentas de desenvolvedor, que incluem a depuração de código HTML, a análise de <i>performance</i> de páginas <i>web</i>, a visualização de recursos de rede etc. </p>
+        <p>Essas ferramentas são extremamente úteis para todos os usuários, desde os mais experientes até os menos experientes. Elas permitem que você visualize, edite, analise e teste o código de páginas <i>web</i>, assim como também modifique o comportamento do navegador. </p>
+        <h4>Elementos</h4>
+        <p>A ferramenta <strong>Elementos</strong> (ou <strong>Elements</strong>) é uma das ferramentas mais úteis e permite a edição de código HTML. Essa ferramenta permite que você visualize o código HTML da página <i>web</i> que você está visualizando, assim como também permite editá-lo em modo de visualização.  </p>
+        <p>Essa ferramenta permite que você faça alterações e verifique-as alterações em tempo real, permitindo que você teste e visualize as alterações que irá fazer no seu código. </p>
+        <img src="../12_ferramentas_depuracao/img/02.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 2 – Aba <strong>Elements</strong> em ação  <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print"> A imagem mostA imagem mostra um site simples no lado esquerdo do navegador Google Chrome e no lado direito as Ferramentas do desenvolvedor com as abas Elementos na parte superior e Estilos na parte inferior. </p>
+        <p>Na parte superior, você pode visualizar o código HTML, e ao passar o cursor sobre alguma <i>tag</i> ela será destacada no <i>site</i>. Ao dar um duplo clique, você pode editar a <i>tag</i> e ver o resultado na tela, lembrando que esse resultado não é salvo no seu código. </p>
+        <img src="../12_ferramentas_depuracao/img/debug1.gif" class="img-responsive center-block mt-40 imprime-menor">      
+        <p class="acessivel no-print"> Aba Element da ferramenta de Debug no Chrome em ação. O mouse passa pelo texto do HTML exposto nessa aba e, à medida que passa pelas tags, destaca uma área na página que está sendo exibida à esquerda. Em um momento há duplo clique no conteúdo de uma tag &lt;li> e altera-se esse conteúdo. Em outro momento, seleciona-se um tag &lt;img> e deleta-se, fazendo com que suma da visualização da página. </p>
+        <h4>Estilo</h4>
+        <p>Na parte inferior da caixa de elementos, você encontra outras abas, entre elas <strong>Estilos</strong> (<strong>Styles</strong>). Com o estilo <strong>css</strong> que está sendo carregado para o elemento selecionado, você pode ver e editar o estilo (que não será salvo no seu arquivo <strong>css</strong>). Além disso, o quadro de estilos <strong>css</strong> mostra de qual arquivo <strong>css</strong> está vindo o estilo. </p>
+        <img src="../12_ferramentas_depuracao/img/03.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 3 – Painel <strong>Estilos</strong> <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print">A imagem mostra o painel estilos das Ferramentas do desenvolvedor do navegador Google Chrome. </p>
+        <img src="../12_ferramentas_depuracao/img/debug2.gif" class="img-responsive center-block mt-40 imprime-menor">      
+        <p class="acessivel no-print"> A animação mostra a aba “Styles” aberta, seleciona-se o elemento &lt;body> na aba “Elements” e em Styles aparece o estilo aplicado, que é o estilo da fonte. Clica-se na caixa de seleção ao lado desse estilo e nota-se que a fonte mudou de estilo na página à esquerda. Depois se digita um novo estilo trocando a cor do texto para vermelho. O mouse então vai para o título na página e, clicando com o direito, usa a opção “Inspecionar elemento” que seleciona o &lt;h1> em Element, mostrando seu estilo aplicado na aba “Styles”. Clica-se na caixa de seleção ao lado do estilo “color: blue”, desabilitando e fazendo com o que o título fique vermelho. Depois se clica de novo e o título volta a azul. Depois duplo clique em “blue” e digita-se green e o título fica verde. Clica-se então no link “geral.css” à direita do estilo, que leva a detalhes do arquivo css com os estilos. </p>
+        <h4>Computado</h4>
+        <p>Ainda no quadro de elementos, a caixa <strong>Computado</strong> mostra quais estilos de tamanho estão valendo para o elemento, incluindo altura, largura, borda, <i>padding</i> (distanciamento interno) e <i>margin</i> (distanciamento externo). </p>
+        <img src="../12_ferramentas_depuracao/img/04.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 4 – Aba <strong>Computado</strong> (<strong>Computed</strong>) <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print"> A imagem mostra o painel computado das Ferramentas do desenvolvedor do navegador Google Chrome. </p>
+        <h4>Console</h4>
+        <p>Esta é outra ferramenta extremamente útil que permite a depuração de JavaScript. Essa ferramenta permite que você visualize os resultados do código JavaScript da página <i>web</i> que você está visualizando, assim como também permite editá-lo. Essa ferramenta permite que você depure o seu código, analise as variáveis e interaja com o código enquanto ele é executado. </p>
+        <p>Ao escrever seu código JavaScript, você pode acrescentar mensagens que aparecerão no console. A seguir, você verá algumas dessas mensagens, porém existem várias outras. </p>
+        <ul>
+          <li>console.log(object [, object, ...]) → mensagem genérica </li>
+          <li>console.info(object [, object, ...]) → mensagem informativa </li>
+          <li>console.warn(object [, object, ...]) → mensagem de atenção </li>
+          <li>console.error(object [, object, ...]) → mensagem de erro </li>
+        </ul>
+        <p>Além das mensagens que você mesmo pode colocar no seu código JavaScript, ainda é possível ver as mensagens que o JavaScript gera ao tentar executar um trecho de código. </p>
+        <p>Por exemplo, caso você tente acessar uma variável ou um objeto nulo, aparecerá uma mensagem no console. Da mesma forma, se seu JavaScript buscar um arquivo fora que esteja inacessível, uma outra mensagem aparecerá no console, ajudando a encontrar os erros do seu código. </p>
+        <p>Veja um breve exemplo: </p>
+        <pre>
+          <code class="language-js">
+  &lt;script> 
+    console.log("Esta é uma mensagem no console")        
+  &lt;/script> 
+          </code>
+        </pre>
+        <p>No navegador fica: </p>
+        <img src="../12_ferramentas_depuracao/img/05.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 5 – Aba <strong>Console</strong>  <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print"> A imagem mostra a Aba Console das Ferramentas do desenvolvedor do navegador Google Chrome, com a mensagem “Esta é uma mensagem no console”. </p>
+        <p>Observe um erro na busca de um arquivo JavaScript no console. O resultado é o seguinte: </p>
+        <img src="../12_ferramentas_depuracao/img/06.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 6 – Mensagem de erro na aba <strong>Console</strong>  <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print"> A imagem mostra a Aba Console das Ferramentas do desenvolvedor do navegador Google Chrome, com a mensagem “Esta é uma mensagem no console” e com um erro ERR ABORTED 404. </p>
+        <h4>Escrever direto no console</h4>
+        <p>Assim como no painel <strong>Elementos</strong>, no qual é possível editar em tempo real os trechos de HTML e CSS (<i>cascading style sheets</i>), no console é possível escrever trechos de código JavaScript diretamente no console. Basta clicar, escrever o trecho de código e teclar <strong>Enter</strong>. </p>
+        <p>Veja um exemplo: </p>
+        <img src="../12_ferramentas_depuracao/img/07.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 7 – Digitando comandos na aba <strong>Console</strong>   <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print">A imagem mostra a Aba Console das Ferramentas do desenvolvedor do navegador Google Chrome, com a mensagem “Esta é uma mensagem no console”, com um erro ERR ABORTED 404 e com um trecho de código console.info e o resultado do comando que é a mensagem “Trecho escrito direto no Console”. </p>
+        <h4>Fontes</h4>
+        <p>No painel <strong>Fontes</strong> (<strong>Sources</strong>), é possível ver toda essa estrutura de arquivos carregada pelo navegador e, em alguns casos, acessar diretamente os arquivos, abrindo ou executando <i>scripts</i> diretamente do navegador. </p>
+        <p>É claro que essa manipulação depende da tecnologia usada para criar o <i>site</i> e principalmente se é um <i>site</i> local. Caso esteja visualizando em um <i>site on-line</i>, a maior parte dos acessos estará limitada. </p>
+        <img src="../12_ferramentas_depuracao/img/08.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 8 – Aba <strong>Fontes</strong>  <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print">A imagem mostra a Aba Fonte das Ferramentas do desenvolvedor do navegador Google Chrome, com a listagem de arquivos no lado esquerdo com o arquivo index selecionado e à direita o conteúdo do arquivo index.html. </p>
+        <h4>Rede</h4>
+        <p>Na aba <strong>Redes</strong> (<strong>Network</strong>), é possível ver em tempo real o carregamento dos elementos do <strong>site</strong> e o tempo que cada elemento carregou. </p>
+        <p><i>Sites</i> que demoram a carregar afastam os usuários. Nesse sentido, a aba <strong>Rede</strong> permite identificar elementos que estão aumentando o tempo de carregamento e otimizar, corrigir ou eliminar o elemento em questão. </p>
+        <p>Observe, na figura a seguir, que o arquivo não encontrado é o que mais demora para carregar. Ou seja, até um erro que aponta para um arquivo não encontrado (erro 404) pode derrubar o tempo de carregamento. </p>
+        <img src="../12_ferramentas_depuracao/img/09.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 9 – Aba <strong>Rede </strong> <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print">A imagem mostra a Aba Rede das Ferramentas do desenvolvedor do navegador Google Chrome, com a listagem de arquivos e suas respectivas propriedades de carregamento. </p>
+        <h3>Ferramentas de depuração e teste de páginas web do Mozilla Firefox</h3>
+        <p>O Firefox é um navegador <i>web</i> que fornece aos usuários uma variedade de ferramentas de desenvolvedor para facilitar o processo de desenvolvimento <i>web</i>. Essas ferramentas podem ser acessadas por meio de seu <i>menu</i> de ferramentas de desenvolvedor, localizado no canto superior direito da tela, ao clicar no ícone <strong>hamburger</strong> (três linhas horizontais). Uma vez que o <i>menu</i> de desenvolvedor esteja aberto, você poderá ver todas as ferramentas de desenvolvedor disponíveis. </p>
+        <img src="../12_ferramentas_depuracao/img/10.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 10 – Acessando as ferramentas de desenvolvimento no Firefox  <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print">A imagem mostra o canto superior direito do navegador Mozilla Firefox com o botão no menu hamburger pressionado e o cursor sobre a opção “mais ferramentas”. </p>
+        <img src="../12_ferramentas_depuracao/img/11.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 11 – Acessando as ferramentas de desenvolvimento no Firefox  <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print">A imagem mostra o canto superior direito do navegador Mozilla Firefox com o botão no menu hamburger pressionado e o cursor sobre a opção “Ferramentas de desenvolvimento”. </p>
+        <p>Você também pode acessar essas ferramentas pelo atalho <strong>Ctrl + Shift + i</strong>. </p>
+        <h4>Ferramentas de desenvolvedor do Firefox</h4>
+        <p>As ferramentas de desenvolvedor do Firefox são muito semelhantes às ferramentas do Google Chrome, basta localizar as ferramentas equivalentes. </p>
+        <img src="../12_ferramentas_depuracao/img/12.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 12 – Ferramenta de desenvolvedores do Firefox   <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print">A imagem mostra um <i>site</i> simples na parte superior do navegador Mozilla Firefox e na parte inferior as Ferramentas do desenvolvedor com a aba Inspector selecionada mostrando código HTML na esquerda, os estilos css na coluna do meio e na direita o painel computado. </p>
+        <p>Na aba <strong>Inspector</strong>, você encontrará o equivalente ao painel <strong>Elementos</strong> do Google Chrome, mostrando o código <strong>HTML</strong> na esquerda, os <strong>estilos css</strong> na coluna do meio e o painel <strong>Computado</strong> à direita. </p>
+        <p>As abas <strong>Console</strong> e <strong>Rede</strong> funcionam da mesma forma que seus equivalentes no Google Chrome. </p>
+        <p>A aba <strong>Debugger</strong> corresponde à aba <strong>Fontes</strong> do Google Chrome, com o mesmo funcionamento.  </p>
+        <h4><i>Design</i> responsivo</h4>
+        <p>Tanto o Firefox quanto o Google Chrome podem ser usados para testar a responsividade do seu <i>site</i>. No Chrome, essa funcionalidade é ativada automaticamente quando se entra no painel <strong>Ferramentas de desenvolvedor</strong>. Já no Firefox, é preciso acessar novamente o <i>menu</i> <strong>hamburger</strong>, clicar em <strong>Mais ferramentas</strong> e, depois, em <strong><i>Design</i> responsivo</strong> ou utilizar o atalho <strong>Ctrl + Shift + M</strong>. </p>
+        <img src="../12_ferramentas_depuracao/img/13.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 13 – Visualização em dimensões de <i>smartphone</i>  <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print">A imagem mostra um site simples afetado pelo painel de responsividade do Firefox simulando um Galaxy S10. </p>
+        <p>Na parte superior do painel <strong><i>Design</i> responsivo</strong>, é possível escolher qual dispositivo ele emulará para que você veja o resultado, ou definir um tamanho específico em <i>pixels</i> para a visualização. Também é possível alternar entre formato retrato ou paisagem do dispositivo emulado. </p>
+        <h4>Extensões</h4>
+        <p>O Chrome oferece extensões exclusivas para ajudar os desenvolvedores a aperfeiçoar seu trabalho, enquanto o Firefox tem o próprio conjunto de extensões e ferramentas de desenvolvedor integradas, que podem ser ativadas no <i>menu</i> <strong>hamburger</strong>, opções <strong>Mais ferramentas</strong> e <strong>Extensões</strong>.  </p>
+        <h4>Inspecionar elemento</h4>
+        <p>As ferramentas de desenvolvedor dos navegadores também podem ser abertas dando um clique com o botão direito em qualquer elemento do <i>site</i> e escolhendo a opção <strong>Inspecionar elemento</strong>. Essa maneira, além de abrir o painel das ferramentas de desenvolvedor com a aba <strong>Elementos</strong> do Google Chrome ou <strong>Inspector</strong> do Firefox, deixará selecionado o elemento em que foi dado o clique. Assim, fica muito mais fácil encontrar o código fonte do elemento que você deseja analisar. </p>
+        <h3>Encerramento</h3>
+        <div class="caixa-destaque iconefinalizando borda-primaria-03 mt-40">
+          Você viu que os navegadores Chrome e Firefox oferecem excelentes ferramentas de desenvolvedor para ajudar os desenvolvedores a criar e testar seus <i>sites</i>. Ambos os navegadores têm ferramentas robustas e equivalentes. Os desenvolvedores podem escolher o navegador que melhor atenda às suas necessidades e aproveitar todos os recursos disponíveis. 
+
+        </div>
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+    <footer class="text-center no-print">
+      <ul class="pagination">
+
+      </ul>
+    </footer>
+
+
+    <!-- Modais -->
+
+    <!-- Modais 100% -->
+
+
+
+  </div>
+
+  </div>
+
+
+
+  <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+  <!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+  <div class="ico-div-loader">
+    <img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+  </div>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="../template/js/jquery.min.js"></script>
+  <script src="../template/js/bootstrap.min.js"></script>
+  <script src="../template/js/jquery.magnific-popup.min.js"></script>
+  <script src="../template/js/print.js"></script>
+  <script src="../template/js/template.config.js"></script>
+  <script src="../template/js/images.loader.js"></script>
+  <script src="js/custom.js"></script>
+  <noscript>
+    <style media="screen">
+      .over-loader {
+        display: none;
+      }
+    </style>
+  </noscript>
+</body>
+
+</html>
+<script>
+  //inicializa zoom na imagem
+  $('.zoom-imagem').magnificPopup({
+    type: 'image',
+    mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+    zoom: {
+      enabled: true, // By default it's false, so don't forget to enable it
+
+      duration: 300, // duration of the effect, in milliseconds
+      easing: 'ease-in-out', // CSS transition easing function
+
+      // The "opener" function should return the element from which popup will be zoomed in
+      // and to which popup will be scaled down
+      // By defailt it looks for an image tag:
+      opener: function (openerElement) {
+        // openerElement is the element on which popup was initialized, in this case its <a> tag
+        // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+        return openerElement.is('img') ? openerElement : openerElement.find('img');
+      }
+    },
+    image: {
+      markup: '<div class="mfp-figure">' +
+        '<div class="mfp-close"></div>' +
+        '<div class="mfp-img"></div>' + // Floated left
+        '<div class="mfp-bottom-bar">' + '<figcaption>' + '<div class="mfp-title" style="text-align:center"></div>' +
+        '<div class="mfp-counter"></div>' + '</figcaption>' +
+        '</div>' +
+        '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+      cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+      tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+    }
+  });
+
+  //inicializa popover
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+  //inicializa tooltip
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
+
+  $(function () {
+    $(".card").click(function () {
+      if ($(this).hasClass("exibe-frente")) {
+        $(this)
+          .children()
+          .first()
+          .hide();
+        $(this)
+          .children()
+          .last()
+          .show();
+        $(this).removeClass("exibe-frente");
+      } else {
+        $(".card .verso").hide();
+        $(".card .frente").show();
+        $(this).addClass("exibe-frente");
+      }
+    });
+  });
+
+  $(document).ready(function () {
+    $(".card .verso").hide();
+  });
+
+
+
+
+  /*------- Script de animação do botão -------*/
+  var root = document.documentElement;
+  root.className += ' js';
+
+  function boxTop(idBox) {
+    var boxOffset = $(idBox).offset().top;
+    return boxOffset;
+  }
+
+  $(document).ready(function () {
+    var $target = $('.animeStart'),
+      $target2 = $('.animeStop'),
+      targetBox = $('.box'),
+      animationClass = 'anime-init',
+      windowHeight = $(window).height(),
+      offset = windowHeight - (windowHeight / 4);
+
+    function animeScroll() {
+      var documentTop = $(document).scrollTop();
+      $target.each(function () {
+        if (documentTop > boxTop(this) - offset) {
+          targetBox.addClass(animationClass);
+        } else {
+          targetBox.removeClass(animationClass);
+        }
+        if (documentTop > boxTop($target2) - offset) {
+          targetBox.removeClass(animationClass);
+        }
+      });
+    }
+    animeScroll();
+
+    $(document).scroll(function () {
+      animeScroll();
+    });
+  });
+
+
+</script>
+
+<!-- Versao atual do handtalk -->
+<script>
+  var scriptElem = document.createElement("script");
+  scriptElem.src = "https://plugin.handtalk.me/web/latest/handtalk.min.js",
+    scriptElem.charset = "UTF-8",
+    scriptElem.onload = function () {
+      window.ht = new HT({
+        token: "bf5b7efb148a829a126a0e0c9fd533bf",
+        align: "top",
+        videoEnabled: true,
+        ytEmbedReplace: true,
+        mobileConfig: {
+          align: "right",
+          actionsAlign: "top",
+          customButtonStyle: {
+            borderRadius: "6px",
+            size: "38px",
+            horizontalMargin: "13px",
+            bottomMargin: "140px",
+            rightMargin: "40px"
+          }
+        }
+      });
+      $('.ht-skip').attr("aria-hidden", "true")
+    },
+    document.body.appendChild(scriptElem);
+
+</script>

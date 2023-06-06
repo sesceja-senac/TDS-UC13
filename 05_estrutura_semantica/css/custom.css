@@ -1,0 +1,195 @@
+
+
+body{
+  background: url('../imgs/bg.png') top no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+.fundo-tecnicos{
+  border-bottom: none !important;
+}
+h1 i,
+h2 i,
+h3 i,
+h4 i {
+  font-weight: bold;
+}
+h3 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+h4 {
+  margin: 0px;
+  margin-top: 40px;
+}
+
+.img-responsive{
+  margin-top: 20px;
+}
+
+.head_tag, .body_tag{
+margin-left: 50px;
+}
+
+.cabecalho, .conteudo{
+  margin-left: 100px;
+}
+
+.legenda-imagem.fig12{
+  font-size: 10px !important;
+}
+
+li{
+  list-style-image: unset !important;
+}
+.bto-imprimir{
+  margin-right: 50px;
+}
+
+.fundo-tecnicos{
+  border-bottom: none !important;
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  padding-left: 0;
+  padding-right: 0;
+}
+.bloco-cinza{
+  background: #ececec;
+  padding: 50px 140px;
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+}
+.bloco-branco{
+  padding: 50px 140px;
+}
+.iconeimportante{
+  background-image: url('../imgs/ico_importante_atencao.png');
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  background-size: 170px 84px;
+  padding-left: 200px;
+}
+
+.iconedesafio{
+  background-image: url('../imgs/ico_desafio.png');
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  background-size: 170px 84px;
+  padding-left: 200px;
+}
+
+.btn-topo {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+}
+
+.btn-topo-mobile{
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+}
+
+.caixacinza{
+  border-color:#ececec;
+  border: 2px;
+  background-color: #ececec;
+  border-radius: 1em;
+  z-index: 4;
+  position: relative;
+  margin-top: 25px;
+  padding-top: 20px;
+  margin-top: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 25px;
+}
+.horizontal-line{
+  background-color:#2875C6;
+  width: 50em;
+  height:5px;
+  margin-top: 35px;
+  position: relative;
+}
+ .textotag{
+  text-decoration: underline;
+ }
+
+ .bg-black {
+  background-color: black;
+  color: white;
+  
+}
+
+.divisaopag{
+  padding: unset;
+}
+ .tagtext{
+  font-size: 20px;
+  padding: unset;
+
+ }
+.caixabranca{
+  border-color:#ffff;
+  border: 2px;
+  background-color: #ffff;
+  border-radius: 1em;
+  z-index: 4;
+  position: relative;
+  margin-top: 25px;
+  padding-top: 20px;
+  margin-top: 70px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 25px;
+}
+
+@media screen and (max-width: 1024px){
+  .bloco-branco, .bloco-cinza{
+    padding: 50px 100px;
+  }
+}
+
+
+@media screen and (max-width: 450px){
+  .figura1desktop{
+      display: none;
+  }
+  .topodesktop{
+    display: none;
+  }
+  .caixa-destaque{
+    word-break: break-word;
+  }
+  .bloco-branco, .bloco-cinza{
+    padding: 50px;
+  }
+}
+
+@media screen and (min-width: 451px){
+    .figura1mobile{
+        display: none;
+    }
+    .topomobile{
+      display: none;  
+    }
+  }
+
+@media screen and (max-width: 980px){
+      .iconeimportante, .iconedesafio{
+        background-position: top 10px center;
+        padding-top: 100px;
+        padding-left: 30px;
+      }}
+      
+ @media screen and (max-width: 1000px){
+        .horizontal-line{
+          display: none;
+        }
+      }

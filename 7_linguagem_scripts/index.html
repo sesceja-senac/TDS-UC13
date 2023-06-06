@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Linguagem de scripts: sintaxe, operadores, palavras reservadas, identificadores, delimitadores, comentários, função, passagem de parâmetros e bibliotecas; chamadas assíncronas</title>
+
+    <!-- Bootstrap -->
+    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+    <link href="../template/css/cores.css" rel="stylesheet">
+    <link href="../template/css/modal-100.css" rel="stylesheet">
+    <link href="../template/css/devibeans.min.css" rel="stylesheet">
+      <!--Extras - novas classes para facilitar-->
+      <link rel="stylesheet" href="../template/css/extras.css">
+    <link href="../template/css/sncload.css" rel="stylesheet">
+    <link href="../template/css/magnific-popup.css" rel="stylesheet">
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <!-- css necessario para o print -->
+    <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+    <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+        	  <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+            <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet" class="container fundo-tecnicos">
+        <header class="no-print">
+          <!-- BTO IMPRIMIR -->
+          <div class="grupo-imprimir no-print">
+            <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                <span class="fa fa-print"></span> <span>Imprimir</span>
+            </button>
+          </div>
+          <!-- /BTO IMPRIMIR -->
+        </header>
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <div class="pagina">
+            <p class="acessivel no-print">Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau máximo de leitura, a fim de que os códigos disponibilizados neste material sejam lidos corretamente. No caso do NVDA (NonVisual Desktop Access), para localizar a opção Grau de pontuação/símbolos, acesse Preferências – Configurações – Fala. Altere o padrão Pouco para Tudo. Dessa forma, o leitor passará a ler os segmentos de código em sua totalidade. </p>
+            <div class="row justify-center">
+              <h2>Linguagem de <i>scripts</i>: sintaxe, operadores, palavras reservadas, identificadores, delimitadores, comentários, função, passagem de parâmetros e bibliotecas; chamadas assíncronas</h2>
+              <img src="imgs/img_1.png" class="mt-20">
+            </div>
+            <h3>Introdução</h3>
+            <p>JavaScript, também conhecida como JS, é uma linguagem de programação criada em 1995 por Brendan Eich para o Netscape, um navegador popular nos anos 1990. A intenção com a linguagem era criar animações e interação. Inicialmente, foi chamada de Mocha, depois de LiveScript e, por fim, de JavaScript. Logo foi adotada pela Microsoft e por seu Internet Explorer, tornando-se, rapidamente, uma linguagem de <i>script</i> padrão para desenvolvimento <i>web</i>, sendo suportada por todos os navegadores atuais.</p>
+            <p>Originalmente criada para ser executada no lado do cliente (também conhecido como <i>front-end</i>), a tecnologia JavaScript foi expandida e tornou-se executável também no lado do servidor, após o desenvolvimento do Node.js – um ambiente de servidor multiplataforma que permite executar códigos JavaScript fora do navegador <i>web</i>. Com isso, muitas bibliotecas começaram a surgir (como Angular, React, React Native, Vue.js e muitas outras), e o JavaScript deixou de ser uma linguagem de programação apenas para a <i>web</i>, sendo possível usá-la para desenvolver também aplicações para ambientes <i>desktop</i> e dispositivos móveis.</p>
+            <p>Neste conteúdo, você será introduzido ao mundo do JavaScript e o foco será o desenvolvimento de aplicações <i>web</i> com a linguagem pura, isto é, sem uso de bibliotecas.</p>
+            <div class="caixa-destaque-livre icone-importante">
+              <p>Muitas pessoas confundem Java e JavaScript porque ambos são linguagens de programação e têm o termo “Java” no nome. Além disso, ambas as linguagens podem ser usadas para criar aplicativos para <i>web</i> e têm pontos em comum quanto à sintaxe, o que contribui para a confusão. No entanto, Java e JavaScript têm propósitos diferentes e são usados para diferentes tarefas. Java é mais relevante para criação de aplicativos para <i>desktops</i> e servidores (<i>back-end</i>), enquanto JavaScript é mais voltada para o <i>front-end</i>, na criação de aplicativos da <i>web</i> ricos em recursos e interativos.</p>
+              <p>A principal diferença entre Java e JavaScript é que o Java é uma linguagem de programação de propósito geral, enquanto o JavaScript é uma linguagem de <i>script</i>. Embora eles tenham algumas semelhanças, como a sintaxe, Java é uma linguagem de programação orientada a objetos, enquanto JavaScript é orientado a eventos.</p>
+            </div>
+
+            <h3>Começando com JavaScript</h3>
+            <p>Agora que você já foi introduzido à linguagem JavaScript, chegou o momento de começar a “pôr a mão na massa”. No decorrer deste conteúdo, serão realizadas diversas práticas, então é interessante que você crie uma pasta na sua área de trabalho. Ela será como a pasta de um projeto JavaScript.</p>
+            <p>Comece criando um arquivo <strong>index.html</strong>, que será a sua página <i>web</i>. Dentro desse arquivo, insira o seguinte trecho de código:</p>
+            <pre>
+              <code class="language-html">
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+      &lt;title&gt;Linguagem de Scripts&lt;/title&gt;
+      &lt;meta charset="utf-8"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+              </code>
+            </pre>
+            <p>Agora, dentro das <i>tags</i> <strong>&lt;body></strong>, insira a <i>tag</i> <strong>&lt;script></strong>, que servirá para dizer ao navegador o que deve ser interpretado como HTML (<i>hyper text markup language</i>) e o que deve ser interpretado como JavaScript. Nesse caso, tudo que for escrito entre as <i>tags</i> <strong>&lt;script>&lt;/script></strong> será interpretado pelo navegador como a linguagem JavaScript. O seu código ficará assim:</p>
+            <pre>
+              <code class="language-html">
+  &lt;!DOCTYPE html>
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;script type="text/javascript">
+          // Código JavaScript
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>                
+              </code>
+            </pre>
+            <p>Essa é uma das formas de trabalhar com o JavaScript, incorporando o código diretamente na página HTML. </p>
+            <p>Outra forma de trabalhar com o JavaScript é referenciando um arquivo de extensão <strong>JS (.js)</strong>. Nesse caso, use a propriedade <strong>src</strong> do HTML para apontar para o arquivo em questão e o seu código ficaria da seguinte maneira:</p>
+            <pre>
+              <code class="language-html">
+  &lt;script type="text/javascript" src="script.js">&lt;/script>
+              </code>
+            </pre>
+            <p>Nessa abordagem, ainda é possível informar um <i>script</i> que esteja fora da estrutura do projeto, passando a URL (<i>uniform resource locator</i>) completa. Por exemplo:</p>
+            <pre>
+              <code class="language-html">
+  &lt;script type="text/javascript" src="https://exemplo.com.br/js/script.js">&lt;/script>
+              </code>
+            </pre>
+            <p>A vantagem de um arquivo separado é que o navegador o baixará e armazenará em seu <i>cache</i>. Outras páginas que fazem referência ao mesmo <i>script</i> o retirarão do <i>cache</i> em vez de baixá-lo, então o arquivo é baixado apenas uma vez. Isso reduz o tráfego e torna as páginas mais rápidas.</p>
+            <p>Por questões didáticas, aqui você criará seus primeiros códigos JavaScript incorporando-os diretamente no HTML. </p>
+            <p>Após escrever o código, salve o arquivo e abra-o no seu navegador <i>web</i> – para isso, basta clicar no arquivo <strong>index.html</strong> criado e abri-lo com o seu navegador padrão.</p>
+            <div class="caixa-destaque-livre icone-importante">
+              <p>Apesar de a <i>tag</i> &lt;script> poder ser inserida em qualquer lugar da página HTML, incluindo a área de cabeçalho (<i>tag</i> &lt;head>), é uma boa prática sempre inserir a <i>tag</i> no final do corpo do HTML, antes do fechamento da <i>tag</i> &lt;/body>. Lembre-se de que o navegador <i>web</i> sempre interpretará uma página <i>web</i> na ordem em que o código foi escrito. Se adicionar um código JavaScript que manipula um elemento HTML antes de esse elemento existir para o navegador, o seu código JavaScript provavelmente não funcionará. Portanto, procure sempre deixar o conteúdo da página (no caso, o conteúdo HTML) ser carregado primeiro para, só depois, carregar os <i>scripts</i> JavaScript.</p>
+            </div>
+            <p>Na linguagem Java, usa-se <strong>System.out.print()</strong>; para escrever saídas de dados. No JavaScript, usa-se <strong>console.log()</strong>;, da seguinte forma:</p>
+            <pre>
+              <code class="language-html">
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;script type="text/javascript">
+        console.log("Olá, mundo!");
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>              
+              </code>
+            </pre>
+            <p>Se você salvar o arquivo agora e tentar abri-lo depois, perceberá que não aparecerá nada na tela. Isso porque a mensagem foi impressa no console, que só se consegue acessar por meio das ferramentas de desenvolvedor do navegador.</p>
+            <img src="imgs/figura_1.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_1.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_1.png" class="center-block img-responsive"></a>
+            <p class="legenda-imagem">
+              Figura 1 – DevTools do Google Chrome<br>
+              Fonte: Senac EAD (2023)    
+            </p>
+            <p class="acessivel no-print">Na imagem, há o console das ferramentas do desenvolvedor (DevTools) do Google Chrome aberto mostrando a mensagem “Olá, mundo!”.</p>
+
+            <h3>Ferramentas de desenvolvedor</h3>
+            <p>Todo código é propenso a erros. Porém, no navegador, os usuários não veem erros por padrão. Portanto, se algo der errado no <i>script</i>, você não verá o que está errado e não poderá corrigir. Para que os desenvolvedores possam ver os erros e obter outras informações úteis sobre seus <i>scripts</i>, as “ferramentas do desenvolvedor” foram incorporadas aos navegadores.</p>
+            <p>As ferramentas do desenvolvedor são potentes e oferecem muitos recursos. Para revelar essas ferramentas no navegador <i>web</i>, pressione a tecla <strong>F12</strong> ou <strong>Ctrl + Shift + i</strong>. As ferramentas do desenvolvedor serão abertas e você terá acesso a um painel com várias opções. A que nos interessa é a opção <strong>Console</strong>, que funcionará para o JavaScript da mesma forma que o console do NetBeans funciona para o Java.</p>
+            <img src="imgs/figura_2.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_2.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_2.png" class="center-block img-responsive"></a>
+            <p class="legenda-imagem">
+              Figura 2 – DevTools do Google Chrome<br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Na imagem, há uma página web em branco aberta no Google Chrome – trata-se do arquivo index.html criado no exemplo desse conteúdo. Do lado direito da tela do navegador, estão abertas as ferramentas do desenvolvedor (DevTools) e a opção “Console” está sendo destacada por um retângulo vermelho.</p>
+            <p>Esse recurso é muito útil quando é preciso testar um <i>script</i> extenso. Usando o <strong>console.log()</strong> em vários trechos do código, é possível visualizar como o código está sendo lido e descobrir erros que talvez não estejam tão claros à primeira vista. </p>
+            <p>Para facilitar a visualização dos dados, e não precisar acessar sempre as ferramentas de desenvolvedor, use uma função nativa do JavaScript muito útil, que é a função <strong>alert()</strong>:</p>
+            <pre>
+              <code class="language-html">
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;script type="text/javascript">
+        alert("Olá, mundo!");
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>              
+              </code>
+            </pre>
+            <p>Agora, tente executar a página mais uma vez. Você verá que uma caixa de alerta aparecerá e exibirá a mensagem que foi passada para a função, com um botão <strong>Ok</strong> para dispensá-la.</p>
+            <img src="imgs/figura_3.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_3.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_3.png" class="center-block img-responsive"></a>
+            <p class="legenda-imagem">
+              Figura 3 – Alerta do JavaScript<br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">A imagem apresenta um alerta do JavaScript com a mensagem “Olá, mundo!”.</p>
+            <p>A caixa de alerta tira o foco da página atual e força o usuário a ler a mensagem. Esse recurso será muito usado nos exemplos deste conteúdo, mas para fins didáticos. Em um projeto real, evite o uso excessivo do <strong>alert()</strong>, pois isso impede que o usuário acesse outras partes da página até que a caixa de alerta seja fechada, o que pode gerar insatisfações na experiência do usuário.</p>
+            <div class="caixa-destaque-livre icone-importante">
+              <p>Por ora, serão tratados os aspectos técnicos da linguagem JavaScript, por isso não haverá mudanças no código HTML. Sendo assim, nos próximos códigos, haverá apenas <i>scripts</i> JavaScript. Para reproduzir esses exemplos, basta copiar e colar o código dentro das <i>tags</i> <strong>&lt;script></strong>. Conforme seus estudos forem avançando, serão apresentados exemplos mais complexos, com códigos HTML e JavaScript interagindo um com o outro.</p>
+            </div>
+
+            <h3>Sintaxe</h3>
+            <p>A linguagem JavaScript tem a sintaxe muito próxima de linguagens de alto nível, por exemplo, a linguagem Java.</p>
+            <h4><i>Case-sensitive</i></h4>
+            <p>Assim como a maioria das linguagens de programação, JavaScript é <i>case-sensitive</i> – o que significa que palavras com letras maiúsculas e minúsculas são tratadas de forma diferente e, por isso, é preciso prestar bastante atenção na hora de escrever certas palavras. Por exemplo, se uma variável “teste” for referenciada como “Teste” em alguma parte do código, provavelmente haverá um erro. </p>
+            <h4>Palavras reservadas</h4>
+            <p>Em JavaScript, existem as seguintes palavras reservadas, que se referem a elementos da linguagem e que não podem ser usadas pelo programador como nome de variável, classe ou função:</p>
+            <div class="table-responsive">
+              <table class="senac">
+                <tbody>
+                  <tr>
+                    <td>abstract</td>
+                    <td>arguments</td>
+                    <td>await</td>
+                    <td>boolean</td>
+                  </tr>
+                  <tr>
+                    <td>break</td>
+                    <td>byte</td>
+                    <td>case</td>
+                    <td>catch</td>
+                  </tr>
+                  <tr>
+                    <td>char</td>
+                    <td>class</td>
+                    <td>const</td>
+                    <td>continue</td>
+                  </tr>
+                  <tr>
+                    <td>debugger</td>
+                    <td>default</td>
+                    <td>delete</td>
+                    <td>do</td>
+                  </tr>
+                  <tr>
+                    <td>double</td>
+                    <td>else</td>
+                    <td>enum</td>
+                    <td>eval</td>
+                  </tr>
+                  <tr>
+                    <td>export</td>
+                    <td>extends</td>
+                    <td>false</td>
+                    <td>final</td>
+                  </tr>
+                  <tr>
+                    <td>finally</td>
+                    <td>float</td>
+                    <td>for</td>
+                    <td>function</td>
+                  </tr>
+                  <tr>
+                    <td>goto</td>
+                    <td>if</td>
+                    <td>implements</td>
+                    <td>import</td>
+                  </tr>
+                  <tr>
+                    <td>in</td>
+                    <td>instaceof</td>
+                    <td>int</td>
+                    <td>interface</td>
+                  </tr>
+                  <tr>
+                    <td>let</td>
+                    <td>long</td>
+                    <td>native</td>
+                    <td>new</td>
+                  </tr>
+                  <tr>
+                    <td>null</td>
+                    <td>package</td>
+                    <td>private</td>
+                    <td>protected</td>
+                  </tr>
+                  <tr>
+                    <td>public</td>
+                    <td>return</td>
+                    <td>short</td>
+                    <td>static</td>
+                  </tr>
+                  <tr>
+                    <td>super</td>
+                    <td>switch</td>
+                    <td>synchronized</td>
+                    <td>this</td>
+                  </tr>
+                  <tr>
+                    <td>throw</td>
+                    <td>throws</td>
+                    <td>var</td>
+                    <td>void</td>
+                  </tr>
+                  <tr>
+                    <td>volatile</td>
+                    <td>while</td>
+                    <td>with</td>
+                    <td>yield</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Tabela 1 – Palavras reservadas<br>
+              Fonte: Senac EAD (2023)
+            </p>
+
+            <h4>Comentários</h4>
+            <p>Um comentário é uma parte no código que não é lida ao executar o código. Geralmente é utilizado para o desenvolvedor escrever anotações ou impedir que alguns trechos de código sejam executados. A sintaxe de comentários em JavaScript é semelhante à sintaxe da linguagem Java e pode ser usada de duas formas.</p>
+            <p>A primeira forma é comentando uma linha inteira. Para isso, usa-se <strong>//</strong> e tudo que vier depois será comentado. Por exemplo:</p>
+            <pre>
+              <code class="language-html">
+  // Esse é um exemplo de comentário em uma linha
+              </code>
+            </pre>
+            <p>A segunda forma é usando delimitadores <strong>/*</strong> e <strong>*/</strong> para definir um bloco de comentário. Por exemplo:</p>
+            <pre>
+              <code class="language-html">
+  /* Esse é o inicio do comentário.
+  Podemos extende-lo o quanto quisermos.
+  Aqui, finalizamos nosso comentário. */                
+              </code>
+            </pre>
+
+            <h4>Ponto e vírgula</h4>
+            <p>Em JavaScript, o caractere <strong>ponto e vírgula (;)</strong> pode ser omitido na maioria dos casos quando existe uma quebra de linha. Isso significa que o seu código também funcionará se for escrito da seguinte forma:</p>
+            <pre>
+              <code class="language-js">
+  alert('Olá') 
+  alert('Mundo')
+              </code>
+            </pre>
+            <p>Aqui, o JavaScript interpreta a quebra de linha como um ponto e vírgula “implícito”. Isso é chamado de “inserção automática de ponto e vírgula”.</p>
+            <p>Na maioria dos casos, uma nova linha significará um ponto e vírgula, mas “na maioria dos casos” não significa “sempre”! Sendo assim, há casos em que uma nova linha não significa um ponto e vírgula. Por exemplo:</p>
+            <pre>
+              <code class="language-js">
+  alert(3 +
+  1
+  + 2);                
+              </code>
+            </pre>
+            <p>O código gerado será <strong>6</strong>, pois o JavaScript não insere ponto e vírgula aqui. É intuitivamente óbvio que, se a linha terminar com um sinal de mais (+), é uma “expressão incompleta”, portanto um ponto e vírgula estaria incorreto e, nesse caso, isso funcionaria como foi pretendido.</p>
+            <p>Contudo, há situações em que o JavaScript “falha” em assumir um ponto e vírgula onde é realmente necessário. Os erros que ocorrem nesses casos são bastante difíceis de encontrar e corrigir.</p>
+
+            <h4>Variáveis</h4>
+            <p>Em JavaScript, as variáveis não são tipadas. Isso significa que não é preciso especificar um tipo, e essa mesma variável pode ter valores de texto, numérico ou booleano atribuídos a qualquer momento. Para declarar uma variável, usa-se a palavra-chave <strong>let</strong>.</p>
+            <p>A instrução a seguir cria (ou seja, declara) uma variável com o nome <strong>mensagem</strong>:</p>
+            <pre>
+              <code class="language-js">
+  let mensagem;                
+              </code>
+            </pre>
+            <p>Agora que você tem uma variável declarada, pode armazenar dados nela usando o operador de atribuição <strong>=</strong> e ler esses dados usando a referência a essa variável. </p>
+            <pre>
+              <code class="language-js">
+  let mensagem;
+  mensagem = 'Olá, mundo!'; //atribuindo um valor em “mensagem”
+  alert(mensagem); //lendo um valor de “mensagem”                              
+              </code>
+            </pre>
+            <p>Também possível declarar várias variáveis em uma única linha:</p>
+            <pre>
+              <code class="language-js">
+  let mensagem = 'Olá, mundo!', usuario = "admin", idade = 45                            
+              </code>
+            </pre>
+            <p>Isso pode parecer mais curto e produtivo, porém não é recomendado. Para facilitar a leitura, procure usar uma única linha por variável. Essa abordagem é um pouco mais extensa, mas torna mais fácil a leitura do código:</p>
+            <pre>
+              <code class="language-js">
+  let mensagem = 'Olá, mundo!'; 
+  let usuario = "admin";
+  let idade = 45;                                           
+              </code>
+            </pre>
+            <p>Também é possível declarar duas variáveis e copiar os dados de uma para a outra:</p>
+            <pre>
+              <code class="language-js">
+  let ola = 'Olá, mundo!'; 
+  let mensagem = ola;                                                         
+              </code>
+            </pre>
+            <p>Vale lembrar que uma variável deve ser declarada apenas uma vez. Uma declaração repetida da mesma variável resultará em erro:</p>
+            <pre>
+              <code class="language-js">
+  let mensagem = "Mensagem 1"; 
+  let mensagem = "Mensagem 2";                                                                        
+              </code>
+            </pre>
+            <img src="imgs/figura_4.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_4.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_4.png" class="center-block img-responsive"></a>
+            <p class="legenda-imagem">
+              Figura 4 – Console do Google Chrome<br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Na imagem, o console das ferramentas de desenvolvedor (DevTools) do navegador Google Chrome retornando a seguinte mensagem de erro “Uncaught SyntaxError: Identifer ‘mensagem’ has already been declared (index.html: 12)”.</p>
+            <div class="caixa-destaque-livre icone-importante">
+              <p>Em <i>scripts</i> mais antigos, você também pode encontrar uma palavra-chave sendo usada para declarar variável: <strong>var</strong> em vez de <strong>let</strong>.</p>
+              <pre>
+                <code class="language-js">
+  var mensagem = 'Olá, mundo!';                                                                       
+                </code>
+              </pre>
+              <p>A palavra <strong>var</strong> faz algo parecido, mas não igual, em comparação à palavra <strong>let</strong>. Ela declara uma variável em escopo de função, enquanto a variável <strong>let</strong> atua em escopo de bloco. Veja uma comparação delas, lado a lado, começando pela declaração de <strong>var</strong>:</p>
+              <pre>
+                <code class="language-js">
+  var x = 1; // declaramos uma var x
+  if (true) {
+      var x = 2; // redeclaramos x
+      alert(x); // vai exibir 2
+  }
+  alert(x); // vai exibir 2
+  // Conclusão: a variável x que declaramos no if irá subscrever a variável x que declaramos no começo pois VAR atua em contexto de função                                                                                         
+                </code>
+              </pre>
+              <p>Agora, veja a declaração com <strong>let</strong>:</p>
+              <pre>
+                <code class="language-js">
+  let x = 1; // declaramos uma let x
+  if (true) {
+      let x = 2; //redeclaramos uma let x
+      alert(x); // vai exibir 2
+  }
+  alert(x); // vai exibir 1
+  // Conclusão: como as variáveis let atuam em contexto de bloco, a variável do bloco IF não subscreve a variável declarada no inicio                                                                                                          
+                </code>
+              </pre>
+              <p>O comportamento de <strong>var</strong> é bem diferente de outras linguagens de programação e pode causar <i>bugs</i> de difícil resolução. A palavra-chave <strong>let</strong> permite um escopo de variável mais preciso e previsível e permite que os programadores reutilizem com segurança nomes para variáveis temporárias dentro da mesma função.</p>
+            </div>
+
+            <h4>Tipos de variáveis</h4>
+            <p>As variáveis em JavaScript, diferente da linguagem Java, não são tipadas, ou seja, não têm tipos. A mesma variável pode mudar (receber um novo valor) de não iniciada (<strong>undefined</strong>) para número (<strong>number</strong>), booleano (<strong>boolean</strong>) e texto (<strong>string</strong>).</p>
+            <pre>
+              <code class="language-js">
+  let x;       // undefined
+  x = 0;       // number
+  x = true;    // boolean
+  x = "texto"; // string                                                                                                                        
+              </code>
+            </pre>
+            <p>Isso ocorre porque o JavaScript define os tipos de dados dinamicamente, enquanto outras linguagens (como Java e C#) são tipadas estaticamente, ou seja, informa-se um tipo (<strong>int</strong>, <strong>string</strong>, <strong>boolean</strong> etc) no momento da declaração e aquela variável só poderá carregar esse tipo de dado especificado. Já em JavaScript, as variáveis podem ser reatribuídas a valores de qualquer tipo, portanto nunca se especifica o tipo de variáveis ou o tipo de retorno das funções.</p>
+            <p>Por exemplo, em JavaScript, o seguinte código, em que se atribui um valor inteiro e depois um texto a uma mesma variável, é válido:</p>
+            <pre>
+              <code class="language-js">
+  let x = 5;
+  x = "Olá";                                                                                                                                   
+              </code>
+            </pre>
+
+            <h4>Nomenclatura de variáveis</h4>
+            <p>Existem duas limitações nos nomes de variáveis em JavaScript:</p>
+            <ol>
+              <li>O nome deve conter apenas letras, dígitos ou os símbolos <strong>$</strong> e <strong>_</strong>.</li>
+              <li>O primeiro caractere não deve ser um dígito.</li>
+            </ol>
+            <p>Veja alguns exemplos de nomes válidos:</p>
+            <pre>
+              <code class="language-js">
+  let nomeUsuario;
+  let teste123;                                                                                                                                              
+              </code>
+            </pre>
+            <p>Quando o nome contém várias palavras, é de boa prática utilizar <strong>camelCase</strong> – prática de juntar as palavras compostas e usar a caixa-alta na primeira letra de cada nova palavra, como feito em <strong>nomeUsuario</strong>.</p>
+            <p>Procure sempre declarar nomes, tanto de variáveis quanto de funções, de forma curta, legível e simples. Isso pode soar óbvio, mas é muito fácil se distrair e escrever nomes como <strong>x1</strong> e <strong>x2</strong> ou, em casos mais extremos, nomes como <strong>calcularASomaDeDoisValoresInteiros</strong>. Nada disso faz muito sentido. Bons nomes de variáveis e funções devem ser simples e fáceis de entender e dizer o que está acontecendo.</p>
+            <p>Manter o inglês também é uma boa ideia, já que linguagens de programação foram construídas nesse idioma e estão em inglês. Veja seu código como uma narrativa. Se você puder ler linha por linha e entender o que está acontecendo, perfeito!</p>
+          </div>
+          <div class="pagina">
+            <h3>Operadores</h3>
+            <p>Você conhece muitos operadores da escola, como adição, multiplicação, subtração e assim por diante. Aqui, você começará com operadores simples e em seguida se concentrará nos aspectos específicos do JavaScript.</p>
+            
+            <h4>Operadores matemáticos</h4>
+            <div class="table-responsive">
+              <table class="senac">
+                <thead>
+                  <th>Operação</th>
+                  <th>Sinal</th>
+                  <th>Exemplo</th>
+                  <th>Resultado</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Adição</td>
+                    <td>+</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  let resultado = 10 + 10;
+  alert(resultado);                                                                                                                 
+                        </code>
+                      </pre>
+                    </td>
+                    <td>20</td>
+                  </tr>
+                  <tr>
+                    <td>Subtração</td>
+                    <td>-</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  let resultado = 33 - 18;
+  alert(resultado);                                                                                                                                         
+                        </code>
+                      </pre>
+                    </td>
+                    <td>15</td>
+                  </tr>
+                  <tr>
+                    <td>Multiplicação</td>
+                    <td>*</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  let resultado = 9 * 8;
+  alert(resultado);                                                                                                                                                                 
+                        </code>
+                      </pre>
+                    </td>
+                    <td>72</td>
+                  </tr>
+                  <tr>
+                    <td>Divisão</td>
+                    <td>/</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  let resultado = 29 / 3;
+  alert(resultado);                                                                                                                                                                                         
+                        </code>
+                      </pre>
+                    </td>
+                    <td>9,66666666</td>
+                  </tr>
+                  <tr>
+                    <td>Resto da divisão</td>
+                    <td>%</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  let resultado = 29 % 3;
+  alert(resultado);                                                                                                                                                                                                            
+                        </code>
+                      </pre>
+                    </td>
+                    <td>2</td>
+                  </tr>
+                  <tr>
+                    <td>Exponencial</td>
+                    <td>**</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  let resultado = 9 ** 3; //9³
+  alert(resultado);                                                                                                                                                                                                                                    
+                        </code>
+                      </pre>
+                    </td>
+                    <td>729</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Tabela 2 – Operadores matemáticos<br>
+              Fonte: Senac EAD (2023)
+            </p>
+
+            <h4>Concatenação de texto com +</h4>
+            <p>Normalmente, o operador <strong>mais (+)</strong> soma números. Porém, se esse operador for aplicado a <strong>strings</strong>, ele as mesclará (concatenará):</p>
+            <pre>
+              <code class="language-js">
+  let texto = "olá, " + "mundo";
+  alert(texto); // olá, mundo                                                                                                                                                  
+              </code>
+            </pre>
+            <p>Se algum dos operandos for uma <strong>string</strong>, o outro também será convertido em uma <strong>string</strong>. Por exemplo: </p>
+            <pre>
+              <code class="language-js">
+  alert( '1' + 2 ); // "12"
+  alert( 2 + '1' ); // "21"                                                                                                                                                             
+              </code>
+            </pre>
+            <p>Observe que não importa se o primeiro operando é uma <strong>string</strong> ou o segundo. Veja um exemplo mais complexo:</p>
+            <pre>
+              <code class="language-js">
+  alert(2 + 2 + '1' ); // "41" e não "221"                                                                                                                                                        
+              </code>
+            </pre>
+            <p>Aqui, os operadores trabalham um após o outro. O primeiro <strong>+</strong> soma dois números, então ele retorna quatro. O próximo <strong>+</strong> adiciona a <strong>string 1</strong> e, por fim, tem-se <strong>4 + '1' = '41'</strong>. </p>
+            <p>Agora, veja um exemplo com os operadores inversos:</p>
+            <pre>
+              <code class="language-js">
+  alert('1' + 2 + 2); // "122" e não "14"                                                                                                                                                       
+              </code>
+            </pre>
+            <p>Aqui, o primeiro operando é uma <strong>string</strong>, então o compilador tratará os outros dois operandos como <strong>strings</strong> também. Logo, você terá as operações <strong>'1' + 2 = "12"</strong> e, após isso, <strong>"12" + 2 = "122"</strong>.</p>
+            <p>O operador <strong>+</strong> é o único que lida com <strong>strings</strong> dessa forma. Outros operadores aritméticos trabalham apenas com números e sempre convertem seus operandos em números. Por exemplo:</p>
+            <pre>
+              <code class="language-js">
+  alert( 6 - '2' ); // a string '2' é convertida para 2 e o resultado da operação é 4
+
+  alert( '6' / '2' ); // ambas string são convertidas e o resultado da operação é 3                                                                                                                                                                       
+              </code>
+            </pre>
+
+            <h4>Operadores lógicos</h4>
+            <p>Assim como o Java, o JavaScript tem três principais operadores lógicos:</p>
+            <div class="table-responsive">
+              <table class="senac">
+                <thead>
+                  <th>Operador</th>
+                  <th>Sintaxe</th>
+                  <th>Exemplo</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ou</td>
+                    <td>||</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  alert( true || true );   // true
+  alert( false || true );  // true
+  alert( true || false );  // true
+  alert( false || false ); // false                                                                                                                                                                                               
+                        </code>
+                      </pre>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>E</td>
+                    <td>&&</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  alert( true && true );   // true
+  alert( false && true );  // false
+  alert( true && false );  // false
+  alert( false && false ); // false                                                                                                                                                                                                                        
+                        </code>
+                      </pre>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Não</td>
+                    <td>!</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  alert( !true ); // false                                                                                                                                                                                                                      
+                        </code>
+                      </pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Tabela 3 – Operadores lógicos<br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p>Embora sejam chamados de “lógicos”, podem ser aplicados a valores de qualquer tipo, não apenas booleanos. </p>
+
+            <h4>Operadores de comparação</h4>
+            <p>Você conhece muitos operadores de comparação da matemática. Em JavaScript, eles são escritos assim:</p>
+            <div class="table-responsive">
+              <table class="senac">
+                <thead>
+                  <th>Operador</th>
+                  <th>Sintaxe</th>
+                  <th>Exemplo</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Maior/menor que</td>
+                    <td>a &gt; b, a &lt; b</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  alert( 2 &gt; 1 );  // true 
+  alert( 2 &lt; 1 );  // false                                                                                                                                                                                                                         
+                        </code>
+                      </pre>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Maior/menor que ou igual a</td>
+                    <td>a &gt;= b, a &lt;= b</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  alert( 2 &gt;= 1 );  // true 
+  alert( 2 &lt;= 1 );  // false                                                                                                                                                                                                                                                   
+                        </code>
+                      </pre>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Igual a</td>
+                    <td>a == b</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  alert( 2 == 1 ); // false                                                                                                                                                                                                                                                 
+                        </code>
+                      </pre>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Não é igual</td>
+                    <td>a != b</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  alert( 2 != 1 ); // true                                                                                                                                                                                                                                                
+                        </code>
+                      </pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Tabela 4 – Operadores de comparação<br>
+              Fonte: Senac EAD (2023)
+            </p>
+
+            <h3>Conversões de tipo</h3>
+            <p>Na maioria das vezes, operadores e funções convertem automaticamente os valores dados a eles para o tipo certo. Por exemplo, a função <strong>alert()</strong> converte automaticamente qualquer valor em uma <strong>string</strong> para mostrá-lo. As operações matemáticas convertem valores em números. Mas há casos em que é preciso converter explicitamente um valor para o tipo esperado.</p>
+
+            <h4>Identificando o tipo de dado</h4>
+            <p>Para descobrir o tipo de dado que o JavaScript está lidando, usa-se a palavra-chave <strong>typeof</strong> seguindo o valor.</p>
+            <pre>
+              <code class="language-js">
+  let string = "123";
+  alert(typeof string); // string
+  
+  let numero = 123; 
+  alert(typeof numero); // number
+  
+  let booleano = true;
+  alert(typeof booleano); // boolean                                                                                                                                                                                      
+              </code>
+            </pre>
+            <p>Dessa forma, é possível identificar como o JavaScript está tratando determinado dado e aplicar a conversão certa para o tipo que se quer.</p>
+
+            <h4>Conversão de <i>string</i></h4>
+            <p>A conversão de <strong>string</strong> acontece quando se precisa da forma de <strong>string</strong> de um valor. Para realizar essa conversão, usa-se a função <strong>String();</strong> e passa-se, dentro dos parênteses, o valor que se quer converter.</p>
+            <pre>
+              <code class="language-js">
+  let booleano = true;
+  alert(typeof booleano); // boolean
+  
+  let string = String(booleano); // conversão para string
+  alert(typeof string); //string                                                                                                                                                                                                
+              </code>
+            </pre>
+
+            <h4>Conversão numérica</h4>
+            <p>A conversão numérica em funções e expressões matemáticas ocorre automaticamente. Por exemplo, quando a divisão <strong>/</strong> é aplicada a não números:</p>
+            <pre>
+              <code class="language-js">
+  alert( "6" / "2" ); // 3, textos são convertidos para números                                                                                                                                                                                               
+              </code>
+            </pre>
+            <p>Para realizar uma conversão explícita para números, usa-se a função <strong>Number()</strong>:</p>
+            <pre>
+              <code class="language-js">
+  let string = "123";
+  alert(typeof string); //string
+  
+  let numero = Number(string);
+  alert(typeof numero); //number                                                                                                                                                                                                              
+              </code>
+            </pre>
+            <p>Além do método <strong>Number()</strong>, existem outros métodos JavaScript disponíveis para realizar conversões específicas para outros tipos numéricos – como <strong>float</strong> e <strong>int</strong>.</p>
+            <p>Para converter para <strong>int</strong>, usa-se <strong>parseInt()</strong>; para <strong>float</strong>, <strong>parseFloat()</strong>:</p>
+            <pre>
+              <code class="language-js">
+  let string = "1.23";
+  alert(typeof string); //string
+  
+  let numeroInt = parseInt(string);
+  alert("Valor: " + numeroInt + " - Tipo: " + typeof numero); 
+  let numeroFloat = parseFloat(string);
+  alert("Valor: " + numeroFloat + " - Tipo: " + typeof numeroFloat);                                                                                                                                                                                                                              
+              </code>
+            </pre>
+            <p>Caso deseje limitar o número de casas decimais, use também a função <strong>toFixed()</strong> com a quantidade que você quer. Por exemplo:</p>
+            <pre>
+              <code class="language-js">
+  let string = "1.23333333333";
+  alert(typeof string); //string
+  
+  let numero = parseFloat(string); // valor completo
+  alert("Valor: " + numero + " - Tipo: " + typeof numero); // valor completo
+  
+  alert("Valor: " + numero.toFixed(2) + " - Tipo: " + typeof numero); // valor limitado a 2 casas decimais                                                                                                                                                                                                                                            
+              </code>
+            </pre>  
+            <div class="caixa-destaque-livre icone-importante">
+              <p>Em JavaScript, há apenas um tipo de número, <strong>number</strong>, ao contrário do Java, que tem os tipos <strong>double</strong>, <strong>int</strong> e <strong>float</strong>. Por isso, não é possível lidar nativamente com um número decimal de 21 dígitos, e essa é a razão de não haver um método <strong>parseDouble()</strong> em JavaScript.</p>
+            </div>
+
+            <h4>Condicionais</h4>
+            <p>Às vezes, é preciso realizar diferentes ações com base em diferentes condições. Para fazer isso, pode-se usar a instrução <strong>if</strong>.</p>
+            <p>No JavaScript, tanto a teoria quanto a prática são similares ao Java. A instrução <strong>if(...)</strong> avalia uma condição entre parênteses e, se o resultado for verdadeiro (<i>true</i>), executa um bloco de código que é delimitado por chaves, <strong>{...}</strong>. Por exemplo:</p>
+            <pre>
+              <code class="language-js">
+  if( 1 &lt; 2 ) {
+    alert("A condição é verdadeira!");
+  }                                                                                                                                                                                                                                                        
+              </code>
+            </pre> 
+            <p>A instrução pode conter um bloco <strong>else</strong> opcionalmente. Este é executado quando a condição é falsa (<i>false</i>).</p>
+            <pre>
+              <code class="language-js">
+  if( 1 &gt; 2 ) {
+    alert("A condição é verdadeira!");
+  } else {
+    alert("A condição é falsa!");
+  }                                                                                                                                                                                                                                          
+              </code>
+            </pre>
+            <p>Se você quiser testar várias variantes de uma condição, também é possível. Nesse caso, usa-se o <strong>else if</strong> após a instrução <strong>if</strong>.</p>
+            <pre>
+              <code class="language-js">
+  let nota = 5;
+  if (nota &gt; 6) {
+      alert("Nota média.");
+  } else if (nota == 10) {
+      alert("Nota máxima!");
+  } else {
+      alert("Nota baixa");
+  }                                                                                                                                                                                                                                                        
+              </code>
+            </pre>
+            <p>No código acima, o JavaScript primeiro verifica se a nota é maior que 6. Se for falso, vai para a próxima condição. Se também for falso, mostra o último alerta.</p>
+            <div class="caixa-destaque-livre icone-importante">
+              <p>Lembre-se desta regra: você só irá para a próxima condição se a atual for falsa. Isso significa que, se caso o valor da nota for 10, não haverá o alerta “Nota máxima!” sendo apresentado, pois a primeira condição será verdadeira.</p>
+            </div>
+
+            <h4>Repetição</h4>
+            <p>Em desenvolvimento de sistemas, muitas vezes é preciso repetir ações, o que é feito por meio de laços de repetição. Aqui, em JavaScript, tem-se exatamente a mesma abordagem que na linguagem Java.</p>
+            <div class="table-responsive">
+              <table class="senac">
+                <thead>
+                  <th><i>Loop</i></th>
+                  <th></th>
+                  <th>Sintaxe</th>
+                  <th>Exemplo</th>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>While</strong></td>
+                    <td>Enquanto a condição for verdadeira, o bloco de código será executado.</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  while (condição) {
+    // código
+  }                                                                                                                                                                                                                                                                     
+                        </code>
+                      </pre>
+                    </td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  let i = 0;
+  while (i &lt; 3) {
+    alert( i );
+    i++;
+  }                                                                                                                                                                                                                                                                                   
+                        </code>
+                      </pre>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>Do... While</strong></td>
+                    <td>O <i>loop</i> primeiro executará o bloco de código e depois verificará a condição. Caso seja verdadeiro, execute-o novamente.</td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  do {
+    // código
+  } while (condição);                                                                                                                                                                                                                                                                                           
+                        </code>
+                      </pre>
+                    </td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  do {
+    alert( i );
+    i++;
+  } while (i &lt; 3);                                                                                                                                                                                                                                                                                                    
+                        </code>
+                      </pre>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>For</strong></td>
+                    <td>
+                      Esse <i>loop</i> é mais complexo. Examine a declaração parte a parte:<br>
+                      <ul>
+                        <li><strong>início</strong>: É executado uma vez ao entrar no <i>loop</i>.</li>
+                        <li><strong>condição</strong>: É verificado antes de cada iteração do <i>loop</i>. Se for falso, o <i>loop</i> para.</li>
+                        <li><strong>código</strong>: É o que será executado repetidamente enquanto a condição for verdadeira.</li>
+                        <li><strong>fim</strong>: É executado após o fim de cada iteração.</li>
+                      </ul>
+                    </td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  for (inicio; condição; fim) {
+    // código
+  }                                                                                                                                                                                                                                                                                                                     
+                        </code>
+                      </pre>
+                    </td>
+                    <td>
+                      <pre>
+                        <code class="language-js">
+  for (let i = 0; i &lt; 3; i++) { 
+    alert(i);
+  }                                                                                                                                                                                                                                                                                                                             
+                        </code>
+                      </pre>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Tabela 5 – <i>Loops</i><br>
+              Fonte: Senac EAD (2023)
+            </p>
+
+            <h3>Função</h3>
+            <p>As funções são os principais “blocos de construção” do programa. Eles permitem que o código seja chamado várias vezes sem repetição, o que é muito útil quando é preciso executar uma mesma ação em contextos diferentes de um <i>software</i>.</p>
+
+            <h4>Declaração de função</h4>
+            <p>Para criar uma função, use a seguinte sintaxe:</p>
+            <pre>
+              <code class="language-js">
+  function nome(parametro1, parametro2) {
+    // corpo
+  }                                                                                                                                                                                                                                                                     
+              </code>
+            </pre>
+            <p>A palavra-chave <strong>function</strong> vai primeiro, depois o nome da função e, por fim, os parâmetros entre parênteses (separados por vírgula). Caso a função não tenha nenhum parâmetro, basta deixá-los em branco. </p>
+            <div class="caixa-destaque-livre icone-importante">
+              <p>Funções são ações, portanto seu nome geralmente é um verbo. Procure sempre definir nomes de forma breve, sendo o mais preciso possível e descrevendo o que a função faz, para que alguém que leia o código tenha uma indicação do que a função realmente faz.</p>
+            </div>
+            <p>Perceba que aqui, no JavaScript, não é preciso se preocupar em informar o tipo de retorno da função, diferentemente do Java.</p>
+            <p>Para o primeiro exemplo, foi criada uma função para mostrar a mensagem “Olá, mundo” e chamá-la duas vezes:</p>
+            <pre>
+              <code class="language-js">
+  function mostrarMensagem() {
+    alert("Olá, mundo!");
+  }
+  mostrarMensagem();
+  mostrarMensagem();                                                                                                                                                                                                                                                                                 
+              </code>
+            </pre>
+            <p>Este exemplo demonstra claramente um dos principais propósitos das funções: evitar a duplicação de código. Se alguma vez você precisar mudar a mensagem ou a forma como ela é mostrada, basta modificar o código em um lugar: a função que a gera.</p>
+
+            <h4>Variáveis locais</h4>
+            <p>Uma variável local é uma variável declarada dentro de uma função, e esta só é visível dentro dessa função. Por exemplo:</p>
+            <pre>
+              <code class="language-js">
+  function mostrarMensagem() {
+    let mensagem = "Olá, mundo! Eu sou JavaScript!"; // variável local
+    alert(mensagem);
+  }
+  mostrarMensagem(); // Olá, mundo! Eu sou JavaScript!
+  alert(mensagem); // &lt;-- Erro! "mensagem is not defined"                                                                                                                                                                                                                                                                                                
+              </code>
+            </pre>
+
+            <h4>Variáveis externas</h4>
+            <p>Consideram-se variáveis externas qualquer variável que esteja declarada fora do contexto de uma função. Além das variáveis locais, uma função também pode acessar uma variável externa:</p>
+            <pre>
+              <code class="language-js">
+  let linguagem = "JavaScript.";
+  function mostrarMensagem() {
+      let mensagem = "Olá, mundo! Eu sou " + linguagem;
+      alert(mensagem);
+  }
+  mostrarMensagem();
+  alert(mensagem);                                                                                                                                                                                                                                                                                                            
+              </code>
+            </pre>
+            <p>A função tem acesso total à variável externa e também pode modificá-la.</p>
+            <pre>
+              <code class="language-js">
+  let linguagem = "JavaScript.";
+  function mostrarMensagem() {
+      linguagem = "JS."; // mudamos o nome da linguagem
+      let mensagem = "Olá, mundo! Eu sou " + linguagem;
+      alert( mensagem );
+  }
+  alert(linguagem); // Exibimos o nome JavaScript
+  mostrarMensagem(); // Chamamos o método que irá alterar o nome
+  alert(linguagem); // Exibimos o novo nome                                                                                                                                                                                                                                                                                                                          
+              </code>
+            </pre>
+            <p>A variável externa só é usada se não houver uma local. Se uma variável com o mesmo nome for declarada dentro da função, ela ignorará a externa. Por exemplo, no código a seguir, a função usa a variável local <strong>linguagem</strong> enquanto a externa é ignorada:</p>
+            <pre>
+              <code class="language-js">
+  let linguagem = "JavaScript.";
+  function mostrarMensagem() {
+      let linguagem = "JS."; 
+      let mensagem = "Olá, mundo! Eu sou " + linguagem;
+      alert( mensagem );
+  }
+  alert(linguagem); 
+  mostrarMensagem(); 
+  alert(linguagem);                                                                                                                                                                                                                                                                                                                                          
+              </code>
+            </pre>
+            <p>As variáveis declaradas fora de qualquer função, como a variável externa <strong>linguagem</strong> no código acima, são chamadas de <strong>variáveis globais</strong>. Essas variáveis são visíveis para qualquer função a menos que sejam sombreadas por outra variável local.</p>
+          </div>
+          <div class="pagina">
+            <h3>Parâmetros</h3>
+            <p>Ao falar sobre funções, os termos “parâmetros” e “argumentos” são frequentemente usados e podem passar a impressão de que são a mesma coisa, mas há uma diferença muito sutil:</p>
+            <div class="caixa-destaque-livre">
+              <p>Parâmetros são variáveis listadas como parte da definição da função.</p>
+              <p>Argumentos são valores passados para a função quando ela é invocada.</p>
+            </div>
+            <p>Assim como na linguagem Java, é possível passar dados arbitrários para funções usando parâmetros. No exemplo a seguir, foi escrita uma função que tem dois parâmetros: <strong>numero1</strong> e <strong>numero2</strong>.</p>
+            <pre>
+              <code class="language-js">
+  function somar(numero1, numero2) {
+    alert(numero1 + numero2);
+  }
+  somar(27, 30);                                                                                                                                                                                                                                                                                                                                                      
+              </code>
+            </pre>
+            <p>Quando a função é chamada na última linha, passam-se os argumentos, em que os valores fornecidos são copiados para as variáveis locais <strong>numero1</strong> e <strong>numero2</strong> para serem, em seguida, usadas pela função.</p>
+            <div class="caixa-destaque-livre icone-dica">
+              <p>Para tornar o código limpo e fácil de entender, é recomendável usar principalmente variáveis e parâmetros locais na função, e não variáveis externas. É sempre mais fácil entender uma função que obtém parâmetros, trabalha com eles e retorna um resultado do que uma função que não obtém parâmetros, mas modifica variáveis externas como efeito colateral.</p>
+            </div>
+
+            <h4>Valores padrão</h4>
+            <p>Se uma função for chamada, mas um argumento não for fornecido, o valor correspondente será <strong>undefined</strong>. Por exemplo, a função acima poderia ser chamada com um único argumento:</p>
+            <pre>
+              <code class="language-js">
+  function somar(numero1, numero2) {
+    alert(numero1 + numero2);
+  }
+  somar(13);                                                                                                                                                                                                                                                                                                                                                                   
+              </code>
+            </pre>
+            <p>Tal chamada produziria o seguinte efeito <strong>13 + undefined</strong>. Como o valor de <strong>numero2</strong> não é passado, ele se torna <strong>undefined</strong> e o cálculo não é realizado.</p>
+            <p>Para evitar esse tipo de situação, é possível especificar valores padrões para os parâmetros na declaração da função usando <strong>=</strong>:</p>
+            <pre>
+              <code class="language-js">
+  function somar(numero1 = 0, numero2 = 0) {
+    alert(numero1 + numero2);
+  }
+  somar(13);                                                                                                                                                                                                                                                                                                                                                  
+              </code>
+            </pre>
+            <p>Dessa forma, ambos os parâmetros <strong>numero1</strong> e <strong>numero2</strong> terão o valor padrão <strong>0</strong> caso algum desses parâmetros não for passado. Dessa forma, minimizam-se erros no sistema que possam quebrar alguma funcionalidade. </p>
+
+            <h4>Retornando um valor</h4>
+            <p>Uma função pode retornar um valor de volta ao código de chamada como resultado. Um exemplo simples seria retornar o valor da função <strong>somar()</strong>:</p>
+            <pre>
+              <code class="language-js">
+  function somar(numero1 = 0, numero2 = 0) {
+    return numero1 + numero2;
+  }
+  let resultado = somar(30, 103);
+  alert(resultado);                                                                                                                                                                                                                                                                                                                                                           
+              </code>
+            </pre>
+
+            <h3>Vetores</h3>
+            <p>Em JavaScript, é possível trabalhar com vetores usando <i>arrays</i>. Um <i>array</i> é uma estrutura de dados que permite armazenar vários valores em uma única variável.</p>
+            <p>Existem duas sintaxes para criar um vetor vazio:</p>
+            <pre>
+              <code class="language-js">
+  let vetor = new Array();                                                                                                                                                                                                                                                                                                                                                          
+              </code>
+            </pre>
+            <p>ou</p>
+            <pre>
+              <code class="language-js">
+  let vetor = [];                                                                                                                                                                                                                                                                                                                                                          
+              </code>
+            </pre>
+            <p>Em JavaScript, quase sempre a segunda forma é usada. </p>
+            <p>Para adicionar itens ao vetor, basta separar os valores com virgula. A seguir, veja alguns exemplos de vetores que armazenam diferentes tipos de dados.</p>
+            <pre>
+              <code class="language-js">
+  let stringArray = ["um", "dois", "três"];
+  let numericoArray = [1, 2, 3, 4];
+  let decimalArray = [1.1, 1.2, 1.3];
+  let booleanArray = [true, false, false, true];                                                                                                                                                                                                                                                                                                                                                                    
+              </code>
+            </pre>
+            <p>Em linguagens de programação como Java, tem-se como regra que todos os elementos do vetor devem ser do mesmo tipo. Já na linguagem JavaScript não é necessário armazenar o mesmo tipo de valores em um vetor, como é possível ver no exemplo a seguir.</p>
+            <pre>
+              <code class="language-js">
+  let dados = [1, "Dois", "3", true, 4000, 5.5];                                                                                                                                                                                                                                                                                                                                                                   
+              </code>
+            </pre>  
+            <p>Para acessar o valor de um determinado item do vetor, é preciso informar o nome do vetor seguido do número da posição que se quer acessar entre colchete. Lembre-se de que cada item do vetor está associado a um índice numérico começando com 0.</p>
+            <pre>
+              <code class="language-js">
+  let frutas = ["Maçã", "Laranja", "Abacaxi"];
+  alert( frutas[0] ); // Maçã
+  alert( frutas[1] ); // Laranja
+  alert( frutas[2] ); // Abacaxi                                                                                                                                                                                                                                                                                                                                                                              
+              </code>
+            </pre>  
+            <p>Se desejar percorrer um vetor inteiro e exibir todos os valores armazenados, use um laço de repetição <strong>for</strong>.</p>
+            <pre>
+              <code class="language-js">
+  let frutas = ["Maçã", "Laranja", "Abacaxi"];
+  for (let i = 0; i &lt; frutas.length; i++) {
+      alert(frutas[i]);
+  }                                                                                                                                                                                                                                                                                                                                                                                            
+              </code>
+            </pre>  
+            <p>Para adicionar um novo elemento, use o método <strong>push</strong>, que adicionará um elemento no final do vetor:</p>
+            <pre>
+              <code class="language-js">
+  let frutas = ["Maçã", "Laranja", "Abacaxi"];
+  frutas.push("Uva");
+  for (let i = 0; i &lt; frutas.length; i++) {
+      alert(frutas[i]);
+  }                                                                                                                                                                                                                                                                                                                                                                                                    
+              </code>
+            </pre> 
+            <p>Além disso, o JavaScript fornece uma série de métodos que podem ser usados para manipular vetores: o <strong>pop</strong> (para remover o último elemento do vetor), o <strong>shift</strong> (para remover o primeiro elemento do vetor), o <strong>unshift</strong> (para adicionar um elemento no início do vetor), entre outros.</p>
+
+            <h3>Eventos</h3>
+            <p>O JavaScript depende de um <i>loop</i> de eventos que escuta mensagens (como cliques do <i>mouse</i>, pressionamentos de tecla ou mensagens criadas por outro objeto) e enfileira essas mensagens para processamento. Podem ser criadas funções que escutam determinadas mensagens e são acionadas quando esses eventos acontecem.</p>
+            <p>Essa arquitetura orientada a eventos faz todo o sentido para o propósito original (e ainda primário) do JavaScript – a interação do usuário do <i>site</i>. Ele permite que o aplicativo ouça entradas criadas pelo usuário. Ter um sistema integrado de detecção de eventos torna (relativamente) fácil criar aplicativos em tempo real em domínios como bate-papo, jogos, colaboração e envio.</p>
+            <p>Um evento é como um sinal ou mensagem de que algo aconteceu. Por exemplo, toda vez que seu <i>mouse</i> clica em um elemento de uma página, o evento <strong>onclick</strong> desse elemento é disparado. Em circunstâncias normais, isso não faz com que nada mais aconteça. Mas você pode usar esses eventos para acionar a execução de outro código. Você pode escrever um código que diga (em essência): toda vez que isso acontecer, faça outra coisa.</p>
+
+            <h4>Lista de eventos JavaScript</h4>
+            <p>A maioria dos nomes descreve exatamente quando eles disparam. Alguns deles são aplicáveis apenas a alguns tipos de elementos.</p>
+            <p><strong>Veja, a seguir, os ventos do <i>mouse</i>.</strong></p>
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        onclick
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                      <p>O evento acontece quando um elemento da página é clicado.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        oncontextmenu
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                      <p>O evento acontece quando o botão direito do <i>mouse</i> é clicado sobre um elemento.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        onmouseover/onmouseout
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                      <p>O evento acontece quando o cursor do <i>mouse</i> passa por cima ou sai de um elemento.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading4">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        onmousedown/onmouseup
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                    <div class="panel-body">
+                      <p>O evento acontece quando o botão esquerdo do <i>mouse</i> é pressionado ou solto sobre um elemento.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading5">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        onmousemove
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                    <div class="panel-body">
+                      <p>O evento acontece quando o <i>mouse</i> é movido.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="acessivel print">
+              <h4>onclick</h4>
+              <p>O evento acontece quando um elemento da página é clicado.</p>
+              <h4>oncontextmenu</h4>
+              <p>O evento acontece quando o botão direito do <i>mouse</i> é clicado sobre um elemento.</p>
+              <h4>onmouseover/onmouseout</h4>
+              <p>O evento acontece quando o cursor do <i>mouse</i> passa por cima ou sai de um elemento.</p>
+              <h4>onmousedown/onmouseup</h4>
+              <p>O evento acontece quando o botão esquerdo do <i>mouse</i> é pressionado ou solto sobre um elemento.</p>
+              <h4>onmousemove</h4>
+              <p>O evento acontece quando o <i>mouse</i> é movido.</p>
+            </div>
+            <p><strong>Veja, a seguir, os eventos do teclado.</strong></p>
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading6">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                        onkeydown
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse6" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading6">
+                    <div class="panel-body">
+                      <p>O evento acontece quando uma tecla do teclado é pressionada.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading7">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        onkeyup
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                    <div class="panel-body">
+                      <p>O evento acontece quando uma tecla do teclado é liberada.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="acessivel print">
+              <h4>onkeydown</h4>
+              <p>O evento acontece quando uma tecla do teclado é pressionada.</p>
+              <h4>onkeyup</h4>
+              <p>O evento acontece quando uma tecla do teclado é liberada.</p>
+            </div>
+            <p><strong>Veja, agora, eventos de elementos de formulários.</strong></p>
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading8">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                        submit
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse8" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading8">
+                    <div class="panel-body">
+                      <p>O evento acontece quando o usuário envia um formulário <strong>&lt;form&gt;</strong>.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading9">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                        onfocus
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9">
+                    <div class="panel-body">
+                      <p>O evento acontece quando um elemento de um formulário recebe foco, ou seja, quando está sendo usado.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading10">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                        onblur
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+                    <div class="panel-body">
+                      <p>O evento acontece quando um elemento de um formulário perde foco, ou seja, quando se sai dele.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="acessivel print">
+              <h4>submit</h4>
+              <p>O evento acontece quando o usuário envia um formulário <strong>&lt;form&gt;</strong>.</p>
+              <h4>onfocus</h4>
+              <p>O evento acontece quando um elemento de um formulário recebe foco, ou seja, quando está sendo usado.</p>
+              <h4>onblur</h4>
+              <p>O evento acontece quando um elemento de um formulário perde foco, ou seja, quando se sai dele.</p>
+            </div>
+
+            <h4>Manipulação de eventos</h4>
+            <p>Para reagir a eventos, atribui-se um <strong>handler</strong> (manipulador, em português) – uma função que é executada no caso de o evento acontecer.</p>
+            <p>A forma mais simples de fazer isso é por meio de um atributo no HTML.</p>
+            <pre>
+              <code class="language-html">
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+        &lt;title&gt;Linguagem de Scripts&lt;/title&gt;
+        &lt;meta charset="utf-8"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;form id="formulario"&gt;
+        &lt;h1 id="titulo"&gt;Login&lt;/h1&gt;
+        &lt;p&gt;
+          &lt;label&gt;Usuário:&lt;/label&gt;
+          &lt;input type="text" id="usuario"&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+          &lt;label&gt;Senha:&lt;/label&gt;
+          &lt;input type="password" id="senha"&gt;
+        &lt;/p&gt;
+        &lt;input type="submit" value="Acessar" onclick="alert('Login efetuado!');"&gt;
+      &lt;/form&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;                                                                                                                                                                                                                                                                                                                                                                                                
+              </code>
+            </pre> 
+            <p>Com um clique no <i>mouse</i> sobre o botão <strong>Acessar</strong>, o código interno do <strong>onclick</strong> é executado. Observe que, dentro de <strong>onclick</strong>, usam-se aspas simples, pois o próprio atributo está em aspas duplas. Se você se esquecer de que o código está dentro do atributo e colocar aspas dentro – assim: onclick="alert(<strong>"</strong>..");" –, então seu evento não funcionará, pois a segunda aspa dupla, destacada em negrito, será reconhecida como o fechamento da primeira.</p>
+            <p>Além disso, um atributo HTML não é um lugar conveniente para escrever muito código. Então, é melhor criar uma função JavaScript e chamá-la.</p>
+            <pre>
+              <code class="language-html">
+  &lt;!DOCTYPE html&gt;
+  &lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+      &lt;title&gt;Linguagem de Scripts&lt;/title&gt;
+      &lt;meta charset="utf-8"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;form id="formulario"&gt;
+        &lt;h1 id="titulo"&gt;Login&lt;/h1&gt;
+        &lt;p&gt;
+          &lt;label&gt;Usuário:&lt;/label&gt;
+          &lt;input type="text" id="usuario"&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+          &lt;label&gt;Senha:&lt;/label&gt;
+          &lt;input type="password" id="senha"&gt;
+        &lt;/p&gt;
+        &lt;input type="submit" value="Acessar" onclick="fazerLogin()"&gt;
+      &lt;/form&gt;
+      &lt;script type="text/javascript"&gt;
+        function fazerLogin() {
+            alert("Login efetuado!");
+        }
+      &lt;/script&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;
+              </code>
+            </pre>  
+            
+            <h3>DOM</h3>
+            <p>Imagine o seguinte: você está com a televisão ligada. Você não gosta do programa que está sendo transmitido e deseja alterá-lo. Você também deseja aumentar o volume. Para fazer isso, deve haver uma maneira de interagir com a televisão. E o que você usa para fazer isso? Um controle remoto!</p>
+            <p>O controle remoto serve de ponte para que você interaja com a televisão. Você torna a televisão ativa e dinâmica por meio dele. E da mesma forma o JavaScript torna a página HTML ativa e dinâmica por meio do DOM (<i>document object model</i>). Assim como a televisão não pode fazer muito por si mesma, o JavaScript não faz muito mais do que permitir que você execute alguns cálculos ou trabalhe com <strong>strings</strong> básicas. Portanto, para tornar um documento HTML mais interativo e dinâmico, o <i>script</i> precisa ser capaz de acessar o conteúdo do documento e também precisa saber quando o usuário está interagindo com ele. Ele faz isso se comunicando com o navegador, usando as propriedades, os métodos e os eventos na interface chamada DOM.</p>
+            <p>O DOM é uma interface de programação para documentos da <i>web</i>. Ele representa a página para que os programas possam alterar a estrutura, o estilo e o conteúdo do documento.</p>
+            <p>A representação do DOM é de um tipo de estrutura de dados chamada de árvore. Nessa estrutura, ele representa a página da <i>web</i> usando uma série de objetos. O objeto principal é o <strong>document</strong>, que, por sua vez, abriga outros objetos que também abrigam os próprios objetos e assim por diante.</p>
+            <img src="imgs/figura_5.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_5.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_5.png" class="center-block img-responsive"></a>
+            <p class="legenda-imagem">
+              Figura 5 – Árvore de elementos do DOM<br>
+              Fonte: Barro (2022)
+            </p>
+            <p class="acessivel no-print">Na imagem, a estrutura de árvore do DOM. No topo, uma caixa laranja com o texto “Document”. Abaixo, o nó de uma caixa vermelha com o texto “Element &lt;html&gt;”. Em seguida, duas ramificações: um nó com a caixa azul “Element &lt;head&gt;” e outro com a caixa azul “Element &lt;body&gt;”. Na primeira ramificação, o nó de uma caixa roxa com o texto “Element &lt;title&gt;” seguida do nó de uma caixa verde “Text ‘meu título’”. No nó de caixa azul “Element &lt;body&gt;”, três ramificações. A primeira é o nó de caixa rosa “Attribute “href”. A segunda é o nó de caixa roxa “Element &lt;a&gt;” seguida da caixa verde “Text ‘meu link’”. Por fim, o último nó de uma caixa roxa “Element &lt;h1&gt;” seguida da caixa verde “Text ‘meu cabeçalho’”.</p>
+
+            <h4>Objeto <i>document</i></h4>
+            <p>Quando um documento HTML é carregado na janela de um navegador <i>web</i>, ele se torna um objeto <strong>document</strong>. Esse é o objeto mais alto na estrutura do DOM e tem propriedades e métodos que podem ser acessados e usados como desejar. Para fazer isso no código, após digitar <strong>document</strong>, basta colocar um ponto seguido de uma propriedade ou método que deseja utilizar. </p>
+            <p>Como exemplo, a seguir, a propriedade URL foi acessada, seu valor foi passado para uma variável e, por fim, o valor da variável foi exibido em um alerta:</p>
+            <pre>
+              <code class="language-html">
+  &lt;html lang="pt-br"&gt;
+    &lt;head&gt;
+        &lt;title&gt;Linguagem de Scripts&lt;/title&gt;
+        &lt;meta charset="utf-8"&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;script type="text/javascript"&gt;
+            let url = document.URL;
+            alert(url);
+        &lt;/script&gt;
+    &lt;/body&gt;
+  &lt;/html&gt;               
+              </code>
+            </pre>  
+            <p>Todas as operações no DOM começarão com o objeto <strong>document</strong>. A partir desse ponto, é possível acessar qualquer nó da estrutura, que será visto como um objeto com métodos e propriedades. Esses nós são conhecidos como <strong>elementos</strong>.</p>
+
+            <h4>Pesquisando elementos</h4>
+            <p>Antes de modificar qualquer elemento, é preciso saber identificar e localizar esses elementos no documento. Para isso, usam-se métodos de pesquisa do DOM.</p>
+            <p><strong>getElementById()</strong></p>
+            <p>Se um elemento HTML tiver o atributo <strong>id</strong>, é possível localizar o elemento usando o método <strong>document.getElementById(id)</strong>:</p>
+            <pre>
+              <code class="language-html">
+  &lt;!DOCTYPE html>
+  &lt;html lang="pt-br">
+    &lt;head>
+        &lt;title>Linguagem de Scripts&lt;/title>
+        &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+        &lt;form id="formulario">
+            &lt;h1 id="titulo">Login&lt;/h1>
+            &lt;p>
+                &lt;label>Usuário:&lt;/label>
+                &lt;input type="text" id="usuario">
+            &lt;/p>
+            &lt;p>
+                &lt;label>Senha:&lt;/label>
+                &lt;input type="password" id="senha">
+            &lt;/p>
+            &lt;input type="submit" value="Acessar">
+        &lt;/form>
+        &lt;script type="text/javascript">
+            let elemento = document.getElementById('titulo');
+            alert(elemento);
+        &lt;/script>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+            <p>Se o elemento for encontrado, o método retornará o elemento como um objeto. Caso o elemento não seja encontrado, será retornado <strong>null</strong>.</p>
+            <p>Se você estiver lidando com um campo de entrada de dados (<strong>input</strong>), é possível acessar a propriedade <strong>value</strong> e descobrir qual informação consta nesse formulário. Por exemplo: </p>
+            <pre>
+              <code class="language-html">
+  &lt;!DOCTYPE html>
+  &lt;html lang="pt-br">
+    &lt;head>
+        &lt;title>Linguagem de Scripts&lt;/title>
+        &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+        &lt;form id="formulario">
+            &lt;h1 id="titulo">Login&lt;/h1>
+            &lt;p>
+                &lt;label>Usuário:&lt;/label>
+                &lt;input type="text" id="usuario">
+            &lt;/p>
+            &lt;p>
+                &lt;label>Senha:&lt;/label>
+                &lt;input type="password" id="senha" value="123">
+            &lt;/p>
+            &lt;input type="submit" value="Acessar">
+        &lt;/form>
+        &lt;script type="text/javascript">
+            let elemento = document.getElementById('senha');
+            alert(elemento.value);
+        &lt;/script>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+            <p>Isso é muito útil em situações em que é preciso validar se alguma informação foi preenchida corretamente ou se um campo de formulário foi de fato preenchido.</p>
+            <p><strong>getElementsBy*</strong></p>
+            <p>Visto que o <strong>id</strong> de um elemento deve ser um identificador único, ou seja, não deve se repetir, usa-se <strong>getElementById()</strong> para localizar esse único elemento. Agora, se for preciso selecionar mais de um elemento, usam-se os métodos <strong>getElementsBy</strong> seguido da propriedade que desejar usar como identificação. </p>
+            <p><strong>getElementsByTagName()</strong></p>
+            <p>Nesse exemplo, pegue todos os elementos com a <i>tag</i> &lt;input> do documento. Esses elementos serão do tipo <strong>radio</strong>. Isso significa que haverá várias opções que podem ser selecionadas (propriedade <strong>checked</strong>). Aproveite esse exemplo para aprender também como descobrir qual opção está selecionada ou não.</p>
+            <pre>
+              <code class="language-html">
+  &lt;!DOCTYPE html>
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;table id="tabela">
+        &lt;tr>
+          &lt;td>O que você está aprendendo?:&lt;/td>
+          &lt;td>
+            &lt;label>
+              &lt;input type="radio" name="tecnologia" value="HTML"> HTML
+            &lt;/label>
+            &lt;label>
+              &lt;input type="radio" name="tecnologia" value="CSS"> CSS
+            &lt;/label>
+            &lt;label>
+              &lt;input type="radio" name="tecnologia" value="JavaScript" checked> JS
+            &lt;/label>
+          &lt;/td>
+        &lt;/tr>
+      &lt;/table>
+      &lt;script type="text/javascript">
+        // Buscamos todos os elementos com a tag input
+        let inputs = document.getElementsByTagName('input');
+        // Percorremos item a item dessa lista e o tratamos individualmente como o objeto input
+        for (let input of inputs) {
+            // Exibimos o valor da input e verificamos se ela está marcada (true/false)
+            alert(input.value + ': ' + input.checked);
+        }
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+            <p>Perceba que os métodos <strong>getElementsBy*</strong> retornam uma coleção de elementos, e não um elemento. Portanto, não se consegue extrair diretamente o valor dos elementos como se fez com o exemplo anterior. A única forma de fazer isso é acessando cada elemento da lista e sua respectiva propriedade – para isso, usa-se o laço de repetição <strong>for</strong>.</p>
+            <p><strong>getElementsByName()</strong></p>
+            <p>Com esse método, buscam-se todos os elementos com a propriedade <strong>name</strong>. Aproveite esse exemplo para usar a propriedade <strong>length</strong>, que dirá quantos elementos foram encontrados no documento.</p>
+            <pre>
+              <code class="language-html">
+  &lt;!DOCTYPE html>
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;table id="tabela">
+        &lt;tr>
+          &lt;td>O que você está aprendendo?:&lt;/td>
+          &lt;td>
+            &lt;label>
+              &lt;input type="radio" name="tecnologia" value="HTML"> HTML
+            &lt;/label>
+            &lt;label>
+              &lt;input type="radio" name="tecnologia" value="CSS"> CSS
+            &lt;/label>
+            &lt;label>
+              &lt;input type="radio" name="tecnologia" value="JavaScript" checked> JS
+            &lt;/label>
+          &lt;/td>
+        &lt;/tr>
+      &lt;/table>
+      &lt;script type="text/javascript">
+        // Buscamos todos os elementos com a tag input
+        let tecnologias = document.getElementsByName('tecnologia');
+        // Retornamos a quantidade de elementos encontrados
+        alert("Quantidade de tecnologias: " + tecnologias.length)
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+            <p><strong>getElementsByClassName()</strong></p>
+            <p>Nesse método, buscam-se todos os elementos que tenham determinado nome de classe CSS.</p>
+            <pre>
+              <code class="language-html">
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;style>
+        .vermelho {
+            color: red;
+        }
+        .azul {
+            color: blue;
+        }
+      &lt;/style>
+      &lt;table id="tabela">
+        &lt;tr>
+          &lt;td>O que você está aprendendo?:&lt;/td>
+          &lt;td>
+            &lt;label class="vermelho">
+              &lt;input type="radio" name="tecnologia" value="HTML"> HTML
+            &lt;/label>
+            &lt;label class="vermelho">
+              &lt;input type="radio" name="tecnologia" value="CSS"> CSS
+            &lt;/label>
+            &lt;label class="azul">
+              &lt;input type="radio" name="tecnologia" value="JavaScript" checked> JS
+            &lt;/label>
+          &lt;/td>
+        &lt;/tr>
+      &lt;/table>
+      &lt;script type="text/javascript">
+        const tecnologias = document.getElementsByClassName("vermelho");
+        alert("Classes encontradas: " + tecnologias.length);
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>                  
+              </code>
+            </pre>
+
+            <h4>Modificando elementos</h4>
+            <p>A modificação do DOM é a chave para criar páginas vivas. Aqui, você verá como criar novos elementos e modificar o conteúdo da página existente.</p>
+            <p><strong>style</strong></p>
+            <p>A propriedade <strong>style</strong> permite que você modifique as propriedades CSS de um elemento. O objeto <strong>style</strong> contém propriedades CSS como <strong>color</strong>, <strong>font-size</strong>, <strong>background-color</strong> etc., e seus valores podem ser atribuídos diretamente ao elemento HTML. Por exemplo:</p>
+            <pre>
+              <code class="language-html">
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;div id="meuElemento" style="color: blue">
+        &lt;p>Conteúdo original&lt;/p>
+      &lt;/div>
+      &lt;button onclick="atualizarConteudo()">Atualizar&lt;/button>
+
+      &lt;script type="text/javascript">
+        function atualizarConteudo() {
+          document.getElementById("meuElemento").style.color = "red";
+          document.getElementById("meuElemento").style.fontSize = "20px";
+        }
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>              
+              </code>
+            </pre>
+            <p>Nesse exemplo, a cor do texto do elemento <strong>"meuElemento"</strong> é definida como vermelho e o tamanho da fonte é definido como 20 <i>pixels</i>. Perceba que, para aplicar a propriedade <strong>font-size</strong>, é preciso aplicar as práticas de <strong>camelCase</strong> para que que o DOM possa interpretar corretamente o nome da propriedade. Essa prática deve ser aplicada para todas as propriedades com nomes compostos. Por exemplo, em vez de usar <strong>"background-color"</strong>, use <strong>"backgroundColor"</strong>.</p>
+            <p>Também é possível definir múltiplas propriedades CSS de uma só vez usando o método <strong>cssText</strong>. Por exemplo:</p>
+            <pre>
+              <code class="language-html">
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;div id="meuElemento" style="color: blue">
+        &lt;p>Conteúdo original&lt;/p>
+      &lt;/div>
+      &lt;button onclick="atualizarConteudo()">Atualizar&lt;/button>
+
+      &lt;script type="text/javascript">
+        function atualizarConteudo() {
+            document.getElementById("meuElemento").style.cssText = "color: red; font-size: 20px";
+        }
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+            <p><strong>innerHTML</strong></p>
+            <p>A propriedade <strong>innerHTML</strong> permite que você modifique o conteúdo HTML de um elemento. Por exemplo:</p>
+            <pre>
+              <code class="language-html">
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;div id="meuElemento">
+        &lt;p>Conteúdo original&lt;/p>
+      &lt;/div>
+      &lt;button onclick="atualizarConteudo()">Atualizar&lt;/button>
+
+      &lt;script type="text/javascript">
+        function atualizarConteudo() {
+            document.getElementById("meuElemento").innerHTML = "&lt;p>Novo conteúdo&lt;/p>";
+        }
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>              
+              </code>
+            </pre>
+            <p>Isso substituirá o conteúdo anterior pelo novo conteúdo, alterando a exibição do elemento na página.</p>
+            <p>Caso deseje adicionar um novo conteúdo a um determinado elemento sem substituir o conteúdo anterior, concatene o conteúdo antigo com o novo da seguinte maneira:</p>
+            <pre>
+              <code class="language-html">
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;div id="meuElemento">
+        &lt;p>Conteúdo original&lt;/p>
+      &lt;/div>
+      &lt;button onclick="atualizarConteudo()">Atualizar&lt;/button>
+
+      &lt;script type="text/javascript">
+        function atualizarConteudo() {
+          let conteudoAntigo = document.getElementById("meuElemento").innerHTML;
+          let conteudoNovo = "&lt;p>Novo conteúdo&lt;/p>";
+          document.getElementById("meuElemento").innerHTML = conteudoAntigo + conteudoNovo;
+        }
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+          </div>
+          <div class="pagina">
+            <h3>Lista de compras</h3>
+            <p>Agora que já se sabe como manipular um elemento, você desenvolverá um exemplo mais complexo. Para isso, criará uma página na qual possa cadastrar itens a uma lista de compras.</p>
+            <pre>
+              <code class="language-html">
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;h1>Compras do mercado&lt;/h1>
+      &lt;p>
+        Nome do item: 
+        &lt;input type="text" id="item">
+      &lt;/p>
+      
+      &lt;button onclick="adicionar()">Adicionar&lt;/button>
+
+      &lt;h3>Lista:&lt;/h3>
+      &lt;div id="listaDeCompras">
+        &lt;!-- Aqui será apresentado os itens cadastrados --&gt;
+      &lt;/div>
+
+      &lt;script type="text/javascript">
+        function adicionar() {
+          let conteudoAntigo = document.getElementById("listaDeCompras").innerHTML;
+          let conteudoNovo = "&lt;p>" + document.getElementById("item").value + "&lt;/p>";
+          document.getElementById("listaDeCompras").innerHTML = conteudoAntigo + conteudoNovo;
+        }
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+            <p>Perceba que, nesse exemplo, os itens foram adicionados diretamente ao elemento <strong>"listaDeCompras"</strong>. Caso deseje usar um vetor para armazenar esses dados e, depois, organizá-los na página, terá um código um pouco mais complexo. Implemente essa solução e adicione um trecho de código que limpará o seu formulário após o item ser cadastrado:</p>
+            <pre>
+              <code class="language-html">
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+
+    &lt;body>
+      &lt;h1>Compras do mercado&lt;/h1>
+      &lt;p>
+        Nome do item:
+        &lt;input type="text" id="item">
+      &lt;/p>
+
+      &lt;button onclick="adicionar()">Adicionar&lt;/button>
+
+      &lt;h3>Lista:&lt;/h3>
+      &lt;div id="listaDeCompras">
+        &lt;!-- Aqui será apresentado os itens cadastrados --&gt;
+      &lt;/div>
+
+      &lt;script type="text/javascript">
+        let listaDeItens = []; // Vetor para armazenar os itens adicionados
+
+        function adicionar() {
+          let novoItem = document.getElementById("item").value; // Obter o valor do novo item
+          listaDeItens.push(novoItem); // Adicionar o novo item ao vetor
+          document.getElementById("item").value = ""; // Limpar o campo de entrada de texto
+
+          // Exibir os itens armazenados no vetor na página
+          let conteudoLista = "";
+          for (let i = 0; i &lt; listaDeItens.length; i++) {
+              conteudoLista += "&lt;p>" + listaDeItens[i] + "&lt;/p>";
+          }
+          document.getElementById("listaDeCompras").innerHTML = conteudoLista;
+        }
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>                
+              </code>
+            </pre>
+            <p>Perfeito! Que tal evoluir um pouco mais e aplicar o que você aprendeu sobre manipulação de estilo com DOM também? Agora, sempre que um item da lista for clicado, você verificará se há alguma estilização aplicada. Se não houver, você deve “riscar” o item da lista. Caso o item já esteja riscado (ou seja, caso tenha estilização), remova o risco e deixe o texto legível novamente.</p>
+            <pre>
+              <code class="language-html">
+  &lt;html lang="pt-br">
+    &lt;head>
+        &lt;title>Linguagem de Scripts&lt;/title>
+        &lt;meta charset="utf-8">
+    &lt;/head>
+
+    &lt;body>
+      &lt;h1>Compras do mercado&lt;/h1>
+      &lt;p>
+        Nome do item:
+        &lt;input type="text" id="item">
+      &lt;/p>
+
+      &lt;button onclick="adicionar()">Adicionar&lt;/button>
+
+      &lt;h3>Lista:&lt;/h3>
+      &lt;div id="listaDeCompras">
+        <!-- Aqui será apresentado os itens cadastrados -->
+      &lt;/div>
+
+      &lt;script type="text/javascript">
+        let listaDeItens = []; // Vetor para armazenar os itens adicionados
+
+        function adicionar() {
+          let novoItem = document.getElementById("item").value; // Obter o valor do novo item
+          listaDeItens.push(novoItem); // Adicionar o novo item ao vetor
+          document.getElementById("item").value = ""; // Limpar o campo de entrada de texto
+
+          // Exibir os itens armazenados no vetor na página (opcional)
+          let conteudoLista = "";
+          for (let i = 0; i &lt; listaDeItens.length; i++) {
+            // Adicionamos o item da lista com o evento onclick preparado para acionar a função riscar
+            // Aqui, usaremos a posição do vetor para diferenciar um elemento do outro
+            conteudoLista += "&lt;p id='"+ i +"' onclick='riscar("+i+")'>" + listaDeItens[i] + "&lt;/p>";
+          }
+          document.getElementById("listaDeCompras").innerHTML = conteudoLista;
+        }
+
+        function riscar(id) {
+          // Verificamos se o elemento não possui estilização
+          if(document.getElementById(id).style.cssText == "") {
+            // Se não tiver, aplicamos o seguinte estilo
+            document.getElementById(id).style.cssText="text-decoration: line-through;"  
+          } else {
+            // Se tiver, removemos o estilo
+            document.getElementById(id).style.cssText=""
+          }
+        }
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+
+            <h3>Validação de formulários</h3>
+            <p>Agora, você continuará aplicando seus conhecimentos em um novo exemplo, implementando a validação de um formulário.</p>
+            <p>Para isso, algumas regras devem ser estabelecidas:</p>
+            <div class="caixa-destaque-livre">
+              <ol>
+                <li>O formulário deve conter dois campos: <i>e-mail</i> e senha.</li>
+                <li>Os campos devem ser validados após cada elemento ser desfocado pelo usuário.</li>
+                <li>
+                  Cada campo deve ter uma função de validação onde:<br>
+                  <ol type="a">
+                    <li>A validação do <i>e-mail</i> deve verificar se o caractere @ foi digitado – dica: utilize o método <strong>includes()</strong> no valor do elemento.</li>
+                    <li>A validação da senha deve verificar se o tamanho do valor digitado é maior que 6.</li>
+                  </ol>
+                </li>
+                <li>Quando o usuário clicar em <strong>Acessar</strong>, as validações devem ser realizadas novamente para verificar os campos caso o usuário não tenha focados eles em nenhum momento.</li>
+                <li>Se ambos os campos estiverem válidos, uma mensagem de sucesso deve aparecer. Do contrário, uma mensagem de erro é exibida.</li>
+              </ol>
+            </div>
+            <p>Tente realizar esse desafio aplicando o que aprendeu. Após isso, confira a resposta a seguir e compare com a solução que você implementou.</p>
+            <pre>
+              <code class="language-html">
+                <!DOCTYPE html>
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;form id="formulario">
+        &lt;h1 id="titulo">Login&lt;/h1>
+        &lt;p>
+          &lt;label>E-mail:&lt;/label>
+          &lt;input type="text" id="email" onblur="validarEmail()">
+        &lt;/p>
+        &lt;p>
+          &lt;label>Senha:&lt;/label>
+          &lt;input type="password" id="senha" onblur="validarSenha()">
+        &lt;/p>
+        &lt;input type="submit" value="Acessar" onclick="fazerLogin()">
+      &lt;/form>
+      &lt;script type="text/javascript">
+        // Verificamos se o valor digitado possui o caracter @
+        function validarEmail() {
+          let email = document.getElementById("email").value;
+          if(email.includes('@')) {
+            return true;
+          } else {
+            alert("E-mail inválido!");
+            return false;
+          }
+        }
+        // Verificamos se a senha é maior que 6 digitos
+        function validarSenha() {
+          let senha = document.getElementById("senha").value;
+          if(senha.length &lt; 6) {
+            alert("A senha precisa ter ao menos 6 caracteres");
+            return false;
+          } else {
+            return true;
+          }
+        }
+
+        function fazerLogin() {
+          // Validamos se o email e a senha foram preenchidos corretamente
+          if(validarEmail() && validarSenha()) {
+            // Se a validação retornar TRUE
+            alert("Login efetuado!");
+          } else {
+            // Se a validação retornar FALSE
+            alert("Não foi possível realizar o login.");
+          }
+        }
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+
+            <h3>Chamadas assíncronas</h3>
+            <p>AJAX é uma abreviação de <i>asynchronous JavaScript and XML</i> (<i>extensible markup language</i>). É uma técnica usada para criar aplicações <i>web</i> interativas, permitindo que o código JavaScript faça requisições a servidores remotos para recuperar dados sem precisar atualizar a página.</p>
+            <p>Um exemplo de uso de AJAX seria um <i>site</i> de notícias <i>on-line</i>. Quando o usuário abrir a página, o código JavaScript fará uma requisição ao servidor remoto para recuperar os dados das últimas notícias. Em vez de atualizar a página inteira, os dados são enviados de volta ao código JavaScript, que os exibe na página do usuário. Isso permite que o usuário receba as últimas notícias sem precisar recarregar a página.</p>
+            <p>Para usar AJAX, é preciso, primeiro, criar um <i>script</i> JavaScript que contenha o código necessário para realizar a requisição. O código precisa usar a API (<i>application programming interface</i>) <strong>XMLHttpRequest</strong> para realizar a requisição HTTP (<i>hyper text transfer protocol</i>) para o servidor remoto.</p>
+            <p>Em seguida, adiciona-se uma chamada JavaScript para esse arquivo em sua página HTML. Essa chamada deve ocorrer após o carregamento da página HTML, pois o código JavaScript precisa ser carregado antes de poder ser executado.</p>
+            <p>Uma vez que o código JavaScript estiver carregado, você pode usá-lo para realizar a requisição AJAX. O código precisa usar a API <strong>XMLHttpRequest</strong> para definir o método e a URL da requisição, além de configurar um manipulador de eventos para lidar com a resposta do servidor remoto.</p>
+            <p>Depois que a requisição é realizada e a resposta é recebida, o manipulador de eventos é chamado para processar a resposta. O código JavaScript, então, pode usar essa resposta para atualizar a página do usuário e exibir os dados recuperados.</p>
+            <p>A seguir, veja algo bem simples para exemplificar como se faz essa chamada assincrônica com AJAX, colocando em prática todo esse passo a passo. </p>
+            <pre>
+              <code>
+  &lt;html lang="pt-br">
+    &lt;head>
+      &lt;title>Linguagem de Scripts&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+
+    &lt;body>
+      &lt;button type="button" onclick="carregarAjax()">Carregar AJAX&lt;/button>
+      &lt;div id="resultado">
+        &lt;!-- Os dados carregados serão exibidos aqui --&gt;
+      &lt;/div>
+
+      &lt;script type="text/javascript">
+        function carregarAjax() {
+          //Criar um objeto XMLHttpRequest
+          let xhr = new XMLHttpRequest();
+
+          // Apontar em qual URL será feita a requisição
+          let url = 'http://example.com/api/data'
+
+          //Definir a função de manipulação de eventos para processar a resposta
+          xhr.onreadystatechange = function () {
+            //Verificar se a resposta foi recebida com sucesso
+            if (xhr.readyState == 4 && xhr.status == 200) {
+              //Processar a resposta
+              let resposta = xhr.responseText;
+              //Atualizar a página do usuário com os dados da resposta
+              document.getElementById('resultado').innerHTML = resposta;
+            }
+          };
+
+          //Realizar a requisição
+          xhr.open('GET', url, true);
+          xhr.send();
+        }
+      &lt;/script>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+            <p>A biblioteca jQuery fornece uma interface simplificada para realizar requisições AJAX e manipular os dados retornados. Além disso, o jQuery também oferece outros recursos, como animações, seletores de elementos e manipulação de eventos. Por isso, você voltará a estudar chamadas assíncronas mais adiante.</p>
+
+            <h3>Encerramento</h3>
+            <p class="icone-concluindo">Parabéns por chegar até aqui e adquirir todos esses conhecimentos sobre linguagens de <i>script</i>. Como você pode ver, a linguagem JavaScript oferece uma vasta gama de recursos e ferramentas para desenvolver e organizar a interface e os elementos visuais das suas aplicações <i>web</i>. Não é à toa que essa é uma das linguagens de programação mais populares para o desenvolvimento de aplicações <i>web</i>. Seu uso permite criar interfaces dinâmicas e interativas para os usuários, tornando a experiência mais agradável e intuitiva.</p>
+            <p>Com esses conhecimentos, você já tem um bom começo para desenvolver aplicações ainda mais ricas em conteúdo. No entanto, não pare por aqui! Existem muitos recursos ainda não explorados, que irão ajudar você a desenvolver páginas para web ainda melhores. Continue seus estudos em Javascript, coloque em prática tudo que aprendeu e continue evoluindo para criar projetos ainda mais incríveis.</p>
+          </div>
+        </section>
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+        <footer class="text-center no-print">
+          
+          <ul class="pagination">
+
+          </ul>
+         
+        </footer>
+
+    </div>
+
+
+    <!-- Modais -->
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+    <!-- carrega todas as imagens dos icones nesta div
+    caso queira adicionar mais imagens de novos icones do css,
+    ou qualquer imagem que deva ser contabilizada durante a fase
+    de loading, referenciar aqui.
+    -->
+    <div class="ico-div-loader">
+      <img src="../template/images/atencao.png">
+        <img src="../template/images/bg-content.jpg">
+        <img src="../template/images/bg-topo.jpg">
+        <img src="../template/images/black-zoom-in-256.png">
+        <img src="../template/images/concluindo.png">
+        <img src="../template/images/curtir.png">
+        <img src="../template/images/desafio.png">
+        <img src="../template/images/dica.png">
+        <img src="../template/images/doc.png">
+        <img src="../template/images/fundamental.png">
+        <img src="../template/images/icon-03.png">
+        <img src="../template/images/importante.png">
+        <img src="../template/images/lightbulb.png">
+        <img src="../template/images/link.png">
+        <img src="../template/images/link_pdf_hover.png">
+        <img src="../template/images/link_pdf_normal.png">
+        <img src="../template/images/logo-senac.png">
+        <img src="../template/images/mark-icon.png">
+        <img src="../template/images/mark-icon02.png">
+        <img src="../template/images/midia.png">
+        <img src="../template/images/monitor.png">
+        <img src="../template/images/nao_curtir.png">
+        <img src="../template/images/pergunta.png">
+        <img src="../template/images/pesquisa.png">
+        <img src="../template/images/play.png">
+        <img src="../template/images/radio_flat.png">
+        <img src="../template/images/refletir.png">
+        <img src="../template/images/saiba_mais.png">
+        <img src="../template/images/senac_loader.png">
+        <img src="../template/images/tanamidia.png">
+        <img src="../template/images/transcricao.png">
+        <img src="../template/images/transcricao_small.png">
+        <img src="../template/images/tv.png">
+        <img src="../template/images/tv_bottom.png">
+        <img src="../template/images/zoom.png">
+        <img src="../template/images/zoom_ie.cur">
+        <img src="../template/images/zoom_ie.png">
+        <!-- adicionar as imagens customizadas aqui abaixo -->
+    </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../template/js/jquery.min.js"></script>
+    <script src="../template/js/bootstrap.min.js"></script>
+    <script src="../template/js/jquery.magnific-popup.min.js"></script>
+    <script src="../template/js/print.js"></script>
+    <script src="../template/js/template.config.js"></script>
+    <script src="../template/js/images.loader.js"></script>
+    <script src="../template/js/highlight.min.js"></script>
+    <noscript>
+      <style media="screen">
+        .over-loader { display: none;}    
+      </style>
+    </noscript>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+
+    <script>
+      var scriptElem=document.createElement("script");
+      scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+      scriptElem.charset="UTF-8",
+      scriptElem.onload=function(){
+            window.ht = new HT({
+                token:"bf5b7efb148a829a126a0e0c9fd533bf",
+                align:"top",
+                videoEnabled: true,
+                ytEmbedReplace: true,           
+                mobileConfig:{align:"right",
+                              actionsAlign:"top",
+                              customButtonStyle:{
+                                    borderRadius:"6px",
+                                    size:"38px",
+                                    horizontalMargin:"13px",
+                                    bottomMargin:"140px",
+                                    rightMargin:"40px"}
+                              }
+              });        
+          $('.ht-skip').attr("aria-hidden","true")
+        },
+      document.body.appendChild(scriptElem);
+    </script>
+  </body>
+</html>

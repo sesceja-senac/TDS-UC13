@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="234" viewBox="0 0 600 234">
+  <g id="fig_7_dsktp" transform="translate(-660 -9087)">
+    <rect id="Retângulo_66" data-name="Retângulo 66" width="600" height="234" rx="24" transform="translate(660 9087)" fill="#f8f8f8"/>
+    <g id="Grupo_164" data-name="Grupo 164" transform="translate(0 719)">
+      <g id="Grupo_163" data-name="Grupo 163" transform="translate(45 3347)">
+        <rect id="Retângulo_57" data-name="Retângulo 57" width="486" height="30" transform="translate(672 5124)" fill="#343434"/>
+        <text id="_p_title_Aqui_temos_um_título_Texto_do_parágrafo_p_" data-name="&lt;p title=&apos;Aqui temos um título&apos;&gt; Texto do parágrafo&lt;/p&gt; " transform="translate(915 5146)" fill="#fff" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-230.796" y="0">&lt;p title=&apos;Aqui temos um título&apos;&gt; Texto do parágrafo&lt;/p&gt; </tspan></text>
+      </g>
+      <text id="Tag" transform="translate(746 8420)" fill="#343434" font-size="18" font-family="SegoeUI-Italic, Segoe UI" font-style="italic"><tspan x="-14.489" y="0">Tag</tspan></text>
+      <text id="Atributo" transform="translate(772 8559)" fill="#343434" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-32.871" y="0">Atributo</tspan></text>
+      <g id="Icon_feather-arrow-down" data-name="Icon feather-arrow-down" transform="translate(735 8447.738)">
+        <path id="Caminho_71" data-name="Caminho 71" d="M18,29.762V7.5" transform="translate(-7.5 -7.5)" fill="none" stroke="#004b8d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Caminho_72" data-name="Caminho 72" d="M28.5,28.5,18,18,7.5,28.5" transform="translate(-7.5 -18)" fill="none" stroke="#004b8d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Icon_feather-arrow-down-2" data-name="Icon feather-arrow-down" transform="translate(760.5 8502)">
+        <path id="Caminho_71-2" data-name="Caminho 71" d="M18,7.5V29.762" transform="translate(-7.5 -7.5)" fill="none" stroke="#004b8d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Caminho_72-2" data-name="Caminho 72" d="M28.5,18,18,28.5,7.5,18" transform="translate(-7.5 -6.238)" fill="none" stroke="#004b8d" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>

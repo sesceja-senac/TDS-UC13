@@ -1,0 +1,119 @@
+body{
+  background: url('../imgs/bg.jpg') no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #fff;
+}
+.fundo-tecnicos{
+  border-bottom: none !important;
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  padding-left: 0;
+  padding-right: 0;
+}
+header{margin-right: 90px;}
+h1 i,
+h2 i,
+h3 i,
+h4 i {
+  font-weight: bold;
+}
+h2{
+  padding-bottom: 50px;
+  border-bottom: 3px solid;
+  width: 80%;
+  margin: 20px auto;
+}
+h3 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+h4 {
+  margin: 0px;
+  margin-top: 40px;
+}
+td{font-family: roboto;}
+pre {
+  padding: 0;
+  background: transparent;
+  border: none;
+  margin: 0;
+  border-radius: 50px;
+  margin-left: -50px;
+  margin-right: -50px;
+}
+pre code{border-radius: 30px;}
+
+td pre{max-width: 300px;}
+
+.mt-20{margin-top: 20px;}
+.mt-40{margin-top: 40px;}
+.mt-60{margin-top: 60px;}
+.pl-2{padding-left: 20px;}
+.my-3{margin: 30px auto;}
+
+table.senac{width: 100%;}
+.bloco-branco{
+  padding: 50px 170px;
+}
+.bloco-cinza{
+  background: #ececec;
+  border-radius: 50px;
+  padding: 50px 170px;
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+}
+.caixa-destaque-livre, .caixa-destaque{
+  -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  -moz-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.29);
+  margin: 50px auto;
+}
+.caixa-destaque-livre pre, td pre{
+  margin-left: 0;
+  margin-right: 0;
+}
+.painel-abas{padding: 40px;}
+.nav-tabs{
+  margin-left: 0;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color: #fff;
+  cursor: default;
+  background-color: #2875C6;
+  border: 1px solid #1d5591;
+  border-bottom-color: transparent;
+}
+
+.codigo-destaque{
+  background: #000;
+  color: #a39e9b;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+.code-destaque{
+  background-color: #071772 !important;
+}
+
+@media screen and (max-width: 1024px){
+  .bloco-branco, .bloco-cinza{
+    padding: 50px 100px;
+  }
+}
+
+@media screen and (max-width: 480px){
+  .caixa-destaque code{
+    word-break: break-word;
+  }
+  .bloco-branco, .bloco-cinza{
+    padding: 50px;
+  }
+  pre{
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+}

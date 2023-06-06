@@ -1,0 +1,12 @@
+body{
+	background: url('../imgs/background.png') no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	word-break: break-word;
+}
+h1 i, h2 i, h3 i, h4 i {
+	font-weight: bold;
+}
+h3{
+	margin-top: 50px;
+}

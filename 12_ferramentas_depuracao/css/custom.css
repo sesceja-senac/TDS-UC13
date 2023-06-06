@@ -1,0 +1,88 @@
+body {
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.fundo-tecnicos{
+  border-bottom: none !important;
+}
+
+p{
+  color:#000;
+}
+
+h1 i,
+h2 i,
+h3 i,
+h4 i {
+  font-weight: bold;
+  color: #567ec5;
+}
+
+h2{
+margin-top: 20px;
+margin-bottom: 10px;
+color: #567ec5;
+}
+h3{
+margin-top: 50px;
+color: #567ec5;
+}
+
+h4{
+margin-top: 40px;
+color: #567ec5;
+}
+
+.fundo-tecnicos{
+  background: #dbe5f4;
+}
+
+.caixa-destaque-livre{
+  font-size: 1.2em;
+}
+
+body{ 
+  background: url('../img/elemento_esquerda_ancorado.png') no-repeat left center / 20%, url('../img/elemento_direita_ancorado.png') no-repeat right center / 20%;
+  background-attachment: fixed;
+  background-color:  #dbe5f4;
+}
+
+.iconefinalizando{
+  background-image: url('../img/ico_finalizando.png');
+  background-position: left 5px center;
+  background-repeat: no-repeat;
+  background-size: 132px 77px;
+  padding-left: 150px;
+}
+
+
+
+@media screen and (max-width: 1024px){
+
+  .internet01{
+    flex-wrap: wrap;
+  }
+  .internet01 img{display: none;}
+  body{ background: unset;}
+}
+
+@media screen and (max-width: 480px){
+  .iconefinalizando{
+    word-break: break-word;
+  }
+}
+@media screen and (max-width: 980px){
+  .iconefinalizando{
+    background-position: top 10px center;
+    padding-top: 100px;
+    padding-left: 5px;
+  }}
+
+  @media screen and (max-width: 450px){
+
+    @media screen and (min-width: 451px){
+      .versaomobile{
+          display: none;
+      }}
+    }

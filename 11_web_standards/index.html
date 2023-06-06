@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Web standards: padrões sugeridos pelo World Wide Web Consortium (W3C) e recomendações de boas práticas</title>
+
+    <!-- Bootstrap -->
+    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+    <link href="../template/css/cores.css" rel="stylesheet">
+    <link href="../template/css/modal-100.css" rel="stylesheet">
+    <link href="../template/css/devibeans.min.css" rel="stylesheet">
+      <!--Extras - novas classes para facilitar-->
+      <link rel="stylesheet" href="../template/css/extras.css">
+    <link href="../template/css/sncload.css" rel="stylesheet">
+    <link href="../template/css/magnific-popup.css" rel="stylesheet">
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <!-- css necessario para o print -->
+    <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+    <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+        	  <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+            <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet" class="container">
+        <header class="no-print">
+          <!-- BTO IMPRIMIR -->
+          <div class="grupo-imprimir no-print">
+            <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                <span class="fa fa-print"></span> <span>Imprimir</span>
+            </button>
+          </div>
+          <!-- /BTO IMPRIMIR -->
+        </header>
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <div class="pagina">
+            <p class="acessivel no-print">Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau máximo de leitura, a fim de que os códigos disponibilizados neste material sejam lidos corretamente. No caso do NVDA (NonVisual Desktop Access), para localizar a opção Grau de pontuação/símbolos, acesse Preferências – Configurações – Fala. Altere o padrão Pouco para Tudo. Dessa forma, o leitor passará a ler os segmentos de código em sua totalidade. </p>
+            <img src="imgs/img.png" class="img-inicio">
+            <div class="inicio">
+              <h2><i>Web standards</i>: padrões sugeridos pelo World Wide Web Consortium (W3C) e recomendações de boas práticas</h2>
+              <h3><i>Web standards</i>: W3C</h3>
+              <p>A história da criação do World Wide Web Consortium (W3C) começa em 1989, quando Tim Berners-Lee, um cientista da computação britânico que trabalhava no CERN, o laboratório de física de partículas na Suíça, propôs a criação de um sistema de hipertexto que permitisse o compartilhamento de informações entre cientistas em diferentes instituições. Ele desenvolveu o que hoje se conhece como a World Wide Web (WWW), que é a base da Internet moderna.</p>
+              <img src="imgs/figura_1.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/figura_1.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_1.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 1 – Tim Berners-Lee, criador da WWW<br>
+                Fonte: Tietz (2018)
+              </p>
+              <p class="acessivel no-print">Na imagem, à esquerda, Tim Berners-Lee e, à esquerda, um monitor de computador do tipo CRT com algumas páginas web abertas.</p>
+            </div>
+            <p>No início dos anos 1990, a popularidade da <i>web</i> cresceu rapidamente e surgiram muitos navegadores e servidores <i>web</i> diferentes, cada um com as próprias tecnologias e os próprios recursos. Isso tornou difícil para os desenvolvedores criar <i>sites</i> que funcionassem bem em todos os navegadores e dispositivos.</p>
+            <p>Para abordar esse problema, Tim Berners-Lee fundou o <strong>W3C</strong>, em 1994, consórcio composto de empresas, organizações e indivíduos que trabalham juntos para desenvolver padrões abertos e tecnologias para a <i>web</i>. A missão do W3C é liderar a <i>web</i> para a sua plena potencialidade, desenvolvendo protocolos e diretrizes que promovam sua evolução e garantam sua acessibilidade a todos.</p>
+            <img src="imgs/figura_2.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_2.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_2.png" class="center-block img-responsive"></a>
+            <p class="legenda-imagem">
+              Figura 2 – O primeiro servidor <i>web</i> (no adesivo, é possível ver a mensagem “This machine is a server, do not power down”, em uma tradução livre, “Esta máquina é um servidor, não desligar”).<br>
+              Fonte: Wikipédia (2005)
+            </p>
+            <p class="acessivel no-print">Na imagem, um gabinete de servidor do tipo NEXT e um monitor de computador do tipo CRT, ambos na cor preta. No Gabinete do servidor, um adesivo colado por Tim Berners-Lee que diz: “This machine is a server, DO NOT POWER DOWN!!”, em uma tradução livre, “Esta máquina é um servidor, NÃO DESLIGAR!!”.</p>
+            <p>Ao longo dos anos, o W3C desenvolveu muitas especificações técnicas importantes, como o HTML (<i>hypertext markup language</i>), CSS (<i>cascading style sheets</i>), XML (<i>extensible markup language</i>), entre outros. Esses padrões ajudaram a tornar a <i>web</i> mais acessível e aprimoraram a experiência do usuário. A W3C também é uma organização ativa em questões de privacidade e segurança na <i>web</i>.</p>
+            <p>Em resumo, a W3C é uma organização líder no desenvolvimento de padrões para a <i>web</i>. Por meio de suas especificações técnicas e recomendações de boas práticas, a W3C ajuda a garantir que a <i>web</i> seja acessível, usável e interoperável em todos os dispositivos e navegadores.</p>
+            <p><i>Web standards</i> (ou padrões <i>web</i>) são um conjunto de especificações técnicas e diretrizes que definem as melhores práticas para a criação de <i>sites</i> e aplicativos <i>web</i>. </p>
+            <p>Veja, a seguir, alguns dos padrões mais importantes desenvolvidos pela W3C.</p>
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        HTML
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                      <p>A linguagem de marcação de hipertexto (HTML) é usada para estruturar e exibir conteúdo na <i>web</i>. O W3C estabelece as especificações para a versão mais recente do HTML, que é o HTML5.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        CSS 
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                      <p>As folhas de estilo em cascata (CSS) são usadas para definir o <i>layout</i> e o estilo de um <i>site</i>. O W3C estabelece as especificações para a versão mais recente do CSS, que é o CSS3.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        JavaScript 
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                      <p>A linguagem de programação JavaScript é usada para adicionar interatividade a um <i>site</i>. O W3C estabelece as especificações para o JavaScript, incluindo o padrão ECMAScript.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="acessivel print">
+              <h4>HTML</h4>
+              <p>A linguagem de marcação de hipertexto (HTML) é usada para estruturar e exibir conteúdo na <i>web</i>. O W3C estabelece as especificações para a versão mais recente do HTML, que é o HTML5.</p>
+              <h4>CSS</h4>
+              <p>As folhas de estilo em cascata (CSS) são usadas para definir o <i>layout</i> e o estilo de um <i>site</i>. O W3C estabelece as especificações para a versão mais recente do CSS, que é o CSS3.</p>
+              <h4>JavaScript</h4>
+              <p>A linguagem de programação JavaScript é usada para adicionar interatividade a um <i>site</i>. O W3C estabelece as especificações para o JavaScript, incluindo o padrão ECMAScript.</p>
+            </div>
+            <p>Além desses padrões, a W3C também desenvolve especificações para outras tecnologias <i>web</i>, como XML, SVG (<i>scalable vector graphics</i>), e <i>web accessibility</i> (acessibilidade na <i>web</i>).</p>
+            <p>A importância dos <i>web standards</i> reside na sua capacidade de permitir que desenvolvedores criem <i>sites</i> e aplicativos <i>web</i> acessíveis, usáveis e interoperáveis. Ao seguir esses padrões, os desenvolvedores podem garantir que seus <i>sites</i> sejam mais compatíveis com diferentes navegadores e dispositivos, além de melhorar a experiência do usuário.</p>
+
+            <h4>Boas práticas de uso para os padrões W3C</h4>
+            <ol>
+              <li>Use HTML semântico – O HTML semântico é uma prática que envolve o uso de elementos HTML para fornecer significado e estrutura ao conteúdo de uma página da <i>web</i>. Isso torna o conteúdo mais fácil de ler e entender para os usuários e também ajuda os mecanismos de busca a entenderem o que é importante em uma página. Sempre que possível, use <i>tags</i> HTML apropriadas, como <strong>&lt;header></strong>, <strong>&lt;main></strong>, <strong>&lt;section></strong>, <strong>&lt;article></strong>, <strong>&lt;nav></strong> e <strong>&lt;footer></strong> para estruturar o conteúdo da sua página.</li>
+              <li>Valide o seu código – A validação de código é um processo que verifica se o HTML, CSS e JavaScript são escritos de acordo com as especificações da W3C. Isso ajuda a garantir que seus <i>sites</i> sejam acessíveis e compatíveis com diferentes navegadores e dispositivos. Você pode usar ferramentas <i>on-line</i>, como o validador W3C, para verificar se o seu código é válido.</li>
+              <li>Use CSS para estilizar seu site – O CSS é uma linguagem de estilo que permite definir a aparência do seu site. Use CSS para criar layouts responsivos, tornar seu site acessível para usuários com deficiência visual e para manter a consistência visual em todo ele.</li>
+              <li>Certifique-se de que seu <i>site</i> seja acessível – A acessibilidade na <i>web</i> é importante para garantir que todos os usuários possam acessar e interagir com seu <i>site</i>. Siga as diretrizes de acessibilidade da W3C, como o <i>Web Content Accessibility Guidelines</i> (WCAG), para garantir que seu <i>site</i> seja acessível para usuários com deficiências visuais, auditivas ou motoras.</li>
+              <li>Teste seu <i>site</i> em diferentes navegadores e dispositivos – Para garantir que seu <i>site</i> seja compatível com diferentes navegadores e dispositivos, teste-o em diferentes plataformas e dispositivos. Isso ajuda a identificar problemas e corrigi-los antes que os usuários encontrem problemas ao acessar seu <i>site</i>.</li>
+              <li>
+                <img src="imgs/figura_3.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                <a href="imgs/figura_3.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_3.png" class="center-block img-responsive"></a>
+                <p class="legenda-imagem">
+                  Figura 3 – Um mesmo <i>site</i> aberto em dois navegadores diferentes<br>
+                  Fonte: adaptado de TechHut (c2023)
+                </p>
+                <p class="acessivel no-print">Na imagem, um mesmo site (https://www.techhut.com.br/) aberto em dois navegadores diferentes, à esquerda o navegador Microsoft-Edge e à direita o navegador Firefox. É possível ver que a renderização e o espaçamento do topo do site com os artigos abaixo encontram-se diferentes.</p>
+                <p>Seguir as recomendações de boas práticas acima pode ajudar a garantir que seu <i>site</i> seja acessível, usável e compatível com diferentes navegadores e dispositivos. Além disso, essas práticas podem melhorar a experiência do usuário e tornar seu <i>site</i> mais atraente e profissional.</p>
+                <p>Ao escrever seus códigos usando as recomendações da W3C, é possível levar em consideração as seguintes boas práticas de escrita de código e indentação para HTML, CSS e JavaScript.</p>
+              </li>
+            </ol>
+
+            <h4>Boas práticas em HTML</h4>
+            <ul>
+              <li>Use <i>tags</i> semânticas apropriadas para descrever o conteúdo. Por exemplo, use <strong>&lt;header></strong>, <strong>&lt;nav></strong>, <strong>&lt;main></strong> e <strong>&lt;footer></strong> em vez de <strong>&lt;div></strong>.</li>
+              <li>Use aspas duplas para atributos de <i>tag</i> em vez de aspas simples.</li>
+              <li>Inclua um <strong>alt</strong> em todas as imagens, para garantir que usuários com deficiência visual possam entender o conteúdo da imagem.</li>
+              <li>Use indentação consistente para tornar o código mais fácil de ler.</li>
+            </ul>
+            <pre>
+              <code class="language-html">
+  &lt;!DOCTYPE html>
+  &lt;html>
+    &lt;head>
+      &lt;title>Minha página&lt;/title>
+    &lt;/head>
+    &lt;body>
+      &lt;header>
+        &lt;h1>Minha Página&lt;/h1>
+      &lt;/header>
+      &lt;nav>
+        &lt;ul>
+          &lt;li>
+            &lt;a href="#">Página Inicial&lt;/a>
+          &lt;/li>
+          &lt;li>
+            &lt;a href="#">Sobre Nós&lt;/a>
+          &lt;/li>
+          &lt;li>
+            &lt;a href="#">Contato&lt;/a>
+          &lt;/li>
+        &lt;/ul>
+      &lt;/nav>
+      &lt;main>
+        &lt;h2>Sobre Nós&lt;/h2>
+        &lt;p>...&lt;/p>
+      &lt;/main>
+      &lt;footer>
+        &lt;p>&copy; 2023 - Todos os direitos reservados&lt;/p>
+      &lt;/footer>
+    &lt;/body>
+  &lt;/html>
+              </code>
+            </pre>
+
+            <h4>Boas práticas em CSS</h4>
+            <ul>
+              <li>Use nomes descritivos para classes e IDs, em vez de nomes genéricos.</li>
+              <li>Use a cascata do CSS para evitar repetição de estilos.</li>
+              <li>Comente seu código para ajudar a descrever o que faz cada seletor.</li>
+            </ul>
+            <p>Exemplo:</p>
+            <pre>
+              <code class="language-css">
+  /* Estilos para a navegação */
+  nav {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  navul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  navli {
+    display: inline-block;
+  }
+  
+  nava {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  /* Estilos para o cabeçalho */
+  header {
+    background-image: url('header-bg.jpg');
+    height: 200px;
+    background-size: cover;
+  }                
+              </code>
+            </pre>
+
+            <h4>Boas práticas em JavaScript</h4>
+            <ul>
+              <li>Use nomes descritivos para variáveis e funções.</li>
+              <li>Use <strong>const</strong> e <strong>let</strong> em vez de <strong>var</strong> ao declarar variáveis e constantes para evitar problemas com escopo.</li>
+              <li>Use espaços em branco para tornar o código mais legível.</li>
+            </ul>
+            <p>Exemplo:</p>
+            <pre>
+              <code class="language-js">
+  const lista = [1, 2, 3, 4];
+
+  functionsomarLista(lista) {
+      let soma = 0;
+      for (let i = 0; i &lt; lista.length; i++) {
+          soma += lista[i];
+      }
+      return soma;
+  }
+              </code>
+            </pre>
+
+            <h4>Validador de código W3C</h4>
+            <p>O validador de código HTML do W3C é uma ferramenta muito útil para verificar se o seu código HTML está seguindo os padrões recomendados e se está livre de erros. Aqui está um guia passo a passo para usar o validador:</p>
+            <ol>
+              <li>Acesse o <i>site</i> do validador de código HTML do W3C (para isso, pesquise por “Validator W3” em seu buscador).</li>
+              <li>
+                Na seção <strong>Validated By Direct Input</strong>, cole seu código HTML no campo de texto. Para testar nesse momento, use o seguinte código HTML, que contém inconsistências (você consegue apontar algumas delas antes da análise?):<br>
+                <pre>
+                  <code class="language-html">
+  &lt;!DOCTYPE html>
+  &lt;html>
+    &lt;head>
+      &lt;title>Testes em páginas&lt;/title>
+      &lt;meta charset="utf-8">
+    &lt;/head>
+    &lt;body>
+      &lt;main>
+        &lt;center>&lt;h1>Artigos&lt;/h1>&lt;/center>
+        &lt;article id="artigo">
+            &lt;h2>Título do artigo 1&lt;/h2>
+            &lt;img src="imagem-320x213.jpg" alt="teste">
+            &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales elit vel massa cursus, at varius nisl feugiat. Quisque vitae justo vitae nulla sollicitudin ullamcorper. Fusce eu dui vulputate, aliquet mauris vel, ultricies mauris.
+            &lt;/p>
+            &lt;/p>
+        &lt;/article>
+        &lt;article id="artigo">
+            &lt;h2>Título do artigo 2&lt;/h2>
+            &lt;img src="imagem-320x213.jpg">
+            &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus sodales elit vel massa cursus, at varius nisl feugiat. Quisque vitae justo vitae nulla sollicitudin ullamcorper. Fusce eu dui vulputate, aliquet mauris vel, ultricies mauris.
+            &lt;/p>
+        &lt;/article>
+    &lt;/body>
+  &lt;/html>
+                  </code>
+                </pre>
+                <br>
+                <img src="imgs/figura_4.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                <a href="imgs/figura_4.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_4.png" class="center-block img-responsive"></a>
+                <p class="legenda-imagem">
+                  Figura 4 – Validando código no <i>site</i> do W3C<br>
+                  Fonte: Senac EAD (2023)
+                </p>
+                <p class="acessivel no-print">Página mostra aba “Validate by Direct Input” em destaque, com HTML proposto já colado em uma área de texto abaixo. Abaixo, um botão “Check”.</p>
+              </li>
+              <li>Clique no botão <strong>Check</strong>.</li>
+              <li>
+                O validador analisará o seu código e mostrará uma lista de erros, avisos e informações no painel de resultados.<br>
+                <img src="imgs/figura_5.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                <a href="imgs/figura_5.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_5.png" class="center-block img-responsive"></a>
+                <p class="legenda-imagem">
+                  Figura 5 – Erros encontrados pelo validador<br>
+                  Fonte: Senac EAD (2023)
+                </p>
+                <p class="acessivel no-print">Página com variadas mensagens de erro, listadas em detalhe a seguir no texto.</p>
+              </li>
+            </ol>
+            <p>Veja algumas dicas para ajudar você a entender os resultados:</p>
+            <div class="caixa-destaque-livre">
+              <ul>
+                <li>Os erros são problemas que devem ser corrigidos, pois impedem que o seu código seja interpretado corretamente pelos navegadores.</li>
+                <li>Os avisos são problemas que devem ser analisados, mas podem ser ignorados em alguns casos.</li>
+                <li>As informações fornecem dicas e sugestões para melhorar o seu código.</li>
+              </ul>
+            </div>
+            <p>Os erros que o validador gera com base no código de teste de HTML apresentado anteriormente são os seguintes (em tradução livre):</p>
+            <div class="caixa-destaque-livre">
+              <p>Alerta: “Considere adicionar atributo <strong>lang</strong> à <i>tag</i> <strong>html</strong> para declarar a linguagem deste documento”. Incluir <strong>&lt;html lang="pt-br"></strong>, por exemplo, ajuda na indexação das páginas, mas não é algo obrigatório.</p>
+              <p>Erro: “Elemento <strong>center</strong> é obsoleto”. A <i>tag</i> <strong>&lt;center></strong> era usada no HTML4, mas na versão nova foi abolida.</p>
+              <p>Erro: “Nenhum elemento <strong>p</strong> no escopo, mas um fechamento de <strong>p</strong> detectado”. O validador refere-se à linha 15 do código, em que há um <strong>&lt;/p></strong> sem um <strong>&lt;p></strong> correspondente.</p>
+              <p>Erro: “ID <strong>artigo</strong> duplicado”. De fato, note que ambos os elementos <strong>&lt;article></strong> do código estão com o mesmo valor para o atributo <strong>id</strong>.</p>
+              <p>Alerta: “A primeira ocorrência de <strong>artigo</strong> é aqui”. O validador está apenas indicando em qual linha está o primeiro elemento com o id “artigo”.</p>
+              <p>Erro: “Um elemento <strong>img</strong> deve ter um atributo <strong>alt</strong>, exceto em certas condições”. Está se referindo à <i>tag</i> <strong>&lt;img></strong> da linha 19, em que não há atributo <strong>alt</strong> preenchido.</p>
+              <p>Erro: <i>“Tag</i> de fechamento <strong>body</strong> detectada, mas há elementos não fechados”. O problema aqui acontece diretamente por conta do erro seguinte.</p>
+              <p>Erro: “Elemento <strong>main</strong> não fechado”. Repare que, no código, omitiu-se <strong>&lt;/main></strong>, o que gerou este erro e o anterior.</p>
+            </div>
+            <div class="caixa-destaque icone-desafio">
+              <p>Corrija os erros e alertas apontados pelo validador W3C para o código HTML proposto e submeta novamente o código ao validador.</p>
+            </div>
+            <p>Quando tiver um código livre de qualquer erro e de qualquer observação, você verá a seguinte mensagem na tela:</p>
+            <div class="caixa-destaque"><p><strong>Document checking completed. No errors or warnings to show.</strong></p></div>
+            <p>Traduzindo a mensagem: “Checagem do documento completa. Sem erros ou alertas para mostrar”.</p>
+            <div class="caixa-destaque-livre icone-importante">
+              <p>Lembre-se de que o validador é uma ferramenta importante, mas não é a única que você deve usar para garantir a qualidade do seu código. É importante sempre escrever código claro e organizado, seguindo as boas práticas recomendadas.</p>
+            </div>
+
+            <h3><i>Search engine optimization</i></h3>
+            <p>O SEO (<i>search engine optimization</i>) é um conjunto de técnicas que tem como objetivo melhorar a visibilidade e o posicionamento de um <i>site</i> nos resultados de busca do Google e de outros buscadores. Uma das técnicas de SEO mais importantes é o uso de <i>metatags</i> no código HTML do <i>site</i>, especialmente a <i>metatag</i> <strong>description</strong> e a <i>metatag</i> <strong>keywords</strong>.</p>
+            <p>A <i>metatag</i> <strong>description</strong> é um resumo do conteúdo da página, que é exibido nos resultados de busca. É importante escrever uma descrição concisa, clara e atraente, com até 160 caracteres. Para incluir a <i>metatag</i> <strong>description</strong> em seu <i>site</i>, adicione o seguinte código HTML entre as <i>tags</i> <strong>&lt;head></strong> e <strong>&lt;/head></strong>:</p>
+            <pre>
+              <code class="language-html">
+  &lt;meta name="description" content="Insira aqui uma descrição clara e concisa do conteúdo da sua página.">
+              </code>
+            </pre>
+            <p>A <i>metatag</i> <strong>keywords</strong> é uma lista de palavras-chave relevantes para o conteúdo da página. Embora ela não seja mais usada pelos principais mecanismos de busca, ainda pode ser útil para algumas plataformas de busca menos conhecidas. </p>
+            <p>Além do conhecido Google, há algumas plataformas de busca menos conhecidas, por exemplo: Ecosia, DuckDuckGo, Bing, Yahoo e Ask.com.</p>
+            <p>Para incluir a <i>metatag</i> <strong>keywords</strong> em seu <i>site</i>, adicione o seguinte código HTML entre as <i>tags</i> <strong>&lt;head></strong> e <strong>&lt;/head></strong>:</p>
+            <pre>
+              <code class="language-html">
+  &lt;meta name="keywords" content="Insira aqui uma lista de palavras-chave relevantes para o conteúdo da sua página.">&lt;/metaname>
+              </code>
+            </pre>
+            <p>Além das <i>metatags</i>, há algumas dicas de otimização de busca para um <i>site</i> da <i>web</i>. Veja a seguir.</p>
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading4">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse4" aria-expanded="true" aria-controls="collapse4">
+                        Use palavras-chave relevantes
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse4" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading4">
+                    <div class="panel-body">
+                      <p>Escolha palavras-chave relevantes para o conteúdo da sua página e inclua-as em títulos, texto, imagens e <i>links</i> internos.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading5">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        Escreva conteúdo de qualidade 
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                    <div class="panel-body">
+                      <p>Crie conteúdo de qualidade, útil e relevante para o seu público-alvo e atualize-o regularmente.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading6">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                        Otimize as imagens 
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
+                    <div class="panel-body">
+                      <p>Use imagens de alta qualidade e otimize-as para carregar rapidamente, incluindo <i>tags</i> <strong>alt</strong> descritivas.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading7">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        Use URLs descritivas
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                    <div class="panel-body">
+                      <p>Escolha URLs (<i>uniform resource locator</i>) que descrevam claramente o conteúdo da página e use hifens para separar palavras.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading8">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                        Use <i>links</i> internos e externos
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+                    <div class="panel-body">
+                      <p>Use <i>links</i> internos para ajudar os visitantes a navegar no seu <i>site</i> e <i>links</i> externos para aumentar a credibilidade do seu <i>site</i> e melhorar o SEO.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading9">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                        Otimize o carregamento da página
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9">
+                    <div class="panel-body">
+                      <p>Certifique-se de que o seu <i>site</i> carrega rapidamente, otimizando imagens, reduzindo o tamanho do arquivo, usando <i>caches</i>, entre outras técnicas.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading10">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse10" aria-expanded="false" aria-controls="collapse10">
+                        Use redes sociais
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading10">
+                    <div class="panel-body">
+                      <p>Promova o seu <i>site</i> nas redes sociais para aumentar a sua visibilidade e direcionar tráfego para ele.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="acessivel print">
+              <h4>Use palavras-chave relevantes</h4>
+              <p>Escolha palavras-chave relevantes para o conteúdo da sua página e inclua-as em títulos, texto, imagens e <i>links</i> internos.</p>
+              <h4>Escreva conteúdo de qualidade</h4>
+              <p>Crie conteúdo de qualidade, útil e relevante para o seu público-alvo e atualize-o regularmente.</p>
+              <h4>Otimize as imagens</h4>
+              <p>Use imagens de alta qualidade e otimize-as para carregar rapidamente, incluindo <i>tags</i> <strong>alt</strong> descritivas.</p>
+              <h4>Use URLs descritivas</h4>
+              <p>Escolha URLs (<i>uniform resource locator</i>) que descrevam claramente o conteúdo da página e use hifens para separar palavras.</p>
+              <h4>Use <i>links</i> internos e externos</h4>
+              <p>Use <i>links</i> internos para ajudar os visitantes a navegar no seu <i>site</i> e <i>links</i> externos para aumentar a credibilidade do seu <i>site</i> e melhorar o SEO.</p>
+              <h4>Otimize o carregamento da página</h4>
+              <p>Certifique-se de que o seu <i>site</i> carrega rapidamente, otimizando imagens, reduzindo o tamanho do arquivo, usando <i>caches</i>, entre outras técnicas.</p>
+              <h4>Use redes sociais</h4>
+              <p>Promova o seu <i>site</i> nas redes sociais para aumentar a sua visibilidade e direcionar tráfego para ele.</p>
+            </div>
+            <p>Lembre-se de que o SEO é um processo contínuo e que é importante monitorar e ajustar sua estratégia de acordo com as mudanças nos algoritmos dos mecanismos de busca.</p>
+            <h3>Encerramento</h3>
+            <p class="icone-concluindo">Em resumo, você viu, neste conteúdo, vários assuntos relacionados ao desenvolvimento <i>web</i>, incluindo os padrões do W3C para HTML, CSS e JavaScript, as melhores práticas para escrever código bem estruturado e indentado e, ainda, a importância da otimização para mecanismos de busca para um <i>site</i>. Você também viu que aprender a seguir as diretrizes do W3C pode ajudar a garantir que o código do seu <i>site</i> seja consistente, acessível e compatível com vários navegadores e dispositivos. </p>
+            <p>Além disso, você viu que seguir as melhores práticas de codificação, incluindo a boa estruturação e indentação do código, pode tornar o processo de desenvolvimento mais fácil e eficiente. Por fim, você aprendeu que otimizar seu <i>site</i> para mecanismos de busca é essencial para aumentar sua visibilidade e seu alcance na <i>web</i>. Utilizando estratégias de SEO, como a adição de <i>metatags</i> ao código HTML, é possível melhorar o posicionamento do <i>site</i> nos resultados de busca e aumentar o tráfego orgânico. No geral, seguir essas práticas e recomendações pode levar a um <i>site</i> mais acessível, eficiente e eficaz na <i>web</i>.</p>
+          </div>
+
+        </section>
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+        <footer class="text-center no-print">
+          
+          <ul class="pagination">
+
+          </ul>
+         
+        </footer>
+    </div>
+
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+<!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+<div class="ico-div-loader">
+	<img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../template/js/jquery.min.js"></script>
+<script src="../template/js/bootstrap.min.js"></script>
+<script src="../template/js/jquery.magnific-popup.min.js"></script>
+<script src="../template/js/print.js"></script>
+<script src="../template/js/template.config.js"></script>
+<script src="../template/js/images.loader.js"></script>
+<script src="../template/js/highlight.min.js"></script>
+<noscript>
+  <style media="screen">
+    .over-loader { display: none;}    
+  </style>
+</noscript>
+</body>
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  });
+	//inicializa zoom na imagem
+	$('.zoom-imagem').magnificPopup({
+	 type: 'image',
+  	 mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+ 	 zoom: {
+		enabled: true, // By default it's false, so don't forget to enable it
+
+		duration: 300, // duration of the effect, in milliseconds
+		easing: 'ease-in-out', // CSS transition easing function
+
+		// The "opener" function should return the element from which popup will be zoomed in
+		// and to which popup will be scaled down
+		// By defailt it looks for an image tag:
+		opener: function(openerElement) {
+		  // openerElement is the element on which popup was initialized, in this case its <a> tag
+		  // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+		  return openerElement.is('img') ? openerElement : openerElement.find('img');
+		}
+	  },
+	   image: {
+		  markup: '<div class="mfp-figure">'+
+					'<div class="mfp-close"></div>'+
+					'<div class="mfp-img"></div>'+ // Floated left
+					'<div class="mfp-bottom-bar">'+'<figcaption>'+'<div class="mfp-title" style="text-align:center"></div>'+
+					  '<div class="mfp-counter"></div>'+'</figcaption>'+
+					'</div>'+
+				  '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+		  cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+		  tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+	   }
+	});
+
+	//inicializa popover
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
+	//inicializa tooltip
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+
+
+  $(function() {
+    $(".card").click(function() {
+      if ($(this).hasClass("exibe-frente")) {
+        $(this)
+          .children()
+          .first()
+          .hide();
+        $(this)
+          .children()
+          .last()
+          .show();
+        $(this).removeClass("exibe-frente");
+      } else {
+        $(".card .verso").hide();
+        $(".card .frente").show();
+        $(this).addClass("exibe-frente");
+      }
+    });
+  });
+
+  $( document ).ready(function() {
+    $(".card .verso").hide();
+  });
+
+
+
+
+  /*------- Script de animação do botão -------*/
+  var root = document.documentElement;
+  root.className += ' js';
+
+  function boxTop(idBox) {
+    var boxOffset = $(idBox).offset().top;
+    return boxOffset;
+  }
+
+  $(document).ready(function() {
+    var $target = $('.animeStart'),
+        $target2 = $('.animeStop'),
+        targetBox = $('.box'),
+        animationClass = 'anime-init',
+        windowHeight = $(window).height(),
+        offset = windowHeight - (windowHeight / 4);
+
+    function animeScroll() {
+      var documentTop = $(document).scrollTop();
+      $target.each(function() {
+        if (documentTop > boxTop(this) - offset) {
+          targetBox.addClass(animationClass);
+        } else {
+          targetBox.removeClass(animationClass);
+        }
+        if (documentTop > boxTop($target2) - offset) {
+          targetBox.removeClass(animationClass);
+        } 
+      });
+    }
+    animeScroll();
+
+    $(document).scroll(function() {
+      animeScroll();
+    });
+  });
+
+
+</script>
+
+<script>
+  var scriptElem=document.createElement("script");
+  scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+  scriptElem.charset="UTF-8",
+  scriptElem.onload=function(){
+        window.ht = new HT({
+            token:"bf5b7efb148a829a126a0e0c9fd533bf",
+            align:"top",
+            videoEnabled: true,
+            ytEmbedReplace: true,           
+            mobileConfig:{align:"right",
+                          actionsAlign:"top",
+                          customButtonStyle:{
+                                borderRadius:"6px",
+                                size:"38px",
+                                horizontalMargin:"13px",
+                                bottomMargin:"140px",
+                                rightMargin:"40px"}
+                          }
+          });        
+      $('.ht-skip').attr("aria-hidden","true")
+    },
+  document.body.appendChild(scriptElem);
+</script>

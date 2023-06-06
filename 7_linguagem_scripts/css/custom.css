@@ -1,0 +1,130 @@
+body{
+  
+  background: url('../imgs/elemento_ancorado_esquerda.png') no-repeat left center / 18%, url('../imgs/elemento_ancorado_direita.png') no-repeat right center / 18%;
+  background-attachment: fixed;
+  background-color:  #4170B4;
+}
+
+.fundo-tecnicos{
+  border-bottom: none !important;
+  background: transparent;
+}
+h2, h3, h4, h5, li, p, td{color: #fff;}
+.caixa-destaque p, .caixa-destaque-livre p,
+.caixa-destaque li, .caixa-destaque-livre li{color: #333;}
+h1 i,
+h2 i,
+h3 i,
+h4 i {
+  font-weight: bold;
+}
+h3 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+h4 {
+  margin: 0px;
+  margin-top: 40px;
+}
+pre {
+  padding: 0;
+  background: transparent;
+  border: none;
+  margin: 0;
+}
+td{font-family: roboto;}
+td *{font-size: inherit;}
+td ul{
+  margin-left: 0;
+  padding-left: 20px;
+}
+td pre{max-width: 300px;}
+table.senac{width: 100%;}
+.justify-center{
+  display: flex;
+  align-items: center;
+}
+.mt-20{margin-top: 20px;}
+.mt-40{margin-top: 40px;}
+.mt-60{margin-top: 60px;}
+.pl-2{padding-left: 20px;}
+.my-3{margin: 30px auto;}
+
+.painel-abas{padding: 40px;}
+.nav-tabs{
+  margin-left: 0;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+  color: #fff;
+  cursor: default;
+  background-color: #2875C6;
+  border: 1px solid #1d5591;
+  border-bottom-color: transparent;
+}
+
+.codigo-destaque{
+  background: #000;
+  color: #a39e9b;
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+.code-destaque{
+  background-color: #071772 !important;
+}
+
+.caixa-destaque, .caixa-destaque-livre{background-color: #fff;}
+.icone-importante{
+  background-image: url('../imgs/ico_importante_atencao.png');
+  background-repeat: no-repeat;
+  background-position: left 10px center;
+  background-size: 170px 84px;
+  padding-left: 200px;
+}
+.icone-concluindo{
+  background-image: url('../imgs/ico_finalizando.png');
+  background-position: left 10px center;
+  background-repeat: no-repeat;
+  background-size: 174px 86px;
+  padding-left: 205px;
+}
+.icone-dica{
+  background-image: url('../imgs/ico_dica.png');
+  background-position: left 10px center;
+  background-repeat: no-repeat;
+  background-size: 132px 77px;
+  padding-left: 150px;
+}
+@media screen and (max-width: 1024px){
+  .fundo-tecnicos{
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+  .justify-center{
+    flex-wrap: wrap;
+  }
+  .justify-center img{display: none;}
+  body{background-size: 20%;}
+}
+@media screen and (max-width: 980px){
+  .icone-importante, .icone-concluindo, .icone-dica{
+    background-position: top 10px center;
+    padding-top: 100px;
+    padding-left: 30px;
+  }
+  body{background-image: unset;}
+  .fundo-tecnicos{
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+@media screen and (max-width: 480px){
+  .caixa-destaque code{
+    word-break: break-word;
+  }
+  .fundo-tecnicos {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}

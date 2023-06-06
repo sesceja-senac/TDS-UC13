@@ -1,0 +1,174 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.editor-html {
+    color: #333;
+    background: none;
+    border: 0px none;
+    width: 100%;
+    height: 100%;
+    padding: 1.5em;
+    overflow: auto;
+    padding-top: 3em;
+}
+
+.editor {
+    width: calc(40% - 32px);
+    float: left;
+    height: 100%;
+    background-color: #f2f2f2;
+    overflow: hidden;
+    overflow-y: auto;
+    position: relative;
+    display: none;
+    margin-left: 32px;
+}
+
+.editor.ativo {
+    display: block;
+}
+
+.app {
+    background-color: #333;
+}
+
+.app {
+    height: 100%;
+    padding: 0.5em;
+}
+
+.app,
+.editor {
+    box-sizing: border-box;
+}
+
+.output.ativo {
+    width: calc(60% - 10px);
+    float: right;
+}
+
+.output {
+    width: calc(100% - 32px);
+    height: 100%;
+    float: right;
+    background-color: white;
+    overflow: auto;
+}
+
+.bto.bto-esconder {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.bto {
+
+    background-color: #333;
+    border: 0px none;
+    color: white;
+    padding: 10px;
+    font-size: 1em;
+}
+
+
+.label.ativo {
+    display: inline;
+}
+
+.label {
+    display: none
+}
+
+.bto.bto-download {
+    background-color: #333;
+    position: absolute;
+    width: 40px;
+    top: 39px;
+    left: 0px;
+}
+
+.bto.bto-fullscreen {
+    background-color: #333;
+    position: absolute;
+    width: 40px;
+    top: 70px;
+    left: 0px;
+}
+
+.bto:active {
+    background-color: #000;
+}
+
+.bto:hover {
+    cursor: pointer;
+}
+
+.label.desktop.ativo {
+    display: inline-block;
+}
+
+.label.mobile.ativo {
+    display: none;
+}
+
+.far.fa-eye.mobile {
+    display: none;
+}
+
+.far.fa-eye.desktop {
+    display: inline-block;
+}
+
+.fas.fa-code.desktop {
+    display: inline-block;
+}
+
+.fas.fa-code.mobile {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .editor {
+        position: absolute;
+        top: 7px;
+        left: 8px;
+        float: unset;
+        width: calc(100% - 48px);
+        margin-right: 20px;
+        overflow: hidden;
+        overflow-y: auto;
+        display: none;
+        height: calc(100% - 15px);
+    }
+
+    .label.ativo.desktop {
+        display: none;
+    }
+
+    .label.ativo.mobile {
+        display: inline;
+    }
+
+    .far.fa-eye.mobile {
+        display: inline-block;
+    }
+
+    .far.fa-eye.desktop {
+        display: none;
+    }
+
+    .fas.fa-code.desktop {
+        display: none;
+    }
+
+    .fas.fa-code.mobile {
+        display: inline-block;
+    }
+}

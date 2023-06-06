@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Linguagem de estilo CSS: conceito, seletores, combinação de seletores e propriedades</title>
+
+    <!-- Bootstrap -->
+    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+    <link href="../template/css/cores.css" rel="stylesheet">
+    <link href="../template/css/modal-100.css" rel="stylesheet">
+    <link href="../template/css/devibeans.min.css" rel="stylesheet">
+      <!--Extras - novas classes para facilitar-->
+      <link rel="stylesheet" href="../template/css/extras.css">
+    <link href="../template/css/sncload.css" rel="stylesheet">
+    <link href="../template/css/magnific-popup.css" rel="stylesheet">
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <!-- css necessario para o print -->
+    <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+    <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+        	  <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+            <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet" class="container fundo-tecnicos">
+        <header class="no-print">
+          <!-- BTO IMPRIMIR -->
+          <div class="grupo-imprimir no-print">
+            <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                <span class="fa fa-print"></span> <span>Imprimir</span>
+            </button>
+          </div>
+          <!-- /BTO IMPRIMIR -->
+        </header>
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <div class="pagina">
+            <p class="acessivel no-print">Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau máximo de leitura, a fim de que os códigos disponibilizados neste material sejam lidos corretamente. No caso do NVDA (NonVisual Desktop Access), para localizar a opção Grau de pontuação/símbolos, acesse Preferências – Configurações – Fala. Altere o padrão Pouco para Tudo. Dessa forma, o leitor passará a ler os segmentos de código em sua totalidade. </p>
+            <h2>Linguagem de estilo CSS: conceito, seletores, combinação de seletores e propriedades</h2>
+            
+            <div class="bloco-branco">
+              <h3>Introdução</h3>
+              <p><i>Cascading style sheet</i> (CSS), ou, se preferir, folha de estilos em cascata, é uma linguagem utilizada para estilizar elementos que são escritos em linguagem de marcação como o próprio HTML (<i>hyper text markup language</i>, ou linguagem de marcação de hipertexto). <strong>Ele é o responsável por tornar um <i>website</i> muito mais visual e de fácil navegação para os usuários, dando cores, estilos, fontes e muitos outros efeitos</strong> que conseguem trazer uma visualização muito mais agradável.</p>  
+              <p>O CSS é o responsável por estilizar e posicionar elementos de uma página HTML. Enquanto HTML define estrutura, CSS define estilo visual.</p> 
+              <p>O objeto de estudo deste conteúdo será o <strong>CSS3</strong>, que foi lançado em 2012 e é, até hoje, a versão mais recente do CSS. Essa versão trouxe algumas alterações bem importantes e que facilitam muito a criação de <i>websites</i> mais dinâmicos.</p>  
+            </div>
+            <div class="bloco-cinza">
+              <h3>Modelo de cascata</h3>
+              <p>Mas, afinal, o que é essa folha de estilos em cascata? Quando se lida com CSS, é preciso levar em consideração que se estará trabalhando com um conjunto de regras e uma sintaxe específica para estilização. Essas regras, assim como os <strong>seletores</strong>, estarão definidas dentro de um <strong>bloco de código</strong> em que serão aplicadas as alterações desejadas.</p>
+              <p>Parece complicado, não é? Pois então, isso será desmistificado. Veja o exemplo a seguir.</p>
+              <pre>
+                <code class="language-html">
+    &lt;body>
+      &lt;p>Olá, bem-vindo ao conteúdo de CSS do Curso Técnico em Desenvolvimento de Sistemas! &lt;/p>
+    &lt;/body>          
+                </code>
+              </pre>
+              <p>Acima, há um bloco de HTML, com apenas um parágrafo, explicitado pela <i>tag</i> <strong>&lt;p></strong>. Quando isso for exibido em um navegador, aparecerá desta forma:</p>
+              <img src="imgs/fig_1_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <img src="imgs/fig_1_mobile.png" class="center-block img-responsive visible-sm visible-xs no-print" aria-hidden="true">
+              <p class="legenda-imagem">
+                Figura 1 – Exemplo de exibição em HTML<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">Frase “Olá, bem-vindo ao conteúdo de CSS do Curso Técnico em Desenvolvimento de Sistemas!” em fonte Times News Roman preta e com fundo branco.</p>
+            </div>
+            <div class="bloco-branco">
+              <p>Simples, não é? Porém, como se pode ver, o texto está em uma fonte padrão e em um tamanho padrão. E agora é a hora de o CSS brilhar! Com ele, você poderá estilizar esse parágrafo como quiser. Mude três coisas: a fonte, o tamanho e a cor.</p>
+              <div class="caixa-destaque-livre icone-importante">
+                <p>Existem três maneiras de se utilizar o CSS dentro de um arquivo de HTML. As outras maneiras serão exploradas em breve neste conteúdo, porém, para esses exemplos, será utilizado um arquivo exclusivo para o CSS.</p>
+              </div>
+              <pre>
+                <code class="language-css">
+    p {
+      font-family: Arial;
+      font-size: large;
+      color: red;
+    }                       
+                </code>
+              </pre>
+              <p>Como foi utilizada a <i>tag</i> &lt;p> no HTML, basta referenciá-la no CSS e, entre chaves, “{ }”, colocar os comandos necessários. No exemplo anterior, o <strong>font-family</strong> busca a fonte que você quer, o <strong>font-size</strong> aumenta o tamanho (é possível usar números também) e <strong>color</strong> muda a cor da fonte dentro de uma biblioteca gigantesca de cores, que podem ser usadas com o seu nome em inglês, ou até mesmo com o código hexadecimal delas. Vermelho, por exemplo, seria #FF0000. Veja como ficou o parágrafo agora:</p>
+              <img src="imgs/fig_2_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <img src="imgs/fig_2_mobile.png" class="center-block img-responsive visible-sm visible-xs no-print" aria-hidden="true">
+              <p class="legenda-imagem">
+                Figura 2 – Exemplo de exibição de texto com CSS aplicado<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">Frase “Olá, bem-vindo ao conteúdo de CSS do Curso Técnico em Desenvolvimento de Sistemas!” em fonte Arial vermelha e com fundo branco.</p>
+            </div>
+            <div class="bloco-cinza">
+              <p>As regras CSS são aplicadas em ordem de precedência, começando pelo nível mais alto e descendo até o nível mais baixo. Se houver regras conflitantes em um mesmo nível, a regra mais específica terá precedência sobre a regra mais genérica.</p>
+              <p>Em resumo, o modelo Cascata em CSS é uma técnica para determinar a ordem de aplicação das propriedades de estilo aos elementos HTML, levando em consideração a especificidade das regras definidas e a ordem de precedência dos níveis de cascata.</p>
+              <p>No exemplo anterior, foi feito apenas um <strong>&lt;p></strong>, certo? Porém, seria possível expandir mais ainda. Cheque este código HTML:</p>
+              <pre>
+                <code class="language-html">
+    &lt;body>
+      &lt;p>Olá, bem-vindo ao conteúdo de CSS do Curso Técnico em Desenvolvimento de Sistemas! &lt;/p>
+      &lt;p>Me chamo &lt;span>Pedro Henrique Flores &lt;/span> e serei o tutor de vocês! &lt;/p>
+      &lt;p>Acesse o site do SENAC EAD clicando &lt;a href="https://www.ead.senac.br">AQUI! &lt;/a> &lt;/p>
+    &lt;/body>                               
+                </code>
+              </pre>
+              <p>Veja que existe um <strong>&lt;span></strong> e também um <strong>&lt;a></strong> dentro do <strong>&lt;p></strong>. Graças à lógica por trás do modelo Cascata, apenas serão definidas regras específicas para esses novos elementos. A partir daí, haverá as regras do <strong>&lt;p></strong> aplicadas em todos. Veja:</p>
+              <pre>
+                <code class="language-css">
+    p {
+      color: blue;
+      font-weight: bold;
+    }
+    
+    span {
+      color: red;
+    }
+    
+    a {
+      color: green;
+    }                                           
+                </code>
+              </pre>
+              <p>Veja, agora, o resultado:</p>
+              <img src="imgs/fig_3_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <img src="imgs/fig_3_mobile.png" class="center-block img-responsive visible-sm visible-xs no-print" aria-hidden="true">
+              <p class="legenda-imagem">
+                Figura 3 – Exemplo de regras do modelo Cascata
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">Frase 1: “Olá, bem-vindo ao conteúdo de CSS do Curso Técnico em Desenvolvimento de Sistemas!” em azul e negrito. Frase 2: “Me chamo Pedro Henrique Flores e serei o tutor de vocês!” com o nome “Pedro Henrique Flores” em vermelho. Frase 3: “Acesse o site do SENAC EAD clicando AQUI” com a palavra “AQUI” em verde.</p>
+            </div>
+            <div class="bloco-branco">
+              <h4>Qual é a melhor forma de usar?</h4>
+              <p>Você já entendeu o CSS e como ele funciona e é aplicado nos elementos HTML, mas, agora, entenderá qual é a melhor forma de utilizar esses elementos. É importante entender que existem <strong>três</strong> formas de utilizar tais elementos e existe um processo hierárquico e até mesmo de boas práticas e padronização nesse processo.</p>
+              <p><strong><i>Inline</i> (em linha)</strong>: utilizar as <i>tags</i> de estilização de CSS dentro do próprio elemento HTML. Não é recomendado o uso dessa prática, pois o código fica extremamente poluído e dificulta o desenvolvimento <i>front-end</i> como um todo, principalmente quando se começa a utilizar o JavaScript. Exemplo:</p>
+              <pre>
+                <code class="language-html">
+    &lt;body>
+      &lt;p style="color: blue; font-weight: bold;">Usando o CSS inline!&lt;/p>
+    &lt;/body>                                        
+                </code>
+              </pre>
+              <p><Strong><i>Internal</i> (interno)</Strong>: quando existe uma página específica e diferente das demais (e serão usadas poucas alterações no CSS), pode-se, tranquilamente, utilizar o CSS interno, bastando apenas declarar o <strong>&lt;style></strong> dentro da <i>tag</i> <Strong>&lt;head></Strong> do arquivo HTML, e a partir daí utilizar seletores, classes e afins para estilizar como preferir. Exemplo:</p>
+              <pre>
+                <code class="language-html">
+    &lt;html>
+      &lt;head>
+        &lt;style>
+          p {
+              color: blue;
+              font-weight: bold;
+          }
+        &lt;/style>
+        &lt;meta charset="UTF-8">
+      &lt;/head>
+      &lt;body>
+        &lt;p>Usando o CSS inline!&lt;/p>
+      &lt;/body>
+    &lt;/html>                                     
+                </code>
+              </pre>
+              <p><strong><i>External</i> (externo)</strong>: por fim, sem dúvidas, a melhor e mais padrão das opções é criar um arquivo <strong>exclusivo</strong> para o CSS e apenas o referenciar no arquivo HTML. Nesse arquivo, é possível separar todas as classes e todos os elementos que serão estilizados, facilitando bastante a organização de qualquer desenvolvedor.</p>
+              <pre>
+                <code class="language-html">
+    &lt;html>
+      &lt;head>
+        &lt;link rel="stylesheet" href="index.css">
+        &lt;meta charset="UTF-8">
+      &lt;/head>
+      &lt;body>
+        &lt;p>Usando o CSS external!&lt;/p>
+      &lt;/body>
+    &lt;/html>                                                   
+                </code>
+              </pre>
+              <p>Apenas chamando a linha <Strong>&lt;link rel=”stylesheet” href=”[nomeDoArquivo.css]”></Strong> e o IDE (ambiente de desenvolvimento integrado) encontrando esse arquivo, puxará todas estilizações dentro dele.</p>
+              <pre>
+                <code class="language-css">
+    /*ESTILIZANDO O PARÁGRAFO*/
+    p {
+        color: blue;
+        font-weight: bold;
+    }
+    /*ESTILIZANDO O PARÁGRAFO*/                                
+                </code>
+              </pre>
+              <p>Pronto!</p>
+              <div class="caixa-destaque-livre icone-importante">
+                <p>A ordem dos fatores <strong>altera o produto</strong>! O CSS é algo muito volátil e ele respeita uma ordem de hierarquia. Então, se, por ventura, elementos <strong><i>inline</i></strong> forem usados e depois for feito de forma diferente em um arquivo <strong>externo</strong>, o <strong><i>inline</i></strong> será respeitado e o <strong>externo</strong> será ignorado! Sendo assim, sempre opte por apenas uma das opções, <i>ok</i>?</p>
+              </div>
+            </div>
+            <div class="bloco-cinza">
+              <h3>Seletores, classes e IDs</h3>
+              <p>Os <strong>seletores</strong> são a chave para organizar o CSS e mantê-lo coeso dentro do arquivo. No exemplo que você viu anteriormente, usou-se o <strong>seletor p</strong> para poder estilizar o arquivo. Contudo, é importante entender a ordem e a nomenclatura desses seletores. Veja como é simples:</p>
+              <img src="imgs/fig_4_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_4_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_4_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 4 – Explicação visual da estrutura de CSS<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">À esquerda, uma caixa com rótulo seletor e texto interno “p”. À direita, caixa com texto “{font-family: Arial” e uma seta apontando para “font-family” escrita “PROPRIEDADE”. Outra seta onde está escrito “VALOR” aponta para “Arial”. À direita dessa caixa, é possível ler “DECLARAÇÃO”. Abaixo dessa caixa, outra caixa com texto “font-size: large;”, com seta “propriedade” apontada para “font-size” e seta “valor” apontada para “large”. À direita se lê “DECLARAÇÃO”. Abaixo dessa caixa, outra caixa com texto “color: red;}”, seta “propriedade” aponta para “color” e seta “valor” aponta para “red;”. À direita, “DECLARAÇÃO”.</p>
+              <p>É importante observar que cada seletor pode ter a própria estilização, e é aí que o CSS fica cada vez mais “rico”. Agora, você testará algumas novas regras e verá que o CSS pode (e irá) criar mais e mais caminhos para diversos tipos de estilizações. Comece com um HTML bem simples:</p>
+              <pre>
+                <code class="language-html">
+    &lt;body>
+      &lt;h1>Aqui é título!&lt;/h1>
+      &lt;h2>Aqui é um subtítulo!&lt;/h2>
+      &lt;p>E aqui é nosso parágrafo!&lt;/p>
+    &lt;/body>          
+                </code>
+              </pre>
+              <p>E vá direto para o CSS, agora com três seletores diferentes:</p>
+              <pre>
+                <code class="language-css">
+    h1 {
+      font-family: Verdana;
+      text-align: center;
+      color: blue;
+    }
+    
+    h2 {
+      font-family: Georgia;
+      text-align: center;
+      color: #008000;
+    }
+    
+    p {
+      font-family: Arial;
+      font-size: large;
+      text-align: center;
+      color: red;
+    }                              
+                </code>
+              </pre>
+              <p>Veja o resultado de tudo isso:</p>
+              <img src="imgs/fig_5_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_5_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_5_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 5 – Exemplo de CSS usando vários seletores<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">No topo, um texto grande e negrito em fonte Verdana azul “Aqui é título”. Abaixo, texto “Aqui é um subtítulo” em verde, Times New Roman e menor que o de cima. Abaixo, ainda texto “E aqui é nosso parágrafo!” em vermelho, Arial e menor.</p>
+            </div>
+            <div class="bloco-branco">
+              <div class="caixa-destaque-livre icone-dica">
+                <p>No exemplo anterior e nos exemplos seguintes, destaca-se apenas o trecho <strong>&lt;body></strong> do código HTML. Para os seus testes, sugere-se que, para cada exemplo, com o VSCode, crie um arquivo HTML em uma pasta (<strong>teste1.html</strong>, por exemplo), com uma estrutura básica como a seguinte:</p>
+                <pre>
+                  <code class="codigo-destaque">
+  <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"utf-8"</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Testando CSS<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string"><span class="code-destaque">"teste1.css"</span></span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+      <span class="hljs-comment">&lt;!-- aqui vai o código do exemplo --&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>                   
+                  </code>
+                </pre>
+                <p>Digite o código HTML proposto no exemplo substituindo o trecho com comentário, apenas tomando o cuidado de não repetir a <i>tag</i> <strong>&lt;body>&lt;/body></strong>. Em seguida, crie um arquivo na mesma pasta para o CSS (<strong>teste1.css</strong>, por exemplo). É importante que a referência ao CSS destacada no código HTML acima tenha o mesmo nome do arquivo CSS que criou. Nesse arquivo, então, digite as regras CSS propostas. Teste tudo abrindo a página HTML no seu navegador e atualizando (<strong>F5</strong> ou <strong>Ctrl + R</strong>) sempre que fizer uma modificação.</p>
+              </div>
+              <p>Legal, não é? Foram colocados três tipos de formatações diferentes dentro do próprio CSS e transformou-se aquele HTML simples em algo colorido e visualmente mais agradável e estilizado. Como se pode perceber, há ali três <strong>seletores</strong> diferentes: <strong>h1</strong>, <strong>h2</strong> e <strong>p</strong>. Esses seletores tem o próprio <strong>bloco de código</strong> e a própria formatação, e tudo isso é papel do CSS trabalhando com o que foi estruturado no HTML. Porém, agora, você pensará e aumentará um pouco esse processo.</p>
+              <p>Como o seu navegador entende esses seletores? Essa é uma pergunta de extrema importância para entender como, quando e quais seletores você utilizará. Os três principais, e em ordem de especificidade, são:</p>
+              <div class="caixa-destaque">
+                <ol>
+                  <li>IDs</li>
+                  <li>Classes</li>
+                  <li>Seletor universal</li>
+                </ol>
+              </div>
+            </div>
+            <div class="bloco-cinza">
+              <h4>Seletor universal</h4>
+              <p>Uma das técnicas mais simples e mais usadas no CSS é o uso do seletor universal. Esse seletor aplica em todas as <i>tags</i> qualquer formatação! Basta colocar no CSS o ícone do asterisco (*) e pronto! Geralmente se utiliza isso para formatações gerais no corpo das páginas, como fontes e espaçamentos que serão utilizados dentro de todo o <i>site</i>.</p>
+              <pre>
+                <code class="language-html">
+    &lt;body>
+      &lt;h1>Vamos agora entender como funciona o seletor Universal&lt;/h1>
+      &lt;h2>No CSS é bem simples de se aplicar&lt;/h2>
+      &lt;p>E ele formatará todos os elementos aqui do HTML&lt;/p>
+    &lt;/body>          
+                </code>
+              </pre>
+              <p>No CSS:</p>
+              <pre>
+                <code class="language-css">
+    * {
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      color: green;
+      text-align: center;
+    }              
+                </code>
+              </pre>
+              <p>Veja o resultado:</p>
+              <img src="imgs/fig_6_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_6_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_6_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 6 – Exemplo de uso do seletor universal<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">Frase 1: “Vamos agora entender como funciona o seletor Universal” em fundo branco e letras verdes. Frase 2: “No CSS é bem simples de se aplicar”. Frase 3: “E ele formatará todos os elementos aqui do HTML”.</p>
+              <p>Então, é possível perceber que há três <i>tags</i> diferentes, <strong>&lt;h1></strong>, <strong>&lt;h2></strong> e <strong>&lt;p></strong>, e, como se usa o seletor universal, aplicam-se nele quatro formatações: fonte (tipo e negrito), cor e alinhamento. Isso significa que todos elementos, a partir de agora, terão essas características. Simples, não é?</p>
+              <div class="caixa-destaque-livre icone-importante">
+                <p>Tenha cuidado ao usar o seletor universal. Apesar de ser útil e simples o seu uso, ele tem uma especificidade baixa e, com isso, outros seletores sobrescreverão o que foi definido nele. Então, pense bem no que colocar nele como formatações gerais e até mesmo avalie se vale a pena utilizar!</p>
+              </div>
+            </div>
+            <div class="bloco-branco">
+              <h4>Classes</h4>
+              <p>Esse nome é, sem dúvidas, familiar, certo? Porém, tratando-se de CSS, é preciso entender que isso é <strong>muito diferente</strong> de orientação a objetos. No CSS, as <strong>classes</strong> serão um identificador para determinadas <i>tags</i>. Elas facilitarão (e muito) alguns padrões de fontes, cores, espaçamentos etc. dentro dos códigos e, sem dúvida, diminuirão a quantidade a ser digitada, ajudando a manter um padrão. Veja como isso fica ao ser implementado:</p>
+              <pre>
+                <code class="language-html">
+    &lt;body>
+      &lt;h1 class="titulo">Aqui é título!&lt;/h1>
+      &lt;h2 class="titulo">Aqui é um sub-título!&lt;/h2>
+      &lt;p class="texto">E aqui é nosso parágrafo!&lt;/p>
+      &lt;p class="texto">Aplicando a mesma classe da tag anterior&lt;/p>
+    &lt;/body>          
+                </code>
+              </pre>
+              <p>No CSS:</p>
+              <pre>
+                <code class="language-css">
+    .titulo {
+      text-align: center;
+      color:red;
+    }
+    
+    .texto {
+      text-align: center;
+      color:blue;
+    }                       
+                </code>
+              </pre>
+              <p>Veja o resultado:</p>
+              <img src="imgs/fig_7_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_7_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_7_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 7 – Resultado da aplicação de classe<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">Página mostrando a frase “Aqui é título” e abaixo “Aqui é um subtítulo”, ambas vermelhas. Abaixo, frases “E aqui é nosso parágrafo” e “Aplicando a mesma classe da tag anterior”, ambas azuis.</p>
+              <p>Basta, no HTML, definir os nomes das classes que você utilizará e, dentro do CSS, utilizar o ponto (.), pois ele que define a nomenclatura da classe para ser alterada. </p>
+              <p>As classes serão o seletor mais utilizado por você durante o processo de criação de estilização. Elas individualizam os elementos e acabam tornando-os únicos para determinadas formatações, ao mesmo tempo que a mesma regra pode ser reutilizada em vários elementos, inclusive de <i>tags</i> diferentes. Serão bastante explorados, dentro do conteúdo, o funcionamento das classes e outras técnicas que facilitaram a diminuição e a estruturação de um código limpo e que seja de fácil leitura para todos os navegadores.</p>
+            </div>
+            <div class="bloco-cinza">
+              <h4>IDs</h4>
+              <p>Por que se começa pela menor especificidade e termina na maior?</p>
+              <p>Os IDs dentro do HTML/CSS são especiais. Sempre que definir um ID no HTML e levar ao CSS, ele será a maior especificidade. Não importa se você colocar classes e afins, ele sempre comandará a hierarquia. Veja este exemplo:</p>
+              <pre>
+                <code class="language-html">
+    &lt;body>
+      &lt;p class="classe1" id="idTexto">Testando a Classe e o ID&lt;/p>
+      &lt;p class="classe2" id="idTexto">Testando a Classe e o ID&lt;/p>
+    &lt;/body>                  
+                </code>
+              </pre>
+              <p>E no CSS:</p>
+              <pre>
+                <code class="language-css">
+    .classe1{
+      font-family: 'Courier New', Courier, monospace;
+      color: green;
+    }
+    
+    .classe2{
+      font-family: 'Courier New', Courier, monospace;
+      color: red;
+    }
+    
+    #idTexto {
+      font-family: Arial, Helvetica, sans-serif;
+      color: blue;
+    }                              
+                </code>
+              </pre>
+              <p>Agora, veja o resultado:</p>
+              <img src="imgs/fig_8_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_8_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_8_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 8 – Exemplo de ID em CSS<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p>Mas qual é a vantagem de usar um ID? Pense da seguinte forma:</p>
+              <div class="caixa-destaque-livre">
+                <p>Um ID é feito para ser usado apenas uma vez em um arquivo HTML, e uma <i>tag</i> só pode ter um ID. Uma classe pode ser reusada quantas vezes forem necessárias em um arquivo HTML, e uma <i>tag</i> pode ter múltiplas classes.</p>
+              </div>
+              <p>Pensando em CSS, o ID será usado para algo muito específico e muito singular dentro de uma página. Elementos como <strong>&lt;form></strong>, <strong>&lt;article></strong>, <strong>&lt;button></strong> e afins são elementos que são mais únicos, diferentes de <strong>&lt;p></strong>, <strong>&lt;h1></strong>, <strong>&lt;h2></strong> e, principalmente, <strong>&lt;div></strong>.</p>
+              <p>Porém, ainda falando de ID, chega-se a um ponto superimportante de <strong>programação <i>front-end</i></strong>. Quando se adentrar em JavaScript, os IDs serão de suma importância para usar e unir o HTML e a sua programação. O uso desse atributo (e de outros) ajudará a identificar e facilitará o processo de buscar determinados espaços em suas páginas, tornando-as dinâmicas como um todo. </p>
+            </div>
+            <div class="bloco-branco">
+              <h4>Múltiplas classes</h4>
+              <p>Quando se lida com classes, existe mais uma técnica que é extremamente útil para a estilização. Em muitas situações, haverá algumas configurações similares entre classes ou que se replicarão em determinados espaços nas páginas e você desejará pequenas alterações. Então, é possível aplicar uma classe a mais dentro do mesmo elemento para que ele herde as estilizações da outra classe e tenha também a sua própria. Isso abre espaço para muita coisa e facilita (ainda mais) a limpeza e a organização dos códigos. </p>
+              <p>Confuso? Na realidade, é bem simples! Veja:</p>
+              <pre>
+                <code class="language-html">
+    &lt;body>
+      &lt;div class="caixaDeTexto">
+        &lt;p>Aqui é a nossa caixa verde!&lt;/p>
+      &lt;/div>
+      &lt;div class="caixaDeTexto azul">
+        &lt;p>Aqui é a nossa caixa azul!&lt;/p>
+      &lt;/div>
+      &lt;div class="caixaDeTexto vermelha">
+        &lt;p>Aqui é a nossa caixa vermelha!&lt;/p>
+      &lt;/div>
+    &lt;/body>          
+                </code>
+              </pre>
+              <p>Se você analisar esse trecho de código, verá que se repete a classe <strong>caixaDeTexto</strong> e, em <strong>&lt;div></strong>, tem-se escrito “azul” e “vermelha” logo ao lado. Esse é o conceito de <strong>múltiplas classes</strong> no CSS. Usa-se o espaço para separar as classes e, depois, isso é trazido para dentro do CSS. Veja como fica simples:</p>
+              <pre>
+                <code class="language-css">
+    .caixaDeTexto {
+      border: 4px solid green;
+      margin: .3em;
+      padding: .5em;
+    }
+    
+    .caixaDeTexto.azul {
+      border-color: blue;
+    }
+    
+    .caixaDeTexto.vermelha {
+      border-color: red;
+    }              
+                </code>
+              </pre>
+              <p>A classe <strong>.caixaDeTexto</strong> define uma borda com sua grossura e tamanho, uma margem e um espaçamento interno. Agora as classes <strong>.azul</strong> e <strong>.vermelha</strong> fazem apenas as alterações específicas, herdando tudo que vem da classe <strong>.caixaDeTexto</strong>. Veja tudo isso no resultado final:</p>
+              <img src="imgs/fig_9_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_9_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_9_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 9 – Exemplo de múltiplas classes em CSS<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">Na imagem, há três caixas com bordas, uma abaixo da outra. A primeira com bordas verdes e a frase “Aqui é a nossa caixa verde!”. Abaixo, com bordas azuis e a frase “Aqui é a caixa azul”. Abaixo, com bordas vermelhas e a frase “Aqui é a nossa caixa vermelha”.</p>
+              <p>Com isso, consegue-se compreender uma grande gama de conhecimentos e técnicas para iniciar o CSS. Estrutura-se tudo no HTML e, a partir disso, parte-se diretamente para a estilização. O CSS torna tudo muito mais vivo dentro das páginas, e dominar os conceitos dos seletores fará toda a diferença.</p>
+            </div>
+          </div>
+          <div class="pagina">
+            <div class="bloco-branco">
+              <h3>Regra encadeada</h3>
+              <p>Um dos atalhos e das técnicas para se trabalhar com CSS é o uso de <strong>regras encadeadas</strong>. O seu conceito é bem similar ao de <strong>múltiplas classes</strong>, mas agora não há necessidade de usar elas em si, e sim apenas os seletores.</p>
+              <p>Veja o código a seguir em HTML:</p>
+              <pre>
+                <code class="language-html">
+    &lt;body>
+      &lt;div>
+        &lt;h1>Aqui é o título dentro da div!&lt;/h1>
+        &lt;p>Aqui é o parágrafo dentro da div!&lt;/p>
+      &lt;/div>
+      &lt;p>Sou apenas um parágrafo fora da div!&lt;/p>
+    &lt;/body>          
+                </code>
+              </pre>
+              <p>Tem-se uma <strong>&lt;div></strong> com dois elementos internos, <strong>&lt;h1></strong> e <strong>&lt;p></strong>, e um <strong>&lt;p></strong> fora dessa <strong>&lt;div></strong>; nenhuma classe, ID ou afins foram configurados, certo? Se você apenas colocasse no CSS o elemento <strong>p</strong>, ele configuraria todos os elementos <strong>&lt;p></strong> da página. Aqui, no caso, deseja-se apenas o <strong>&lt;p></strong> que está dentro da <strong>&lt;div></strong>. É agora que entra a <strong>regra encadeada</strong>!</p>
+              <pre>
+                <code class="language-css">
+    div {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    div p {
+      font-weight: bold;
+      color: darkblue;
+      font-family: 'Courier New', Courier, monospace;
+    }              
+                </code>
+              </pre>
+              <p>Veja o resultado final disso tudo:</p>
+              <img src="imgs/fig_10_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_10_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_10_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 10 – Exemplo de regra encadeada<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">Página mostrando frase “Aqui é o título dentro da div!” em negrito e grande. Abaixo, menor e em fonte Corrier New azul, frase “aqui é o parágrafo dentro da div!”. Abaixo, uma frase em Times New Roman de tamanho pequeno “Sou apenas um parágrafo fora da div!”.</p>
+              <p>Como é possível perceber, a <strong>&lt;div></strong> recebeu a fonte Arial, porém o uso de <strong>div p</strong> avisou o CSS que todos os <strong>&lt;p></strong> dentro da <strong>&lt;div></strong> devem receber a fonte Courier New e a cor <i>darkblue</i>. Já o <strong>&lt;p></strong> que estava fora da <strong>&lt;div></strong> e sem nenhuma classe definida ficou sem formatação algum, pois no CSS a hierarquia foi respeitada. É algo que pode salvar o tempo de todos, e as regras encadeadas não têm limite, podendo ser usados dois, quatro, dez elementos encadeados sem problema!</p>
+            </div>
+            <div class="bloco-cinza">
+              <h3>Algumas propriedades de estilo</h3>
+              <p>A seguir, veja a seleção de algumas propriedades úteis de estilo:</p>
+              <div class="table-responsive">
+                <table class="senac">
+                  <thead>
+                    <tr>
+                      <th>Propriedade</th>
+                      <th>Descrição</th>
+                      <th>Exemplo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>background-color</strong></td>
+                      <td>Cor de fundo de um elemento.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    background-color: beige;
+    background-color: #FF00FF;
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>background</strong></td>
+                      <td>Configurações de fundo de um elemento. Na mesma propriedade, é possível definir cor, imagem, repetição e posicionamento.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    background: lightblue url("img_tree.gif") no-repeat fixed center;
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>border</strong></td>
+                      <td>Definições de borda: espessura, estilo e cor</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    border: 2px dotted blue;
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>border-radius</strong></td>
+                      <td>Arredondamento de cantos de um elemento. É possível determinar um único valor para todos os cantos ou valores diferentes para cada canto.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    border-radius: 25px;
+    border-radius: 10px 20px 10px 20px;                          
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>font-family</strong></td>
+                      <td>Tipo de fonte. Quando se informa mais de um valor, a página tenta aplicar a primeira fonte; se não conseguir, tentará aplicar a segunda, e assim por diante</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    font-family: "Times New Roman", Times, serif;                      
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>font-size</strong></td>
+                      <td>Tamanho de fonte. Pode usar valores absolutos (em <i>pixels</i>, cm, pt etc) ou relativos.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    font-size: 15px;
+    font-size: large;
+    font-size: 150%;                                             
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>font-style</strong></td>
+                      <td>Estilo do texto. Geralmente usado para itálico.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    font-style: normal;
+    font-style: italic;
+    font-style: oblique;                                                                    
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>font-weight</strong></td>
+                      <td>Espessura dos caracteres. Geralmente usado para negrito.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    font-weight: normal;
+    font-weight: bold;
+    font-weight: bolder;                                                                                             
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>opacity</strong></td>
+                      <td>Transparência ou opacidade de um elemento. Admite valores de 0 (totalmente transparente) a 1 (totalmente opaco).</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    opacity: 0.5;
+    opacity: 0.2;                                                                                                                      
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>text-decoration</strong></td>
+                      <td>Decoração de um texto. Geralmente usado para sublinhado. Para retirar o estilo original de um <i>hyperlink</i>, é possível usar o valor <strong>none</strong>.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    text-decoration: none;
+    text-decoration: underline;                                                                                                                                             
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="legenda-imagem">
+                Tabela 1 – Propriedades úteis de estilo<br>
+                Fonte: Senac EAD (2023)
+              </p>
+            </div>
+            <div class="bloco-branco">
+              <h3>Algumas propriedades de dimensões</h3>
+              <p>A seguir, veja a seleção de algumas propriedades úteis de dimensionamento e visibilidade de um elemento:</p>
+              <div class="table-responsive">
+                <table class="senac">
+                  <thead>
+                    <tr>
+                      <th>Propriedade</th>
+                      <th>Descrição</th>
+                      <th>Exemplo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>height</strong></td>
+                      <td>Altura de um elemento (uma imagem, por exemplo). Pode levar valores absolutos ou relativos.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    height: 50px;
+    height: 10%;
+    height: auto;                                                                                                                                                                       
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>line-height</strong></td>
+                      <td>Altura da linha de um elemento (<strong>div</strong>, por exemplo).</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    line-height: 1.5;
+    line-height: 20px;                                                                                                                                                                                               
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>width</strong></td>
+                      <td>Largura de um elemento (uma imagem, por exemplo). Pode levar valores absolutos ou relativos.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    width: 50px;
+    width: 10%;
+    width: auto;                                                                                                                                                                                                                        
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>visibility</strong></td>
+                      <td>Determina se o elemento está visível ou não.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    visibility: visible;
+    visibility: hidden;                                                                                                                                                                                                                                                
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="legenda-imagem">
+                Tabela 2 – Propriedades úteis de dimensionamento e visibilidade<br>
+                Fonte: Senac EAD (2023)
+              </p>
+            </div>
+            <div class="bloco-cinza">
+              <h3>Alinhamentos e espaçamentos</h3>
+              <p>Você já lidou com cores, fontes e estruturas um pouco mais visuais, porém tudo isso não seria encaixado em uma boa página se não houvesse um trabalho minucioso de alinhamentos e espaçamentos de conteúdo. É essencial dominar e compreender essas técnicas para poder estruturar tudo que as páginas compreenderão, já que esses conteúdos precisam ser encaixados. </p>
+              <p>Pense em uma página em um <i>website</i> como um quebra-cabeça com espaços limitados, que está pronta para receber textos, imagens, <i>links</i> e tudo mais que o HTML possa oferecer, porém, para encaixar isso, existem diversas maneiras que o CSS utiliza para tornar tudo um pouco mais fácil.</p>
+              <p>Desde que o CSS3 foi implementado, construir e “encaixar as peças” desse quebra-cabeça ficou muito mais fácil, graças a dois simples conceitos chamados <i>display</i> e <i>flex</i>.</p>
+              <p>Hoje em dia, é importante ter estruturas de páginas que funcionam em qualquer tipo de dispositivo, então elementos como altura, largura, resolução, orientação e outros precisam ser levados em consideração para que funcionem tranquilamente. No passado, fazia-se à mão e tentava-se adaptar de várias maneiras e testando em diversas resoluções, mas o <i>flex</i> chegou para mudar e facilitar a estilização de estrutura. Veja como fica:</p>
+              <pre>
+                <code class="language-html">
+    &lt;div class="conteudo">
+      &lt;div class="interno">Item&lt;/div>
+      &lt;div class="interno">Item&lt;/div>
+      &lt;div class="interno">Item&lt;/div>
+      &lt;div class="interno">Item&lt;/div>
+    &lt;/div>           
+                </code>
+              </pre>
+              <p>Aqui, observa-se o conteúdo, de maneira bem simples. Agora, no CSS, aplicam-se os diferentes tipos de <i>display</i>.</p>
+              <p><strong>Display: block</strong></p>
+              <pre>
+                <code class="language-css">
+    .conteudo {
+      font-family: Lucida Console;
+      text-align: center;
+      display: block;
+      background-color: aquamarine;
+      width: 50%;
+    }
+    
+    .interno {
+      margin-top: 5px;
+      padding-top: 5px;
+      background-color: yellow;
+    }                      
+                </code>
+              </pre>
+              <img src="imgs/fig_11_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_11_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_11_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 11 – Exemplo de <strong>display: block</strong><br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">Na imagem, há quatro linhas com o fundo amarelo e em cada linha está escrita a palavra “Item”.</p>
+              <p>O <strong>display: block</strong>, como o nome diz, cria um bloco para adaptar os conteúdos e exibe um abaixo do outro. Geralmente esse <i>display</i> é usado para adaptar um conteúdo que pode conter imagem e texto e que se adapte àquele espaço destinado a ele. </p>
+              <p><strong>Display: inline</strong></p>
+              <pre>
+                <code class="language-css">
+    .conteudo {
+      display: inline;
+      background-color: aquamarine;
+    }                               
+                </code>
+              </pre>
+              <img src="imgs/fig_12_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_12_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_12_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 12 – Exemplo de <strong>display: inline</strong><br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">Na imagem, há quatro linhas com o fundo amarelo e em cada linha está escrita a palavra “Item”.</p>
+              <p>Já o <strong>display: inline</strong> ocupa o espaço de uma linha inteira para exibir o seu conteúdo. Perceba que o <strong>background-color</strong> foi completamente ignorado, pois a linha toda é ocupada. Geralmente esse <i>display</i> é usado para listagens ou <i>menus</i>.</p>
+              <p><strong>Display: inline-block</strong></p>
+              <pre>
+                <code class="language-css">
+    .conteudo {
+      font-family: Lucida Console;
+      text-align: center;
+      display: inline-block;
+      background-color: aquamarine;
+      width: 20%;
+    }
+    
+    .interno {
+      width: auto;
+      margin-top: 5px;
+      padding-top: 5px;
+      margin-bottom: 5px;
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: yellow;
+    }                                       
+                </code>
+              </pre>
+              <img src="imgs/fig_13_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_13_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_13_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 13 – Exemplo de <strong>display: inline-block</strong><br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">Na imagem, há quatro blocos com o fundo amarelo e em cada linha está escrita a palavra “Item”.</p>
+              <p>Agora, “unindo o melhor dos dois mundos”, o <strong>inline-block</strong> recebe os conteúdos de cada linha, preenche essas linhas e depois cria os blocos, um abaixo do outro. Quanto maior o conteúdo de cada linha, mais os blocos se adaptam. No exemplo anterior, é possível ver que colocando a <strong>width</strong> da <strong>&lt;div></strong> pai como 20% e da <strong>.interno</strong> como auto e apenas ajustando as margens, ele cria os blocos de uma maneira coesa.</p>
+            </div>
+            <div class="bloco-branco">
+              <p><strong>Display: flex</strong></p>
+              <pre>
+                <code class="language-css">
+    .conteudo {
+      font-family: Lucida Console;
+      text-align: center;
+      display: flex;
+      background-color: aquamarine;
+      width: 30%;
+    }
+    
+    .interno {
+      margin-top: 5px;
+      padding-top: 5px;
+      margin-bottom: 5px;
+      margin-left: 5px;
+      margin-right: 5px;
+      background-color: yellow;
+    }                                                  
+                </code>
+              </pre>
+              <img src="imgs/fig_14_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_14_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_14_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 14 – Exemplo de <strong>display: flex</strong><br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="acessivel no-print">Na imagem, há quatro blocos com o fundo amarelo na mesma linha, e em cada bloco está escrita a palavra “Item”.</p>
+              <p>O <strong>display: flex</strong> preza pela responsividade, pela eficiência e pelos dinamismos dos seus conteúdos dentro das páginas. O <i>flex</i> distribui, igualitariamente, os conteúdos dentro do espaço que é dado a eles e, sem dúvida, adapta-se para cada dispositivo em que for utilizado. Sem dúvida, a utilização do <i>flex</i> economizará tempo e muitas dores de cabeça de quem estiver com a “mão na massa” dentro do CSS.</p>
+              <p>Até este momento, você está apenas organizando os conteúdos de <strong>&lt;div></strong> e afins e fazendo eles se adaptarem a um <i>container</i>. Porém, existem duas técnicas superimportantes que ajudam a <strong>organizar também os espaços entre os <i>containers</i> e o conteúdo de dentro deles</strong>. Dominar essas duas técnicas é mais um passo para construir excelentes páginas!</p>
+            </div>
+          </div>
+          <div class="pagina">
+            <div class="bloco-branco">
+              <h3><i>Margin</i> vs <i>padding</i></h3>
+              <p>É bem possível que essas duas palavras sejam as mais usadas por vocês durante todo o processo de construção de suas páginas. Mas também é fácil de confundir a função de cada uma delas e como elas funcionam dentro do CSS.</p>
+              <p>Imagine uma <strong>&lt;div></strong>, um pequeno <i>container</i>. Esse <i>container</i> é uma “caixa” que, dentro dela, existe um conteúdo. Quando se cria mais de uma <strong>&lt;div></strong>, uma abaixo da outra, e aplica-se uma borda, elas ficarão grudadas. Veja este exemplo:</p>
+              <pre>
+                <code class="language-html">
+    &lt;body>
+      &lt;div class="caixa">
+        &lt;img src="senac logo.webp"/>
+        &lt;p>Aqui é uma div!&lt;/p>
+      &lt;/div>
+      &lt;div class="caixa">
+        &lt;img src="senac logo.webp"/>
+        &lt;p>Aqui é uma div!&lt;/p>
+      &lt;/div>
+    &lt;/body>                                            
+                </code>
+              </pre>
+              <p>No CSS:</p>
+              <pre>
+                <code class="language-css">
+    * {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .caixa{
+      border: 4px solid blue;
+    }
+    
+    .caixa img {
+      width: 10%;
+    }                                                        
+                </code>
+              </pre>
+              <img src="imgs/fig_15_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_15_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_15_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 15 – Exemplo de mais de uma <strong>&lt;div></strong><br>
+                  Fonte: Senac EAD (2023)                
+              </p>
+              <p class="acessivel no-print">Na imagem, há dois blocos com bordas azuis e fundo branco. Dentro do bloco há o logo do Senac e, logo abaixo, a frase “Aqui é uma div”.</p>
+              <p>Na figura anterior, veja que as bordas estão grudadas e uma abaixo da outra. Isso acontece porque não se aplicou <strong>margin</strong> entre elas. A figura está bem no centro, mas se você quiser mover <strong>apenas</strong> ela ou <strong>apenas</strong> o texto, use o <strong>padding</strong> para isso.</p>
+              <div class="caixa-destaque">
+                <p>Em resumo, <strong>margin</strong> é para criar espaços em volta dos elementos e <strong>padding</strong> é para criar espaços entre os elementos, dentro de um <i>container</i>.</p>
+              </div>
+            </div>
+            <div class="bloco-cinza">
+              <p>Agora, veja a separação dessas caixas utilizando <strong>margin</strong> e a adaptação da imagem para ficar ao lado do texto, como fica no CSS:</p>
+              <pre>
+                <code class="language-css">
+    .caixa{
+      border: 4px solid blue;
+      margin-top: 1em;
+    }
+    
+    .caixa img {
+      float: left;
+      padding-left: 5px;
+      width: 10%;
+    }                                                                  
+                </code>
+              </pre>
+              <p>E o resultado:</p>
+              <img src="imgs/fig_16_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_16_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_16_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 16 – Exemplo de <strong>margin</strong> e <strong>padding</strong><br>
+                Fonte: Senac EAD (2023)               
+              </p>
+              <p class="acessivel no-print">Na imagem, há dois blocos com bordas azuis e fundo branco. Dentro do bloco, o logo do Senac e, ao lado, a frase “Aqui é uma div agora com margin e padding”.</p>
+              <p>O que aconteceu no fim das contas? O <strong>margin-top</strong> criou uma margem <strong>entre cada &lt;div>, no topo de cada uma delas</strong>, dando esse espaçamento necessário. O <strong>float: left</strong> jogou a imagem para a esquerda e o <strong>padding-left</strong> fez com que ela saísse da borda da caixa e ficasse alinhada com o texto. É simples assim, porém os valores necessários para cada uso de <strong>margin</strong> e <strong>padding</strong> sempre terão de ser analisados e testados enquanto a página está sendo montada.</p>
+            </div>
+            <div class="bloco-branco">
+              <h4>Que <i>margin</i> ou <i>padding</i> usar?</h4>
+              <p>Ambos utilizam uma lógica similar para poder trabalhar com os seus espaçamentos. Todo elemento tem quatro possíveis espaçamentos.</p>
+              <img src="imgs/fig_17_dsktp.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig_17_dsktp.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_17_dsktp.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 17 – Exemplo visual dos espaçamentos<br>
+                Fonte: Senac EAD (2023)          
+              </p>
+              <p class="acessivel no-print">Na imagem, há um quadrado laranja com a palavra “Margin” no canto superior esquerdo. Em cada canto da imagem, há setas laranjas de duas pontas, com as palavras “margin-left”, “margin-right”, “margin-top” e “margin-bottom”. Dentro desse quadrado laranja, há um quadrado azul com a palavra “Padding” no canto superior esquerdo. Em cada canto desse quadrado, há setas azuis de duas pontas, com as palavras “padding-left”, “padding-right”, “padding-top” e “padding-bottom”. No centro do quadrado azul, há um retângulo cinza com a palavra “Conteúdo”.</p>
+              <p>Veja a seguinte divisão de <strong>margin</strong>:</p>
+              <div class="caixa-destaque">
+                <p><strong>margin-top</strong>: [valor][unidade de tamanho]</p>
+                <p><strong>margin-right</strong>: [valor][unidade de tamanho]</p>
+                <p><strong>margin-left</strong>: [valor][unidade de tamanho]</p>
+                <p><strong>margin-bottom</strong>: [valor][unidade de tamanho]</p>
+
+                <p class="my-3">E o mesmo vale para o <strong>padding</strong>:</p>
+
+                <p><strong>padding-top</strong>: [valor][unidade de tamanho]</p>
+                <p><strong>padding-right</strong>: [valor][unidade de tamanho]</p>
+                <p><strong>padding-left</strong>: [valor][unidade de tamanho]</p>
+                <p><strong>padding-bottom</strong>: [valor][unidade de tamanho]</p>
+              </div>
+              <p>Então, é possível aplicar esses espaçamentos sempre que necessário dentro de qualquer conteúdo. Por exemplo, em uma <strong>&lt;div></strong> cheia de texto, pode-se usar o <strong>padding</strong> para deixar tudo mais alinhado:</p>
+              <pre>
+                <code class="language-css">
+    .caixa p {
+      padding-top: 10px;
+      padding-right: 5px;
+      padding-left: 3px;
+      padding-bottom: 5px;
+    }              
+                </code>
+              </pre>
+              <p>E é isso que se tem para os espaçamentos de <strong>padding</strong> e <strong>margin</strong>! Evidentemente, todo esse processo de criação é importante para ir testando os valores que mais se adaptam aos conteúdos criados.</p>
+              <div class="caixa-destaque-livre">
+                <p>Digitar quatro linhas, uma a uma, para os espaçamentos é extremamente cansativo. Então, pode-se usar uma outra técnica para cumprir esse papel. No trecho CSS anterior, no qual foram aplicados quatro <strong>paddings</strong> diferentes, poderia ter sido feito desta forma:</p>
+                <p class="pl-2"><strong>padding: 10px 5px 3px 5px</strong></p>
+                <p>Isso facilita (e muito) a qualidade do código. É importante lembrar que ele sempre respeita uma ordem, então sempre será desta forma:</p>
+                <p class="pl-2"><strong>padding: [top] [right] [left] [bottom]</strong></p>
+                <p>E é possível usar isso para <strong>margin</strong> da mesma forma, sem problemas!</p>
+              </div>
+            </div>
+            <div class="bloco-cinza">
+              <h4>Float</h4>
+              <p>A propriedade <strong>float</strong>, vista anteriormente, serve para alinhar um elemento à direita ou à esquerda do <i>container</i> onde ele está, permitindo que texto ou outros elementos em linha possam se posicionar ao lado do elemento afetado. Veja o exemplo a seguir:</p>
+              <pre>
+                <code class="language-html">
+    &lt;body>
+      &lt;div>
+        &lt;img src="rosa.jpg" alt="rosa vermelha" class="img-esquerda"/>
+        &lt;p>A rosa é uma das flores mais populares no mundo. Vem sendo cultivada pelo homem desde a Antiguidade.&lt;/p>
+      &lt;/div>
+      &lt;div>
+        &lt;img src="violeta.jpg" alt="violetas lilases" class="img-direita"/>
+        &lt;p>Violaceae, a família das violetas, contém cerca de 26 gêneros e 900 espécies de plantas herbáceas, arvoretas, arbustos ou menos frequentemente lianas.&lt;/p>
+      &lt;/div>
+    &lt;/body>              
+                </code>
+              </pre>
+              <p>Para o CSS:</p>
+              <pre>
+                <code class="language-css">
+    div{
+      border: 2px solid black;
+      width: 50%;
+      overflow:auto;
+    }
+    .img-esquerda{
+      float:left;
+      width: 220px;
+    }
+    .img-direita{
+      float:right;
+      width: 220px;
+    }                          
+                </code>
+              </pre>
+              <p>A classe <strong>img-esquerda</strong> define um alinhamento à esquerda com <strong>float:left</strong> e a classe <strong>img-direita</strong> usa <strong>float:right</strong> para alinhar a imagem à direita do <i>container</i> (<strong>&lt;div></strong>). Na regra “div”, ainda definimos <strong>overflow:auto</strong>. O <strong>overflow</strong> é uma propriedade usada para definir o comportamento de um elemento quando seu conteúdo ultrapassar em largura ou altura as dimensões do <i>container</i>. Aqui, usa-se <strong>auto</strong> para que <strong>&lt;div></strong> se adapte ao conteúdo (experimente retirar essa propriedade e veja o resultado), mas a propriedade pode ainda levar valores como <strong>visible</strong> (valor padrão), <strong>hidden</strong> (corta o trecho do conteúdo que ficou fora do <i>container</i>) e <strong>scroll</strong> (inclui barra de rolagem no <i>container</i>).</p>
+              <img src="imgs/fig_18.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/fig.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_18.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 18 – Imagens com propriedade <strong>float</strong><br>
+                Fonte: Senac EAD (2023)         
+              </p>
+              <p class="acessivel no-print">Acima, veja um quadro contornado de preto ocupando metade da largura da página e que contém uma imagem de uma rosa à esquerda e um texto à direita da imagem. Abaixo, outro quadro com um texto à esquerda e uma imagem de violetas à direita.</p>
+              <div class="caixa-destaque-livre icone-desafio">
+                <p>Agora que você tem o conhecimento mais abrangente de <strong>margin</strong> e <strong>padding</strong>, é interessante praticar! Tente emular uma estrutura 3x3 de blocos, tendo uma imagem, um título e um texto em cada um dos blocos. Exemplo visual:</p>
+                <img src="imgs/fig_19.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                <a href="imgs/fig_19.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/fig_19_dsktp.png" class="center-block img-responsive"></a>
+                <p class="legenda-imagem">
+                  Figura 19 – Exemplo visual para desafio<br>
+                  Fonte: Senac EAD (2023)        
+                </p>
+                <p class="acessivel no-print">Na imagem, há 6 blocos, 3 na linha de cima e 3 na linha debaixo, todos com o mesmo conteúdo interno: uma imagem com o logo do Senac, abaixo a palavra “Título” e abaixo a frase “Texto descritivo”.</p>
+              </div>
+            </div>
+            <div class="bloco-branco">
+              <h3>Unidades de medida no CSS</h3>
+              <p>Durante o conteúdo, algumas unidades de medida foram utilizadas para poder estilizar os exemplos. Mas quais são elas? Quais são as corretas e quais as suas diferenças?</p>
+              <p>Primeiro, é preciso separar essas unidades entre <strong>absolutas</strong> e <strong>relativas</strong>. A seguir, entenda cada uma delas.</p>
+              <h4>Absolutas</h4>
+              <p>Bem simples de entender, as unidades absolutas têm esse nome porque elas <strong>jamais</strong> alterarão o seu tamanho, independentemente da largura da tela. Antigamente, como havia monitores com padrões de resolução e tamanho, eram as mais usadas, pois eram de fácil adaptação e criação. Porém, como hoje as páginas devem se adaptar a telas diferentes, como celulares, <i>tablets</i>, monitores <i>desktop</i> e afins, algumas caíram em desuso. São elas:</p>
+              <ul>
+                <li><strong>cm (centímetro)</strong>: é uma medida comum, conhecida por todos, que pode ser utilizada no <i>front-end</i>, mas não é uma boa saída, tendo em vista que 1 cm pode ser grande até mesmo para uma tela de celular.</li>
+                <li><strong>pt (ponto) ou pc (paica)</strong>: são medidas complexas, mas que datam dos primórdios do CSS. Geralmente são usadas para tamanho de fonte em impressões de papel e podem se adaptar às páginas de um <i>site</i>.</li>
+                  <ul>
+                    <li>1 pt é igual a 1,66 <i>pixels</i>.</li>
+                    <li>1 pc é igual a 12 pt.</li>
+                  </ul>
+                <li><strong><i>Pixel</i></strong>: é, sem dúvida, a medida absoluta mais comum e recomendada. Geralmente se utiliza o <i>pixel</i> para pequenos ajustes, como <strong>margin</strong>, <strong>padding</strong>, <strong>border</strong> e afins, que não impactarão visualmente a página como um todo e a sua estrutura, mas darão o retoque visual necessário. O <i>pixel</i> é usado com a sigla <strong>px</strong> no CSS.</li>
+              </ul>
+
+              <h4>Relativas</h4>
+              <p>Hoje, as unidades relativas são as que dominam as unidades de medida no CSS. Elas procurarão sempre se adaptar ao comportamento que foi definido no HTML e no início do CSS (como o tamanho máximo de uma <strong>&lt;div></strong>) e também às telas que ele está desenvolvendo. São elas:</p>
+              <ul>
+                <li><strong>rem</strong>: no <i>front-end</i>, o rem é, sem dúvida, uma das unidades mais usadas, mas é preciso compreender basicamente como ele funciona. O padrão de 1 rem é igual a 16 px, porém é importante saber que 1 px em uma tela de celular é diferente de 1 px em uma tela de televisão, por exemplo. O uso do rem é essencial para toda a estrutura do seu CSS.</li>
+                <li><strong>em</strong>: o em tem o funcionamento similar ao rem, porém ele sempre herdará o tamanho de um elemento-pai (uma <strong>&lt;div></strong> acima, por exemplo), então a sua utilização exige uma estrutura por trás. Para deixar mais visual, veja este exemplo:</li>
+              </ul>
+              <pre>
+                <code class="language-css">
+    .elemento-pai {
+      font-size: 100px;
+    }
+    
+    .texto{
+      font-size: 0.5em;
+    }                                       
+                </code>
+              </pre>
+              <p>Nesse exemplo, o elemento-pai tem 100 px, isto é, 1 em = 100 px. Logo, foi definido que o <strong>font-size</strong> seja de 0,5 em, no caso 50 px. É ótimo utilizar o em para ter mais controle acerca das alterações que se faz e, ainda, garantir a adaptação a telas menores e afins.</p>
+            </div>
+            <div class="bloco-cinza">
+              <h3>Algumas propriedades de posicionamento</h3>
+              <p>A seguir, veja uma seleção de algumas propriedades úteis para posicionamento de elementos na página:</p>
+              <div class="table-responsive">
+                <table class="senac">
+                  <thead>
+                    <tr>
+                      <th>Propriedade</th>
+                      <th>Descrição</th>
+                      <th>Exemplo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>bottom, top, left, right</strong></td>
+                      <td>Posicionamento de um elemento a partir da base, do topo e da extremidade esquerda ou direita do elemento-pai. Geralmente é usado em conjunto com <strong>position: absolute</strong> ou <strong>position: fixed</strong>.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    bottom: 10px;
+    left: 10px;                                                                                                                                                                                               
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>position</strong></td>
+                      <td>Tipo de posicionamento de um elemento. Os valores mais comuns são <strong>static</strong>, valor padrão que reflete o fluxo do documento; <strong>absolute</strong>, para posicionar com relação ao primeiro elemento anterior que não seja <strong>static</strong>; <strong>fixed</strong>, para posicionar com relação à tela do navegador; <strong>relative</strong>, para posicionar com relação à posição natural que o elemento ocuparia.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    position: static;
+    position: relative;
+    position: absolute;
+    position: fixed;                                                                                                                                                                                                                       
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>text-align</strong></td>
+                      <td>Alinhamento do texto em um <i>container</i>.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    text-align: justify;
+    text-align: center;                                                                                                                                                                                                                                               
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>vertical-align</strong></td>
+                      <td>Alinhamento vertical de um elemento <i>inline</i> ou com propriedade <strong>display inline</strong> ou <strong>inline-block</strong>.</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    vertical-align: top;
+    vertical-align: middle;
+    vertical-align: bottom;                                                                                                                                                                                                                                                                       
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>z-index</strong></td>
+                      <td>Definição da ordem de posicionamento de um elemento. Geralmente é usado para sobrepor um elemento a outros (um modal, por exemplo).</td>
+                      <td>
+                        <pre>
+                          <code class="language-css">
+    z-index: -1;                                                                                                                                                                                                                                                                     
+                          </code>
+                        </pre>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="legenda-imagem">
+                Tabela 3 – Propriedades úteis para posicionamento de elementos na página<br>
+                Fonte: Senac EAD (2023)
+              </p>
+            </div>
+            <div class="bloco-branco">
+              <h3>Interações dinâmicas</h3>
+              <p>Dentro do CSS3, há diversas maneiras de editar e deixar visuais as páginas sem nem ainda ter entrado em JavaScript, por exemplo. E é graças a muitos efeitos práticos, simples e dinâmicos que é possível levar tudo para dentro do CSS!</p>
+              <p>Veja, a seguir, os efeitos que se podem ser realizados em <i>links</i> e em botões, pois são efeitos simples e fáceis.</p>
+              <p>Primeiro, monta-se o HTML:</p>
+              <pre>
+                <code class="language-html">
+    &lt;div class="buttons">
+      &lt;button type="button" class="effect effect-1">Efeito&lt;/button>
+    &lt;/div>                                      
+                </code>
+              </pre>
+              <p>São apenas três botões simples para depois aplicar o CSS em cima disso.</p>
+              <p>Aplique a tecnologia do <i>hover</i> e do <i>transition</i>.</p>
+              <p><strong><i>Hover</i></strong>: faz um efeito quando o cursor do <i>mouse</i> está em cima; pode ser uma troca de cor, uma troca de fonte etc.</p>
+              <p><strong><i>Transition</i></strong>: faz uma transição de um efeito para outro, dada uma duração específica.</p>
+              <pre>
+                <code class="language-css">
+    .buttons {
+      text-align: center;
+      margin-top: 3em;
+    }
+    
+    .effect{
+      border:none;
+      color:#fff;
+      padding: 20px;
+      margin: 10px;
+      font-size: 24px;
+      border-radius: 10px;
+      position: relative;
+      box-sizing: border-box;
+      cursor: pointer;
+      transition: all 400ms ease;
+    }                                                 
+                </code>
+              </pre>
+              <p>A estrutura dos botões, o tamanho, a fonte, as margens e também a transição que terá em cada um deles foram definidos.</p>
+              <p>Agora, é hora de aplicar o efeito!</p>
+              <pre>
+                <code class="language-css">
+    .effect-1::before{
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 0px;
+      height: 64px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 10px;
+      transition: all 2s ease;
+    }
+    
+    .effect-1:hover:before{
+      width: 100%;
+    }              
+                </code>
+              </pre>
+              <p>Veja, a seguir, o resultado desse efeito de animação com <i>hover</i> e <i>transition</i>:</p>
+              <img src="imgs/gif1.gif" class="center-block img-responsive no-print">
+              <img src="imgs/gif1.png" class="center-block img-responsive only-print" aria-hidden="true">
+              <p class="acessivel no-print">Um retângulo de fundo verde com as bordas arredondadas com a palavra “Efeito” escrita no centro. Quando o cursor do mouse passa por cima do retângulo, um efeito de sobreposição de cor acontece, vindo da esquerda para a direita, deixando o fundo mais claro. Após 1 segundo retorna a cor normal.</p>
+              <p>Quando o cursor fica sobre o botão, o efeito acontece, aplicando o <i>transition</i> em todo o botão por dois segundos. E isso é só o começo das funções que podem ser trabalhadas no CSS!</p>
+              <div class="caixa-destaque-livre icone-desafio">
+                <p>Construa, agora, os dois botões a seguir com os seguintes efeitos. As cores podem ser diferentes, à vontade. Basta usar <i>transition</i> e <i>hover</i>. Não se esqueça de criar as classes para diferenciar os botões!</p>
+                <img src="imgs/gif2.gif" class="center-block img-responsive no-print">
+                <img src="imgs/gif2.png" class="center-block img-responsive only-print" aria-hidden="true">
+                <p class="acessivel no-print">Dois retângulos, um de fundo azul com as bordas arredondadas com a palavra “Efeito” escrita no centro, ao lado um de fundo vermelho com as bordas arredondadas com a palavra “Efeito”. Quando o cursor do mouse passa por cima do retângulo azul, um efeito de sobreposição de cor acontece, vindo de cima para baixo, deixando o fundo mais claro. Após 1 segundo retorna à cor normal. Quando o cursor do mouse passa por cima do retângulo vermelho, ele fica com fundo branco e letras vermelhas. Após a remoção do mouse, retorna à cor normal.</p>
+              </div>
+            </div>
+            <div class="bloco-cinza">
+              <h3>Encerramento</h3>
+              <p>CSS é incrível, não é? Porém, com grandes poderes vêm grandes responsabilidades. Esta é uma pequena fragmentação de todas as possibilidades que o mundo de estilização traz para você, e domar essas técnicas, sem dúvidas, não será um trabalho fácil. </p>
+              <p>Existe uma gama de técnicas extras que virão por meio de incansáveis práticas e estudos de tudo que o CSS vem a oferecer, assim como o uso de <i>bootstrap</i>, bibliotecas externas e até mesmo agregação com o JavaScript, que abrirá ainda mais possibilidades, mas agora com programação.</p>
+              <p>Nunca deixe de pensar no visual das suas páginas e dos seus sistemas. A tecnologia, hoje, anda de mão dadas com a experiência e a interface de usuário, e, tratando-se de Internet, o CSS é um facilitador imenso.</p>
+            </div>
+          </div>
+        </section>
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+        <footer class="text-center no-print">
+          
+          <ul class="pagination">
+
+          </ul>
+         
+        </footer>
+    </div>
+
+
+    <!-- Modais -->
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+<!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+<div class="ico-div-loader">
+	<img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../template/js/jquery.min.js"></script>
+<script src="../template/js/bootstrap.min.js"></script>
+<script src="../template/js/jquery.magnific-popup.min.js"></script>
+<script src="../template/js/print.js"></script>
+<script src="../template/js/template.config.js"></script>
+<script src="../template/js/images.loader.js"></script>
+<script src="../template/js/highlight.min.js"></script>
+<noscript>
+  <style media="screen">
+    .over-loader { display: none;}    
+  </style>
+</noscript>
+</body>
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code:not(.codigo-destaque)').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  });
+	//inicializa zoom na imagem
+	$('.zoom-imagem').magnificPopup({
+	 type: 'image',
+  	 mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+ 	 zoom: {
+		enabled: true, // By default it's false, so don't forget to enable it
+
+		duration: 300, // duration of the effect, in milliseconds
+		easing: 'ease-in-out', // CSS transition easing function
+
+		// The "opener" function should return the element from which popup will be zoomed in
+		// and to which popup will be scaled down
+		// By defailt it looks for an image tag:
+		opener: function(openerElement) {
+		  // openerElement is the element on which popup was initialized, in this case its <a> tag
+		  // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+		  return openerElement.is('img') ? openerElement : openerElement.find('img');
+		}
+	  },
+	   image: {
+		  markup: '<div class="mfp-figure">'+
+					'<div class="mfp-close"></div>'+
+					'<div class="mfp-img"></div>'+ // Floated left
+					'<div class="mfp-bottom-bar">'+'<figcaption>'+'<div class="mfp-title" style="text-align:center"></div>'+
+					  '<div class="mfp-counter"></div>'+'</figcaption>'+
+					'</div>'+
+				  '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+		  cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+		  tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+	   }
+	});
+
+	//inicializa popover
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
+	//inicializa tooltip
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+</script>
+
+<script>
+  var scriptElem=document.createElement("script");
+  scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+  scriptElem.charset="UTF-8",
+  scriptElem.onload=function(){
+        window.ht = new HT({
+            token:"bf5b7efb148a829a126a0e0c9fd533bf",
+            align:"top",
+            videoEnabled: true,
+            ytEmbedReplace: true,           
+            mobileConfig:{align:"right",
+                          actionsAlign:"top",
+                          customButtonStyle:{
+                                borderRadius:"6px",
+                                size:"38px",
+                                horizontalMargin:"13px",
+                                bottomMargin:"140px",
+                                rightMargin:"40px"}
+                          }
+          });        
+      $('.ht-skip').attr("aria-hidden","true")
+    },
+  document.body.appendChild(scriptElem);
+</script>

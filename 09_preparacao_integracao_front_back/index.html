@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ferramentas de depuração passo a passo</title>
+
+    <!-- Bootstrap -->
+    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+    <link href="../template/css/cores.css" rel="stylesheet">
+    <link href="../template/css/modal-100.css" rel="stylesheet">
+    <link href="../template/css/devibeans.min.css" rel="stylesheet">
+      <!--Extras - novas classes para facilitar-->
+      <link rel="stylesheet" href="../template/css/extras.css">
+    <link href="../template/css/sncload.css" rel="stylesheet">
+    <link href="../template/css/magnific-popup.css" rel="stylesheet">
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <!-- css necessario para o print -->
+    <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+    <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+        	  <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+            <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet" class="container fundo-tecnicos">
+        <header class="no-print">
+          <!-- BTO IMPRIMIR -->
+          <div class="grupo-imprimir no-print">
+            <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                <span class="fa fa-print"></span> <span>Imprimir</span>
+            </button>
+          </div>
+          <!-- /BTO IMPRIMIR -->
+        </header>
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <div class="pagina">
+            <p class="acessivel no-print">Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau máximo de leitura, a fim de que os códigos disponibilizados neste material sejam lidos corretamente. No caso do NVDA (NonVisual Desktop Access), para localizar a opção Grau de pontuação/símbolos, acesse Preferências – Configurações – Fala. Altere o padrão Pouco para Tudo. Dessa forma, o leitor passará a ler os segmentos de código em sua totalidade. </p>
+            
+             <!--Menu-->
+             <div class="bg-fundo"></div>
+             <input type="checkbox" id="menu" name="menu" class="menu-checkbox no-print">
+             <label class="menu-toggle no-print" for="menu"><span>Toggle</span></label>
+             <div class="menu no-print" aria-hidden="true">
+               <div id="style-2" class="scroll-bar">
+                 <div class="force-overflow">
+                   
+                   <ul class="eng-item-menu">
+                     <li class="item1">
+                       <a href="#t1" class="fundo-item">Introdução</a>
+                       <hr>
+                     </li>
+                     <li class="item2">
+                       <a href="#t2" class="fundo-item">Simulando um <i>back-end</i></a>
+                       <hr>
+                     </li>
+                     <li class="item3">
+                       <a href="#t3" class="fundo-item">Instalando o NPM – Node.js</a>
+                       <hr>
+                     </li>
+                     <li class="item4">
+                       <a href="#t4" class="fundo-item">Instalando o servidor JSON Server</a>
+                       <hr>
+                     </li>
+                     <li class="item5">
+                       <a href="#t5" class="fundo-item">Protocolo HTTP – GET e POST</a>
+                       <hr>
+                     </li>
+                     <li class="item6">
+                       <a href="#t6" class="fundo-item">Preparando para os próximos exemplos</a>
+                       <hr>
+                     </li>
+                     <li class="item7">
+                       <a href="#t7" class="fundo-item">Solicitações GET e POST</a>
+                       <hr>
+                     </li>
+                     <li class="item8">
+                       <a href="#t8" class="fundo-item">API Fetch</a>
+                     </li>
+                     <li class="item9">
+                       <a href="#t9" class="fundo-item">jQuery</a>
+                     </li>
+                     <li class="item10">
+                      <a href="#t10" class="fundo-item">Validações</a>
+                    </li>
+                    <li class="item11">
+                      <a href="#t11" class="fundo-item">Validação com jQuery Validation</a>
+                    </li>
+                    <li class="item12">
+                      <a href="#t12" class="fundo-item">Máscaras</a>
+                    </li>
+                    <li class="item13">
+                      <a href="#t13" class="fundo-item"> Encerramento</a>
+                    </li>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+ 
+             <button id="btn-topo" class="btn-link btn-topo no-print" title="Voltar ao topo"> <img src="../05_estrutura_semantica/imgs/bt_voltar_ao_topo_dsktp.svg" class="topodesktop"> </button>
+             <button id="btn-topomobile" class="btn-link btn-topo-mobile no-print" title="Voltar ao topo"> <img src="../05_estrutura_semantica/imgs/bt_voltar_ao_topo_mobile.svg" class="topomobile"> </button>
+             <div class=" container bloco-branco">
+            <h2>Preparação para integração de <i>front-end</i> com regras <i>back-end</i> por meio de formulários e validações</h2>
+            <div class="horizontal-line mt-60 no-print">.</div>
+            <h3 id="t1">Introdução </h3>
+            <p>O desenvolvimento <i>front-end</i> concentra-se na codificação e criação de elementos e recursos de um <i>site</i> que serão vistos pelo usuário. Você também pode pensar no <i>front-end</i> como o “lado do cliente” de um aplicativo. Imagine que você é um desenvolvedor <i>front-end</i>. Isso significa que seu trabalho é codificar e dar vida aos elementos visuais de um <i>site</i>. </p>
+            <p>Já o desenvolvimento <i>back-end</i> concentra-se no lado do <i>site</i> que os usuários não podem ver. Você também pode se referir ao <i>back-end</i> como o “lado do servidor” de um <i>site</i>. Por exemplo, imagine que você esteja executando um <i>site</i> de mídia social. Você precisa de um local acessível para armazenar todas as informações de seus usuários em um banco de dados, como Oracle, SQL Server, MySQL, entre outros. O <i>back-end</i> ajudará a gerenciar esse banco de dados, bem como o conteúdo do <i>site </i>armazenado nele. Isso garante que os elementos <i>front-end</i> em seu <i>site</i> de mídia social continuem a funcionar corretamente enquanto os usuários navegam pelo conteúdo carregado e outros perfis de usuário.</p>
+            <p>A interação entre o <i>front-end</i> e o <i>back-end</i> é possível por meio de solicitações HTTP (<i>hyper text transfer protocol</i>). Funcionalidades como atualizar um usuário novo/antigo em um banco de dados, publicar uma postagem de <i>blog</i>, excluir uma imagem do seu perfil e atualizar sua biografia exigem uma interação entre um servidor e um cliente para modificar os dados.</p>
+            <p>Ao criar aplicativos na <i>web</i>, frequentemente você interage com dados armazenados em diferentes bancos de dados e servidores. Para interagir com servidores no <i>front-end</i>, você pode usar diferentes métodos HTTP para solicitar dados, conhecidos também por <i>request</i> ou requisições. </p>
+            </div>
+            <div class="bloco-cinza">
+            <h3 id="t2">Simulando um <i>back-end</i></h3>
+            <p>Nos exemplos ao decorrer deste conteúdo, será utilizado um programa para simular um servidor de <i>back-end </i>usando o programa JSON Server para demonstrar como funcionam as solicitações HTTP, verificando se realmente serão recebidas pelo <i>back-end</i> e retornadas ao <i>front-end</i>.  </p>
+            <p>Na realidade, o JSON Server é usado para criar um serviço <i>web</i>, aplicando um protocolo chamado REST (<i>representational state transfer</i>), muito usado para comunicação <i>web</i>. Nesse momento, não serão dados muitos detalhes sobre <i>web-services</i>, pois o foco serão os testes de requisições.</p>
+            </div>
+            <div class="bloco-branco">
+            <h3 id="t3">Instalando o NPM – Node.js</h3>
+            <p>Para começar a usar o JSON Server, é necessário que você tenha instalado o NPM (<i>node package manager</i>), que é um gerenciador de pacotes do Node.js. </p>
+            <p>Com o NPM, você pode gerenciar dependências do seu projeto, acessar o repositório do NPM e ter acesso a diversas bibliotecas e diversos <i>frameworks</i> JavaScript, permitindo que sejam instalados/desinstalados.</p>
+            <p>O NPM está incluído no Node.js. Prossiga estas etapas para instalá-lo:</p>
+            <ul>
+              <li> Acesse o <i>site</i> oficial do Node.js, pesquisando por “Node.js” em seu buscador. </li>
+              <li> Conforme mostra a imagem a seguir, o <i>site</i> reconhece o sistema operacional automaticamente (Windows, neste caso) e sugere duas versões para <i>download</i>: LTS e Current. Priorize o <i>download</i> de versões LTS (<i>long-term support</i>, ou suporte de longo prazo), que são as versões mais estáveis com mais suporte.
+                <img src="../09_preparacao_integracao_front_back/imgs/01.png" class="img-responsive center-block mt-40 imprime-menor">
+                <p class="legenda-imagem">
+                  Figura 1 – Instalando NPM – Node.js <br>
+                  Fonte: Senac EAD (2023)
+                </p>
+                <p class="acessivel no-print">Imagem do navegador de Internet que exibe um menu na opção “Downloads”. No centro da tela são exibidas as opções LTS e Current e os links para download nos sistemas operacionais.</p>
+              </li>
+              <li>Após a instalação do Node.js, você pode verificar tanto a versão do Node.js quanto a versão do NPM instaladas, executando os seguintes comandos: <strong>node -v</strong> e <strong>npm -v</strong>.
+              <pre>
+                <code class="language-js">
+                  node -v
+                  v18.14.2
+
+                  npm -v
+                  9.5.0
+
+                </code>
+              </pre>
+              </li>
+            </ul>
+            </div>
+            <div class="bloco-cinza">
+            <h3 id="t4">Instalando o servidor JSON Server</h3>
+            <p>Para começar a usar o JSON Server, instale o pacote usando o NPM:</p>
+            <pre>
+              <code class="language-json">
+                npm install -g json-server
+              </code>
+            </pre>
+            <p>Ao adicionar a opção <strong>-g</strong>, garante-se que o pacote seja instalado globalmente em seu sistema.</p>
+          </div>
+          <div class="bloco-branco">
+            <h4>Criando um arquivo de banco de dados com JSON</h4>
+            <p>Crie um arquivo JSON (<i>JavaScript object notation</i>, ou notação de objetos JavaScript) com alguns dados conforme sua necessidade. Por exemplo, você precisa de alguns dados JSON com informações de um cadastro como <i>login</i>, <i>senha</i> e <i>id</i>. Então, crie um arquivo chamado <strong>dados.json</strong> com as seguintes informações:</p>
+            <pre>
+              <code class="language-json">
+{
+  "cadastros": [
+    {
+      "login": "senac",
+      "senha": "senacead",
+      "id": 1
+    },
+    {
+      "login": "aluno",
+      "senha": "123",
+      "id": 2
+    }
+  ]
+}                
+              </code>
+            </pre>
+            <p>JSON é uma formatação leve de troca de dados utilizado para transferir informações entre sistemas.</p>
+            <p>Os dados contidos em um arquivo no formato JSON devem ser estruturados por meio de uma coleção de pares com nome e valor ou serem uma lista ordenada de valores. </p>
+            <p>Seus elementos devem conter:</p>
+            <div>
+            <div class="caixaazul textobranco2 text-center">
+              CHAVE
+            </div>
+            <div class="caixacinza"> 
+              <p>Corresponde ao identificador do conteúdo. Por isso, deve ser uma <i>string</i> delimitada por aspas.</p>
+            </div>
+          </div>
+          <div>
+            <div class="caixaazul textobranco2 text-center">
+              VALOR
+            </div>
+            <div class="caixacinza"> 
+              <p>Representa o conteúdo correspondente e pode conter os seguintes tipos de dados: <i>string</i>, <i>array</i>, <i>object</i>, <i>number</i>, <i>boolean</i> ou <i>null</i>.</p>
+            </div>
+          </div>
+         
+            <h4>Executando o servidor</h4>
+            <p>Inicie o servidor JSON executando o seguinte comando:</p>
+            <pre>
+              <code class="language-json">
+                json-server --watch dados.json
+              </code>
+            </pre>
+            <p>Como parâmetro, é preciso passar o arquivo que contém a estrutura JSON (<strong>dados.json</strong>). Além disso, está sendo usado o parâmetro <strong>--watch</strong>. Ao usar esse parâmetro, garante-se que o servidor seja iniciado no modo de observação, o que significa que ele observa alterações de arquivo e atualiza a API (<i>application programming interface</i>, ou interface de programação de aplicação) automaticamente.</p>
+            <p>Ao rodar o comando acima, o módulo do JSON Server inicia e gera uma rota que o servidor de dados possa ser acessado, por meio da URL (<i>uniform resource locator</i>) &lt;http://localhost:3000/cadastros>. É nesse endereço que deverão ser realizadas as solicitações de <strong>GET</strong> e <strong>POST</strong>.</p>
+            <pre>
+              <code class="language-json">
+                Loading dados.json
+                Done
+
+                Resources
+                http://localhost:3000/cadastros
+
+                Home
+                http://localhost:3000
+
+              </code>
+            </pre>
+            <h4>Testando o serviço</h4>
+            <p>Você pode testar se tudo está certo usando no browser a URL &lt;http://localhost:3000/cadastros>.</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/02.png" class="img-responsive center-block mt-40 imprime-menor">
+              <p class="legenda-imagem">
+                Figura 2 – Acessando serviço de cadastros <br>
+                Fonte: Senac EAD (2023)
+              </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe dados de cadastros com login, senha e id.</p>
+            <h3 id="t5">Protocolo HTTP – GET e POST</h3>
+            <p>O HTTP é o protocolo responsável pela comunicação de <i>sites</i> na <i>web</i>. Quando um <i>site</i> é acessado, esse é o protocolo utilizado. O HTTP oferece suporte a muitos métodos para transferir dados ou executar qualquer operação no servidor, como GET, POST, PUT, DELETE, PATCH, entre outros. </p>
+            <p>Formulários em HTML (<i>hyper text markup language</i>) podem usar qualquer método especificando <strong>method="POST"</strong> ou <strong>method="GET"</strong> (padrão) no elemento &lt;form>. O método especificado determina como os dados do formulário são enviados ao servidor. O servidor recebe os dados enviados, realiza o processamento e retorna para o cliente. </p>
+            <div class="caixadestaqueazul textobranco mt-40"> 
+              <p>Quando o método é <strong>GET</strong>, os parâmetros são passados no cabeçalho da requisição, ou seja, todos os dados do formulário podem ser vistos pela URI (<i>uniform resource identifier</i>). Já no método <strong>POST</strong>, os dados do formulário são enviados como parâmetros no corpo da requisição da solicitação HTTP.</p>
+            </div>
+            <p>Para exemplificar, no código a seguir, criou-se um formulário com campo de texto como <i>login</i> e <i>senha</i>. Inicialmente, será usado o método GET e será incluída uma ação <strong>action=“http://localhost:3000/cadastros”</strong> para simular onde os dados serão enviados após clicar no botão <strong>Enviar</strong> do formulário.</p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    &lt;title>Formulário&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Cadastro de Usuários</h1>
+    &lt;form action="http://localhost:3000/cadastros" method="GET">
+    Login: &lt;input type="text" name="login" /> &lt;br>
+    Senha: &lt;input type="text" name="senha" /> &lt;br>
+    &lt;input type="submit" value="Enviar"/>
+    &lt;/form>    
+&lt;/body>
+&lt;/html>
+              </code>
+            </pre>
+            <p>No formulário, ao dados estão sendo informados como <i>login</i> “supervisor” e senha “321”.</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/03.png" class="img-responsive center-block mt-40 imprime-menor">
+              <p class="legenda-imagem">
+                Figura 3 – Tela de <i>login</i> <br>
+                Fonte: Senac EAD (2023)
+              </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário com os campos Login e Senha e o botão Enviar.</p>
+            <p>Após clicar no botão <strong>Enviar</strong>, o evento <strong>submit</strong> é disparado. É possível ver, na imagem a seguir, que os dados passados no método <strong>GET</strong> ficam bem visíveis na barra de endereço, o que pode comprometer a segurança. Como o método GET retorna dados, então é exibido um <i>array</i> vazio.</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/04.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 4 – Tela de envio de dados (requisição GET) <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe no topo uma URL de acesso http://localhost:3000/cadastros?login=supervisor&senha=321, no centro tela com array vazio.</p>
+            <p>Veja, agora, o mesmo formulário, porém alterado o método para <strong>POST</strong>:</p>
+            <pre>
+            <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    &lt;title>Formulário&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Cadastro de Usuários&lt;/h1>
+    &lt;form action="http://localhost:3000/cadastros" method="POST">
+    Login: &lt;input type="text" name="login" /> &lt;br>
+    Senha: &lt;input type="text" name="senha" /> &lt;br>
+    &lt;input type="submit" value="Enviar"/>
+    &lt;/form>    
+&lt;/body>
+&lt;/html>
+            </code>
+            </pre>
+            <p>Ao informar os mesmos dados do exemplo anterior e após clicar no botão <strong>Enviar</strong>, ao contrário do GET, o POST envia os parâmetros no corpo da requisição do HTTP, escondendo os dados da URI. Observe que o servidor recebe os dados, processa e retorna ao <i>front-end</i> os dados cadastrados.</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/05.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 5 – Tela de envio de dados (requisição POST) <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe no topo uma URL http://localhost:3000/cadastros, no centro tela os dados que foram cadastrados via requisição POST.</p>
+            <p>Por isso, é fundamental que o valor dos atributos <strong>name</strong> das <i>tags</i> no HTML sejam exatamente iguais ao do servidor. </p>
+            <p>Exemplo: o campo <i>login</i> no <i>back-end</i> (servidor) não tem acento, é no singular e todo em minúsculo. Então, não se pode ter na <i>tag</i> do HTML do formulário “Login”, “LOGIN”, “Logín”. É necessário ser exatamente igual. Isso evita que o servidor esteja esperando informação dos campos, porém não receba em razão de o nome da <i>tag</i> do campo ser trocado ou inexistente no HTML do cadastro. Essa dica pode evitar muita “dor de cabeça” e até mesmo horas de trabalho.</p>
+          
+            <h3 id="t6">Preparando para os próximos exemplos</h3>
+            <p>Antes de continuar, configure um novo serviço (ou uma nova URL) no JSON Server para realizar os próximos testes propostos.</p>
+            <p>Primeiro, crie um novo arquivo de dados para o JSON Server. Na pasta, crie o arquivo <strong>db.json</strong>. Nele, inclua o seguinte conteúdo:</p>
+            <pre>
+            <code class="language-json">
+{
+  "noticias": [
+    {
+      "titulo": "Java",
+      "conteudo": "Linguagem Java",
+      "id": 1
+    },
+    {
+      "titulo": "JSON SERVER",
+      "conteudo": "Utilizado para API ficticia",
+      "id": 2
+    }
+  ]
+}
+            </code>
+            </pre>
+            <p>Nesse caso, um serviço que lida com “notícias” está sendo configurado, ou seja, está sendo simulado um back-end em que há cadastro de manipulação de dados de notícias (informações como título e conteúdo são registradas). </p>
+            <p>Após editar o arquivo, no prompt de comando use o seguinte comando:</p>
+            <pre>
+            <code class="language-json">
+              json-server --watch db.json
+            </code>
+            </pre>
+            <pre>
+            <code class="language-json">
+              Loading db.json
+              Done
+              
+              Resources
+              http://localhost:3000/noticias
+              
+              Home
+              http://localhost:3000
+              
+            </code>
+            </pre>
+            <p>Você pode testar se tudo está certo usando no <i>browser</i> a URL &lt;http://localhost:3000/noticias>. Nos próximos exemplos, essa URL será usada para simular as requisições.</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/06.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 6 – Acessando serviço de notícias <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe dados de notícias com título, conteúdo e id.</p>
+            <h3 id="t7">Solicitações GET e POST</h3>
+            <p>Inicialmente, é preciso criar uma página em HTML que o navegador possa exibir. Adote-a com o nome de <strong>index.html</strong>. A página HTML não tem conteúdo visual, ela será utilizada apenas para carregar o arquivo <strong>js.js</strong> para que seja possível ver as requisições e as respostas no console do navegador.</p>
+            <pre>
+            <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    &lt;title>Java Script HTTP Requests</title>
+&lt;/head>
+
+&lt;body>
+    &lt;script src="js.js">&lt;/script>
+&lt;/body>
+
+&lt;/html>
+            </code>
+            </pre>
+            <p>Você também deve ter o console do navegador aberto para que possa ver os resultados de suas solicitações HTTP. Isso geralmente é feito clicando <strong>F12</strong> e selecionando a aba <strong>Console</strong>.</p>
+            <p>Para seguir os exemplos, é necessário iniciar o serviço do JSON Server. Volte ao tópico anterior para rever como fazer isso e ativar a URL &lt;http://localhost:3000/noticias>. É nesse endereço que deverão ser realizadas as solicitações de <strong>GET</strong> e <strong>POST</strong>. </p>
+            <p>A seguir, você começará a enviar solicitações GET e POST usando a API Fetch e a biblioteca jQuery.</p>
+            <h3 id="t8">API Fetch</h3>
+            <p>Fetch é uma API JavaScript nativa simplificada e moderna, usada para fazer solicitações HTTP. Ela vem com suporte integrado para promessas e melhora na sintaxe. Como uma API construída tendo em mente as necessidades de aplicativos e desenvolvedores modernos, o Fetch tornou-se uma das formas mais populares de enviar solicitações HTTP em JavaScript atualmente.</p>
+            <h4>Como enviar uma solicitação GET em JavaScript usando a API Fetch</h4>
+            <p>Enviar uma solicitação GET usando a API Fetch requer apenas a URL. Isso então retorna uma promessa que você pode acessar usando o método <strong>then()</strong>. Portanto, ao chamar o método <strong>fetch</strong>, você receberá uma promessa de resposta.</p>
+            <p>Promessa é um objeto em JavaScript que permite a execução de processamentos de forma assíncrona dentro do seu código, uma vez que é definido como um objeto em que é possível guardar valores que poderão ser usados em outro momento no seu código enquanto você executa outras tarefas.</p>
+            <p>Veja, agora, no código no arquivo <strong>js.js</strong>, um exemplo da API Fetch:</p>
+            <pre>
+              <code class="language-js">
+                fetch("http://localhost:3000/noticias")
+                .then((response) => response.json())
+                .then((json) => console.log(json));
+              </code>
+            </pre>
+            <p>Nesse código, passou-se a URL &lt;http://localhost:3000/noticias> para o método <strong>fetch</strong>. Em seguida, a resposta do servidor foi acessada usando o método <strong>then</strong>. A resposta foi convertida em um objeto JSON usando o método <strong>response.json()</strong>.</p>
+            <p>Depois de obter a resposta, usa-se outro método <strong>then</strong> para exibir os dados no console do navegador pelo método <strong>console.log(json)</strong>.</p>
+            <pre>
+              <code class="language-json">
+(2) [{…}, {…}]
+0: {titulo: 'Java', conteudo: 'Linguagem Java', id: 1}
+1: {titulo: 'JSON SERVER', conteudo: 'Utilizado para API ficticia', id: 2}
+length: 2
+              </code>
+            </pre>
+            <h4>Como enviar uma solicitação POST em JavaScript usando API Fetch</h4>
+            <p>O método <strong>fetch</strong> tem um segundo parâmetro que permite especificar o <strong>method</strong> tipo de solicitação a ser enviada e o <strong>body</strong> dados a serem enviados. Esse parâmetro <strong>method</strong> permite enviar solicitações do tipo POST.</p>
+            <p>Agora que os parâmetros foram aprofundados, veja, no código no arquivo <strong>js.js</strong>, o exemplo a seguir:</p>
+            <pre>
+              <code class="language-json">
+fetch("http://localhost:3000/noticias", {
+  method: "POST",
+  body: JSON.stringify({
+    titulo: "API Fetch",
+    conteudo: "Conhecendo a API Fetch",
+  }),
+  headers: {
+    "Content-type": "application/json; charset=UTF-8",
+  },
+})
+.then((response) => response.json())
+.then((json) => console.log(json));
+              </code>
+            </pre>
+            <p>Nesse código, foram adicionadas opções de solicitação no parâmetro <strong>método</strong>. Usou-se a propriedade <strong>method</strong> para especificar o tipo de solicitação POST. Na propriedade <strong>body</strong>, serão especificados os dados a serem enviados ao servidor. Note que se adotou o método <strong>JSON.stringify</strong>, que converte valores em JavaScript para uma <i>string</i> em JSON. Por fim, a propriedade <strong>headers</strong> é utilizada para especificar que seriam enviados dados no formato JSON ao servidor.</p>
+            <p>Semelhante à solicitação por GET, ao realizar uma solicitação por POST, a resposta será retornada usando o método <strong>then()</strong>. Se tudo ocorrer bem, você terá a notícia exibida no console do navegador.</p>
+            <pre>
+              <code class="language-json">
+{titulo: 'API Fetch', conteudo: 'Conhecendo a API Fetch', id: 3}
+conteudo: "Conhecendo a API Fetch"
+id: 3
+titulo: "API Fetch"
+              </code>
+            </pre>
+            <h3 id="t9">jQuery</h3>
+            <p>Como já estudado, o uso de jQuery simplifica o processo de codificação em JavaScript, tendo uma extensa documentação de métodos e diversos <i>plugins</i> que permitem estender as funcionalidades do jQuery.</p>
+            <p>No envio de solicitações em GET e POST, o uso de jQuery simplifica o processo de obtenção dos dados de servidores, tornando a sintaxe mais curta e direta. Veja, a seguir, exemplos de solicitações por GET e POST usando jQuery.</p>
+            <h4>Como enviar uma solicitação GET em JavaScript usando jQuery</h4>
+            <p>No arquivo <strong>index.html</strong> que está sendo usado nos exemplos, não se pode esquecer de adicionar a biblioteca jQuery/JavaScript dentro da <i>tag</i> <strong>&lt;head></strong> do HTML. Além disso, será adicionada também no <i>body</i> a <strong>&lt;div id="news">&lt;/div></strong>. </p>
+            <p>Veja como ficou o código <strong>index.html</strong>:</p>
+            <pre>
+              <code>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    &lt;script src="https://code.jquery.com/jquery-3.4.1.js">&lt;/script>  
+    &lt;title>Java Script HTTP Requests&lt;/title>
+&lt;/head>
+
+&lt;body>
+    &lt;div id="news">&lt;/div>
+    &lt;script src="js.js">&lt;/script>
+&lt;/body>
+
+&lt;/html>
+              </code>
+            </pre>
+            <p>O jQuery fornece o método <strong>$.get()</strong> para enviar solicitações GET aos servidores. O método aceita dois parâmetros – a URL para o servidor e uma função de retorno de chamada que é executada se a solicitação for bem-sucedida. Veja, agora, no código no arquivo <strong>js.js</strong>, como realizar essa solicitação.</p>  
+            <pre>
+              <code class="language-js">
+$.get("http://localhost:3000/noticias", function(data, status){
+    for (i = 0; i < data.length; i++) {
+        $('#news').append("&lt;ul>&lt;li>" + data[i].titulo + " - " + data[i].conteudo  + "&lt;/li>&lt;/ul>");
+    }
+});              
+              </code>
+            </pre>
+            <p>Como pode ser visto no código acima, o método <strong>$.get()</strong> recebeu a URL &lt;http://localhost:3000/noticias> e uma função de <strong>callback</strong> anônima como seus parâmetros.</p>
+            <p>Por meio da função de retorno de chamada, você pode acessar os dados da solicitação (<strong>data</strong>) e o <i>status</i> da solicitação (<strong>status</strong>). Sendo assim, é possível percorrer agora todos os itens retornados (em um <strong>for</strong>) e criar uma lista de notícias com título e conteúdo, usando a função <strong>$('#news').append()</strong>.</p>
+            <p>Veja a lista de notícias exibidas na página <strong>index.html</strong>: </p>
+            <img src="../09_preparacao_integracao_front_back/imgs/07.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 7 – Listando notícias (solicitação GET usando jQuery) <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe os dados em uma lista das notícias pelo título e conteúdo.</p>
+            <h4>Como enviar uma solicitação POST em Java Script usando jQuery</h4>
+            <p>Agora, crie um arquivo chamado <strong>cadastro.html</strong>. Nele, haverá um formulário de cadastro de notícias com os campos <strong>título</strong> e <strong>conteúdo</strong> e a <strong>&lt;div id="result">&lt;/div></strong>, que receberá uma mensagem de confirmação de cadastro sem a necessidade de atualizar a tela.</p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    &lt;script src="https://code.jquery.com/jquery-3.4.1.js">&lt;/script>
+    &lt;title>Java Script HTTP Requests&lt;/title>
+&lt;/head>
+
+&lt;body>
+    &lt;h1>Cadastro de notícias&lt;/h1>
+    &lt;form method="post" action="">
+        &lt;label>Titulo: &lt;input type="text" name="titulo" id="titulo">&lt;/label>&lt;br>&lt;br>
+                          &lt;label>Conteúdo:      &lt;textarea      cols="50"      name="conteudo"      id="conteudo">&lt;/textarea>&lt;/label>&lt;br>&lt;br>
+        &lt;input type="submit" value="Cadastrar">
+    &lt;/form>
+    &lt;div id="result">&lt;/div>
+    &lt;script src="cadastro.js">&lt;/script>
+&lt;/body>
+
+&lt;/html>
+              </code>
+            </pre>
+            <p>Já no arquivo <strong>cadastro.js</strong>, há o código do método responsável por receber os dados do formulário de cadastro e realizar uma solicitação por POST utilizando jQuery. </p>
+            <pre>
+              <code class="language-js">
+1 $(document).ready(function () {
+    $("form").submit(function (event) {
+
+        // Impede o envio normal do formulário
+5       event.preventDefault();
+
+        //Serializa os valores de controle de formulário enviados
+        //para serem enviados ao servidor da Web com a solicitação 
+9       var formValues = $(this).serialize();
+
+11      $.ajax({
+            type: 'POST',
+            url: 'http://localhost:3000/noticias',
+            data: formValues
+        })
+16     .done(function (data) {
+            // enviar mensagem de registro salvo
+            $('#result').append("Registro salvo!");
+        })
+20      .fail(function (msg) {
+            // caso a solicitacao de POST tenha falhado
+            alert("Falha no POST" + msg);
+        });
+    });
+});
+              </code>
+            </pre>
+            <div class="caixadestaquecinza mt-40"> 
+              <ol>
+                <li>Quando ocorrer a submissão do cadastro de notícias, o evento <strong>preventDefault()</strong> subscreve o evento <strong>submit</strong> do formulário para que ocorra agora a submissão pelo jQuery (linha 5).</li>
+                <li>O próximo passo é obter os dados do formulário (linha 9). É preciso, agora, obter os dados de todos os campos e os respectivos conteúdos. Em vez de atribuir campo a campo, adote o método <strong>$(this).serialize()</strong>, que serializará todos os campos e valores do formulário de modo automático e dinâmico.</li>
+                <li>O método <strong>$.ajax()</strong> (linha 11) tem os parâmetros <strong>type</strong> (que nesse exemplo é POST), <strong>url</strong> (que especifica a URL do servidor) e <strong>data</strong> (que são todos os dados a serem enviados).</li>
+                <li>A função de <strong>callback done</strong> (linha 16) é executada quando a requisição é finalizada com sucesso e permite tratar o retorno do servidor que é recebido por meio do parâmetro <strong>data</strong>. No exemplo, está sendo enviada uma mensagem de forma assíncrona informando “Registro salvo” para na <i>tag</i> <strong>result</strong> do formulário.</li>
+                <li>Por fim, há a função de <strong>callback fail</strong> (linha 20), que, por sua vez, será executada quando ocorrer algum erro na requisição. De modo semelhante, a mensagem de erro é recebida pelo parâmetro <strong>msg</strong> e exibida utilizando a função de alerta do JavaScript, <strong>alert</strong>.</li>
+              </ol>
+            </div>
+            <p>Veja, a seguir, o exemplo de solicitação por POST em jQuery usando AJAX de um cadastro de notícias que retorna do servidor uma confirmação de registro salvo, sem a necessidade de atualizar a tela.</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/08.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 8 – Solicitação assíncrona por POST <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário de cadastro de notícias com o campo Título informando “JQuery com AJAX” e o campo Conteúdo com a informação “Exemplo de requisição POST” seguido do botão “Cadastrar”. No final da tela é mostrado o texto “Registro salvo!” em razão do retorno de sucesso da operação de cadastrar a notícia.</p>
+            <h3 id="t10">Validações</h3>
+            <p>A validação de formulário é de vital importância para a segurança de uma aplicação, bem como para a usabilidade dela. O processo de validação avalia se o valor de entrada está no formato correto antes de enviá-lo ao servidor. Por exemplo, se houver um campo de entrada para um endereço de <i>e-mail</i>, o valor certamente deve conter um endereço de <i>e-mail</i> válido, deve começar com uma letra ou um número, seguido do símbolo do @, e deve terminar com um nome de domínio.</p>
+            <p>Sobre validações de formulários, é importante ressaltar que elas devem ocorrer tanto do lado do <i>front-end</i> quanto no lado do <i>back-end</i>. No <i>back-end</i>, a validação é mais segura, pois ela não pode ser desabilitada, comparada com a validação em <i>front-end</i> via JavaScript.</p>
+            <p>No tópico a seguir, serão abordadas duas formas de validação de formulários no <i>front-end</i>: por meio dos atributos do HTML5 e pelo <i>plugin</i> da validação jQuery Validation.</p>
+            <h4>Usando os atributos-padrão em HTML5</h4>
+            <p>O HTML5 fornece atributos-padrão aplicados somente no elemento <strong>input</strong>. Os mais usados são os elencados a seguir.</p>
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class="panel-group gaitinha" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Required
+                </a>
+              </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  Especifica os campos de entrada que precisam ser preenchidos antes de enviar o formulário.
+                </div>
+              </div>
+              </div>
+              <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Minlength e maxlength
+                </a>
+              </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                Especifique o comprimento mínimo e máximo esperado de uma string.
+              </div>
+              </div>
+              </div>
+              <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Min e max
+                </a>
+              </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                Especifique os valores mínimo e máximo dos números.
+              </div>
+              </div>
+              </div><div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading4">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                  Type
+                </a>
+              </h4>
+              </div>
+              <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+              <div class="panel-body">
+                Especifica que tipo de dados são necessários para campos de entrada específicos, por exemplo, data, número, nome, <i>e-mail</i> e assim por diante.
+              </div>
+              </div>
+              </div>
+              <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="heading5">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                  Pattern
+                </a>
+              </h4>
+              </div>
+              <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+              <div class="panel-body">
+                Permite definir a própria regra para validar um valor de entrada usando expressões regulares.
+              </div>
+              </div>
+              </div>
+            </div>
+            </div>
+            
+            <div class="acessivel print">
+              <p>Required</p>
+              <p>Especifica os campos de entrada que precisam ser preenchidos antes de enviar o formulário.</p>
+              <p>Minlength e maxlength</p>
+              <p>Especifique o comprimento mínimo e máximo esperado de uma string.</p>
+              <p>Min e max</p>
+              <p>Especifique os valores mínimo e máximo dos números.</p>
+              <p>Type</p>
+              <p>Especifica que tipo de dados são necessários para campos de entrada específicos, por exemplo, data, número, nome, <i>e-mail</i> e assim por diante.</p>
+              <p>Pattern</p>
+              <p>Permite definir a própria regra para validar um valor de entrada usando expressões regulares.</p>
+            </div>
+            <p>Veja alguns exemplos de validação:</p>
+            <p><strong>Required</strong>: para campos genéricos, como nome, sobrenome e idade de preenchimento obrigatório.</p>
+            <pre>
+              <code class="language-html">
+                &lt;p>Nome: &lt;br> &lt;input type="text" name="nome" required>&lt;/p>
+                &lt;p>Sobrenome: &lt;br> &lt;input type="text" name="sobrenome" required>&lt;/p>
+                &lt;p>Idade: &lt;br> &lt;input type="number" name="idade" required>&lt;/p>
+              </code>
+            </pre>
+            <p><strong>Data</strong>: usando as propriedades, <strong>type</strong> sendo <strong>date</strong>,<strong> maxlength</strong>, <strong>min</strong> e <strong>max</strong>.</p>
+            <pre>
+              <code class="language-html">
+                &lt;p>Data de nascimento: &lt;br>&lt;input type="date"      required maxlength="10"      name="datanasc"     min="1900-01-01" max="2025-12-31" />&lt;/p>
+              </code>
+            </pre>
+            <p><strong>Hora</strong>: usando as propriedades, <strong>type</strong> sendo <strong>time</strong>, <strong>maxlength</strong>.</p>
+            <pre>
+              <code class="language-html">
+                &lt;p>Hora: &lt;br>&lt;input type="time" required maxlength="8" name="hora" />&lt;/p>
+              </code>
+            </pre>
+            <p>Veja, agora, um exemplo para validação dos campos nome, sobrenome, idade, data de nascimento e hora. Para isso, crie um arquivo <strong>validar.html</strong>.</p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    &lt;title>Validações&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;form action="" method="POST">
+        &lt;p>Nome: &lt;br> &lt;input type="text" name="nome" required>&lt;/p>
+        &lt;p>Sobrenome: &lt;br> &lt;input type="text" name="sobrenome" required>&lt;/p>
+        &lt;p>Idade: &lt;br> &lt;input type="number" name="idade" required>&lt;/p>
+        &lt;p>Data de nascimento: &lt;br>&lt;input   type="date"  required maxlength="10"  name="datanasc"  min="1900-01-01" max="2025-12-31" />&lt;/p>        
+        &lt;p>Hora: &lt;br>&lt;input type="time" required maxlength="8" name="hora" />&lt;/p>
+        &lt;input type="submit" value="Cadastrar">
+    &lt;/form>    
+&lt;/body>
+&lt;/html>
+              </code>
+            </pre>
+            <p>Veja, a seguir, a execução no navegador de Internet.</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/09.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 9 – Formulário de cadastro com validação <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário contendo os campos Nome, Sobrenome, Idade, Data de Nascimento e Hora, seguido do botão Cadastrar. No campo Sobrenome, está habilitada uma modal de alerta com a mensagem “Preencha este campo” e no campo “Data de nascimento” uma modal de alerta com a mensagem “O valor deve ser 01/01/1990 ou posterior”.</p>
+            <p>Agora, <strong>defina uma regra para adicionar expressões regulares no atributo pattern</strong>. Nesse caso, será especificado que o nome de usuário deve consistir apenas em letras minúsculas, não permitindo letras maiúsculas, números ou outros caracteres especiais. Além disso, o tamanho do nome do usuário não deve ter mais que 15 caracteres. A expressão regular dessa regra pode ser expressa como <strong>[a-z]{1,15}</strong>.</p>
+            <pre>
+              <code class="language-html">
+                &lt;p>Username: <br>
+                    &lt;input   type="text"     required name="username"    placeholder="Username"    pattern="[a-z]{1,15}$">&lt;/input>&lt;/p>                  
+              </code>
+            </pre>
+            <p>Apenas letras:</p>
+            <pre>
+              <code class="language-html">
+                &lt;p>Endereço: &lt;br>&lt;input type="text" required name="endereco" pattern="[a-z\s]+$" />&lt;/p>
+              </code>
+            </pre>
+            <p>Apenas números:</p>
+            <pre>
+              <code class="language-html">
+                &lt;p>Número: &lt;br>&lt;input type="text" requiredname="numeros" pattern="[0-9]+$"/>&lt;/p>
+              </code>
+            </pre>
+            <p>Telefone:</p>
+            <pre>
+              <code class="language-html">
+                &lt;p>Telefone: &lt;br>&lt;input type="text" required maxlength="15" name="telefone pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{4}$" />&lt;/p>
+              </code>
+            </pre>
+            <p><i>E-mail</i>:</p>
+            <pre>
+              <code class="language-html">
+                &lt;p>E-mail: &lt;br>&lt;input type="email" required name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />&lt;/p>
+              </code>
+            </pre>
+            <p>Moeda:</p>
+            <pre>
+              <code class="language-html">
+                &lt;p>Valor:  &lt;br> &lt;input type="text" required maxlength="15" name="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" /> &lt;/p>
+              </code>
+            </pre>
+            <p>Veja, agora, o exemplo completo de validação dos campos usando expressão regular de <i>username</i>, endereço, número, telefone, <i>e-mail</i> e valor no arquivo <strong>validar.html</strong>.</p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    &lt;title>Validações</title>
+&lt;/head>
+&lt;body>
+    &lt;form action="" method="POST">
+        &lt;p>Username: &lt;br>&lt;input type="text" required name="username" placeholder="Username" pattern="[a-z]{1,15}$">&lt;/input>&lt;/p>
+        &lt;p>Endereço: &lt;br>&lt;input type="text" required name="endereco" pattern="[a-z\s]+$" />&lt;/p>
+        &lt;p>Número: &lt;br>&lt;input type="text" requiredname="numeros" pattern="[0-9]+$"/>&lt;/p>
+        &lt;p>Telefone: &lt;br>&lt;input type="text" required maxlength="15" name="telefone pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{4}$" />&lt;/p>
+        &lt;p>E-mail: &lt;br>&lt;input type="email" required name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />&lt;/p>
+        &lt;p>Valor: &lt;br>&lt;input type="text" required maxlength="15" name="valor" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" />&lt;/p>
+            
+        &lt;input type="submit" value="Cadastrar">
+    &lt;/form>    
+&lt;/body>
+&lt;/html>
+              </code>
+            </pre>
+            <p>Veja, a seguir, a execução no navegador de Internet. </p>
+            <img src="../09_preparacao_integracao_front_back/imgs/10.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 10 – Formulário de cadastro com validação <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário contendo os campos Usarname, Endereço, Número, Telefone e Valor seguido do botão Cadastrar. Em todos os campos é exibida uma modal de alerta com a mensagem “É preciso que o formato corresponda ao exibido”, exceto o campo “E-mail” que exibe uma modal de alerta com a mensagem “Inclua um '@' no endereço de e-mail, 'asdasdas' está com um '@' faltando”.</p>
+            <h4>Utilize placeholders</h4>
+            <p>Lembre-se de usar o <strong>placeholder</strong> nos campos em que você precise “dar alguma dica” para o usuário de como ele deve preenchê-lo: </p>
+            <pre>
+              <code class="language-html">
+                &lt;p>Telefone: &lt;br>&lt;input type="text" required maxlength="15" name="telefone"  placeholder="(XX) XXXX-XXXX" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{4}$" />&lt;/p>
+              </code>
+            </pre>
+            <img src="../09_preparacao_integracao_front_back/imgs/11.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 11 – Campo de telefone com <strong>placeholder</strong> <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário contendo o campo Telefone e uma caixa onde será inserido um telefone. Essa caixa apresenta um placeholder, que é uma dica de preenchimento, com o texto “(XX) XXXX-XXXX”.</p>
+            <h4>Personalizar as mensagens de validação</h4>
+            <p>Felizmente, é possível personalizar a mensagem para ser mais útil, e existem algumas maneiras de fazer isso. A abordagem mais fácil é especificar o atributo <strong>title</strong> dentro do elemento de entrada:</p>
+            <pre>
+              <code>
+                &lt;p>Username: &lt;br>
+                &lt;input type="text" required name="username" placeholder="Username" pattern="[a-z]{1,15}$"
+                  title="O nome de usuário deve conter apenas letras minúsculas no máximo com 15 caracteres. ex: john">&lt;/input>&lt;/p>                  
+              </code>
+            </pre>
+            <img src="../09_preparacao_integracao_front_back/imgs/12.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 12 – Mensagem de erro na validação <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe o campo Username. No campo é inserida uma sequência de texto e números, na qual é gerada uma mensagem em alerta sobre o campo informado: “É preciso que o formato corresponda ao exigido. O nome de usuário deve conter apenas letras minúsculas no máximo com 15 caracteres .ex: john”.</p>
+            <p>Ainda assim, a mensagem pop-up apresenta a mensagem-padrão “É preciso que o formato corresponda ao exigido”.</p>
+            <h4>Substituindo a mensagem-padrão de validação do HTML5</h4>
+            <p>Agora, substitua essa mensagem-padrão por uma mensagem totalmente personalizada. Você usará um pouco de JavaScript para fazer isso.</p>
+            <p>Comece adicionando o atributo <strong>id</strong> ao elemento <strong>input</strong> e remova o <strong>title</strong>.</p>
+            <pre>
+              <code class="language-html">
+                &lt;p>Username: &lt;br>
+                &lt;input type="text" required id="username" name="username" placeholder="Username" pattern="[a-z]{1,15}$">&lt;/input>&lt;/p>                  
+              </code>
+            </pre>
+            <p>Agora, no bloco em JavaScript do seu código HTML, é possível selecionar o elemento de entrada usando JavaScript e atribuí-lo a uma variável. Por último, especifique a mensagem usada quando a entrada mostra seu estado inválido.</p>
+            <pre>
+              <code class="language-js">
+                var input = document.getElementById('username');
+
+                input.oninvalid = function(event) {
+                  event.target.setCustomValidity('O nome de usuário deve conter apenas letras minúsculas no máximo com 15 caracteres. ex: senac');
+                }
+              </code>
+            </pre>
+            <p>O evento <strong>oninvalid</strong> herda um objeto que contém algumas propriedades, incluindo a propriedade <strong>target</strong> (o elemento inválido) e a <strong>validationMessage</strong> que contém a mensagem de texto de erro. No exemplo anterior, substitui-se a mensagem de texto usando o método <strong>setCustomValidity()</strong>.</p>
+            <p>Veja, agora, o exemplo completo da validação com mensagem personalizada do campo <strong>username</strong>.</p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    &lt;title>Validações&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;form action="" method="POST">
+        &lt;p>Username: &lt;br>
+            &lt;input type="text" required id="username" name="username" placeholder="Username" pattern="[a-z]{1,15}$">&lt;/input>&lt;/p>
+            &lt;input type="submit" value="Cadastrar">
+    &lt;/form>  
+
+&lt;script language="JavaScript">
+    var input = document.getElementById('username');
+    input.oninvalid = function(event) {
+    event.target.setCustomValidity('O nome de usuário deve conter apenas letras minúsculas no máximo com 15 caracteres. ex: senac');
+    }
+&lt;/script>
+
+&lt;/body>
+&lt;/html>
+              </code>
+            </pre>
+            <p>Encontre a mensagem personalizada substituindo perfeitamente o padrão.</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/13.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 13 – Personalizando a mensagem-padrão de erro <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe o campo Username. No campo Username é exibida uma mensagem em alerta sobre o campo: “O nome de usuário deve conter apenas letras minúsculas no máximo com 15 caracteres. ex: senac”.</p>
+            <h3 id="t11">Validação com jQuery Validation</h3>
+            <p>Usar o <i>plugin</i> do jQuery Validation para validar formulários serve a muitos propósitos. Ele oferece recursos adicionais, como exibir facilmente mensagens de erro personalizadas e adicionar lógica condicional à validação de formulário HTML. As condições de validação podem ser adicionadas, removidas ou modificadas a qualquer momento com facilidade.</p>
+            <p>Antes de começar a usar o <i>plugin</i> em seus campos, é preciso incluir os arquivos necessários. Por isso, crie o arquivo <strong>registrar.html</strong> e inclua a biblioteca <strong>jQuery</strong> e o <i>plugin</i> <strong>jQuery Validation</strong> dentro da <i>tag</i> <strong>head</strong> do HTML.</p>
+            <p>O <i>link</i> do <i>plugin</i> do jQuery Validation poderá ser obtido diretamente no <i>site</i> (digite “jQuery Validation” em seu buscador), na opção “Latest files on jsDelivr CDN”. No momento da escrita deste conteúdo, encontra-se na versão 1.19.5, conforme a figura a seguir.</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/14.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 14 – <i>Site</i> do <i>plugin</i> jQuery Validation <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe um site no qual no conteúdo central tem uma opção “Latest files on jsDelivr CDN”, com uma listagem de opções de links do plugin para ser incluído no código HTML. Considerar a primeira opção.</p>
+            <p>Após obter o <i>link</i> do <i>plugin</i>, será preciso criar um formulário de cadastramento com os campos <i>nome</i>, <i>e-mail</i> e senha. Além disso, crie o arquivo <strong>validar.js</strong> para começar a validar o formulário com o método <strong>validade</strong>.</p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    &lt;script src="https://code.jquery.com/jquery-3.4.1.js">&lt;/script>
+                      &lt;script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js">&lt;/script>
+
+    &lt;title>Validando formulários com JQuery Validation&lt;/title>
+&lt;/head>
+
+&lt;body>
+    &lt;h1>Validando formulários com JQuery Validation&lt;/h1>
+    &lt;form method="post" action="" id="frmRegistro">
+        &lt;p>Nome: &lt;br>&lt;input type="text" name="nome" id="nome" required>&lt;/p>
+        &lt;p>E-mail: &lt;br>&lt;input type="email" name="email" id="email" required>&lt;/p>
+        &lt;p>Senha: &lt;br>&lt;input type="text" name="senha" id="senha" required>&lt;/p>
+        &lt;input type="submit" value="Cadastrar">
+    &lt;/form>
+                  
+    &lt;div id="result">&lt;/div>
+    &lt;script src="validar.js">&lt;/script>
+&lt;/body>
+
+&lt;/html>
+              </code>
+            </pre>
+            <p>Para começar a validar o formulário com esse <i>plugin</i>, basta adicionar o seguinte código JavaScript no arquivo <strong>validar.js</strong>:</p>
+            <pre>
+              <code class="language-js">
+                $("#frmRegistro").validate();
+              </code>
+            </pre>
+            <p>Como é possível ver no código acima, <strong>#frmRegistro</strong> refere-se ao formulário, no qual declara-se a <i>tag</i> <strong>id=“frmRegistro”</strong>, portanto o <i>plugin</i> <strong>Validate</strong> está no controle do formulário. Como definiu-se um único método de validação, o <i>plugin</i> entende que valida cada campo com base em suas características. Por exemplo: o campo <i>e-mail</i> está marcando em HTML com <strong>type=“email”</strong> e <strong>“required”</strong>, então a validação permitirá que apenas endereços de <i>e-mail</i> válidos e obrigatórios sejam introduzidos. Se você não definir como obrigatório para o campo de <i>e-mail</i>, então a validação aceitará apenas entrada de <i>e-mail</i> válida, não obrigatória.</p>
+            <p>Para visualizar a validação, acesse no seu navegador a página <strong>registrar.html</strong> e tente enviar o formulário clicando no botão <strong>Cadastrar</strong>. Você deve obter um resultado conforme a imagem a seguir:</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/15.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 15 – Resultado da validação <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário de cadastro com os campos Nome, E-mail e Senha, com a mensagem ao lado de cada campo “This field is required” seguido do botão “Cadastrar”.</p>
+            <h4>Adicionando regras de validação para campos de entrada</h4>
+            <p>Você também pode passar algumas regras para o método <strong>validate()</strong> para determinar como os valores de entrada são validados. O valor do parâmetro <strong>rules</strong> deve ser um objeto com pares chave-valor. A chave em cada caso é o nome do elemento que se quer validar. O valor dessa chave é um objeto que contém um conjunto de regras que serão usadas para validação.</p>
+            <p>Veja, na tabela a seguir, as principais regras de validação:</p>
+            <table class="senac table-responsive text-left">
+              <tbody>
+                <tr>
+                  <th>Rule</th>
+                  <th>Validação</th>
+                </tr>
+                <tr>
+                  <td><strong>e-mail</strong></td>
+                  <td>Quando definido como "<strong>true</strong>", esse campo aceitará apenas endereços de <i>e-mail</i> válidos.</td>
+                </tr>
+                <tr>
+                  <td><strong>required</strong></td>
+                  <td>Se definido como "<strong>true</strong>", esse campo é obrigatório.</td>
+                </tr>
+                <tr>
+                  <td><strong>min</strong></td>
+                  <td>Define o número ou valor mínimo válido. Por exemplo, se definido como 4, o usuário só poderá informar um número maior igual a 4. </td>
+                </tr>
+                <tr>
+                  <td><strong>max</strong></td>
+                  <td>Define o número ou valor máximo válido. Por exemplo, se definido como 10, os usuários podem inserir apenas números menores ou iguais a 10. </td>
+                </tr>
+                <tr>
+                  <td><strong>range</strong></td>
+                  <td>Determina o intervalo que contém os valores mínimo e máximo válidos. Por exemplo, se definido como [10, 20], o usuário só poderá inserir um número maior ou igual a 10 e menor ou igual a 20.</td>
+                </tr>
+                <tr>
+                  <td><strong>minlength</strong></td>
+                  <td>Especifica o número mínimo de caracteres. Se definido como 10, por exemplo, o usuário só poderá inserir um valor de no mínimo 10 caracteres. </td>
+                </tr>
+                <tr>
+                  <td><strong>maxlength</strong></td>
+                  <td>Define o número máximo de caracteres. Se definido como 5, por exemplo, o usuário poderá inserir no máximo cinco caracteres. </td>
+                </tr>
+                <tr>
+                  <td><strong>url</strong></td>
+                  <td>Se definido como "<strong>true</strong>", esse campo aceitará apenas URLs válidas.</td>
+                </tr>
+                <tr>
+                  <td><strong>date</strong></td>
+                  <td>Se definido como "<strong>true</strong>", esse campo aceitará apenas datas válidas.</td>
+                </tr><tr>
+                  <td><strong>number</strong></td>
+                  <td>Se definido como "<strong>true</strong>", esse campo aceitará apenas números inteiros ou decimais.</td>
+                </tr>
+            </table>
+            <p class="legenda-tabela">
+              Tabela 1 – Principais regras de validação <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p>Para exemplificar, retorne ao exemplo anterior no arquivo <strong>registrar.html</strong> e remova as propriedades <strong>required</strong>, modificando o <strong>type="email"</strong> para <strong>"text"</strong>. Dessa forma, não haverá nenhuma validação.</p>
+            <pre>
+              <code>
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+
+&lt;head>
+    &lt;meta charset="UTF-8" />
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    &lt;meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    &lt;script src="https://code.jquery.com/jquery-3.4.1.js">&lt;/script>
+                                &lt;script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js">&lt;/script>
+
+    &lt;title>Validando formulários com JQuery Validation&lt;/title>
+&lt;/head>
+
+&lt;body>
+  &lt;h1>Validando formulários com JQuery Validation&lt;/h1>
+    &lt;form method="post" action="" id="frmRegistro">
+        &lt;p>Nome: &lt;br>&lt;input type="text" name="nome" id="nome">&lt;/p>
+        &lt;p>E-mail: &lt;br>&lt;input type="text" name="email" id="email">&lt;/p>
+        &lt;p>Senha: &lt;br>&lt;input type="text" name="senha" id="senha">&lt;/p>
+        &lt;input type="submit" value="Cadastrar">
+    &lt;/form>
+                  
+    &lt;div id="result">&lt;/div>
+    &lt;script src="validar.js">&lt;/script>
+&lt;/body>
+
+&lt;/html>
+              </code>
+            </pre>
+            <p>Agora, no arquivo <strong>validar.js</strong>, acrescente o seguinte código:</p>
+            <pre>
+              <code class="language-js">
+  $("#frmRegistro").validate({
+  rules: {
+      nome: {
+          required: true
+  },        
+      email: {
+          required: true,
+          email: true
+      },
+      senha: {
+          required: true,
+          minlength: 6,
+          maxlength: 12
+      }
+  },
+  messages: {
+      nome: {
+          required: "campo nome é obrigatório",
+      },
+      email: {
+          required: "campo e-mail é obrigatório",
+          email: "O e-mail deve estar no formato: xxx@xxxx.xxx"
+      },
+      senha: {
+          required: "campo senha é obrigatório",
+          minlength: "A senha deve ter ao menos 6 caracteres",
+          maxlength: "A senha deve ter no máximo 12 caracteres",
+      },        
+  }
+});
+            </code>
+            </pre>
+            <p>No trecho de código acima, as chaves <strong>nome</strong>, <strong>email</strong> e <strong>senha</strong> são simplesmente os nomes dos elementos de entrada do formulário no HTML. Cada chave tem um objeto como seu valor, e os pares chave-valor no objeto determinam como um campo de entrada será validado.</p>
+            <p>Por exemplo, definir <strong>required</strong> como <strong>true</strong> tornará o elemento necessário para o envio do formulário. Definir <strong>minlength</strong> um valor como 6 forçará o usuário a inserir pelo menos seis caracteres na entrada de texto.</p>
+            <h4>Personalizando as mensagens de validação</h4>
+            <p>Assim como as <strong>rules</strong>, é possível personalizar as mensagens de erro de validação por meio do parâmetro <strong>messages</strong>. Por exemplo, o campo da senha acionará <strong>required</strong> caso seja deixado em branco, e a mensagem definida “campo senha é obrigatório” será exibida. De outra forma, caso a quantidade de caracteres informada seja inferior a seis caracteres ou superior a 12, será exibida a mensagem “A senha deve ter ao menos 6 caracteres” ou “A senha deve ter no máximo 12 caracteres”, respectivamente.</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/16.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 16 – Personalização da mensagem de erro <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário de cadastro com os campos Nome, E-mail e Senha, com a mensagem ao lado de cada campo, respectivamente, “campo nome é obrigatório”, “campo e-mail é obrigatório”. No campo Senha tem a informação “ab” e a mensagem “A senha deve ter ao menos 3 caracteres”, seguida do botão “Cadastrar”.</p>
+            <h3 id="t12">Máscaras</h3>
+            <p>Ao lidar com dados, provenientes do preenchimento de um formulário, você pode querer que eles sejam formatados de uma determinada maneira. Sem dúvida, você pode fornecer instruções em cada campo, mas haverá uma grande variedade de usuários preenchendo o formulário. Nem todos podem inserir os dados no formato desejado. Além disso, o usuário pode não querer manter a formatação dos dados.</p>
+            <p>Por isso, adotam-se máscaras nos formulários em HTML, o que possibilita uma redução de inconsistências nas entradas de dados. </p>
+            <p>O <strong>jQuery Mask</strong> é um <i>plugin</i> leve, muito simples de adicionar e implementar e que cria máscaras para entrada de dados em campos de formulário e elementos HTML. Esse <i>plugin</i> é útil para obter dados, números, números de telefone, CPF, CNPJ, datas, entre outros. </p>
+            <p>O <i>link</i> do <i>plugin</i> do jQuery Mask poderá ser obtido diretamente no <i>site</i> (digite “jQuery Mask Pluigin” em seu buscador), na opção “CDNjs”. No momento da escrita deste conteúdo, encontra-se na versão 1.14.16, conforme a imagem a seguir:</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/17.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 17 – <i>Site</i> do <i>plugin</i> jQuery Mask <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe um site no qual no conteúdo central tem uma opção “CDNjs”, com um link do plugin para ser incluído no código HTML.</p>
+            <p>Para exemplificar, veja como criar o arquivo <strong>Formulario.html</strong>. Inclua a biblioteca <strong>jQuery</strong> e o <i>plugin</i> <strong>jQuery Mask</strong> dentro da <i>tag</i> <strong>head</strong> do HTML. Deverá ser criado um formulário de cadastramento com os campos telefone, CEP, CPF, CNPJ e data.</p>
+            <pre>
+              <code class="language-html">
+&lt;html>
+
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;title>Máscara de formulário</title>
+
+    &lt;script src="https://code.jquery.com/jquery-3.4.1.js">&lt;/script>
+                                &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js">&lt;/script>
+&lt;/head>
+
+&lt;body>
+    &lt;h1>Máscaras com JQuery Mask&lt;/h1>
+    &lt;form method="post" action="" id="frm">
+    &lt;p>
+        &lt;label>Telefone&lt;/label>&lt;br>
+        &lt;input type="text" id="telefone">
+    &lt;/p>
+  
+    &lt;p>
+        &lt;label>CEP&lt;/label>&lt;br>
+        &lt;input type="text" id="cep">
+    &lt;/p>
+  
+    &lt;p>
+        &lt;label>CPF&lt;/label>&lt;br>
+        &lt;input type="text" id="cpf">
+    &lt;/p>
+  
+    &lt;p>
+        &lt;label>CNPJ&lt;/label>&lt;br>
+        &lt;input type="text" id="cnpj">
+    &lt;/p>
+  
+    &lt;p>
+        &lt;label>Data&lt;/label>&lt;br>
+        &lt;input type="text" id="data">
+    &lt;/p>
+    &lt;input type="submit" value="Cadastrar">
+    &lt;/form>
+    &lt;script>
+        $(document).ready(function () {
+            $('#telefone').mask('(00) 00000-0000');
+            $('#cep').mask('00000-000');
+            $('#cpf').mask('000.000.000-00');
+            $('#cnpj').mask('00.000.000/0000-00');
+            $('#data').mask('00/00/0000');
+        });
+    &lt;/script>
+
+&lt;/body>
+
+&lt;/html>
+
+              </code>
+            </pre>
+            <p>Esse código tem máscaras nos campos aplicado diretamente na <i>tag</i> <strong>script</strong>. Como pode ser visto, simplesmente é informado o nome do campo pela <i>tag</i> <strong>id</strong> do formulário, por exemplo <strong>id=”telefone”</strong>, e então você pode aplicar a máscara usando a função <strong>mask</strong> e informar o formato, nesse caso (00) 00000-00.</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/18.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 18 – Exemplo de máscara de entrada de dados <br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário de cadastro com os campos Telefone, CEP, CPF, CNPJ e Data. Cada campo tem informações digitadas com suas respectivas máscaras. No final é exibido o botão “Cadastrar”.</p>
+            <h3 id="t13"> Encerramento</h3>
+            <div class="icone-concluindo">
+              <p>Neste conteúdo, foi possível verificar os diversos aspectos nas solicitações GET e POST que o <i>front-end</i> deverá ter para requisitar e tratar as informações enviadas pelo <i>back-end</i>. Como foi visto, essa capacidade de interação evoluiu ao longo dos anos, havendo diversas formas de realizar, como por meio de APIs nativas do Fetch e de terceiros como o jQuery. Além disso, foram abordadas as validações e as máscaras de dados em formulários HTML, por meio de diversos exemplos.</p>
+            </div>
+          </div>
+
+          </div>
+
+        </section>
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+        <footer class="text-center no-print">
+          <!--
+          <ul class="pagination">
+
+          </ul>
+          -->
+        </footer>
+
+      </div>
+
+    </div>
+
+
+    <!-- Modais -->
+
+    
+    <!-- Modais 100% -->
+
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+<!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+<div class="ico-div-loader">
+	<img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../template/js/jquery.min.js"></script>
+<script src="../template/js/bootstrap.min.js"></script>
+<script src="../template/js/jquery.magnific-popup.min.js"></script>
+<script src="../template/js/print.js"></script>
+<script src="../template/js/template.config.js"></script>
+<script src="../template/js/images.loader.js"></script>
+<script src="../template/js/highlight.min.js"></script>
+<script src="../09_preparacao_integracao_front_back/js/custom.js"></script>
+<noscript>
+  <style media="screen">
+    .over-loader { display: none;}    
+  </style>
+</noscript>
+</body>
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  });
+	//inicializa zoom na imagem
+	$('.zoom-imagem').magnificPopup({
+	 type: 'image',
+  	 mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+ 	 zoom: {
+		enabled: true, // By default it's false, so don't forget to enable it
+
+		duration: 300, // duration of the effect, in milliseconds
+		easing: 'ease-in-out', // CSS transition easing function
+
+		// The "opener" function should return the element from which popup will be zoomed in
+		// and to which popup will be scaled down
+		// By defailt it looks for an image tag:
+		opener: function(openerElement) {
+		  // openerElement is the element on which popup was initialized, in this case its <a> tag
+		  // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+		  return openerElement.is('img') ? openerElement : openerElement.find('img');
+		}
+	  },
+	   image: {
+		  markup: '<div class="mfp-figure">'+
+					'<div class="mfp-close"></div>'+
+					'<div class="mfp-img"></div>'+ // Floated left
+					'<div class="mfp-bottom-bar">'+'<figcaption>'+'<div class="mfp-title" style="text-align:center"></div>'+
+					  '<div class="mfp-counter"></div>'+'</figcaption>'+
+					'</div>'+
+				  '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+		  cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+		  tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+	   }
+	});
+
+	//inicializa popover
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
+	//inicializa tooltip
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+
+
+  $(function() {
+    $(".card").click(function() {
+      if ($(this).hasClass("exibe-frente")) {
+        $(this)
+          .children()
+          .first()
+          .hide();
+        $(this)
+          .children()
+          .last()
+          .show();
+        $(this).removeClass("exibe-frente");
+      } else {
+        $(".card .verso").hide();
+        $(".card .frente").show();
+        $(this).addClass("exibe-frente");
+      }
+    });
+  });
+
+  $( document ).ready(function() {
+    $(".card .verso").hide();
+  });
+
+
+
+
+  /*------- Script de animação do botão -------*/
+  var root = document.documentElement;
+  root.className += ' js';
+
+  function boxTop(idBox) {
+    var boxOffset = $(idBox).offset().top;
+    return boxOffset;
+  }
+
+  $(document).ready(function() {
+    var $target = $('.animeStart'),
+        $target2 = $('.animeStop'),
+        targetBox = $('.box'),
+        animationClass = 'anime-init',
+        windowHeight = $(window).height(),
+        offset = windowHeight - (windowHeight / 4);
+
+    function animeScroll() {
+      var documentTop = $(document).scrollTop();
+      $target.each(function() {
+        if (documentTop > boxTop(this) - offset) {
+          targetBox.addClass(animationClass);
+        } else {
+          targetBox.removeClass(animationClass);
+        }
+        if (documentTop > boxTop($target2) - offset) {
+          targetBox.removeClass(animationClass);
+        } 
+      });
+    }
+    animeScroll();
+
+    $(document).scroll(function() {
+      animeScroll();
+    });
+  });
+
+
+</script>
+
+<script>
+  var scriptElem=document.createElement("script");
+  scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+  scriptElem.charset="UTF-8",
+  scriptElem.onload=function(){
+        window.ht = new HT({
+            token:"bf5b7efb148a829a126a0e0c9fd533bf",
+            align:"top",
+            videoEnabled: true,
+            ytEmbedReplace: true,           
+            mobileConfig:{align:"right",
+                          actionsAlign:"top",
+                          customButtonStyle:{
+                                borderRadius:"6px",
+                                size:"38px",
+                                horizontalMargin:"13px",
+                                bottomMargin:"140px",
+                                rightMargin:"40px"}
+                          }
+          });        
+      $('.ht-skip').attr("aria-hidden","true")
+    },
+  document.body.appendChild(scriptElem);
+</script>

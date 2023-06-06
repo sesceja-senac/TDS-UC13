@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ferramentas de depuração passo a passo</title>
+
+    <!-- Bootstrap -->
+    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+    <link href="../template/css/cores.css" rel="stylesheet">
+    <link href="../template/css/modal-100.css" rel="stylesheet">
+    <link href="../template/css/devibeans.min.css" rel="stylesheet">
+      <!--Extras - novas classes para facilitar-->
+      <link rel="stylesheet" href="../template/css/extras.css">
+    <link href="../template/css/sncload.css" rel="stylesheet">
+    <link href="../template/css/magnific-popup.css" rel="stylesheet">
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <!-- css necessario para o print -->
+    <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+    <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+        	  <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+            <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet" class="fundo-tecnicos">
+        <header class="no-print">
+          <!-- BTO IMPRIMIR -->
+          <div class="grupo-imprimir no-print">
+            <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                <span class="fa fa-print"></span> <span>Imprimir</span>
+            </button>
+          </div>
+          <!-- /BTO IMPRIMIR -->
+        </header>
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <div class="pagina">
+            <p class="acessivel no-print">Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau máximo de leitura, a fim de que os códigos disponibilizados neste material sejam lidos corretamente. No caso do NVDA (NonVisual Desktop Access), para localizar a opção Grau de pontuação/símbolos, acesse Preferências – Configurações – Fala. Altere o padrão Pouco para Tudo. Dessa forma, o leitor passará a ler os segmentos de código em sua totalidade. </p>
+            
+             <!--Menu-->
+             <div class="bg-fundo"></div>
+             <input type="checkbox" id="menu" name="menu" class="menu-checkbox no-print">
+             <label class="menu-toggle no-print" for="menu"><span>Toggle</span></label>
+             <div class="menu no-print" aria-hidden="true">
+               <div id="style-2" class="scroll-bar">
+                 <div class="force-overflow">
+                   
+                   <ul class="eng-item-menu">
+                     <li class="item1">
+                       <a href="#t1" class="fundo-item">Conceito</a>
+                       <hr>
+                     </li>
+                     <li class="item2">
+                       <a href="#t2" class="fundo-item"><i>Front-end</i> para <i>mobile</i></a>
+                       <hr>
+                     </li>
+                     <li class="item3">
+                       <a href="#t3" class="fundo-item">Técnicas e ferramentas</a>
+                       <hr>
+                     </li>
+                     <li class="item4">
+                       <a href="#t4" class="fundo-item">Encerramento</a>
+                       <hr>
+                     </li>      
+                   </ul>
+                 </div>
+               </div>
+             </div>
+ 
+             <div class="container">
+             <div class="row responsividade">
+            <div class="col-lg-7 col-sm-12 col-xs-12 textoresponsividade">
+            <h2>Responsividade: conceito, front-end para ambiente mobile, técnicas e ferramentas</h2>
+            <p><i>Front-end</i>, sendo uma camada de apresentação e de interação, precisa ser desenvolvido com especial atenção às diferentes telas e resoluções que os usuários possam aplicar. A ascensão dos <i>smartphones</i> popularizou um conceito que hoje é fundamental: a responsividade, ou seja, a capacidade de uma página ser apresentada correta e agradavelmente em diversas telas diferentes sem prejuízo à experiência do usuário. Este conteúdo discute esse conceito e aplica recursos de HTML (<i>hyper text markup language</i>), CSS (<i>cascading style sheets</i>) e biblioteca Bootstrap para alcançar responsividade.</p>
+            </div>
+            <div class="col-lg-5">
+            <img src="../10_responsividade/imgs/img.png" class="mt-40 no-print">
+            </div>
+          </div>
+          </div>
+          <div class="parallax" data-parallax="scroll" data-image-src="imgs/paralaxe.png"></div>
+          <div class="container">
+            <h3 id="t1">Conceito</h3>
+            <p>Inicialmente, em um ambiente predominantemente de computadores, as páginas <i>web</i> preocupavam-se em utilizar o máximo da largura de tela possível. Com a popularização das telas pequenas e estreitas dos <i>smartphones</i>, uma preocupação tornou-se crescente no desenvolvimento <i>web</i>: como acomodar bem uma página para que seja corretamente visualizada e ofereça uma boa experiência, seja por uma tela grande, seja por uma tela menor? </p>
+            <p>O termo “responsividade”, ou “<i>design</i> responsivo”, foi cunhado por Ethan Marcotte em seu artigo <i>Responsive Web Design</i>, de 2010, em que une algumas técnicas de <i>design web</i> em uma abordagem unificada: <i>layout</i> em grade flexível, imagens flexíveis e consultas de mídia, usando elementos de HTML e CSS. Com base nisso, é preciso projetar soluções flexíveis e adaptativas, e não mais desenhar soluções que restrinjam a Internet.</p>
+            <p>Observou-se, ainda, que a responsividade não deve se limitar a alterar <i>layouts</i> de acordo com o tamanho das telas, mas, sim, inverter o pensamento corrente de desenhar um <i>site</i> pensando primeiro nas dimensões de uma tela de <i>desktop</i> para depois reescalar para telas menores. Ao invés disso, a ideia seria pensar primeiro nas menores telas para progressivamente evoluir para as telas maiores – hoje esse conceito é conhecido como <i><strong>mobile first</strong></i> (mobile primeiro).</p>
+            <div class="caixa-destaque-livre borda-primaria-03 mt-40"> 
+              <p>Responsividade é, portanto, uma técnica de montagem de páginas usando HTML e CSS em que o <i>site</i> se adapta ao navegador e ao tamanho de tela utilizados sem precisar definir diversos <i>layouts</i> e diversos códigos HTML e CSS para cada tamanho específico.</p>
+              <img src="../10_responsividade/imgs/01.png" class="img-responsive center-block mt-40 imprime-menor">
+                <p class="legenda-imagem">
+                  Figura 1 – <i>Site</i> não responsivo <i>versus site</i> responsivo em telas de <i>smartphone</i> <br>
+                  Fonte: PT Legal ([s. d.])
+                </p>
+                <p class="acessivel no-print">À esquerda uma tela de smartphone mostra página com layout semelhante à de desktop, com menu lateral vertical, imagem, texto com fonte muito pequena. À direita, o mesmo site adaptado para smartphone: o menu fica no topo e torna-se horizontal, a imagem é adaptada à largura da tela e o texto fica com fonte adequada.</p>
+            </div>
+            <p>Algumas das características observadas em um design de site responsivo são as seguintes:</p>
+            <ul>
+              <li>O <i>layout</i> da página deve se adaptar à resolução usada na visualização.</li>
+              <li>O <i>layout</i> deve ser fluido e evitar medidas fixas (quantidade de <i>pixels</i> para medir tamanho, por exemplo).</li>
+              <li>Os elementos da página precisam ser de fácil manipulação para o usuário, independentemente de resolução, podendo ser simplificados ou mesmo removidos se não forem necessários nos dispositivos menores</li>
+              <li>As imagens precisam ser otimizadas e redimensionadas quando necessário, tanto para adaptação à tela quanto para economia de dados de Internet.</li>
+              <li>Botões, <i>links</i> e <i>menus</i> precisam ser adaptados para que possam ser utilizados com toque, além de <i>mouse</i>.</li>
+            </ul>
+            <div class="row">
+            <div class="col-lg-4 col-sm-4 col-xs-4">
+              <img src="../10_responsividade/imgs/02a.png" class="img-responsive center-block mt-20" aria-hidden="true">
+            </div>
+            <div class="col-lg-2 col-sm-2 col-xs-2">
+              <img src="../10_responsividade/imgs/02b.png" class="img-responsive center-block mt-20" aria-hidden="true">
+            </div>
+            <div class="col-lg-4 col-sm-4 col-xs-4">
+              <img src="../10_responsividade/imgs/03a.png" class="img-responsive center-block mt-20" aria-hidden="true">
+            </div>
+            <div class="col-lg-2 col-sm-2 col-xs-2">
+              <img src="../10_responsividade/imgs/03b.png" class="img-responsive center-block mt-20" aria-hidden="true">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="legenda-imagem col-lg-6 col-sm-6 col-xs-6">
+              <p>Figura 2 – O <i>site</i> do Senac EAD é responsivo: à esquerda em um <i>desktop</i> e à direita em uma tela de <i>smartphone</i> <br>
+                Fonte: adaptado de Senac EAD (c2018)
+              </p>
+              <p class="acessivel no-print">Site do Senac EAD à esquerda mostrado em versão desktop: no topo logo e ícones, abaixo, um menu com links, abaixo um carrossel com imagens grandes e abaixo uma grade de cursos em destaque (mostrando 4 cursos lado a lado). À direita, a versão mobile do site: no topo o logo e um ícone para mostrar menu de links, abaixo um carrossel com imagem à largura da tela e abaixo cursos em destaque mostrando apenas um curso (os outros cursos vem abaixo desse).</p>
+            </div>
+            <div class="legenda-imagem col-lg-6 col-sm-6 col-xs-6">
+              <p>Figura 3 – <i>Site</i> não responsivo: à direita em <i>desktop</i> e à esquerda em <i>mobile</i> <br>
+                Fonte: Deque University (c2015)
+              </p>
+              <p class="acessivel no-print">À direita, site em tela desktop mostra um título “Deque University”, uma lista de links na horizontal abaixo, abaixo um título de texto e mais abaixo um texto com uma figura à esquerda e uma lista de tópicos à direita. À esquerda, o mesmo site em tela de mobile, se diferencia apenas no tamanho redimensionado da imagem (proporcional à largura da tela) e no texto que fica com fonte menor.</p>
+            </div>
+          </div>
+
+          <p>Pelos exemplos das figuras 1, 2 e 3, é possível verificar que responsividade não significa mostrar um site exatamente da mesma maneira em uma tela e em outra. Pelo contrário, adaptações são necessárias para que o usuário acesse as mesmas informações com boa usabilidade. </p>
+          <h3 id="t2"><i>Front-end</i> para <i>mobile</i></h3>
+          <p>Alguns elementos de HTML5 e de CSS3 ajudam na criação de páginas responsivas. Eles permitem redimensionar automaticamente, ocultar elementos e aumentar ou diminuir itens visuais de acordo com a tela em que o <i>site</i> é visualizado, deixando-o com boa aparência em diversos dispositivos. </p>
+          <h4><i>Tag</i> viewport</h4>
+          <p>O HTML conta com uma <i>tag</i> chamada <strong>meta</strong>, em que é possível incluir informações adicionais sobre os dados da página. A <i>tag</i> não aparece na tela, mas é detectada e interpretada pelo navegador. </p>
+          <p>O uso da <i>tag</i> <strong>&lt;meta></strong> para responsividade está ligado ao atributo <strong>viewport</strong>, na seguinte sintaxe: </p>
+          <pre>
+            <code>
+              &lt;meta name="viewport" content=""> 
+            </code>
+          </pre>
+          <p>Antes de aprofundar o conhecimento nessa <i>tag</i>, cabe explicar o que é um <strong>viewport</strong>. Esse termo em inglês é usado para definir a área de exibição de conteúdo em um dispositivo e varia de acordo com o tamanho da tela do aparelho. No caso de um computador, o <strong>viewport</strong> para uma página depende do tamanho da janela do navegador – se a janela for redimensionada, o <strong>viewport</strong> aumentará ou diminuirá.  </p>
+          <p>Voltando à <i>tag</i> HTML, usando <strong>meta viewport</strong>, é possível aplicar parâmetros como <strong>width</strong> para definir a largura do <strong>viewport</strong>, <strong>height</strong> para definir sua altura, e <strong>initial-scale</strong> para definir a escala inicial (o <i>zoom</i>) do <strong>viewport</strong>. </p>
+          <p>Para responsividade, é possível usar o valor <strong>device-width</strong> (largura do equipamento) e a escala inicial 1 (100%). </p>
+          <pre>
+            <code>
+              &ltmeta name="viewport" content="width=device-width, initial-scale=1.0"> 
+            </code>
+          </pre>
+          <p>Crie um arquivo HTML com o seguinte código para testar. </p>
+          <pre>
+            <code class="language-html">
+&lt;!DOCTYPE html> 
+&lt;html>
+    &lt;head> 
+        &lt;title>Teste Viewport</title> 
+    &lt;/head>
+    &lt;body> 
+        &lt;p>&lt;b>Abra esta página em um navegador modo desktop e depois em modo mobile&lt;/b>&lt;/p> 
+        &lt;img src="imagem-teste.jpg" alt="teste" width="375"/> 
+        &lt;p> 
+         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+         Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  
+         &lt;/p> 
+    &lt;/body> 
+&lt;/html> 
+            </code>
+          </pre>
+          <p>Note, pela figura a seguir, que a página se mantém mais ou menos com o mesmo <i>layout</i> no <i>desktop</i> e no <i>mobile</i>, tornando a experiência menos agradável na tela pequena. </p>
+          <div class="row center-block">
+            <div class="col-lg-8 col-sm-8 col-xs-8">
+              <img src="../10_responsividade/imgs/04a.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+            </div>
+            <div class="col-lg-4 col-sm-4 col-xs-4">
+              <img src="../10_responsividade/imgs/04b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+            </div>
+          </div>
+          <div class="legenda-imagem">
+            <p>Figura 4 – Página criada sem <strong>&lt;meta name=”viewport”></strong> <br>
+                Fonte: Senac EAD (2023) 
+            </p>
+            <p class="acessivel no-print">À esquerda uma página em desktop com um título, imagem alinhada à esquerda e abaixo um texto. À direita, uma página em mobile com o mesmo layout, e a imagem na página está espremida à esquerda.</p>
+          </div>
+          <p>Agora, inclua a tag &lt;meta> com viewport e depois visualize a diferença na figura 5</p>
+          <pre>
+            <code class="language-html">
+&lt;!DOCTYPE html> 
+&lt;html> 
+      &lt;head> 
+          &lt;title>Teste Viewport&lt;/title> 
+          &lt;meta name="viewport" content="witdth=device-width, initial-scale=1.0"> 
+      &lt;/head> 
+      &lt;body> 
+          &lt;p>&lt;b>Abra esta página em um navegador modo desktop e depois em modo mobile&lt;/b>&lt;/p> 
+          &lt;img src="imagem-teste.jpg" alt="teste" /> 
+          &lt;p> 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  
+          &lt;/p> 
+      &lt;/body> 
+&lt;/html> 
+            </code>
+          </pre>
+          <div class="row center-block">
+            <div class="col-lg-8 col-sm-8 col-xs-8">
+              <img src="../10_responsividade/imgs/05a.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+            </div>
+            <div class="col-lg-4 col-sm-4 col-xs-4">
+              <img src="../10_responsividade/imgs/05b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+            </div>
+          </div>
+          <div class="legenda-imagem">
+            <p>Figura 5 – Página criada com <strong>&lt;meta name=”viewport”></strong> <br>
+                Fonte: Senac EAD (2023) 
+            </p>
+            <p class="acessivel no-print">À esquerda uma página em desktop com um título, imagem alinhada à esquerda e abaixo um texto. À direita, uma página em mobile com o título, e a imagem abaixo está mais ajustada à tela e o texto vem abaixo da imagem.  </p>
+          </div>
+
+            <h4>Dimensões da imagem</h4>
+            <p>Ao incluir imagens, como nos exemplos anteriores, é possível especificar suas dimensões por meio de unidades como pontos, centímetros ou <i>pixels</i>. No entanto, uma alternativa que pode ser mais adequada é usar a porcentagem da tela. Na página anterior, se você quiser que a imagem tenha a mesma largura da tela, pode usar o atributo de CSS <strong>width</strong> com valor “100%” na <i>tag</i> HTML ou em uma folha de estilo. </p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html> 
+&lt;html> 
+    &lt;head> 
+        &lt;title>Teste Viewport&lt;/title> 
+        &lt;meta name="viewport" content="witdth=device-width, initial-scale=1.0"> 
+   &lt;/head> 
+   &lt;body> 
+        &lt;p>&lt;b>Abra esta página em um navegador modo desktop e depois em modo mobile&lt;/b>&lt;/p> 
+        &lt;img src="imagem-teste.jpg" alt="teste" style="width:100%"/> 
+        &lt;p>
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat vol
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo conse
+        &lt;/p> 
+    &lt;/body> 
+&lt;/html> 
+              </code>
+            </pre>
+            <div class="row center-block">
+              <div class="col-lg-8 col-sm-8 col-xs-8">
+                <img src="../10_responsividade/imgs/06a.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+              </div>
+              <div class="col-lg-4 col-sm-4 col-xs-4">
+                <img src="../10_responsividade/imgs/06b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+              </div>
+            </div>
+            <div class="legenda-imagem">
+              <p>Figura 6 – Imagem modificada para largura a 100% da tela  <br>
+                  Fonte: Senac EAD (2023) 
+              </p>
+              <p class="acessivel no-print"> À esquerda uma página em desktop com um título, imagem alinhada à esquerda com largura que ocupa toda a largura da tela e abaixo um texto. À direita, uma página em mobile com o título, a imagem abaixo está também com a largura ajustada à largura da tela, ajustando também a altura proporcionalmente e o texto vem abaixo da imagem. </p>
+            </div>
+            <p>Pode haver um inconveniente em indicar a largura em 100%: se a imagem tem uma largura menor que a da tela, pode ser conveniente manter a dimensão original quando não for necessário. Para isso, é possível usar a propriedade de estilo <strong>max-width</strong> para definir a largura máxima, de maneira que a imagem possa escalar para um valor menor, mas nunca maior ao especificado. Veja, a seguir, o trecho com a tag &lt;img> do exemplo anterior usando esse recurso.  </p>
+            <pre>
+              <code class="language-html">
+                &lt;img src="imagem-teste.jpg" alt="teste" style="max-width:100%; height:auto;"/>
+              </code>
+            </pre>
+            <div class="row">
+              <div class="col-lg-8 col-sm-8 col-xs-8">
+                <img src="../10_responsividade/imgs/07a.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+              </div>
+              <div class="col-lg-4 col-sm-4 col-xs-4">
+                <img src="../10_responsividade/imgs/07b.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+              </div>
+            </div>
+            <div class="legenda-imagem">
+              <p>Figura 7 – Página com estilo <strong>max-width</strong> aplicado à imagem   <br>
+                  Fonte: Senac EAD (2023) 
+              </p>
+              <p class="acessivel no-print"> Página dos exemplos anteriores, mas agora à direita no desktop a imagem não ocupa a largura toda da tela e está alinhada à esquerda. À esquerda a página em tela de mobile mostra a imagem com a largura da tela.  </p>
+            </div>
+            <p>Pela figura 7, note que, em <i>desktop</i>, a imagem assume sua largura original, já que é menor que a largura da janela. Já no <i>smartphone</i>, ela não ultrapassa os limites da largura da tela. </p>
+            <p>Geralmente <strong>max-width</strong> vem acompanhado da regra <strong>height:auto</strong>, definindo que a altura pode varia de acordo com a largura (o que já acontece por padrão quando se especifica apenas largura). </p>
+            <h4>Tamanho da imagem</h4>
+            <p>Juntamente com a questão de dimensões, é possível aplicar recursos relativos a tamanho (ou “peso”) da imagem em <i>bytes</i>. Unindo essas duas questões, pode-se usar uma <i>tag</i> <strong>&lt;picture></strong> de HTML5 e definir que, de acordo com a largura da tela, use-se uma imagem de maior resolução ou outra de menor resolução (que também pode ser mais leve e demorar menos para carregar). Veja o destaque no exemplo a seguir, em que há duas versões para a imagem, uma com resolução 480 px x 320 px e outra com resolução 320 px x 213 px. </p>
+            <pre>
+              <code>
+&lt;!DOCTYPE html> 
+&lt;html> 
+      &lt;head> 
+          &lt;title>Teste Viewport&lt;/title> 
+          &lt;meta name="viewport" content="witdth=device-width, initial-scale=1.0"> 
+      &lt;/head> 
+      &lt;body> 
+            &lt;p>&lt;b>Abra esta página em um navegador modo desktop e depois em modo mobile&lt;/b>&lt;/p> 
+            &lt;picture> 
+                  &lt;source srcset="imagem-320x213.jpg" media="(max-width: 600px)"> 
+                  &lt;source srcset="imagem-480x320.jpg" media="(max-width: 1000px)"> 
+                  &lt;source srcset="imagem-teste.jpg"> 
+                  &lt;img src="imagem-teste.jpg" alt="teste"/> 
+            &lt;/picture> 
+            &lt;p> 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  
+            &lt;/p> 
+      &lt;/body> 
+&lt;/html> 
+              </code>
+            </pre>
+            <p>Dois itens são decisivos para usar essa solução. O primeiro é a <i>tag</i> <strong>&lt;source></strong>, que permite usar opções de figuras para uma mesma imagem. O outro é o atributo <strong>media</strong> de HTML5, em que se consegue especificar condições para usar uma figura ou outra de acordo com propriedades do dispositivo sendo usado. Nesse caso, usa-se como condição a largura da tela: se ela for de até 600 px, usará a imagem do arquivo <strong>“imagem-320x213.jpg”</strong>; caso a largura da tela seja de até 1.000 px, a imagem virá de <strong>“imagem-480x320.jpg”</strong>; caso contrário, por padrão, usará a imagem original <strong>“imagem-teste.jpg”</strong> (que tem dimensões 640 x 425). </p>
+            <div class="row center-block">
+              <div class="col-lg-5 col-sm-5 col-xs-5">
+                <img src="../10_responsividade/imgs/08a.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+              </div>
+              <div class="col-lg-4 col-sm-4 col-xs-4">
+                <img src="../10_responsividade/imgs/08b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-3">
+                <img src="../10_responsividade/imgs/08c.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+              </div>
+            </div>
+            <div class="legenda-imagem">
+              <p>Figura 8 – Comportamento da imagem em três larguras diferentes de telas  <br>
+                  Fonte: Senac EAD (2023) 
+              </p>
+              <p class="acessivel no-print"> À esquerda uma tela desktop com resolução mais larga, a imagem está ocupando mais da metade da largura tela. No meio, tela desktop com largura média e a imagem está menor, ocupando metade da tela. À direita, tela mobile com largura estreita, e a imagem ocupa quase toda a largura da tela. </p>
+            </div>
+            <div class="caixa-destaque iconedesafio borda-primaria-03 mt-40"> 
+              Para ilustrar melhor o que você viu até agora, monte uma página e use a <i>tag</i> <strong>&lt;picture></strong> para mostrar três imagens completamente diferentes de acordo com a largura da tela. Também use a <i>tag</i> de dimensão <strong>max-width</strong> para que ajuste a 100% da largura da tela. Teste encolhendo e expandindo a tela do navegador e usando o recurso de simulação de tela de dispositivos da ferramenta de desenvolvedor do navegador. 
+            </div>
+            <h4>Media queries</h4>
+            <p>No exemplo anterior, você experimentou um pouco do que é um <i>media query</i> (ou consulta de mídia): verificou por meio do atributo <strong>media</strong> um valor relativo ao dispositivo em que a imagem seria mostrada. <i>Media queries</i> são propriedades de CSS que permitem realizar testes sobre o dispositivo e aplicar regras específicas de estilo para esse dispositivo.  </p>
+            <p>A sintaxe é a seguinte: </p>
+            <pre>
+              <code class="language-css">
+                @media tipo-de-midia and (regra [) and|or|not (regra] ){ 
+
+                    regras css; 
+                }
+              </code>
+            </pre>
+            <div class="caixa-destaque borda-primaria-03 mt-40">
+              O <strong>tipo-de-midia</strong>, em questão de responsividade, tipicamente será <i>screen</i> (tela). Porém, é possível definir estilo para impressão (<i>print</i>) ou sintetizadores de voz (<i>speech</i>), por exemplo. 
+            </div>
+            <div class="caixa-destaque borda-primaria-03 mt-40">
+            A <strong>regra</strong> são as condições para que as propriedades sejam aplicadas. Pode haver mais de uma regra e, nesse caso, usa-se <i>and</i>, <i>or</i> ou <i>not</i> para montar a expressão condicional. 
+            </div>
+            <p>Aplique <i>media query</i> em um exemplo simples usando a página com a qual está trabalhando até agora. Neste exemplo, será usada uma cor diferente para o fundo da tela e para o título na página quando estiver usando telas maiores. </p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html> 
+&lt;html> 
+    &lt;head> 
+        &lt;title>Teste Viewport&lt;/title> 
+        &lt;meta name="viewport" content="witdth=device-width, initial-scale=1.0"> 
+        &lt;style>
+                @media screen and (min-width:600px){ 
+                body{ 
+                background-color: #DAF7A6; 
+                } 
+                 } 
+                @media screen and (min-width:1000px){ 
+                p b{  
+                color: #0D38A1 ; 
+                font-family: Arial, Helvetica, sans-serif; 
+                font-size: 2em 
+                 } 
+                }
+        &lt;/style> 
+    &lt;/head> 
+    &lt;body> 
+          &lt;p>&lt;b>Abra esta página em um navegador modo desktop e depois em modo mobile&lt;/b>&lt;/p> 
+          &lt;img src="imagem-320x213.jpg" alt="teste"/> 
+          &lt;p> 
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  
+          &lt;/p> 
+    &lt;/body> 
+&lt;/html> 
+              </code>
+            </pre>
+            <p>No trecho destacado, há a primeira consulta verificando se a tela tem tamanho mínimo de 600 px (<strong>@media screen and (min-width:600px)</strong>). Se sim, mudará a cor de fundo da página. Em seguida, é verificado se a tela tem o mínimo de 1.000 px de largura. Caso afirmativo, também se modifica a fonte do texto em negrito na página. </p>
+            <div class="row">
+              <div class="col-lg-3 col-sm-3 col-xs-3">
+                <img src="../10_responsividade/imgs/09a.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+              </div>
+              <div class="col-lg-4 col-sm-4 col-xs-4">
+                <img src="../10_responsividade/imgs/09b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+              </div>
+              <div class="col-lg-5 col-sm-5 col-xs-5">
+                <img src="../10_responsividade/imgs/09c.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+              </div>
+            </div>
+            <div class="legenda-imagem">
+              <p>Figura 9 – Comparação da página mostrada em telas com 460 px, 665 px e 1.110 px  <br>
+                  Fonte: Senac EAD (2023) 
+              </p>
+              <p class="acessivel no-print"> À esquerda, tela estreita com a página dos exemplos; no meio, tela de largura média com fundo em tom de verde; à direita, tela larga com fundo em tom verde e título com fonte maios, cor azul e tipo Arial.  </p>
+            </div>
+            <p>Veja um segundo exemplo em que se pode definir um <i>menu</i> de <i>links</i> horizontal por padrão (pensando em <i>mobile first</i>, esse seria o <i>layout</i> desejável) e, para telas maiores, manter o <i>menu</i> na lateral esquerda. </p>
+            <pre>
+              <code class="language-html">
+  &lt;!DOCTYPE html> 
+  &lt;html> 
+      &lt;head> 
+          &lt;title>Teste Viewport&lt;/title> 
+          &lt;meta name="viewport" content="witdth=device-width, initial-scale=1.0"> 
+          &lt;style> 
+                  /*por padrão: lista sem pontos e com cor de fundo...*/ 
+                  ul{ 
+                  list-style-type: none; 
+                  overflow: hidden; 
+                  background-color: #DAF7A6; 
+                   } 
+                  /*...e itens da lista ficarão lado a lado.*/ 
+                   li{ 
+                  float:left; 
+                   padding: 5px; 
+                  } 
+                   /*Para telas maiores...*/ 
+                   @media screen and (min-width:600px){ 
+                   /*...os itens da lista ficam um abaixo do outro...*/ 
+                   li{ 
+                  float:none; 
+                  } 
+                  /*...o menu fica à esquerda...*/ 
+                   nav{ 
+                   float:left; 
+                  } 
+                   /*...e o conteúdo dá espaço ao menu*/ 
+                   main{ 
+                  padding-left: 110px; 
+                   } 
+                   } 
+        &lt;/style> 
+      &lt;/head> 
+      &lt;body> 
+          &lt;nav> 
+              &lt;ul> 
+                  &lt;li>&lt;a href="#">Home&lt;/a></li> 
+                  &lt;li>&lt;a href="#">Artigos</a></li> 
+                  &lt;li>&lt;a href="#">Sobre</a></li> 
+              &lt;/ul> 
+          &lt;/nav> 
+          &lt;main> 
+                &lt;p>&lt;b>Abra esta página em um navegador modo desktop e depois em modo mobile&lt;/b>&lt;/p> 
+                &lt;img src="imagem-320x213.jpg" alt="teste" class="imagens"/> 
+                &lt;p> 
+ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
+  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.  
+                &lt;/p> 
+          &lt;/main> 
+      &lt;/body> 
+  &lt;/html> 
+              </code>
+            </pre>
+            <p>No exemplo, estão sendo definidas regras-padrão para os elementos <strong>ul</strong> e <strong>li</strong>, que formam o <i>menu</i> de <i>links</i>, por meio das quais se define que o <i>menu</i> terá cor de fundo e <i>links</i> lado a lado. Com base no <i>media query</i>, se a tela tiver largura maior que 600 px, os <i>links</i> ficam alinhados na vertical (<strong>float:none</strong> sobrescreverá o <strong>float:left</strong> padrão) e posicionados à esquerda da página (<strong>float:left</strong> para o elemento <strong>nav</strong>)</p>
+            <div class="row">
+              <div class="col-lg-8 col-sm-8 col-xs-8">
+                <img src="../10_responsividade/imgs/10a.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+              </div>
+              <div class="col-lg-4 col-sm-4 col-xs-4">
+                <img src="../10_responsividade/imgs/10b.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+              </div>
+            </div>
+            <div class="legenda-imagem">
+              <p>Figura 10 – <i>Menu</i> para <i>desktop</i> e para <i>mobile</i>  <br>
+                  Fonte: Senac EAD (2023) 
+              </p>
+              <p class="acessivel no-print"> À esquerda, a página de testes em tela desktop mostra menu à esquerda do conteúdo com três links um abaixo do outro; à direita, a mesma página mostra o menu acima do conteúdo e os links alinhados horizontalmente.  </p>
+            </div>
+            <p><i>Media queries</i> são essenciais para a construção de interfaces responsivas e são usadas pelas ferramentas que serão abordadas adiante neste conteúdo. </p>
+            <div class="caixa-destaque iconedesafio borda-primaria-03 mt-40">
+              Crie uma página e use <i>media query</i> para mostrar todo o conteúdo em fonte Arial, quando estiver em tela de <i>mobile</i>, e em fonte Georgia com tamanho maior, quando estiver em tela de <i>desktop</i>. 
+            </div>
+            <h3 id="t3">Técnicas e ferramentas</h3>
+            <p>Algumas ferramentas ajudam na tarefa de montar design web responsivo de maneira mais prática. A principal e mais reconhecida no mercado é o Bootstrap, que será tratado com mais detalhes adiante. </p>
+            <p>Antes, veja algumas alternativas (recomenda-se que você busque e teste essas outras ferramentas). </p>
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingOne">
+              <h4 class="panel-title">
+                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Pure CSS 
+                </a>
+              </h4>
+              </div>
+              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                <div class="panel-body">
+                  Biblioteca <i>open-source</i> com coleção de pequenos componentes CSS que seguem a premissa <i>mobile first</i> e que podem ser usados em qualquer projeto <i>web</i>. Bastante leve, não tem dependência com bibliotecas JavaScript como o JQuery (e por isso não traz componentes mais complexos como o Bootstrap); baseia-se no CSS padrão e é extensível. Uma vantagem é ser disponível em módulos, que podem ser obtidos separadamente para o projeto. 
+                  <img src="../10_responsividade/imgs/11.png" class="img-responsive center-block mt-40 imprime-menor">
+                  <p class="legenda-imagem">
+                    Figura 11 – Página inicial do Pure CSS  <br>
+                    Fonte: Pure CSS (c2014) 
+                  </p>
+                </div>
+              </div>
+              </div>
+              <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingTwo">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Foundation 
+                </a>
+              </h4>
+              </div>
+              <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+              <div class="panel-body">
+                <i>Framework open-source</i> flexível com funcionalidades semelhantes ao Bootstrap, oferecendo uma gama alta de ferramentas de <i>design</i> e componentes reutilizáveis. Conta com sistema de <i>grids</i>, tipografia, componentes UI, <i>plugins</i> JavaScript e outros. Pode ser customizado, mas sua curva de aprendizado pode ser mais acentuada por ter muitos recursos. 
+                <img src="../10_responsividade/imgs/12.png" class="img-responsive center-block mt-40 imprime-menor">
+                  <p class="legenda-imagem">
+                    Figura 12 – Página inicial do Foundation <br>
+                    Fonte: Foundation (c1998-2023) 
+                  </p>
+              </div>
+              </div>
+              </div>
+              <div class="panel panel-default">
+              <div class="panel-heading" role="tab" id="headingThree">
+              <h4 class="panel-title">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Cascade 
+                </a>
+              </h4>
+              </div>
+              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+              <div class="panel-body">
+                É outra ferramenta CSS <i>open-source</i> que usa esquema de <i>grids</i> para responsividade e conta com uma série de componentes, como tabelas, navegação e tipografia. Dividido em módulos, o desenvolvedor pode escolher quais funcionalidades deseja importar ao projeto, incluindo apenas as folhas de estilo necessárias para isso. Também é pensado para que funcione bem em navegadores novos e antigos. 
+                <img src="../10_responsividade/imgs/13.png" class="img-responsive center-block mt-40 imprime-menor">
+                  <p class="legenda-imagem">
+                    Figura 13 – Página inicial do Cascade <br>
+                    Fonte: Cascade (c2023) 
+                  </p>
+              </div>
+              </div>
+              </div>
+            </div>
+            </div>
+            
+            <div class="acessivel print">
+              <p> Pure CSS </p>
+              <p>Biblioteca <i>open-source</i> com coleção de pequenos componentes CSS que seguem a premissa <i>mobile first</i> e que podem ser usados em qualquer projeto <i>web</i>. Bastante leve, não tem dependência com bibliotecas JavaScript como o JQuery (e por isso não traz componentes mais complexos como o Bootstrap); baseia-se no CSS padrão e é extensível. Uma vantagem é ser disponível em módulos, que podem ser obtidos separadamente para o projeto. </p>
+              <p>Página disponível em purecss.io. Mostra título “Pure.css”, abaixo links para obtenção do código, e abaixo um texto explicativo. Na lateral esquerda, menu com links diversos.</p>
+              <p>Foundation</p>
+              <p><i>Framework open-source</i> flexível com funcionalidades semelhantes ao Bootstrap, oferecendo uma gama alta de ferramentas de <i>design</i> e componentes reutilizáveis. Conta com sistema de <i>grids</i>, tipografia, componentes UI, <i>plugins</i> JavaScript e outros. Pode ser customizado, mas sua curva de aprendizado pode ser mais acentuada por ter muitos recursos. </p>
+              <p>Página disponível em https://get.foundation. Mostra no topo alguns links, abaixo uma grande imagem e um link para download e mais abaixo texto explicativo sobre a ferramenta. </p>
+              <p>Cascade </p>
+              <p>É outra ferramenta CSS <i>open-source</i> que usa esquema de <i>grids</i> para responsividade e conta com uma série de componentes, como tabelas, navegação e tipografia. Dividido em módulos, o desenvolvedor pode escolher quais funcionalidades deseja importar ao projeto, incluindo apenas as folhas de estilo necessárias para isso. Também é pensado para que funcione bem em navegadores novos e antigos. </p>
+              <p>Página disponível em http://jslegers.github.io/cascadeframework/index.html. Mostra alguns links no topo, abaixo área com logo e título “Cascade Framework”. Abaixo, textos explicativos sobre a ferramenta. </p>
+            </div>
+
+            <h4>Bootstrap</h4>
+            <p>Lançado em 2011 por iniciativa do Twitter, o <i>framework open-source</i> Bootstrap estabelece uma série de padrões, componentes e classes CSS que elevam a consistência do projeto, facilitam a manipulação do estilo, agilizam a programação de funcionalidades comuns de <i>front-end</i> e auxiliam na comunicação do código-fonte (alguém com conhecimento em Bootstrap saberá o que o seu código intenciona ao ler as classes no HTML, o que nem sempre é verdade quando se criam estilos CSS próprios). Essas facilidades em conjunto com a necessidade de adaptar a <i>web</i> para a realidade dos <i>smartphones</i>, que se expandia na época, tornaram a ferramenta uma das mais utilizadas em <i>design</i> de páginas desde então. </p>
+            <img src="../10_responsividade/imgs/14.png" class="img-responsive center-block mt-40 imprime-menor">
+              <p class="legenda-imagem">
+                Figura 14 – Página inicial do Bootstrap <br>
+                Fonte: Bootstrap ([s. d.]) 
+              </p>
+              <p class="acessivel no-print"> Página disponível em https://getbootstrap.com, com topo mostrando links. Abaixo, ao centro da página, um grande logo da ferramenta e a frase “Build fast, responsive sites with Bootstrap”, seguida de parágrafo de apresentação, um comando npm e um botão “read the docs”. Abaixo, linha com o número da última versão e links para download.</p>
+              <p>As principais características do Bootstrap são suas classes CSS, usadas para aplicar estilo ou para embutir alguma funcionalidade nos elementos da página, seus componentes de interface gráfica, como barras de navegação, <i>menus</i> expansíveis e janelas modais, e sua integração com Javascript, permitindo comportamento dinâmico.  </p>
+              <p>Por exemplo, se você quiser que um botão tenha uma aparência específica definida pelo Bootstrap, basta que se inclua a classe CSS correta no elemento de HTML e as funcionalidades e o estilo associados estarão prontamente aplicados ao elemento. Grosseiramente, é possível dizer que usar o Bootstrap é incluir as classes certas nas <i>tags</i> de HTML. </p>
+              <h4>Usando o Bootstrap</h4>
+              <p>Há duas maneiras de aplicar Bootstrap a uma página HTML: </p>
+              <ol>
+                <li>Baixando a biblioteca e fazendo referência aos arquivos. </li>
+                <li>Usando <i>links</i> CDN (<i>content delivery network</i>). </li>
+              </ol>
+            <p>Se você optar <strong>por baixar a biblioteca</strong>, na página principal do projeto (procure por “get Bootstrap”), há uma linha que mostra o número da versão (na data de produção deste material, a versão mais atual é 5.3) e um <i>link</i> para <i>download</i>. Ele levará a uma página de <i>downloads</i>. Nessa página, há uma seção <strong>Compiled CSS and JS</strong> e um botão <strong>Download</strong>. Clica-se nesse botão para baixar um arquivo de nome <strong>bootstrap-&lt;versão>-dist.zip</strong> ou algo semelhante.  </p>
+            <img src="../10_responsividade/imgs/15.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 15 – Página de <i>download</i> do Bootstrap  <br>
+              Fonte: Senac EAD (2023) 
+            </p>
+            <p class="acessivel no-print">A página tem um menu lateral na esquerda com diversos links e a região principal inicia com título “Download” e mais abaixo uma seção com título “Compiled CSS and JS” e um pequeno texto de detalhes. Abaixo, um botão roxo “Download”. A página segue com outras seções abaixo. </p>
+            <p>No arquivo compactado que foi baixado, serão encontrados todos os arquivos CSS e JavaScript necessários para o <i>framework</i>. Extraia o conteúdo diretamente para a pasta onde ficarão as páginas HTML e troque o nome da nova pasta extraída para <strong>bootstrap</strong>. É importante que dentro dessa pasta <strong>bootstrap</strong> estejam as pastas <strong>css</strong> e <strong>js</strong>. </p>
+            <img src="../10_responsividade/imgs/16.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 16 – Hierarquia de pastas para o Bootstrap <br>
+              Fonte: Senac EAD (2023) 
+            </p>
+            <p class="acessivel no-print">Detalhe do Windows Explorer mostrando pasta “projeto-web”, abaixo dela “bootstrap” e abaixo dela “css” e “js”.</p>
+            <p>Na pasta principal (<strong>projeto-web</strong> neste exemplo), será criado um arquivo HTML com o seguinte código: </p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html> 
+&lt;html> 
+    &lt;head> 
+        &lt;meta charset="utf-8"> 
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"> 
+        &lt;title>Primeiro Bootstrap&lt;/title> 
+    &lt;/head> 
+    &lt;body> 
+        &lt;h1>Estamos usando bootstrap?&lt;/h1> 
+        &lt;p>Se este texto e o botão abaixo estão estilizados, estamos sim.&lt;/p> 
+        &lt;button type="button">Click me!&lt;/button> 
+    &lt;/body> 
+&lt;/html> 
+              </code>
+            </pre>
+            <p>Abra no navegador e você verá uma página bastante simples. </p>
+            <img src="../10_responsividade/imgs/17.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 17 – Página para testes criada, sem estilo <br>
+              Fonte: Senac EAD (2023) 
+            </p>
+            <p class="acessivel no-print">Página com texto em fonte Times New Roman, um título “Estamos usando Bootstrap?”. Abaixo, um parágrafo “Se este texto e o botão abaixo estão estilizados, estamos sim”. E abaixo um botão “Click me!”. </p>
+            <p>Adicione o Bootstrap incluindo uma referência ao arquivo CSS principal (<strong>bootstrap.min.css</strong> presente na pasta <strong>bootstrap/css</strong>) e também a um arquivo de JavaScript (<strong>bootstrap.min.js</strong>, presente na pasta <strong>bootstrap/js</strong>). Note a diferença recarregando a página no navegador. </p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html> 
+&lt;html> 
+    &lt;head> 
+        &lt;meta charset="utf-8"> 
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"> 
+        &lt;title>Primeiro Bootstrap&lt;/title> 
+ &lt;link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+    &lt;/head> 
+    &lt;body> 
+        &lt;h1>Estamos usando bootstrap?&lt;/h1> 
+        &lt;p>Se este texto e o botão abaixo estão estilizados, estamos sim.&lt;/p> 
+        &lt;button type="button" class="btn btn-primary">Click me!&lt;/button> 
+        &lt;script src="bootstrap/js/bootstrap.bundle.min.js">&lt;/script> 
+    &lt;/body> 
+&lt;/html> 
+              </code>
+            </pre>
+            <img src="../10_responsividade/imgs/18.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 18 – Página de teste agora com Bootstrap  <br>
+              Fonte: Senac EAD (2023) 
+            </p>
+            <p class="acessivel no-print">A mesma página, agora com texto em fonte diferente e o botão com fundo azul e texto branco. </p>
+            <p>Perceba que sem necessitar de alterações no HTML, o texto já foi reestilizado. O botão, no entanto, precisou levar duas classes CSS próprias do Bootstrap: <strong>btn</strong> e <strong>btn-primary</strong>. Essa é uma amostra de como trabalhar com Bootstrap. </p>
+            <p>Outra maneira de usar o Bootstrap é <strong>por meio de <i>links</i> CDN</strong> (<i>links</i> da <i>web</i> que permitem referenciar os arquivos do <i>framework</i> sem a necessidade de <i>download</i> de todo o pacote). Nesse caso, ao invés de referenciar arquivos locais, você apontará para endereços específicos na <i>web</i>. Esses endereços são disponibilizados pela página do Bootstrap. </p>
+            <pre>
+              <code>
+&lt;!DOCTYPE html> 
+&lt;html> 
+    &lt;head> 
+        &lt;meta charset="utf-8"> 
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"> 
+        &lt;title>Primeiro Bootstrap&lt;/title> 
+                          &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous"> 
+    &lt;/head> 
+    &lt;body> 
+        &lt;h1>Estamos usando bootstrap?&lt;/h1> 
+        &lt;p>Se este texto e o botão abaixo estão estilizados, estamos sim.&lt;/p> 
+        &lt;button type="button" class="btn btn-primary">Click me!&lt;/button> 
+                          &lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
+    &lt;/body> 
+&lt;/html> 
+              </code>
+            </pre>
+            <p>Para a versão 5.3.0, as referências serão as destacadas acima. Elas podem ser encontradas também na página inicial do Bootstrap, na seção <strong>Include via CDN</strong>. Os atributos <strong>integrity</strong> e <strong>crossorigin</strong> são opcionais, mas conferem mais segurança ao uso do CDN – os valores devem ser obtidos na página do Bootstrap, pois mudam a cada versão. </p>
+            <p>Abra a página desenvolvida no navegador e note que o resultado é exatamente o mesmo de antes. A vantagem em usar CDN é que pode tornar o projeto um pouco mais leve por não necessitar baixar recursos desnecessários no carregamento da página. </p>
+            <p>Antes de realizar novos experimentos, veja alguns dos conceitos mais marcantes do <i>framework</i> Bootstrap. </p>
+            <h4>Sistema de grade</h4>
+            <p>O Bootstrap usa um sistema de grade (ou <i>grid system</i>) para posicionamento de elementos da página HTML, organizando <i>containers</i> como <strong>&lt;div></strong> em uma disposição de linhas e colunas. Imagine que uma seção do <i>site</i> precisa mostrar três imagens e um texto abaixo de cada uma. Nesse caso, seria definido, usando classes do Bootstrap, que você quer três colunas para essa região da página. A grade é dividida em 12 colunas e é nisso que seu <i>layout</i> deverá se basear.  </p>
+            <img src="../10_responsividade/imgs/19.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 19 – Grid do Bootstrap aplicado a uma página. O elemento destacado superior ocupa nove colunas, enquanto o elemento destacado inferior ocupa três colunas <br>
+              Fonte: Kind PNG (2019) 
+            </p>
+            <p class="acessivel no-print">Uma página com uma barra de título, uma seção Download e um texto ocupa ¾ da largura da tela. Abaixo, seções com título “bootstrap”, “Source code” e “Sass”, uma do lado da outra, cada uma com um texto e um botão abaixo do título. Cada uma ocupa ¼ da largura da tela. Estão destacadas a seção “Download” e está marcado um texto “9 colunas” e a seção “Bootstrap”, com a marcação “3 colunas”. Sobre a página, há 12 barras translucidas, uma do lado da outra.</p>
+            <p>Algumas instruções devem ser seguidas na hora de montar página com grid: </p>
+            <ul>
+              <li>O <i>grid</i> estará em um elemento HTML com classe <strong>container</strong>. </li>
+              <li>O <strong>container</strong> incluirá elementos com classe <strong>row</strong>. </li>
+              <li>Os elementos <strong>row</strong> incluem colunas, cuja largura é definida especificando-se o número de células que ela abrange usando uma classe <strong>col-sm.*</strong>, na qual <strong>*</strong> é esse número. Por exemplo, quatro elementos <strong>&lt;div></strong> com classe <strong>col-sm-3</strong> resultariam em quatro colunas igualmente espaçadas (o número 3 em <strong>col-sm-3</strong> indica que <strong>&lt;div></strong> está usando o espaço de 3 das 12 colunas definidas pela estrutura de <i>grid</i> do Bootstrap). </li>
+            </ul>
+            <div class="table-responsive">
+            <table class="table senac tabela1">
+              <tr>
+                <td>.col-sm1</td>
+                <td>.col-sm1</td>
+                <td>.col-sm1</td>
+                <td>.col-sm1</td>
+                <td>.col-sm1</td>
+                <td>.col-sm1</td>
+                <td>.col-sm1</td>
+                <td>.col-sm1</td>
+                <td>.col-sm1</td>
+                <td>.col-sm1</td>
+                <td>.col-sm1</td>
+                <td>.col-sm1</td>
+              </tr>  
+              <td colspan="8">col-sm-8</td>
+                <td colspan="4">col-sm-4</td>
+              </tr>
+              <tr>
+                <td colspan="4">.col-sm-4</td>
+                <td colspan="4">.col-sm-4</td>
+                <td colspan="4">.col-sm-4</td>
+              </tr>
+              <tr>
+                <td colspan="6">.col-sm-6</td>
+                <td colspan="6">.col-sm-6</td>
+              </tr>
+            </table>
+          </div>
+            <p class="legenda-tabela">
+              Tabela 1 – Esquema de grid do Bootstrap <br>
+              Fonte: Senac EAD 
+            </p>
+            <p>Veja na tabela 1 que, se você quiser usar 12 colunas, aplicará a classe <strong>col-sm-1</strong> para cada um dos 12 elementos que representarem essas colunas. Por outro lado, se quiser uma seção que ocupe 8 das 12 colunas, <strong>usará col-sm-8</strong>, e assim por diante. </p>
+            <p>Os <i>grids</i> se adaptam de acordo com a resolução da tela. Para telas mais largas, as células aparecem dispostas lado a lado como mostrado na figura 1. Em telas mais estreitas, elas aparecem uma abaixo da outra. </p>
+            <p>O termo <strong>sm</strong>, usado no nome da classe do exemplo, é relativo à responsividade e indica que o <i>layout</i> é pensado para telas pequenas (<i>small</i>) e ficará em células lado a lado em resoluções de, no mínimo, 540 px – resoluções menores transformarão as células em linhas. Além de <strong>sm</strong>, tem-se também <strong>md</strong>, <strong>lg</strong> e <strong>xl</strong>, como mostra a tabela 1, que se comportam de maneira análoga dependendo da resolução que representam. </p>
+            <div class="table-responsive">
+              <table class="table senac tabela1">
+                <tr>
+                  <th></th>
+                  <th>Extrapequeno (extra <i>small</i>) Resolução < 576 px </th>
+                  <th>Pequeno (<i>small devices</i>) Resolução ≥ 576 px </th>
+                  <th>Médio (<i>medium devices</i>) Resolução ≥ 768 px </th>
+                  <th>Grande (<i>large devices</i>) Resolução ≥ 992 px </th>
+                  <th>Extragrande (extra large) Resolução ≥ 1.200 px </th>
+                </tr>
+                <tr>
+                  <th>Tamanho máximo do <i>container</i></th>
+                  <td>Nenhum (auto)</td>
+                  <td>540 px</td>
+                  <td>720 px</td>
+                  <td>960 px</td>
+                  <td>1.140 px</td>   
+                </tr>  
+                <th>Prefixo de classe </th>
+                <td>.col-</td>
+                <td>.col-sm-</td>
+                <td>.col-md-</td>
+                <td>.col-lg-</td>
+                <td>.col-xl</td>
+                </tr>
+              </table>
+            </div>
+            <p class="legenda-tabela">
+              Tabela 2 – Esquemas de classes de coluna do Bootstrap para cada faixa de resolução de tela <br>
+              Fonte: Senac EAD (2023) 
+            </p>
+            <p>Experimente o sistema de <i>grid</i> com um exemplo simples: </p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html> 
+&lt;html> 
+    &lt;head> 
+        &lt;meta charset="utf-8"> 
+        &lt;meta name="viewport" content="width=device-width, initial-scale=1"> 
+        &lt;title>Grids Bootstrap&lt;/title> 
+        &lt;link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+    &lt;/head> 
+    &lt;body> 
+      &lt;div class="container"> 
+          &lt;div class="row"> 
+              &lt;div style="background-color: grey;" class="col-md-6" > 
+                  &lt;p>Conteúdo de uma coluna&lt;/p> 
+              &lt;/div> 
+              &lt;div style="background-color: green;" class="col-md-6"> 
+                  &lt;p>Conteúdo de outra coluna&lt;/p> 
+              &lt;/div> 
+          &lt;/div> 
+      &lt;/div> 
+      &lt;script src="bootstrap/js/bootstrap.bundle.min.js">&lt;/script> 
+    &lt;/body> 
+&lt;/html> 
+              </code>
+            </pre>
+            <p>Note que há uma <strong>&lt;div></strong> com classe <strong>container</strong> e, dentro dele, outro com classe <strong>row</strong> (a linha). Dentro dessa <strong>&lt;div></strong>, há duas outras <strong>&lt;div></strong> com classe <strong>col-md-6</strong>, especificando que cada coluna ocupará metade do <strong>container</strong>. </p>
+            <img src="../10_responsividade/imgs/20.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 20 – Teste com colunas do Bootstrap <br>
+              Fonte: Senac EAD (2023) 
+            </p>
+            <p class="acessivel no-print"> Página com dois blocos, um cinza e um verde, lado a lado. </p>
+            <p>Teste a página em tela <i>mobile</i> e veja que as colunas se tornam linhas quando a resolução é pequena, ou seja, adaptam-se à visualização. </p>
+            <p>Em um exemplo um pouco mais prático, imagine que você precisa fazer uma vitrine de produtos em uma página. É possível tirar benefício do sistema de <i>grids</i>. </p>
+            <pre>
+              <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html> 
+   &lt;head> 
+     &lt;meta charset="utf-8"> 
+     &lt;meta name="viewport" content="width=device-width, initial-scale=1"> 
+     &lt;title>Vitrine &lt;/title> 
+     &lt;link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+     &lt;style> 
+           .produto{ 
+               max-height:150px;  
+               max-width:100% 
+           } 
+           .destaque{ 
+               float:left;  
+               max-height:200px; 
+               max-width:100% 
+             } 
+     &lt;/style> 
+   &lt;/head> 
+   &lt;body> 
+
+  &lt;div class="container"> 
+      &lt;div id="linha-titulo" class="row"> 
+          &lt;div class="col-sm-12"> 
+              &lt;h3>Nossos produtos&lt;/h3> 
+          &lt;/div> 
+      &lt;/div> 
+      &lt;div id="linha-destaques" class="row"> 
+          &lt;div class="col-sm-6"> 
+              &lt;img src="imagens/fone.png" alt="smartphone" class="destaque"/> 
+              &lt;p>&lt;strong>OFERTA RELAMPAGO&lt;/strong>&lt;/p> 
+              &lt;p>Smartphone de última geração&lt;/p> 
+              &lt;p>&lt;strong>Apenas R$ 1000,00&lt;/strong>&lt;/p> 
+          &lt;/div> 
+          &lt;div class="col-sm-6"> 
+              &lt;img src="imagens/tablet.png" alt="tablet" class="destaque"/> 
+              &lt;p>&lt;strong>OFERTA RELAMPAGO&lt;/strong>&lt;/p> 
+              &lt;p>Tablet de última geração&lt;/p> 
+              &lt;p>&lt;strong>Apenas R$ 800,00&lt;/strong>&lt;/p> 
+          &lt;/div> 
+    &lt;/div>
+    &lt;div id="linha-produtos" class="row"> 
+        &lt;div class="col-sm-3"> 
+            &lt;img src="imagens/hd.png" alt="smartphone" class="produto"/> 
+            &lt;p>HD de 500 GB &lt;strong>R$ 350&lt;/strong>&lt;/p> 
+        &lt;/div> 
+        &lt;div class="col-sm-3"> 
+            &lt;img src="imagens/monitor.png" alt="smartphone" class="produto"/> 
+            &lt;p>Monitor de 20 polegadas &lt;strong>R$ 400&lt;/strong>&lt;/p> 
+        &lt;/div> 
+        &lt;div class="col-sm-3"> 
+            &lt;img src="imagens/notebook.png" alt="smartphone" class="produto"/> 
+            &lt;p>Notebook com 8GB de memória&lt;strong>R$ 1950&lt;/strong>&lt;/p> 
+        &lt;/div> 
+        &lt;div class="col-sm-3"> 
+            &lt;img src="imagens/pc.png" alt="smartphone" class="produto"/> 
+            &lt;p>PC com processador 9 núcleos &lt;strong>R$ 2500&lt;/strong>&lt;/p> 
+        &lt;/div> 
+    &lt;/div> 
+    &lt;/div> 
+    &lt;script src="bootstrap/js/bootstrap.bundle.min.js">&lt;/script> 
+    &lt;/body> 
+&lt;/html>  
+              </code>
+            </pre>
+            <p>Observe com atenção o código acima. Nele, estão sendo definidos um <strong>container</strong> e três linhas. A &lt;div> com id "linha-titulo" usa a classe <strong>col-sm-12</strong>, pois deseja-se que o título ocupe toda essa linha (ou seja, as 12 colunas do <i>grid</i>). Já a <strong>&lt;div></strong> de <strong>id "linha-destaques"</strong>  tem dois elementos, cada um ocupando 6 colunas (ou seja, metade do <strong>container</strong>). Na terceira linha, com <strong>id "linha-produtos"</strong>, desejam-se quatro itens e, por isso, a classe <strong>col-sm-3</strong> (pois 12 dividido por 4 é igual a 3) é usada. Note, pela figura 21, que os itens se rearranjam em telas menores. </p>
+            <div class="row">
+              <div class="col-lg-9 col-sm-9 col-xs-9">
+                <img src="../10_responsividade/imgs/21a.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-3">
+                <img src="../10_responsividade/imgs/21b.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+              </div>
+            </div>
+            <div class="legenda-imagem">
+              <p>Figura 21 – Página de teste em tela <i>desktop</i> e em tela <i>mobile</i> <br>
+                  Fonte: Senac EAD (2023) 
+              </p>
+              <p class="acessivel no-print">À esquerda tela de desktop mostrando a página com o título “nossos produtos”, dois produtos (imagem e descrição) lado a lado abaixo e mais abaixo 4 produtos, um ao lado do outro. À direita, tela do smartphone mostrando os produtos um embaixo do outro. </p>
+            </div>
+            <p>É possível também haver <strong>container</strong> dentro de <strong>container</strong>, expandindo as possiblidades de divisões do conteúdo na página. Por exemplo, se você quiser que, em telas menores, a descrição dos produtos de destaque fique abaixo em vez de ficar ao lado da imagem, é possível ajustar da seguinte maneira (o código a seguir mostra apenas o trecho, do código anterior, que sofre alteração): </p>
+            <pre>
+              <code class="language-html">
+&lt;div id="linha-destaques" class="row"> 
+    &lt;div class="col-sm-6"> 
+        &lt;div class="container"> 
+            &lt;div class="row"> 
+                &lt;div class="col-sm-4"> 
+                    &lt;img src="imagens/fone.png" alt="smartphone" class="destaque"/> 
+                &lt;/div> 
+                &lt;div class="col-sm-8"> 
+                    &lt;p>&lt;strong>OFERTA RELAMPAGO&lt;/strong>&lt;/p> 
+                    &lt;p>Smartphone de última geração&lt;/p> 
+                    &lt;p>&lt;strong>Apenas R$ 1000,00&lt;/strong>&lt;/p> 
+                &lt;/div> 
+            &lt;/div> 
+        &lt;/div> 
+    &lt;/div> 
+    &lt;div class="col-sm-6"> 
+        &lt;div class="container"> 
+            &lt;div class="row"> 
+                &lt;div class="col-sm-4"> 
+                    &lt;img src="imagens/tablet.png" alt="tablet" class="destaque"/> 
+                &lt;/div> 
+                &lt;div class="col-sm-8"> 
+                    &lt;p>&lt;strong>OFERTA RELAMPAGO&lt;/strong>&lt;/p> 
+                    &lt;p>Tablet de última geração&lt;/p> 
+                    &lt;p>&lt;strong>Apenas R$ 800,00&lt;/strong>&lt;/p> 
+                &lt;/div> 
+            &lt;/div> 
+        &lt;/div> 
+    &lt;/div> 
+&lt;/div> 
+              </code>
+            </pre>
+            <p>Em cada coluna de <strong>linha-destaques</strong> é incluído um <strnog>container</strnog>, uma linha e duas colunas, que se ajustarão dinamicamente de acordo com a largura da tela. </p>
+            <div class="row">
+              <div class="col-lg-9 col-sm-9 col-xs-9">
+                <img src="../10_responsividade/imgs/22a.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+              </div>
+              <div class="col-lg-3 col-sm-3 col-xs-3">
+                <img src="../10_responsividade/imgs/22b.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+              </div>
+            </div>
+            <div class="legenda-imagem">
+              <p>Figura 22 – Página vitrine ajustada <br>
+                  Fonte: Senac EAD (2023) 
+              </p>
+              <p class="acessivel no-print">À esquerda, a página em tela desktop como visto anteriormente. À direita, a página com a imagem do produto destaque e abaixo a descrição, não mais ao lado como antes. </p>
+            </div>
+            <div class="caixa-destaque iconedesafio borda-primaria-03 mt-40">
+              Usando o sistema de <i>grid</i> do Bootstrap, crie uma página como a da imagem a seguir. Use <strong>&lt;divs></strong> com propriedades <strong>height</strong> e <strong>background-color</strong> configuradas.
+              <img src="../10_responsividade/imgs/desafio 1.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 23 – Exemplo <br>
+              Fonte: Senac EAD (2023) 
+            </p>
+            <p class="acessivel no-print"> Duas linhas, na primeira um retângulo vermelho com texto “height:150px” ocupa 2/3 da tela e um verde à esquerda com texto “height:150px” ocupa 1/3 da tela. Na segunda linha um retângulo amarelo com texto “height:150px” ocupa 1/3 da tela; ao lado, um retângulo com 2 linhas ocupa 1/3 da tela, na linha 1 deste está o texto “height:75px” e a cor laranja e na linha 2 está o texto “height:75px” e a cor cyan; ao lado, um retângulo com texto “height:150px” e cor cinza ocupa 1/3 da tela. </p>
+            </div>
+            <h4>Texto e tipografia</h4>
+            <p>A seguir, alguns recursos que Bootstrap oferece com relação ao conteúdo de texto.</p>
+            <ul>
+              <li>Bootstrap já traz estilização para as <i>tags</i> de <strong>&lt;h1></strong> a <strong>&lt;h6></strong>. Não é necessário aplicar classe específica. </li>
+              <li>É possível alinhar o texto de uma<strong> &lt;div></strong> ou outro <strong>container</strong> usando as classes <strong>text-center</strong> (centralizado) e <strong>text-end</strong> (alinhado à direita). </li>
+              <pre class="mt-20">
+                <code class="language-html">
+&lt;div> 
+    &lt;p>texto à esquerda&lt;/p> 
+&lt;/div> 
+&lt;div class="text-center"> 
+    &lt;p>texto centralizado&lt;/p> 
+&lt;/div> 
+&lt;div class="text-end"> 
+    &lt;p>texto à direita&lt;/p> 
+&lt;/div> 
+                </code>
+              </pre>
+            <img src="../10_responsividade/imgs/23.png" class="img-responsive center-block mt-40 imprime-menor bordaimagem">
+            <p class="legenda-imagem">
+              Figura 24 – Alinhamentos de texto  <br>
+              Fonte: Senac EAD (2023) 
+            </p>
+            <p class="acessivel no-print">Página com “texto à esquerda” alinhado à esquerda, abaixo “texto centralizado” ao centro e abaixo “texto à direita” alinhado na direita da página. </p>
+              <li>Pode-se montar uma lista <strong>&lt;ul></strong> de itens dispostos horizontalmente com as classes <strong>list-inline</strong> e <strong>list-inline-item</strong>. </li>
+              <pre class="mt-20">
+                <code class="language-html">
+                    &lt;ul class="list-inline"> 
+                        &lt;li class="list-inline-item">item 1&lt;/li> 
+                        &lt;li class="list-inline-item">item 2&lt;/li> 
+                        &lt;li class="list-inline-item">item 3&lt;/li> 
+                    &lt;/ul> 
+                </code>
+              </pre>
+              <li class="mt-40">A classe <strong>lead</strong> dá destaque a um parágrafo. 
+              <pre class="mt-20">
+                <code class="language-html">
+              &lt;p class="lead">Este parágrafo está diferente&lt;/p> 
+              &lt;p>Este parágrafo é comum&lt;/p> 
+              &lt;p>E este parágrafo também é comum&lt;/p> 
+                </code>
+              </pre>
+              <img src="../10_responsividade/imgs/24.png" class="img-responsive center-block mt-40 imprime-menor bordaimagem">
+              <p class="legenda-imagem">
+                Figura 25 – Parágrafo com ênfase <br>
+                Fonte: Senac EAD (2023) 
+              </p>
+              <p class="acessivel no-print"> Uma frase “Este parágrafo está diferente” com uma fonte maior e mais destacada e abaixo as duas outras frases com formatação comum. </p>
+              </li>
+            </ul>
+
+            <h4>Imagens</h4>
+
+            <ul class="mt-20">
+              <li>Bootstrap tem uma classe própria que aplica a propriedade <strong>max-width:100%</strong> discutida anteriormente neste conteúdo. Trata-se da classe <strong>img-fluid</strong>. 
+              <pre class="mt-20">
+                <code class="language-html">
+                  &lt;img src="imagem-640x425.jpg" alt="imagem teste" class="img-fluid" /> 
+                </code>
+              </pre>
+              </li>
+              <li class="mt-40">Também é possível alinhar imagens à esquerda ou à direita do <strong>container</strong> com as classes <strong>float-start</strong> e <strong>float-end</strong>. 
+              <pre class="mt-20">
+                <code class="language-html">
+                &lt;img src="imagem-320x213.jpg" class="float-start" /> 
+                &lt;img src="imagem2-320x213.jpg" class="float-end" /> 
+                </code>
+              </pre>
+              </li>
+              <li class="mt-40">Para deixar uma imagem centralizada, pode-se usar a classe <strong>text-center</strong>. 
+                <img src="../10_responsividade/imgs/25.png" class="img-responsive center-block mt-40 imprime-menor bordaimagem">
+                <p class="legenda-imagem">
+                  Figura 26 – Imagem centralizada e com borda arredondada <br>
+                  Fonte: Senac EAD (2023) 
+                </p>
+                <p class="acessivel no-print">  Imagem de um cenário urbano alinhada horizontalmente ao centro da tela com cantos arredondados. </p>
+              </li>
+            </ul>
+
+            <h4> Tabelas</h4>
+            <p>A estilização de tabelas fica facilitada com o Bootstrap. Além disso, a ferramenta aplica elementos de responsividade à estrutura. </p>
+            <ul>
+              <li>A classe <strong>table</strong> já é capaz de estilizar a tabela sem necessidade de outras classes. 
+              <pre class="mt-20">
+                <code class="language-html">
+&lt;table class="table"> 
+    &lt;thead> 
+        &lt;tr> 
+            &lt;th>ID&lt;/th> 
+            &lt;th>Nome&lt;/th> 
+            &lt;th>Idade&lt;/th> 
+        &lt;/tr> 
+    &lt;/thead> 
+    &lt;tbody> 
+        &lt;tr> 
+            &lt;td>1&lt;/td> 
+            &lt;td>João Silva&lt;/td> 
+            &lt;td>50&lt;/td> 
+        &lt;/tr> 
+        &lt;tr> 
+            &lt;td>2&lt;/td> 
+            &lt;td>Maria Aparecida&lt;/td> 
+            &lt;td>45&lt;/td> 
+        &lt;/tr> 
+        &lt;tr> 
+            &lt;td>3&lt;/td> 
+            &lt;td>Quitéria Santana&lt;/td> 
+            &lt;td>30&lt;/td> 
+        &lt;/tr> 
+    &lt;/tbody> 
+&lt;/table> 
+                </code>
+              </pre>
+              </li>
+              <li class="mt-40">É possível aplicar borda à tabela com a classe <strong>table-bordered</strong>. 
+              <pre class="mt-20">
+                <code class="language-html">
+                  &lt;table class="table table-bordered"> 
+
+                      ... 
+                    
+                  &lt;/table> 
+                </code>
+              </pre>
+              </li>
+            <li class="mt-40">É possível fazer uma tabela zebrada (uma linha com cor e outra não) usando a classe <strong>table-striped</strong>. 
+            <pre class="mt-20">
+              <code class="language-html">
+                &lt;table class="table table-striped"> 
+
+                      ... 
+                  
+                &lt;/table> 
+              </code>
+            </pre>
+            <img src="../10_responsividade/imgs/26.png" class="img-responsive center-block mt-40 imprime-menor bordaimagem">
+                <p class="legenda-imagem">
+                  Figura 27 – Tabela zebrada com borda <br>
+                  Fonte: Senac EAD (2023) 
+                </p>
+                <p class="acessivel no-print">Tabela com títulos em negrito, linha 1 branca, linha 2 cinza e assim sucessivamente. </p>
+            </li>
+            </ul>
+            <h4>Formulários</h4>
+            <p>O Bootstrap traz várias melhorias aos formulários tradicionais. Cada campo do formulário deve usar a classe <strong>form-control</strong>. Rótulos para os campos devem usar a classe <strong>form-label</strong>. Os tamanhos dos campos são adaptáveis com a lógica de grades do Bootstrap, permitindo responsividade. </p>
+            <pre>
+              <code class="language-html">
+&lt;div class="container"> 
+    &lt;form method="post" action="#"> 
+        &lt;div class="mb-3"> 
+            &lt;label for="txtNome" class="form-label">Nome:&lt;/label> 
+            &lt;input id="txtNome" class="form-control" type="text"> 
+        &lt;/div> 
+        &lt;div class="mb-3"> 
+            &lt;label for="txtSenha" class="form-label">Senha:&lt;/label> 
+            &lt;input id="txtSenha" class="form-control" type="password"> 
+        &lt;/div> 
+        &lt;div class="mb-3"> 
+            &lt;input type="submit" class="btn btn-primary" value="Acessar" > 
+        &lt;/div> 
+    &lt;/form> 
+&lt;/div> 
+              </code>
+            </pre>
+            <img src="../10_responsividade/imgs/27.png" class="img-responsive center-block mt-40 imprime-menor bordaimagem">
+                <p class="legenda-imagem">
+                  Figura 28 – Formulário estilizado com Bootstrap  <br>
+                  Fonte: Senac EAD (2023) 
+                </p>
+                <p class="acessivel no-print">Campos de texto com bordar cinzas e arredondadas, botão azul.</p>
+            <p>Campos &lt;select> contam com uma classe específica form-select. </p>
+            <pre>
+              <code class="language-html">
+&lt;form method="post" action="#"> 
+    &lt;div class="mb-3"> 
+        &lt;label class="form-label" for="selRegião">Selecione a região &lt;/label> 
+        &lt;select id="selRegiao" class="form-select"> 
+            &lt;option>Norte &lt;/option> 
+            &lt;option>Nordeste &lt;/option> 
+            &lt;option>Centro-Oeste &lt;/option> 
+            &lt;option>Sudeste &lt;/option> 
+            &lt;option>Sul &lt;/option> 
+        &lt;/select> 
+    &lt;/div> 
+    &lt;div class="mb-3"> 
+        &lt;input type="submit" class="btn btn-primary" value="OK" > 
+    &lt;/div> 
+&lt;/form> 
+              </code>
+            </pre>
+            <p><i>Inputs</i> de <i>checkbox</i> também têm uma classe própria: <strong>form-check-input</strong>. Para o <strong>&lt;label></strong> associado a esse elemento, usa-se a classe <strong>form-check-label</strong>. Ambos os elementos precisam estar em um <strong>container</strong> com classe <strong>form-check</strong>. </p>
+            <pre>
+              <code class="language-html">
+                &lt;form method="post" action="#"> 
+                    &lt;div class="form-check"> 
+                        &lt;input class="form-check-input" type="checkbox" value="" id="chkEmail"> 
+                        &lt;label class="form-check-label" for="chkEmail"> 
+                            Deseja receber nossos emails? 
+                        &lt;/label> 
+                    &lt;/div>
+                &lt;/form> 
+              </code>
+            </pre>
+            <p>As mesmas classes são aplicadas a <strong>radio-buttons</strong>. </p>
+            <pre>
+              <code class="language-html">
+&lt;form method="post" action="#"> 
+    &lt;div class="form-check"> 
+        &lt;input class="form-check-input" type="radio" name="radioSexo" id="rbMasculino"> 
+        &lt;label class="form-check-label" for="rbMasculino"> 
+              Masculino 
+        &lt;/label> 
+    &lt;/div> 
+    &lt;div class="form-check"> 
+        &lt;input class="form-check-input" type="radio" name="radioSexo" id="rbFeminino" checked> 
+        &lt;label class="form-check-label" for="rbFeminino"> 
+              Feminino 
+        &lt;/label> 
+    &lt;/div> 
+&lt;/form> 
+              </code>
+            </pre>
+            <h4> Menu de navegação</h4>
+            <p>A classe <strong>nav</strong> pode ser aplicada às <i>tags</i> <strong>&lt;ul></strong> para formar uma lista horizontal de navegação. Para cada item <strong>&lt;li></strong> também é preciso usar a classe <strong>nav-item</strong>. </p>
+            <pre>
+              <code class="language-html">
+&lt;ul class="nav"> 
+  &lt;li class="nav-item"> 
+    &lt;a class="nav-link" href="#">Página Inicial&lt;/a> 
+  &lt;/li> 
+  &lt;li class="nav-item"> 
+    &lt;a class="nav-link" href="#">Produtos&lt;/a> 
+  &lt;/li> 
+  &lt;li class="nav-item"> 
+    &lt;a class="nav-link disabled" href="#">Sobre a Empresa&lt;/a> 
+  &lt;/li> 
+&lt;/ul> 
+              </code>
+            </pre>
+            <img src="../10_responsividade/imgs/28.png" class="img-responsive center-block mt-40 imprime-menor">
+              <p class="legenda-imagem">
+                Figura 29 – <i>Menu</i> de navegação com três <i>links</i>   <br>
+                Fonte: Senac EAD (2023) 
+              </p>
+              <p class="acessivel no-print"> Três links: “Pagina Inicial”, “Produtos” e “Sobre a Empresa” (este último desabilitado, em cinza) alinhados horizontalmente.</p>
+            <p>É possível usar em conjunto com <strong>nav</strong> a classe <strong>justify-content-center</strong> para manter o <i>menu</i> no centro da tela ou <strong>justify-content-end</strong> para alinhá-lo à direita. E se preferir uma navegação vertical, basta adicionar a classe <strong>flex-column</strong>. </p>  
+            <h4>Modais</h4>
+            <p>Modal é um painel ou uma caixa de diálogo que surge à frente do conteúdo de uma página de modo que a interação aconteça apenas com esse painel. É bastante útil para mostrar mensagens ao usuário ou complementar uma ação. Com Bootstrap, para criar um modal, primeiro é preciso definir alguns dados no botão que o aciona: </p>
+            <pre>
+              <code class="language-html">
+                &lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meuModal"> 
+                    Abrir Modal 
+                &lt;/button> 
+              </code>
+            </pre>
+            <p>É necessário usar os atributos de dados <strong>data-bs-toggle</strong> com valor <strong>modal</strong> e <strong>data-bs-target</strong> com valor correspondente ao <strong>id</strong> do <strong>container</strong> que será o painel modal – neste caso, haverá uma <strong>&lt;div></strong> com <strong>id = "meuModal"</strong>. </p>
+            <p>É preciso, então, criar o painel em si: </p>
+            <pre>
+              <code class="language-html">
+&lt;div class="modal" id="meuModal"> 
+    &lt;div class="modal-dialog"> 
+        &lt;div class="modal-content"> 
+
+            &lt;!-- Cabeçalho --> 
+            &lt;div class="modal-header"> 
+                &lt;h4 class="modal-title">Este é um modal&lt;/h4> 
+                &lt;button type="button" class="btn-close" data-bs-dismiss="modal">&lt;/button> 
+            &lt;/div> 
+
+            &lt;!-- Conteúdo --> 
+            &lt;div class="modal-body"> 
+                &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/p> 
+                  &lt;p>Maecenas sit amet lorem suscipit, pulvinar nisl sit amet, eleifend ligula.&lt;/p>  
+                &lt;p>Nulla a ornare lectus, nec pellentesque metus.&lt;/p> 
+            &lt;/div> 
+
+            &lt;!-- Rodapé --> 
+            &lt;div class="modal-footer"> 
+                &lt;button type="button" class="btn btn-danger" data-bs-dismiss="modal"> Fechar &lt;/button> 
+            &lt;/div> 
+
+        &lt;/div> 
+    &lt;/div> 
+&lt;/div> 
+              </code>
+            </pre>
+            <p>A classe CSS <strong>modal</strong> define o painel modal como um todo. </p>
+            <ul>
+              <li>Dentro do elemento com essa classe, há um <strong>container</strong> com a classe <strong>modal-dialog</strong> e, dentro desse, outro <strong>container</strong> com <strong>modal-content</strong> que forma o conteúdo. </li>
+              <li>No <strong>container</strong> com <strong>modal-content</strong> é possível incluir uma <strong>&lt;div></strong> com classe <strong>modal-header</strong> para uma barra de título. A classe <strong>modal-title</strong> pode ser usada para a estilização do título e <strong>btn-close</strong> para um botão de fechar em formato de X.</li>
+              <li>Importante notar o atributo <strong>data-bs-dismiss</strong> com valor <strong>modal</strong>. Caso não tenha esse atributo, o botão não será capaz de fechar o painel. </li>
+              <li>A classe <strong>modal-body</strong> define o conteúdo principal do painel. Aqui poderia ser incluída uma mensagem de erro, uma orientação ao usuário, imagens ou mesmo um formulário. </li>
+              <li>A classe <strong>modal-footer</strong> define um rodapé para o painel, podendo trazer botões de interação. Note mais uma vez o atributo <strong>data-bs-dismiss</strong> com valor <strong>modal</strong>. </li>
+            </ul>
+            <img src="../10_responsividade/imgs/29.png" class="img-responsive center-block mt-40 imprime-menor">
+            <p class="legenda-imagem">
+              Figura 30 – Modal em ação <br>
+              Fonte: Senac EAD (2023) 
+            </p>
+            <p class="acessivel no-print"> Página com um painel à frente do conteúdo. No painel um título “Este é um modal”, um texto de teste abaixo e um botão escrito “Fechar” em vermelho abaixo. </p>
+            <p>Também é possível usar JavaScript para abrir um modal sem a necessidade do clique do usuário. Basta, em algum evento (<strong>ready</strong> do jQuery, por exemplo), criar um objeto e invocar um método <strong>show()</strong>, como no código a seguir. </p>
+            <pre>
+              <code class="language-js">
+              const myModal = new bootstrap.Modal('#meuModal', { }); 
+              myModal.show(); 
+              </code>
+            </pre>
+            <p>Dentre as chaves, podem ser informadas algumas opções, como possibilitar ou bloquear o fechamento do modal pela tecla <strogn>Esc</strogn> (<strong>keyboard: true</strong> ou <strong>keyboard: false</strong>). </p>
+            <div class="caixa-destaque iconedesafio borda-primaria-03 mt-40">
+              Pesquise na documentação do Bootstrap e teste os recursos a seguir um a um: 
+              <ul>
+                <li>Alerts</li>
+                <li>Navbar</li>
+                <li>Jumbotron</li>
+                <li>Cards</li>
+                <li>Carousel</li>
+              </ul>
+            </div>
+
+            <h3 id="t4">Encerramento</h3>
+            <div class="caixa-destaque icone-concluindo borda-primaria-03 mt-40">
+              Com base no conteúdo estudado, fica clara a importância de pensar em responsividade ao desenvolver páginas para <i>front-end</i>. Elementos de HTML5 com CSS3 já garantem boas adaptações às páginas para que se ajustem adequadamente na maioria das telas. No entanto, ferramentas como o Bootstrap, de grande presença no mercado, são de grande auxílio por trazerem soluções práticas de responsividade e por incluírem, ainda, recursos muito úteis no desenvolvimento de páginas <i>web</i>. A recomendação é que você continue estudando essa ferramenta vasta em recursos e mantenha-se de olho nas atualizações que forem disponibilizadas. 
+            </div>
+
+          </div>        
+          </div>
+
+        </section>
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+        <footer class="text-center no-print">
+          <!--
+          <ul class="pagination">
+
+          </ul>
+          -->
+        </footer>
+
+      </div>
+
+    </div>
+
+
+    <!-- Modais -->
+
+    
+    <!-- Modais 100% -->
+
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+<!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+<div class="ico-div-loader">
+	<img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="../template/js/jquery.min.js"></script>
+<script src="../template/js/bootstrap.min.js"></script>
+<script src="../template/js/jquery.magnific-popup.min.js"></script>
+<script src="../template/js/print.js"></script>
+<script src="../template/js/template.config.js"></script>
+<script src="../template/js/images.loader.js"></script>
+<script src="../template/js/highlight.min.js"></script>
+<script src="../09_preparacao_integracao_front_back/js/custom.js"></script>
+<script src="js/parallax.min.js"></script>
+<noscript>
+  <style media="screen">
+    .over-loader { display: none;}    
+  </style>
+</noscript>
+</body>
+</html>
+<script>
+  document.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('pre code').forEach((el) => {
+      hljs.highlightElement(el);
+    });
+  });
+	//inicializa zoom na imagem
+	$('.zoom-imagem').magnificPopup({
+	 type: 'image',
+  	 mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+ 	 zoom: {
+		enabled: true, // By default it's false, so don't forget to enable it
+
+		duration: 300, // duration of the effect, in milliseconds
+		easing: 'ease-in-out', // CSS transition easing function
+
+		// The "opener" function should return the element from which popup will be zoomed in
+		// and to which popup will be scaled down
+		// By defailt it looks for an image tag:
+		opener: function(openerElement) {
+		  // openerElement is the element on which popup was initialized, in this case its <a> tag
+		  // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+		  return openerElement.is('img') ? openerElement : openerElement.find('img');
+		}
+	  },
+	   image: {
+		  markup: '<div class="mfp-figure">'+
+					'<div class="mfp-close"></div>'+
+					'<div class="mfp-img"></div>'+ // Floated left
+					'<div class="mfp-bottom-bar">'+'<figcaption>'+'<div class="mfp-title" style="text-align:center"></div>'+
+					  '<div class="mfp-counter"></div>'+'</figcaption>'+
+					'</div>'+
+				  '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+		  cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+		  tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+	   }
+	});
+
+	//inicializa popover
+	$(function () {
+	  $('[data-toggle="popover"]').popover()
+	})
+	//inicializa tooltip
+	$(function () {
+	  $('[data-toggle="tooltip"]').tooltip()
+	})
+
+
+  $(function() {
+    $(".card").click(function() {
+      if ($(this).hasClass("exibe-frente")) {
+        $(this)
+          .children()
+          .first()
+          .hide();
+        $(this)
+          .children()
+          .last()
+          .show();
+        $(this).removeClass("exibe-frente");
+      } else {
+        $(".card .verso").hide();
+        $(".card .frente").show();
+        $(this).addClass("exibe-frente");
+      }
+    });
+  });
+
+  $( document ).ready(function() {
+    $(".card .verso").hide();
+  });
+
+
+
+
+  /*------- Script de animação do botão -------*/
+  var root = document.documentElement;
+  root.className += ' js';
+
+  function boxTop(idBox) {
+    var boxOffset = $(idBox).offset().top;
+    return boxOffset;
+  }
+
+  $(document).ready(function() {
+    var $target = $('.animeStart'),
+        $target2 = $('.animeStop'),
+        targetBox = $('.box'),
+        animationClass = 'anime-init',
+        windowHeight = $(window).height(),
+        offset = windowHeight - (windowHeight / 4);
+
+    function animeScroll() {
+      var documentTop = $(document).scrollTop();
+      $target.each(function() {
+        if (documentTop > boxTop(this) - offset) {
+          targetBox.addClass(animationClass);
+        } else {
+          targetBox.removeClass(animationClass);
+        }
+        if (documentTop > boxTop($target2) - offset) {
+          targetBox.removeClass(animationClass);
+        } 
+      });
+    }
+    animeScroll();
+
+    $(document).scroll(function() {
+      animeScroll();
+    });
+  });
+
+
+</script>
+
+<script>
+  var scriptElem=document.createElement("script");
+  scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+  scriptElem.charset="UTF-8",
+  scriptElem.onload=function(){
+        window.ht = new HT({
+            token:"bf5b7efb148a829a126a0e0c9fd533bf",
+            align:"top",
+            videoEnabled: true,
+            ytEmbedReplace: true,           
+            mobileConfig:{align:"right",
+                          actionsAlign:"top",
+                          customButtonStyle:{
+                                borderRadius:"6px",
+                                size:"38px",
+                                horizontalMargin:"13px",
+                                bottomMargin:"140px",
+                                rightMargin:"40px"}
+                          }
+          });        
+      $('.ht-skip').attr("aria-hidden","true")
+    },
+  document.body.appendChild(scriptElem);
+</script>

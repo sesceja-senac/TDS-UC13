@@ -1,0 +1,267 @@
+body, .fundo-tecnicos{
+  background: url('../imgs/background.png') no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.iconedesafio{
+  background-image: url('../imgs/ico_desafio.png');
+  background-position: left 5px center;
+  background-repeat: no-repeat;
+  background-size: 132px 77px;
+  padding-left: 150px;
+}
+
+#booklet{
+  padding-left:unset;
+  padding-right: unset; 
+}
+.bto-imprimir{
+  margin-right: 25%;
+}
+.fundo-tecnicos{
+  border-bottom: none !important;
+}
+h1 i,
+h2 i,
+h3 i,
+h4 i {
+  font-weight: bold;
+}
+h3 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+h4 {
+  margin: 0px;
+  margin-top: 40px;
+}
+
+.mt-10{margin-top: 10px;}
+.mt-20{margin-top: 20px;}
+.mt-40{margin-top: 40px;}
+.mt-60{margin-top: 60px;}
+
+.parallax{
+  min-height: 400px;
+  background: transparent;
+  width: 100%;
+}
+
+.parallax-mirror{
+z-index: unset !important;
+}
+
+/*---------- MENU ----------*/
+.eng-item-menu {
+  opacity: 1;
+  margin: 0;
+  padding: 0;
+  margin-top: 80px;
+}
+.eng-item-menu hr {
+  width: 75%;
+  position: relative;
+  background-color: #008da2;
+  margin: 0 auto;
+  height: 1px;
+  border: none;
+}
+
+.item1,
+.item2,
+.item3,
+.item4,
+.item5,
+.item6,
+.item7,
+.item8,
+.item9,
+.item10,
+.item11,
+.item12,
+.item13,
+.item14 {
+  width: 100%;
+  background-color: #007798;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 0 !important;
+}
+.item1:hover,
+.item2:hover,
+.item3:hover,
+.item4:hover,
+.item5:hover,
+.item6:hover,
+.item7:hover,
+.item8:hover,
+.item9:hover,
+.item10:hover,
+.item11:hover,
+.item12:hover,
+.item13:hover,
+.item14:hover {
+  transition: 0.3s;
+  background-color: #008da2;
+}
+
+.fundo-item {
+  width: calc(100% - 5px);
+  position: relative;
+  color: #fff;
+  font-size: 16px;
+  padding: 15px;
+  text-align: center;
+  height: calc(100% - 10px);
+  margin: 0 5px 2px 0;
+  display: inline-block;
+  text-align: left;
+}
+.fundo-item:focus {
+  color: #fff;
+  text-decoration: none;
+}
+.fundo-item:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu,
+.bg-fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.menu-checkbox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  left: -30px;
+}
+
+.menu {
+  width: 340px;
+  height: 100%;
+  transform: translate3d(-340px, 0, 0);
+  transition: transform 0.35s;
+  z-index: 1000;
+}
+
+.bg-fundo {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  z-index: 500;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  display: none;
+}
+
+.mod {
+  display: block;
+}
+
+.overflow {
+  overflow: hidden;
+  position: relative;
+}
+
+.fade-check {
+  transform: translate3d(0, 0, 0);
+}
+
+.menu ul {
+  display: block;
+  position: relative;
+}
+label.menu-toggle {
+  position: fixed;
+  z-index: 1100;
+  top: 15px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  line-height: 0px;
+  display: block;
+  padding: 0;
+  cursor: pointer;
+  text-indent: -9999px;
+  background: #fff url("../imgs/menu-alt.png") 50% 50%/25px 25px no-repeat;
+}
+.menu ul li > label {
+  background: url("../imgs/icon-arrow-right.png") 95% 50%/16px 16px no-repeat;
+}
+
+/* hide navigation icon for sublabels */
+.menu .menu label.menu-toggle {
+  background: none;
+}
+
+.scroll-bar {
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  margin-left: 50px;
+}
+
+.scroll-bar:first-child {
+  margin-left: 0px;
+}
+
+.force-overflow {
+  width: 100%;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.legenda-tabela{
+  font-size: 10px;
+  text-align: center;
+  top: 0;
+  padding: 0;
+  margin-bottom: 3em;
+}
+
+table.senac th {
+background-color:#2875C6 !important;}
+
+.bordaimagem{
+  border:3px solid;
+}
+
+.legenda-tabela{
+  font-size: 10px;
+  text-align: center;
+  top: 0;
+  padding: 0;
+  margin-bottom: 3em;
+}
+
+@media screen and (max-width: 1024px){
+
+  .responsividade{
+    flex-wrap: wrap;
+  }
+  .responsividade img{display: none;}
+}
+
+@media screen and (max-width: 480px){
+  .iconedesafio{ 
+  word-break: break-word;
+}
+}
+
+@media screen and (max-width: 980px){
+  .iconedesafio{ 
+    background-position: top 10px center;
+    padding-top: 100px;
+    padding-left: 5px;
+  }}
+
+  @media screen and (max-width: 1000px){
+    .parallax {display: none;}
+  }

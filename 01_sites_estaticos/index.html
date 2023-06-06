@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office"
+  xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Testes de software</title>
+
+  <!-- Bootstrap -->
+  <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+  <link href="../template/css/cores.css" rel="stylesheet">
+  <!--Extras - novas classes para facilitar-->
+  <link rel="stylesheet" href="../template/css/extras.css">
+  <link href="../template/css/sncload.css" rel="stylesheet">
+  <link href="../template/css/magnific-popup.css" rel="stylesheet">
+  <!-- referencia ao arquivo css com estilos especificos da pagina -->
+  <link href="css/custom.css" type="text/css" rel="stylesheet">
+  <!-- css necessario para o print -->
+  <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+  <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+  <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+
+  <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+  <!-- MARCA D´ÁGUA -->
+  <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+  <!-- /MARCA D´ÁGUA -->
+
+  <div id='sncloader' class='over-loader'>
+    <div class="over-cell">
+      <div id="sncload"></div>
+    </div>
+  </div>
+  <header id="topo" class="senac no-print">
+    <div class="header-tecnicos container">
+      <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+      <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+    </div>
+    <div id="sombra"></div>
+  </header>
+
+  <div id="booklet" class="container fundo-tecnicos">
+    <header class="no-print">
+      <!-- BTO IMPRIMIR -->
+      <div class="grupo-imprimir no-print">
+        <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+          <span class="fa fa-print"></span> <span>Imprimir</span>
+        </button>
+      </div>
+      <!-- /BTO IMPRIMIR -->
+    </header>
+    <!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+    <section class="paginas">
+
+      <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+      <div class="pagina">
+        <p class="acessivel no-print">Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu
+          leitor de tela para o grau máximo de leitura, a fim de que os códigos disponibilizados neste material sejam
+          lidos corretamente. No caso do NVDA (NonVisual Desktop Access), para localizar a opção Grau de
+          pontuação/símbolos, acesse Preferências – Configurações – Fala. Altere o padrão Pouco para Tudo. Dessa forma,
+          o leitor passará a ler os segmentos de código em sua totalidade. </p>
+        <h2><i>Sites</i> estáticos e dinâmicos:<br>
+           conceitos, tecnologias e aplicações </h2>
+           <div class="row internet01">
+            <div class="col-lg-7 col-sm-12 col-xs-12 textointernet">
+              <p><h3>O que é a Internet? </h3>
+                <p>A Internet tem o objetivo de possibilitar a troca de informações. Ela é uma estrutura física composta de
+                  muitos cabos que conectam diversos dispositivos. Esses cabos estão distribuídos por todo o planeta, formando
+                  uma grande teia que liga todas as cidades, os países e os continentes.</p>
+                <p>A Internet é um grande trabalho coletivo de diferentes equipamentos (modens, roteadores etc.) que se
+                  comunicam por meio de cabos de fibra óptica que passam no meio dos oceanos e por meio de ondas de rádio.
+                  Perceba que a Internet é descentralizada, não é um único computador superpotente que garante o seu
+                  funcionamento. </p>
+              </div>
+              <div class="col-lg-5">
+              <img src="../01_sites_estaticos/objetos/img_1.png" class="mt-60 no-print">
+              </div>
+          </div>
+        <h4>Como a Internet funciona?</h4>
+        <p>Você já parou para pensar o que acontece quando dois computadores são conectados? E um computador e um
+          celular? Esses dispositivos, quando conectados, criam uma rede local que permite a comunicação entre eles.
+          Isso é muito útil quando se tem dispositivos próximos. Porém se for preciso, por exemplo, conectar dois
+          dispositivos em países diferentes, como é possível fazer isso? Aqui entra a Internet, que permite criar um
+          caminho entre redes distantes. Tenha em mente que, na prática, por exemplo, o roteador de uma casa é uma rede
+          local, então a conexão dessa rede à Internet precisa de um intermediário, que são os provedores de Internet.
+        </p>
+        <p>A imagem a seguir é uma representação simplificada do que se entende até aqui. Você já está familiarizado com
+          o conceito de servidor, um equipamento que consegue processar e guardar um grande volume de informações. A
+          maior parte da Internet trabalha com o modelo cliente-servidor, e isso significa que, em vez de se conectar
+          diretamente com o celular de outra pessoa, por exemplo, o seu celular acessa um servidor para realizar a
+          comunicação. </p>
+        <img src="../01_sites_estaticos/objetos/01.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 1 – Funcionamento simplificado da Internet <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print"> A imagem mostra o ícone de um computador, de um modem, de um provedor e de um
+          servidor. As imagens são relacionadas com flechas. A primeira flecha inicia no computador, segue até o modem,
+          depois segue até o provedor e, por último, até o servidor. A segunda flecha vai do servidor para o provedor,
+          depois o modem e, por fim, o computador.</p>
+        <p>Esse modelo é amplamente utilizado porque servidores têm capacidade de processamento superior à de
+          computadores, celulares etc. de usuários padrões. Outros fatores importantes são a segurança e a
+          confiabilidade. Como servidores ficam em ambientes controlados, têm manutenção constante e estão sempre
+          ligados – diferentemente de uma máquina de usuário que é desligada geralmente pelo menos uma vez ao dia.</p>
+        <p>Os computadores, celulares etc. são os clientes dos servidores. Tenha em mente que os clientes, além de
+          receber informações do servidor, são capazes de enviar também. Por exemplo, quando você cria uma postagem no
+          Twitter, está enviando dados para os servidores dessa plataforma. Os clientes conectam-se com diferentes
+          servidores e um mesmo servidor atende várias pessoas.</p>
+        <p>O usuário realiza uma ação, por exemplo, procurar uma receita no Google. Essa informação vai até o seu modem,
+          que conversa com o provedor, que navegará pelos caminhos necessários até encontrar o servidor com a informação
+          necessária. Essa resposta fará o caminho inverso até chegar de volta ao computador do usuário.</p>
+        <p>Contudo, na prática, todo esse caminho é mais complexo. Entenda melhor cada um dos quatro pilares da
+          Internet: o dispositivo final, os provedores de serviço, os provedores de acesso e os <i>backbones.</i></p>
+        <h3>Dispositivo final</h3>
+        <p>O dispositivo final é o computador, o celular, o <i>tablet</i> etc. do usuário. Esse dispositivo vai tanto
+          enviar dados quanto receber. É preciso entender dois conceitos importantes envolvendo o dispositivo final:
+          <strong>requisição (<i>request</i>)</strong> e <strong>resposta (<i>response</i>)</strong>.</p>
+        <p>Quando o usuário digita algo, clica em um botão etc., ele faz uma solicitação para o cliente (computador,
+          celular). O cliente transformará essa ação do usuário em uma <strong>requisição (<i>request</i>)</strong>. A
+          requisição é uma solicitação, uma demanda que conterá a informação do que o usuário deseja e que será enviada
+          ao servidor. Por exemplo, “exiba a imagem X”, “valide os dados do usuário”, “carregue um <i>site</i>”. O
+          servidor precisará interpretar essa solicitação para conseguir criar uma resposta.</p>
+        <p>A <strong>resposta (<i>response</i>)</strong> é a maneira como o servidor atende à requisição. Nela, podem
+          estar as informações solicitadas ou um texto informando erro. É possível até mesmo não haver nenhuma
+          informação. Essa resposta será enviada para o cliente, que exibirá para o usuário o que foi recebido. Por
+          exemplo, carrega a página solicitada, aparece uma mensagem de que o <i>site</i> não foi encontrado, exibe as
+          informações do perfil de uma rede social etc.</p>
+        <img src="../01_sites_estaticos/objetos/02.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 2 – Requisição e resposta <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print">A imagem mostra o desenho de uma mulher com uma seta com o texto “Usuário clica em
+          um link” apontando para o próximo desenho, que é da mesma mulher trabalhando no computador. Próximo da imagem
+          está escrito “O navegador cria a requisição e envia para o servidor”. Uma nova flecha aponta para o desenho de
+          um servidor com o texto “O servidor procura a página solicitada na requisição”. Uma outra seta aponta do
+          servidor para a mulher no computador, dizendo “O servidor cria a resposta e envia para o navegador”. Há uma
+          última flecha que aponta da mulher no computador para a outra mulher com os dizeres “Navegador recebe a
+          resposta e exibe para o usuário a página”.</p>
+        <p>Construa um exemplo:</p>
+        <div class="bordabranca infografico no-print">
+        <div class="row espacamento">
+          <div class="col-lg-3 col-sm-3 col-xs-4">
+            <img src="../01_sites_estaticos/objetos/info_usuario_cliente.png" class="img-responsive center-block no-print mt-20" aria-hidden="true">
+            </div>
+            <div class="col-lg-9 col-sm-9 col-xs-8">
+            <p> O usuário digita o endereço &lt;www.ead.senac.br> na barra do navegador.</p>
+            </div>
+        </div>
+        <div class="row espacamento">
+          <div class="col-lg-3 col-sm-3 col-xs-4">
+            <img src="../01_sites_estaticos/objetos/info_cliente_servidor.png" class="img-responsive center-block no-print" aria-hidden="true">
+          </div>
+            <div class="col-lg-9 col-sm-9 col-xs-8">
+            <p> O cliente transforma as informações inseridas em uma requisição da página inicial do Senac EAD que é enviada para o servidor do Senac.</p>
+            </div>
+        </div>
+        <div class="row espacamento">
+          <div class="col-lg-3 col-sm-3 col-xs-4">
+            <img src="../01_sites_estaticos/objetos/info_servidor_cliente.png" class="img-responsive center-block no-print espacomargin1" aria-hidden="true">
+          </div>
+            <div class="col-lg-9 col-sm-9 col-xs-8">
+            <p>O servidor recebe a requisição, interpreta o que está sendo solicitado,procura pela página inicial do Senac EAD, monta a página com dados dinâmicos e envia uma resposta para o cliente contendo as informações da página.</p>
+            </div>
+        </div>
+        <div class="row espacamento">
+          <div class="col-lg-3 col-sm-3 col-xs-4">
+            <img src="../01_sites_estaticos/objetos/info_cliente_usuario.png" class="img-responsive center-block no-print" aria-hidden="true">
+          </div>
+            <div class="col-lg-9 col-sm-9 col-xs-8">
+            <p> O cliente recebe a resposta e transforma em informações que são exibidas na tela do usuário. Entre os elementos da página, está um campo de pesquisa.</p>
+            </div>
+        </div>
+        <div class="row espacamento">
+          <div class="col-lg-3 col-sm-3 col-xs-4">
+            <img src="../01_sites_estaticos/objetos/info_usuario_cliente.png" class="img-responsive center-block no-print" aria-hidden="true">
+          </div>
+            <div class="col-lg-9 col-sm-9 col-xs-8">
+            <p>O usuário clica no campo de pesquisa, digita o nome de um curso que lhe interessa e depois tecla <strong>Enter</strong>.</p>
+            </div>
+        </div>
+        <div class="row espacamento">
+          <div class="col-lg-3 col-sm-3 col-xs-4">
+            <img src="../01_sites_estaticos/objetos/info_cliente_servidor.png" class="img-responsive center-block no-print" aria-hidden="true">
+          </div>
+            <div class="col-lg-9 col-sm-9 col-xs-8">
+            <p>O cliente cria e envia uma requisição que contém a informação que o usuário deseja buscar.</p>
+            </div>
+        </div>
+        <div class="row espacamento">
+          <div class="col-lg-3 col-sm-3 col-xs-4">
+            <img src="../01_sites_estaticos/objetos/info_servidor_cliente.png" class="img-responsive center-block no-print espacomargin" aria-hidden="true">
+          </div>
+            <div class="col-lg-9 col-sm-9 col-xs-8">
+            <p>O servidor recebe a solicitação e envia uma resposta contendo a lista de cursos que contenham o termo pesquisado pelo usuário. Essas informações virão, muito provavelmente, de um banco de dados. O servidor formata essas informações como uma página da <i>web</i>. </p>
+            </div>
+        </div>
+        <div class="row espacamento">
+          <div class="col-lg-3 col-sm-3 col-xs-4">
+            <img src="../01_sites_estaticos/objetos/info_usuario_cliente.png" class="img-responsive center-block no-print" aria-hidden="true">
+          </div>
+            <div class="col-lg-9 col-sm-9 col-xs-8">
+            <p>O usuário clica no <i>link</i> do curso desejado. </p>
+            </div>
+        </div>
+        <div class="row espacamento">
+          <div class="col-lg-3 col-sm-3 col-xs-4">
+            <img src="../01_sites_estaticos/objetos/info_cliente_servidor.png" class="img-responsive center-block no-print" aria-hidden="true">
+          </div>
+            <div class="col-lg-9 col-sm-9 col-xs-8">
+            <p>As informações da ação do usuário e de qual é o curso desejado são transformadas em uma requisição e enviadas para o servidor. </p>
+            </div>
+        </div>
+        </div>
+        <div class="versaomobile bordabranca no-print">
+          <div class="iconeusuario_cliente textmobile">
+            O usuário digita o endereço &lt;www.ead.senac.br> na barra do navegador.
+          </div>
+          <div class="iconecliente-servidor textmobile">
+            O cliente transforma as informações inseridas em uma requisição da página inicial do Senac EAD que é enviada para o servidor do Senac. 
+          </div>
+          <div class="iconeservidor-cliente textmobile">
+            O servidor recebe a requisição, interpreta o que está sendo solicitado, procura pela página inicial do Senac EAD, monta a página com dados dinâmicos e envia uma resposta para o cliente contendo as informações da página. 
+          </div>
+          <div class="iconecliente-usuario textmobile">
+            O cliente recebe a resposta e transforma em informações que são exibidas na tela do usuário. Entre os elementos da página, está um campo de pesquisa. 
+          </div>
+          <div class="iconeusuario_cliente textmobile">
+            O usuário clica no campo de pesquisa, digita o nome de um curso que lhe interessa e depois tecla <strong>Enter</strong>. 
+          </div>
+          <div class="iconecliente-servidor textmobile">
+            O cliente cria e envia uma requisição que contém a informação que o usuário deseja buscar. 
+          </div>
+          <div class="iconeservidor-cliente textmobile">
+            O servidor recebe a solicitação e envia uma resposta contendo a lista de cursos que contenham o termo pesquisado pelo usuário. Essas informações virão, muito provavelmente, de um banco de dados. O servidor formata essas informações como uma página da <i>web</i>.
+          </div>
+          <div class="iconeusuario_cliente textmobile">
+            O usuário clica no <i>link</i> do curso desejado. 
+          </div>
+          <div class="iconecliente-servidor textmobile">
+            As informações da ação do usuário e de qual é o curso desejado são transformadas em uma requisição e enviadas para o servidor.
+          </div>
+        </div>
+        <div class="hidden print">
+          <ul>
+            <li>(Usuário para o cliente) O usuário digita o endereço < www.ead.senac.br> na barra do navegador.</li>
+            <li>(Cliente para o servidor) O cliente transforma as informações inseridas em uma requisição da página
+              inicial do Senac EAD que é enviada para o servidor do Senac.</li>
+            <li>(Servidor para o cliente) O servidor recebe a requisição, interpreta o que está sendo solicitado,
+              procura pela página inicial do Senac EAD, monta a página com dados dinâmicos e envia uma resposta para o
+              cliente contendo as informações da página.</li>
+            <li>(Cliente para o usuário) O cliente recebe a resposta e transforma em informações que são exibidas na
+              tela do usuário. Entre os elementos da página, está um campo de pesquisa.</li>
+            <li>(Usuário para o cliente) O usuário clica no campo de pesquisa, digita o nome de um curso que lhe
+              interessa e depois tecla Enter.</li>
+            <li>(Cliente para o servidor) O cliente cria e envia uma requisição que contém a informação que o usuário
+              deseja buscar.</li>
+            <li>(Servidor para o cliente) O servidor recebe a solicitação e envia uma resposta contendo a lista de
+              cursos que contenham o termo pesquisado pelo usuário. Essas informações virão, muito provavelmente, de um
+              banco de dados. O servidor formata essas informações como uma página da web.</li>
+            <li>(Usuário para o cliente) O usuário clica no link do curso desejado.</li>
+            <li>(Cliente para o servidor) As informações da ação do usuário e de qual é o curso desejado são
+              transformadas em uma requisição e enviadas para o servidor.</li>
+          </ul>
+        </div>
+        <p>Com base nessa ação, outra resposta será montada no servidor, enviada ao cliente e assim sucessivamente a
+          cada ação do cliente que provoque uma requisição.</p>
+        <h3>Provedor de serviço (ISP)</h3>
+        <p>O provedor de serviço (<i>Internet service provider</i> – ISP) é o que se chama, em geral, de provedor de
+          Internet. É a empresa que vai possibilitar o acesso à Internet em troca de uma cobrança mensal.</p>
+        <p>Como exemplo de empresas desse tipo, é possível citar: Oi, Vivo e outras.</p>
+        <p>A maneira como a conexão é realizada varia de provedor e plano, mas, em geral, é disponibilizada por meio de
+          fibra óptica, rede telefônica, sinais de rádio ou satélite.</p>
+        <h3>Provedor de acesso (IAP)</h3>
+        <p>Provedores de acesso (<i>Internet access provider</i> – IAP) também cobram uma taxa mensal dos usuários para
+          entregar pacote de <i>software</i> e serviços, que variam de provedor para provedor.</p>
+        <p>O provedor de acesso compra do ISP (que é o grande provedor com acesso à Internet) o acesso da Internet e
+          revende parte desse acesso para os seus clientes. Geralmente o provedor de acesso fornece uma série de
+          serviços para o usuário, como <i>e-mail</i>, hospedagem de <i>sites</i>, mecanismos de pesquisa etc.</p>
+        <p>Como exemplo de provedores de acesso, é possível indicar: UOL, Tim e outros.</p>
+        <h3><i>Backbone</i></h3>
+        <p>Os <i>backbones</i> são a “espinha dorsal” da Internet. São pontos de redes espalhados pelo mundo todo que
+          transmitem dados e mensagens entre as redes conectadas à Internet.</p>
+        <img src="../01_sites_estaticos/objetos/03.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 3 – Mapa de rotas de <i>backbones</i> nacionais em 2019 <br>
+          Fonte: BNamericas (2022)
+        </p>
+        <p class="acessivel no-print">Mapa do Brasil mostrando as rotas de backbones no território nacional. A
+          concentração maior é nas áreas costeiras do país.</p>
+        <p>Os <i>backbones</i>, em comparação à quantidade de clientes, são pouquíssimos, mas eles têm uma capacidade
+          muito grande de processamento e regras adaptáveis que permitem se conectar com qualquer rede. </p>
+        <p>Os <i>backbones</i> permitem que os provedores de acesso se conectem aos servidores do mundo todo, por isso
+          cada um deles é essencial para o funcionamento da Internet. Sem os <i>backbones</i>, a Internet seria muito
+          lenta, com cada requisição necessitando percorrer grandes distâncias até encontrar seu destino. Tenha em mente
+          que uma requisição realizada no Brasil pode, por exemplo, chegar a um servidor do Japão. Tem-se essa conexão
+          em poucos segundos justamente por causa dos <i>backbones</i>.</p>
+        <p>Exemplos de <i>backbones</i> no Brasil são: Embratel, Telefônica, Oi etc.</p>
+        <h3><i>Transmission Control Protocol/Internet Protocol</i></h3>
+        <p>Com o que se estudou até agora, foi possível compreender que, para uma informação sair do computador do
+          usuário e ir ao seu destino, um longo caminho deve ser percorrido, principalmente quando os servidores
+          desejados estão em outros países e continentes.</p>
+        <p>Como você pode imaginar, é um volume gigantesco de informações que são trocadas continuamente pela Internet,
+          por isso existe a necessidade de utilizar protocolos de comunicação. Similar à comunicação humana, é preciso
+          seguir alguns conceitos básicos:</p>
+        <div class="caixa-destaque borda-primaria-03 mt-40">
+          <ul>
+            <li>Os dispositivos precisam conseguir entender as informações um do outro, “traduzindo” quando necessário.
+            </li>
+            <li>Enquanto um dispositivo envia dados, o outro recebe e vice-versa, sem os dispositivos interromperem um
+              ao outro.</li>
+            <li>Quando uma informação não é compreendida, o dispositivo que a emitiu deve ser sinalizado do problema.
+            </li>
+          </ul>
+        </div>
+        <p>O protocolo <strong>TCP/IP</strong> (<i>Transmission Control Protocol/Internet Protocol</i>) estabelece
+          normas que detalham a troca de dados entre os diferentes dispositivos conectados à Internet. É importante
+          destacar que o TCP/IP não engloba apenas computadores, mas também celulares, <i>tablets</i> e outros
+          dispositivos.</p>
+        <p>Como o protocolo lida com um volume muito grande de dados, ele adota a estratégia de dividir em pequenas
+          partes uma informação enviada (requisição/resposta) para permitir que ela viaje pela rede; e no cliente
+          (computador, celular) a informação é reconstruída juntando todas as partes. O nome dessas pequenas partes é
+          “pacotes”. Por causa da fragmentação da informação, é possível que várias pessoas acessem as mesmas
+          informações simultaneamente. </p>
+        <p>Como um pacote da vida real, para que a informação seja entregue, é necessário um endereço. Cada dispositivo
+          que pode receber dados recebe uma identificação, que é o <strong>IP</strong>. O IP é uma série de números
+          únicos dentro da rede.</p>
+        <p>Porém, apesar de o IP ser muito eficiente, não é amigável para o usuário decorar os números de cada um dos
+          <i>sites</i> que deseja visitar. Então se trabalha com o <strong>Servidor de Nome de Domínio (DNS)</strong>,
+          que é responsável por traduzir os endereços que se está acostumado (como < www.youtube.com>) a informar para o
+            IP do <i>site</i> (142.251.129.46). Os provedores de acesso, os provedores de serviço e os <i>backbones</i>
+            também precisam ter IP de identificação.</p>
+        <h3>Lado do cliente e lado do servidor</h3>
+        <p>Agora que você compreendeu como a Internet funciona, pode concentrar-se em entender como a comunicação de uma
+          aplicação <i>web</i>/<i>site</i> funciona. Um <i>site</i>, diferente de um programa, pode ser aberto em
+          qualquer dispositivo. Então um computador e um celular podem acessar o mesmo <i>site</i>, apesar de serem
+          equipamentos completamente diferentes. O que permite isso são os navegadores, como o Google Chrome, o Firefox,
+          o Vivaldi e outros.</p>
+        <p>Existe uma distinção muito importante quando se fala sobre desenvolvimento <i>web</i>, o que é lado do
+          cliente (<i>client-side</i>) e o que é lado do servidor (<i>server-side</i>). Esses dois termos se referem ao
+          lugar onde o código da aplicação é executado. </p>
+        <div class="caixa-destaque-livre icone-saibamais borda-primaria-03 mt-40">
+          Muitas vezes o lado do cliente é utilizado como sinônimo para <i>front-end</i> e o lado do servidor é utilizado como sinônimo de <i>back-end</i>, porém <i>front-end</i> e <i>back-end</i> são determinações do tipo de processo, enquanto lado do cliente e lado do servidor referem-se ao local onde é executado o processo.
+        </div>
+        <h4>Lado cliente</h4>
+        <p>O lado do cliente é relacionado a tudo que é processado e exibido no cliente. Por exemplo, o usuário apertar
+          um botão, a exibição de imagens e textos etc. O código executado no navegador utiliza o poder computacional da
+          máquina do usuário e precisa estar dentro do cliente.</p>
+        <p>Na página do Senac EAD, por exemplo, ao passar por <i>links</i> de <i>menu</i>, opções aparecem. Também há
+          carrossel com destaques do <i>site</i>, que o usuário pode avançar ou retroceder. Ambas as ações são
+          <i>client-side</i> (do lado do cliente) e processadas inteiramente pelo navegador, não necessitando de
+          comunicação com o servidor.</p>
+        <p>Existem linguagens focadas no desenvolvimento do lado do cliente. São linguagens que o navegador é capaz de
+          entender e rodar os códigos. Exemplos de linguagens do lado do cliente são HTML (<i>hyper text markup
+            language</i>), CSS (<i>cascading style sheet</i>) e JavaScript.</p>
+        <h4>Lado do servidor</h4>
+        <p>O lado do servidor refere-se a tudo aquilo que é processado no servidor em vez do cliente do usuário. O
+          código é processado dentro do servidor, e o cliente recebe apenas a resposta. Como você deve estar imaginando,
+          linguagens focadas no lado do servidor são entendidas pelos servidores. Exemplos de linguagens desse tipo são
+          Java, C#, Python, PHP (<i>hyper text preprocessor</i>), Ruby, entre várias outras.</p>
+        <p>Como exemplo, pense no YouTube. Se digitarmos o endereço do <i>site</i>, será realizada uma solicitação dos
+          elementos para os servidores do YouTube (vídeos, títulos, miniaturas), que ficam na página inicial do site. Os
+          servidores processarão o pedido e enviarão para o cliente a página que deve ser exibida com os dados adequados
+          (os vídeos, as informações do usuário, as recomendações personalizadas e outros elementos).</p>
+        <p>Por mais que possa parecer atrativo realizar tudo do lado do servidor, tenha em mente que cada processamento
+          precisa ir do cliente ao servidor e depois voltar. Isso se torna muito custoso dependendo de quantas demandas
+          precisam ser processadas. Por isso, o ideal é colocar tudo o que for possível no lado do cliente e utilizar o
+          lado do servidor quando necessário.</p>
+        <div class="caixa-destaque-livre borda-primaria-03 mt-40">
+          A programação <i>web</i> se diferencia da programação <i>desktop</i> por contar com essa separação
+          <i>front/back-end</i> e também porque aplicações <i>web</i> são essencialmente <i>stateless</i> – ou “sem
+          estado”. Isso significa que, diferentemente de um programa <i>desktop</i> em que se pode armazenar dados em
+          uma variável e acessar esses dados em várias telas, uma ação na <i>web</i> não precisa ter conhecimento da
+          ação anterior, não há uma memória a ser compartilhada, uma vez que cada requisição gera uma resposta própria.
+          Há, no entanto, recursos como <i>cookies</i>, que permitem guardar dados temporários no navegador para serem
+          usados entre diferentes páginas de um sistema <i>web</i>.
+        </div>
+        <h3><i>Site</i> estático <i>versus site</i> dinâmico</h3>
+        <h4>Estático</h4>
+        <p>O termo “estático” não se refere ao fato de que o <i>site</i> não tem movimento, animações e vídeos, mas,
+          sim, ao fato de que todos os usuários sempre visualizarão o mesmo conteúdo na página, não importando quem nem
+          quando. O <i>site</i> estático só mudará se o seu código for alterado diretamente. Portfólios pessoais de
+          projetos e currículos podem ser um <i>site</i> estático; uma página de aviso de manutenção do sistema também
+          geralmente é estática, assim como alguns “<i>hotsites</i>” (geralmente páginas únicas com informações sobre
+          eventos ou promoções).</p>
+        <img src="../01_sites_estaticos/objetos/04.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 4 – O <i>site</i> SpaceJam, ativo desde 1996, é estático <br>
+          Fonte: SpaceJam (c2021)
+        </p>
+        <p class="acessivel no-print">Página com fundo escuro, logo “SpaceJam” no centro e vários links em volta com
+          ícones de planetas, bola de basquete e naves.</p>
+        <h4>Dinâmico </h4>
+        <p>Já o <i>site</i> dinâmico permite uma personalização dependendo de qual é o usuário que se conectou a ele. O
+          <i>site</i> dinâmico permite isso acessando informações salvas em um banco de dados, e essas informações
+          influenciarão o que aparecerá no <i>site</i>.</p>
+        <p><i>Sites</i> dinâmicos são uma escolha adequada quando se tem a necessidade de alteração constante dos
+          conteúdos e de possibilitar mais liberdade para que os usuários modifiquem e adicionem informações.
+          <i>Blogs</i>, portais de notícias, redes sociais e a sua sala de aula virtual são exemplos de <i>sites</i>
+          dinâmicos.</p>
+        <img src="../01_sites_estaticos/objetos/05.png" class="img-responsive center-block mt-40 imprime-menor">
+        <p class="legenda-imagem">
+          Figura 5 – Uma página de perfil no Instagram é dinâmica <br>
+          Fonte: Senac EAD (2023)
+        </p>
+        <p class="acessivel no-print">Página do Instagram do Senac EAD.</p>
+        <p>Como já foi dito anteriormente, não existe solução na informática que funcione para tudo. O <i>site</i>
+          estático não é melhor que o <i>site</i> dinâmico e vice-versa. Existe o que funciona melhor para a situação, a
+          demanda de projeto, o tempo disponível etc. Inclusive, cada vez mais os desenvolvedores optam por uma solução
+          híbrida, que trabalha tanto com páginas estáticas quanto com outras páginas dinâmicas. Por exemplo, o
+          <i>site</i> do Facebook tem a área de <i>login</i> estática e o <i>feed</i> de postagens com páginas
+          dinâmicas.</p>
+
+
+
+      </div>
+    </section>
+
+
+
+
+
+    <!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+    <footer class="text-center no-print">
+      <ul class="pagination">
+
+      </ul>
+    </footer>
+
+
+    <!-- Modais -->
+
+    <!-- Modais 100% -->
+
+
+
+  </div>
+
+  </div>
+
+
+
+  <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+  <!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+  <div class="ico-div-loader">
+    <img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+  </div>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="../template/js/jquery.min.js"></script>
+  <script src="../template/js/bootstrap.min.js"></script>
+  <script src="../template/js/jquery.magnific-popup.min.js"></script>
+  <script src="../template/js/print.js"></script>
+  <script src="../template/js/template.config.js"></script>
+  <script src="../template/js/images.loader.js"></script>
+  <script src="js/custom.js"></script>
+  <noscript>
+    <style media="screen">
+      .over-loader {
+        display: none;
+      }
+    </style>
+  </noscript>
+</body>
+
+</html>
+<script>
+  //inicializa zoom na imagem
+  $('.zoom-imagem').magnificPopup({
+    type: 'image',
+    mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+    zoom: {
+      enabled: true, // By default it's false, so don't forget to enable it
+
+      duration: 300, // duration of the effect, in milliseconds
+      easing: 'ease-in-out', // CSS transition easing function
+
+      // The "opener" function should return the element from which popup will be zoomed in
+      // and to which popup will be scaled down
+      // By defailt it looks for an image tag:
+      opener: function (openerElement) {
+        // openerElement is the element on which popup was initialized, in this case its <a> tag
+        // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+        return openerElement.is('img') ? openerElement : openerElement.find('img');
+      }
+    },
+    image: {
+      markup: '<div class="mfp-figure">' +
+        '<div class="mfp-close"></div>' +
+        '<div class="mfp-img"></div>' + // Floated left
+        '<div class="mfp-bottom-bar">' + '<figcaption>' + '<div class="mfp-title" style="text-align:center"></div>' +
+        '<div class="mfp-counter"></div>' + '</figcaption>' +
+        '</div>' +
+        '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+
+      cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+
+      tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+    }
+  });
+
+  //inicializa popover
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+  //inicializa tooltip
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
+
+  $(function () {
+    $(".card").click(function () {
+      if ($(this).hasClass("exibe-frente")) {
+        $(this)
+          .children()
+          .first()
+          .hide();
+        $(this)
+          .children()
+          .last()
+          .show();
+        $(this).removeClass("exibe-frente");
+      } else {
+        $(".card .verso").hide();
+        $(".card .frente").show();
+        $(this).addClass("exibe-frente");
+      }
+    });
+  });
+
+  $(document).ready(function () {
+    $(".card .verso").hide();
+  });
+
+
+
+
+  /*------- Script de animação do botão -------*/
+  var root = document.documentElement;
+  root.className += ' js';
+
+  function boxTop(idBox) {
+    var boxOffset = $(idBox).offset().top;
+    return boxOffset;
+  }
+
+  $(document).ready(function () {
+    var $target = $('.animeStart'),
+      $target2 = $('.animeStop'),
+      targetBox = $('.box'),
+      animationClass = 'anime-init',
+      windowHeight = $(window).height(),
+      offset = windowHeight - (windowHeight / 4);
+
+    function animeScroll() {
+      var documentTop = $(document).scrollTop();
+      $target.each(function () {
+        if (documentTop > boxTop(this) - offset) {
+          targetBox.addClass(animationClass);
+        } else {
+          targetBox.removeClass(animationClass);
+        }
+        if (documentTop > boxTop($target2) - offset) {
+          targetBox.removeClass(animationClass);
+        }
+      });
+    }
+    animeScroll();
+
+    $(document).scroll(function () {
+      animeScroll();
+    });
+  });
+
+
+</script>
+
+<!-- Versao atual do handtalk -->
+<script>
+  var scriptElem = document.createElement("script");
+  scriptElem.src = "https://plugin.handtalk.me/web/latest/handtalk.min.js",
+    scriptElem.charset = "UTF-8",
+    scriptElem.onload = function () {
+      window.ht = new HT({
+        token: "bf5b7efb148a829a126a0e0c9fd533bf",
+        align: "top",
+        videoEnabled: true,
+        ytEmbedReplace: true,
+        mobileConfig: {
+          align: "right",
+          actionsAlign: "top",
+          customButtonStyle: {
+            borderRadius: "6px",
+            size: "38px",
+            horizontalMargin: "13px",
+            bottomMargin: "140px",
+            rightMargin: "40px"
+          }
+        }
+      });
+      $('.ht-skip').attr("aria-hidden", "true")
+    },
+    document.body.appendChild(scriptElem);
+
+</script>

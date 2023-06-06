@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office"
+    xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Editor HTML - SenacRS</title>
+    <link href="assets/fa/css/all.css" rel="stylesheet">
+    <link href="assets/css/estilos.css" rel="stylesheet">
+
+
+    <!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Joao Pedro Gaelzer Coelho Silva</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">6934800.00000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Joao Pedro Gaelzer Coelho Silva</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body>
+
+    <div id="app" class="app">
+        <div class="editor ativo">
+            <textarea spellcheck="false" class="editor-html" wrap="soft"></textarea>
+        </div>
+        <div class="output ativo"></div>
+        <button type="button" class="bto bto-esconder" data-action="toggle-code">
+            <i class="fas fa-code desktop"></i>
+            <i class="far fa-eye mobile"></i>
+            <span class="label ativo desktop">Esconder código</span>
+            <span class="label ativo mobile">Visualizar</span></button>
+        <button type="button" class="bto bto-download" data-action="download-code"><i class="fas fa-download"></i>
+        </button>
+        <button type="button" class="bto bto-fullscreen" data-action="fullscreen"><i class="far fa-window-maximize"></i>
+        </button>
+    </div>
+
+
+    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/events.js"></script>
+    <script src="assets/js/functions.js"></script>
+    <script src="assets/js/FileSaver.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="519" height="269" viewBox="0 0 519 269">
+  <defs>
+    <filter id="Retângulo_60" x="0" y="0" width="519" height="269" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="16.5" result="blur"/>
+      <feFlood flood-opacity="0.302"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="fig_6_dsktp" transform="translate(-703.5 -6869.5)">
+    <g transform="matrix(1, 0, 0, 1, 703.5, 6869.5)" filter="url(#Retângulo_60)">
+      <rect id="Retângulo_60-2" data-name="Retângulo 60" width="420" height="170" rx="18" transform="translate(49.5 49.5)" fill="#fff"/>
+    </g>
+    <g id="Grupo_153" data-name="Grupo 153" transform="translate(45 1831)">
+      <rect id="Retângulo_57" data-name="Retângulo 57" width="282" height="30" transform="translate(774 5124)" fill="#343434"/>
+      <text id="_--_Comentário_Aqui_--_" data-name="&lt;!-- Comentário Aqui --&gt; " transform="translate(915 5145)" fill="#fff" font-size="18" font-family="SegoeUI, Segoe UI"><tspan x="-104.115" y="0">&lt;!-- Comentário Aqui --&gt; </tspan></text>
+    </g>
+    <g id="Grupo_154" data-name="Grupo 154" transform="translate(0 477)">
+      <text id="Abertura" transform="translate(876 6566)" fill="#343434" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="-27.053" y="0">Abertura</tspan></text>
+      <text id="Comentário" transform="translate(960 6580)" fill="#343434" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="-36.251" y="0">Comentário</tspan></text>
+      <text id="Fechamento" transform="translate(1045 6566)" fill="#343434" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="-37.96" y="0">Fechamento</tspan></text>
+      <g id="Icon_feather-arrow-down" data-name="Icon feather-arrow-down" transform="translate(857.5 6514.498)">
+        <path id="Caminho_71" data-name="Caminho 71" d="M18,7.5V29.762" transform="translate(0 -1.262)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Caminho_72" data-name="Caminho 72" d="M28.5,18,18,28.5,7.5,18" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Icon_feather-arrow-down-2" data-name="Icon feather-arrow-down" transform="translate(1026.5 6514.498)">
+        <path id="Caminho_71-2" data-name="Caminho 71" d="M18,7.5V29.762" transform="translate(0 -1.262)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Caminho_72-2" data-name="Caminho 72" d="M28.5,18,18,28.5,7.5,18" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Icon_feather-arrow-down-3" data-name="Icon feather-arrow-down" transform="translate(942 6528.716)">
+        <path id="Caminho_71-3" data-name="Caminho 71" d="M18,7.5V43.981" transform="translate(0 -15.481)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        <path id="Caminho_72-3" data-name="Caminho 72" d="M28.5,18,18,28.5,7.5,18" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+    </g>
+  </g>
+</svg>

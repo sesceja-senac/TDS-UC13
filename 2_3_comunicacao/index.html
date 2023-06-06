@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Comunicação visual e imagens vetoriais e bitmap</title>
+
+    <!-- Bootstrap -->
+    <link href="../template/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../template/css/tecnicos_senac.css" rel="stylesheet">
+    <link href="../template/css/cores.css" rel="stylesheet">
+    <link href="../template/css/modal-100.css" rel="stylesheet">
+    <link href="../template/css/devibeans.min.css" rel="stylesheet">
+      <!--Extras - novas classes para facilitar-->
+      <link rel="stylesheet" href="../template/css/extras.css">
+    <link href="../template/css/sncload.css" rel="stylesheet">
+    <link href="../template/css/magnific-popup.css" rel="stylesheet">
+    <!-- referencia ao arquivo css com estilos especificos da pagina -->
+    <link href="css/custom.css" type="text/css" rel="stylesheet">
+    <!-- css necessario para o print -->
+    <link href="../template/css/fa/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="../template/css/print.css" type="text/css" rel="stylesheet">
+    <link href="../template/fonts/roboto.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+  
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Editor>
+<mso:Order msdt:dt="string">46914400.0000000</mso:Order>
+<mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author msdt:dt="string">Paulo Ricardo Soveral Junior</mso:display_urn_x003a_schemas-microsoft-com_x003a_office_x003a_office_x0023_Author>
+<mso:ContentTypeId msdt:dt="string">0x010100393332CEE5C5294F9D2C3CF7CCDACBE5</mso:ContentTypeId>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body onLoad="Javascript:document.getElementById('sncloader').style.display='none';">
+    <!-- MARCA D´ÁGUA -->
+    <img src="../template/images/logo_senac_colorido.png" id="marcadaguaLogo">
+    <!-- /MARCA D´ÁGUA -->
+
+    <div id='sncloader' class='over-loader'><div class="over-cell"><div id="sncload"></div></div></div>
+    <header id="topo" class="senac no-print">
+        <div  class="header-tecnicos container">
+        	  <h1 id="nome-curso">Desenvolvimento de Sistemas</h1>
+            <div id="logo-senac"><img src="../template/images/logo-senac.png" alt="logo do senac"></div>
+        </div>
+        <div id="sombra"></div>
+    </header>
+
+    <div id="booklet">
+        <header class="no-print container">
+          <!-- BTO IMPRIMIR -->
+          <div class="grupo-imprimir no-print">
+            <button type="button" data-pdf="true" class="bto-imprimir" name="button">
+                <span class="fa fa-print"></span> <span>Imprimir</span>
+            </button>
+          </div>
+          <!-- /BTO IMPRIMIR -->
+        </header>
+<!-- - - - - - - - - - - - - - - - não alterar acima - - - - - - - - - - - - -->
+        <section class="paginas">
+
+          <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
+          <div class="pagina">
+            <div class="container">
+              <p class="acessivel no-print">Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau máximo de leitura, a fim de que os códigos disponibilizados neste material sejam lidos corretamente. No caso do NVDA (NonVisual Desktop Access), para localizar a opção Grau de pontuação/símbolos, acesse Preferências – Configurações – Fala. Altere o padrão Pouco para Tudo. Dessa forma, o leitor passará a ler os segmentos de código em sua totalidade. </p>
+              
+              <h2 class="acessivel print">Comunicação visual e imagens vetoriais e <i>bitmap</i></h2>
+              <div class="row no-print mt-40" aria-hidden="true">
+                <div class="col-lg-6">
+                  <img src="imgs/titulo.png" class="img-responsive">
+                </div>
+                <div class="col-lg-6 hidden-xs">
+                  <img src="imgs/img_1.png" class="img-responsive">
+                </div>
+              </div>
+              <h3>Introdução</h3>
+              <p>Frequentemente há lojas com vitrines expondo grandes letras sinalizando descontos. É possível ver também grandes logos divertidos de lanchonetes em vermelho e amarelo chamando a atenção (você provavelmente lembrou de uma marca conhecida, não é mesmo?). Nas ruas, as pessoas orientam-se por semáforos. Todos esses exemplos são uma forma de comunicação visual. A utilização correta de cores e letras traz informações, sentimentos e destaque para um produto, um <i>site</i> ou uma empresa, proporcionando uma identidade visual chamativa. Já a utilização incorreta dessas características pode causar efeito contrário, fazendo com que a criação passe despercebida entre o seu público-alvo. </p>
+              <p>Para poder desenvolver uma boa comunicação visual com o público, é necessário aprofundar-se mais nos conhecimentos de cores e tipografias. Considerando que será trabalhada a perspectiva de desenvolvimento <i>web</i>, os conhecimentos sobre esse conteúdo focarão as informações mais relevantes para a elaboração de <i>layouts</i> de projeto.</p>
+            </div>
+            <div class="parallax" data-parallax="scroll" data-image-src="imgs/paralaxe_1_teoriacor.png"></div>
+            <div class="container">
+              <h3>Teoria da cor</h3>
+              <p>Existem dois sistemas principais para a formação das cores: RGB (vermelho/<i>red</i>, verde/<i>green</i> e azul/<i>blue</i>) e CMYK (ciano/<i>cyan</i>, magenta, amarelo/<i>yellow</i> e preto/<i>key</i> = chave).</p>
+              <p>A combinação das cores do sistema RGB gera o sistema aditivo de cores, no qual a sobreposição gera o branco e a ausência da cor gera o preto. É usado na indústria de <i>design</i> digital porque representa a mesma formação de cores usada em telas de computador, telas de televisão (TV) e telas de dispositivos móveis. </p>
+              <p>O sistema de cores CMYK é também chamado de processo de quatro cores porque usa quatro cores diferentes para produzir matizes diferentes. O preto aqui é usado porque as outras três cores combinadas não podem produzir um preto totalmente saturado. São as tintas ou os pigmentos, frequentemente utilizados na criação de peças que serão impressas, encontrados em cartuchos e <i>toners</i> de impressoras.</p>
+              <p>Considerando que o sistema RGB é o utilizado para dispositivos que emitem luz (telas de computador, telas de TV, telas de dispositivos móveis), aqui o maior foco será essa estruturação.</p>
+              <p>No sistema RGB, parte-se de três cores primárias para formar três cores secundárias e seis terciárias. São essas as cores principais que aparecem no disco cromático RGB (figura a seguir). A mistura delas entre si pode gerar, por adição, até 16 milhões de tonalidades diferentes. Essa relação de cores é conhecida como círculo cromático.</p>
+              <img src="imgs/figura_1.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/figura_1.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_1.png" class="center-block img-responsive"></a>
+              <p class="legenda-imagem">
+                Figura 1 – Formação das 12 cores do sistema RGB: primárias, secundárias e terciárias<br>
+                Fonte: Arty (2017)
+              </p>
+              <p class="acessivel no-print">Círculo com cores em variadas. Dentro desse círculo, um prisma também com variação de cores.</p>
+              <p>Analisando o círculo cromático apresentado anteriormente, é possível observar um padrão de cores que pode ser classificado com base em sua temperatura.</p>
+            
+            <h4>Temperatura de cor</h4>
+            <p>A temperatura das cores é uma questão bastante subjetiva, tendo muito a ver com as experiências e as percepções de quem as vê. No entanto, pode-se dividir o disco cromático entre cores quentes e frias.</p>
+            <p><strong>Cores quentes</strong></p>
+            <p>As cores quentes são aquelas com menor comprimento de onda. São consideradas mais vivas e enérgicas, como o vermelho, o amarelo, o laranja e todas as suas variações. A utilização de cores quentes em um <i>layout</i> transmite a sensação de aconchego, calor e vivacidade.</p>
+            <img src="imgs/figura_2.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_2.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_2.png" class="center-block img-responsive"></a>
+            <p class="legenda-imagem">
+              Figura 2 – Composição de cores quentes<br>
+              Fonte: Adobe Color (c2023)
+            </p>
+            <p class="acessivel no-print">Círculo cromático com cinco cores quentes selecionadas. Abaixo dele, está a composição da paleta utilizando as mesmas cinco cores.</p>
+            <p><strong>Cores frias</strong></p>
+            <p>As cores frias são aquelas com maior comprimento de onda, sendo exemplos o azul, o verde, o tom de oliva e todas as suas variações. Elas transmitem a sensação de calma e tranquilidade. Na figura a seguir, você pode ver a harmonização cromática com base no uso de cores frias.</p>
+            <img src="imgs/figura_3.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_3.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_3.png" class="center-block img-responsive"></a>
+            <p class="legenda-imagem">
+              Figura 3 – Composição de cores frias<br>
+              Fonte: Adobe Color (c2023)
+            </p>
+            <p class="acessivel no-print">Círculo cromático com cinco cores frias selecionadas. Abaixo dele, está a composição da paleta utilizando as mesmas cinco cores.</p>
+
+            <h4>Propriedade das cores</h4>
+            <p>As cores contam com variações chamadas de nuances, sendo essas características divididas em três categorias: matiz, saturação e brilho.</p>
+            <div class="table-responsive">
+              <table class="senac">
+                <tbody>
+                  <tr>
+                    <td style="width: 300px;">
+                      <strong>Matiz</strong>: o matiz é a própria cor pura, sem adição de branco ou preto. É a característica que permite definir e distinguir uma cor. Vermelho, verde, amarelo e azul são matizes, por exemplo.
+                      Para criar uma cor intermediária ou secundária, como laranja (vermelho e amarelo), é preciso misturar proporções exatamente iguais de duas cores primárias.
+                    </td>
+                    <td>
+                      <img src="imgs/figura_4.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_4.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_4.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 4 – Matizes<br>
+                        Fonte: Senac EAD (2023)
+                      </p>
+                      <p class="acessivel no-print">Há quatro quadrados preenchidos, respectivamente, com as cores vermelho, verde, amarelo e azul.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 300px;">
+                      <strong>Brilho</strong>: o brilho, também chamado de valor de luminosidade, refere-se à maior ou à menor quantidade de luz presente na cor. Ao adicionar branco a um matiz, ele gradualmente fica mais claro.
+                      Por outro lado, ao acrescentar preto a um matiz, ele fica gradualmente mais escuro. Essa variação é conhecida como escala tonal.
+                    </td>
+                    <td>
+                      <img src="imgs/figura_5.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_5.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_5.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 5 – Brilho<br>
+                        Fonte: Senac EAD (2023)
+                      </p>
+                      <p class="acessivel no-print">Duas linhas de cores no tom de azul, sendo a primeira linha de tons mais claros em razão da adição de branco, e a segunda linha de tons mais escuros em razão da adição de preto.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td style="width: 300px;">
+                      <strong>Saturação</strong>: a saturação, também conhecida como croma, refere-se à pureza da cor. É definida pela quantidade de pigmento cinza que a cor contém.
+                      Com o máximo de saturação, não há nada de cinza, e as cores são mais vívidas. Ao contrário, em níveis de saturação mais baixos, as cores contêm quantidades cada vez maiores de cinza, o que resulta em opacidade.
+                      Na figura 6, é possível observar cores extremamente “vivas”. Com alta saturação, elas deixam o espaço mais vibrante. Os matizes puros, incluindo os primários, são completamente saturados.
+                      Sem saturação, apresenta-se o mesmo <i>wireframe</i> da figura anterior, mas, desta vez, com as cores pouco saturadas, o que resulta em uma composição mais opaca. Na figura 7, pode-se perceber que a coloração fica mais acinzentada.
+                    </td>
+                    <td>
+                      <img src="imgs/figura_6.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_6.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_6.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 6 – <i>Layout</i> com cores saturadas<br>
+                        Fonte: Senac EAD (2023)
+                      </p>
+                      <p class="acessivel no-print">Wireframe de uma página com retângulos verde, azul-claro, vermelho, marrom, laranja, azul e roxo, representando áreas de uma página.</p>
+                      <img src="imgs/figura_7.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_7.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_7.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 7 – <i>Layout</i> com cores pouco saturadas<br>
+                        Fonte: Senac EAD (2023)
+                      </p>
+                      <p class="acessivel no-print">Mesmo layout da figura anterior, mas agora as cores estão mais apagadas (tons pastel).</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Tabela 1 – Matiz, brilho e saturação<br>
+              Fonte: Senac EAD (2023)
+            </p>
+            <p>Veja uma situação-exemplo: um cliente solicitou que você desenvolvesse um <i>site</i>. Como você selecionará cores que estejam em harmonia entre si para desenvolver o projeto?</p>
+            <p>Embora você já entenda mais sobre cores, talvez seu conhecimento ainda não seja suficiente para responder a essa pergunta. Para solucionar esse problema e buscar a paleta de cores perfeita para um projeto, é preciso analisar a harmonização das cores dentro do disco cromático RGB.</p>
+
+            <h4>Harmonização de cores</h4>
+            <p>São chamadas de harmônicas as cores que combinam entre si e formam conjuntos visualmente equilibrados. Existem várias formas de encontrar padrões harmônicos para a sua paleta de cores. Veja, a seguir, algumas delas.</p>
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Harmonia de cores análogas
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">
+                      <p>A harmonização entre cores análogas diz respeito à combinação de cores que se encontram lado a lado no disco cromático. Por serem vizinhas, há baixo contraste entre elas.</p>
+                      <img src="imgs/figura_8.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_8.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_8.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 8 – Harmonização de cores análogas<br>
+                        Fonte: Adobe Color (c2023)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Harmonia de cores complementares
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">
+                      <p>Harmonia de cores complementares é a composição de duas cores opostas no disco cromático. A figura a seguir apresenta como exemplo tons alaranjados e azuis. Perceba que a harmonização complementar apresenta grandes contrastes. Para encontrar uma cor complementar a outra no disco cromático, basta verificar a que está no extremo oposto dela.</p>
+                      <img src="imgs/figura_9.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_9.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_9.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 9 – Harmonização de cores complementares<br>
+                        Fonte: Adobe Color (c2023)
+                      </p>
+                      <p>A harmonização complementar é mais rara em <i>layouts</i> de páginas, já que o alto contraste alcançado pode gerar cansaço visual.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Harmonia monocromática
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">
+                      <p>Harmonia monocromática é a combinação de apenas uma cor e suas variantes em tons claros e escuros. Seria o uso de uma cor e suas nuances. O interessante dessa combinação é que ela não cansa e transmite a sensação de amplitude.</p>
+                      <p>No disco da figura a seguir, a matriz pêssego foi eleita como cor de partida. As diferentes nuances são alcançadas com base nas variações de brilho e saturação.</p>
+                      <img src="imgs/figura_10.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_10.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_10.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 10 – Harmonização de cores monocromáticas<br>
+                        Fonte: Adobe Color (c2023)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading4">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                        Harmonia tríade
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+                    <div class="panel-body">
+                      <p>É a combinação entre as cores que estão equidistantes 120° no disco cromático, formando um triângulo. Pela harmonia tríade entre os tons rosados, verdes e amarelos da figura a seguir, surge a paleta de cores escolhida.</p>
+                      <img src="imgs/figura_11.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_11.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_11.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 11 – Harmonização de cores tríades<br>
+                        Fonte: Adobe Color (c2023)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading5">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                        Escolha de cores e tons
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+                    <div class="panel-body">
+                      <p>No início do conteúdo, foram mencionados alguns exemplos de coisas ou lugares que são associados às cores. Quando se vê a cor verde, normalmente se associa a “prossiga”, “correto”. Já no exemplo de uma lanchonete de logo vermelho e amarelo, facilmente vem à cabeça a empresa de lanches McDonalds. Essas situações acontecem porque suas vivências vinculam determinadas cores a determinadas situações e a determinados locais, sentimentos e pensamentos, fazendo com que isso seja uma ótima oportunidade de criar uma identidade visual de qualidade e ter uma ótima comunicação visual com o cliente. </p>
+                      <p>Sabendo disso, é possível analisar uma breve lista de significados mais comuns atribuídos às cores. Veja a seguir:</p>
+                      <div class="caixa-destaque-livre">
+                        <p><span style="color: #B73213">Vermelho</span>: audácia, energia, paixão e coragem. </p>
+                        <p><span style="color: #D3812F">Laranja</span>: diversão, calor, extroversão e inovação. </p>
+                        <p><span style="color: #EFD729">Amarelo</span>: confiança, criatividade, simpatia e otimismo. </p>
+                        <p><span style="color: #299941">Verde</span>: natureza, paz, segurança e conforto.</p>
+                        <p><span style="color: #2F36C1">Azul</span>: inteligência, calmante, sucesso e confiança. </p>
+                        <p><span style="color: #7719BA">Roxo</span>: autenticidade, luxo, riqueza e charme. </p>
+                        <p><span style="color: #C414BC">Rosa</span>: inocência, suavidade, maciez e sinceridade. </p>
+                        <p><span style="color: #845220">Marrom</span>: natureza, robustez, suporte e resistência. </p>
+                        <p><span style="color: #000">Preto</span>: elegância, poder, sofisticação e luxo. </p>
+                        <p><span style="color: #FFF; background: #000;">Branco</span>: calma, pureza, honestidade e limpeza.</p>
+                      </div>
+                      <div class="caixa-destaque-livre">
+                        <p>Para exercitar: Pense em logos conhecidos e faça uma análise das cores utilizadas. Quais são as intenções vinculadas às cores escolhidas? Você vê sentido nelas? Você gosta da combinação de cores?</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="acessivel print">
+              <h5>Harmonia de cores análogas</h5>
+              <p>A harmonização entre cores análogas diz respeito à combinação de cores que se encontram lado a lado no disco cromático. Por serem vizinhas, há baixo contraste entre elas.</p>
+              <img src="imgs/figura_8.png" class="center-block img-responsive print">
+              <p class="legenda-imagem">
+                Figura 8 – Harmonização de cores análogas<br>
+                Fonte: Adobe Color (c2023)
+              </p>
+              <p class="no-print">Um disco cromático acima com círculos internos apontando para cores em tom de laranja. Abaixo, linha com cinco células em tons de laranja.</p>
+              <h5>Harmonia de cores complementares</h5>
+              <p>Harmonia de cores complementares é a composição de duas cores opostas no disco cromático. A figura a seguir apresenta como exemplo tons alaranjados e azuis. Perceba que a harmonização complementar apresenta grandes contrastes. Para encontrar uma cor complementar a outra no disco cromático, basta verificar a que está no extremo oposto dela.</p>
+              <img src="imgs/figura_9.png" class="center-block img-responsive print">
+              <p class="legenda-imagem">
+                Figura 9 – Harmonização de cores complementares<br>
+                Fonte: Adobe Color (c2023)
+              </p>
+              <p class="no-print">Um disco cromático acima com círculos internos apontando para cores em tons de laranja e outros apontando para o lado oposto, em cores azuis. Abaixo, linha com cinco células: uma em marrom, duas em tons de laranja e marrom e duas em tons de azul.</p>
+              <p>A harmonização complementar é mais rara em <i>layouts</i> de páginas, já que o alto contraste alcançado pode gerar cansaço visual.</p>
+              <h5>Harmonia monocromática</h5>
+              <p>Harmonia monocromática é a combinação de apenas uma cor e suas variantes em tons claros e escuros. Seria o uso de uma cor e suas nuances. O interessante dessa combinação é que ela não cansa e transmite a sensação de amplitude.</p>
+              <p>No disco da figura a seguir, a matriz pêssego foi eleita como cor de partida. As diferentes nuances são alcançadas com base nas variações de brilho e saturação.</p>
+              <img src="imgs/figura_10.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="legenda-imagem">
+                Figura 10 – Harmonização de cores monocromáticas<br>
+                Fonte: Adobe Color (c2023)
+              </p>
+              <p class="no-print">Um disco cromático acima com círculos internos apontando para cores em tons de laranja e outros apontando mais para o centro do círculo. Abaixo, linha com cinco células: uma em marrom, duas em tons de laranja e marrom e duas em tons de marrom.</p>
+              <h5>Harmonia tríade</h5>
+              <p>É a combinação entre as cores que estão equidistantes 120° no disco cromático, formando um triângulo. Pela harmonia tríade entre os tons rosados, verdes e amarelos da figura a seguir, surge a paleta de cores escolhida.</p>
+              <img src="imgs/figura_11.png" class="center-block img-responsive print">
+              <p class="legenda-imagem">
+                Figura 11 – Harmonização de cores tríades<br>
+                Fonte: Adobe Color (c2023)
+              </p>
+              <p class="no-print">um disco cromático acima com círculos internos apontando para cores em tons de laranja, outras em tons de roxo e outras em tons de verde. Cada círculo está ligado ao centro do círculo cromático por linhas. Percebe-se ângulo de 120° entre essas linhas. Abaixo, linha com cinco células: uma em verde, uma roxa, outra em verde-claro e as duas últimas em tons de marrom.</p>
+              <h5>Escolha de cores e tons</h5>
+              <p>No início do conteúdo, foram mencionados alguns exemplos de coisas ou lugares que são associados às cores. Quando se vê a cor verde, normalmente se associa a “prossiga”, “correto”. Já no exemplo de uma lanchonete de logo vermelho e amarelo, facilmente vem à cabeça a empresa de lanches McDonalds. Essas situações acontecem porque suas vivências vinculam determinadas cores a determinadas situações e a determinados locais, sentimentos e pensamentos, fazendo com que isso seja uma ótima oportunidade de criar uma identidade visual de qualidade e ter uma ótima comunicação visual com o cliente. </p>
+              <p>Sabendo disso, é possível analisar uma breve lista de significados mais comuns atribuídos às cores. Veja a seguir:</p>
+              <div class="caixa-destaque-livre">
+                <p><span style="color: #B73213">Vermelho</span>: audácia, energia, paixão e coragem. </p>
+                <p><span style="color: #D3812F">Laranja</span>: diversão, calor, extroversão e inovação. </p>
+                <p><span style="color: #EFD729">Amarelo</span>: confiança, criatividade, simpatia e otimismo. </p>
+                <p><span style="color: #299941">Verde</span>: natureza, paz, segurança e conforto.</p>
+                <p><span style="color: #2F36C1">Azul</span>: inteligência, calmante, sucesso e confiança. </p>
+                <p><span style="color: #7719BA">Roxo</span>: autenticidade, luxo, riqueza e charme. </p>
+                <p><span style="color: #C414BC">Rosa</span>: inocência, suavidade, maciez e sinceridade. </p>
+                <p><span style="color: #845220">Marrom</span>: natureza, robustez, suporte e resistência. </p>
+                <p><span style="color: #000">Preto</span>: elegância, poder, sofisticação e luxo. </p>
+                <p><span style="color: #FFF; background: #000;">Branco</span>: calma, pureza, honestidade e limpeza.</p>
+              </div>
+              <div class="caixa-destaque-livre">
+                <p>Para exercitar: Pense em logos conhecidos e faça uma análise das cores utilizadas. Quais são as intenções vinculadas às cores escolhidas? Você vê sentido nelas? Você gosta da combinação de cores?</p>
+              </div>
+            </div>
+
+            <h4>Dicas gerais sobre utilização de cores</h4>
+            <p>Agora, você já conhece as principais características das cores do sistema RGB e as principais harmonizações. Utilize a teoria das cores a seu favor. Teste sempre as combinações em <i>wireframes</i> simples para verificar como o conjunto funciona. </p>
+            <p>Uma ótima ferramenta para começar a criar harmonizações é oferecida pelo Adobe Color (para acessar, digite “Adobe Color” em seu buscador). Nele, é possível manipular um disco cromático e eleger uma cor de partida ou extrair essa cor de uma imagem e testar as diversas harmonizações apresentadas aqui. A ideia é experimentar até chegar a uma boa cartela de cores, elemento fundamental na criação de <i>layouts</i>.</p>
+            <p>Outro <i>site</i> interessante para realizar testes é o Muzli Colors (para acessar, digite “Muzli Colors” em seu buscador). Com ele, você pode selecionar uma cor e automaticamente serão sugeridas diferentes paletas com base nos padrões de harmonização e também combinações padrões para inspiração. </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <img src="imgs/figura_12.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                <a href="imgs/figura_12.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_12.png" class="center-block img-responsive"></a>
+                <p class="legenda-imagem">
+                  Figura 12 – Página inicial do Adobe Color<br>
+                  Fonte: Adobe Color (c2023)
+                </p>
+                <p class="acessivel no-print">Página do Adobe Color com logo e links no topo. Na esquerda, opções para clicar. No centro, roda cromática, com uma lista de cinco células coloridas abaixo.</p>
+              </div>
+              <div class="col-lg-6">
+                <img src="imgs/figura_13.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                <a href="imgs/figura_13.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_13.png" class="center-block img-responsive"></a>
+                <p class="legenda-imagem">
+                  Figura 13 – Página do Muzli Colors (ao clicar em uma célula colorida, paletas são sugeridas)<br>
+                  Fonte: Muzli Colors ([s. d.])
+                </p>
+                <p class="acessivel no-print">Página com logo no topo, caixa de pesquisa e botões de login. No corpo da página, título “Color Palette Generator”. Abaixo, caixa de busca de nome de cor. Mais abaixo, uma grade com células coloridas, iniciando com tons de amarelo, passando por verde, laranja e vermelho.</p>
+              </div>
+            </div>
+            <p>Em <i>layouts</i> para a Internet, a dica é eleger uma das cores como a preponderante, trabalhando com outras duas de modo mais pontual.</p>
+          </div>
+          <div class="parallax" data-parallax="scroll" data-image-src="imgs/paralaxe_2_tipografia.png"></div>
+          <div class="container">
+            <h3>Tipografia para <i>web</i></h3>
+            <p>A tipografia é a arte e o processo de desenvolvimento da composição de um texto, seja este de forma física (impressa ou escrita), seja digitalmente. Visa definir padrões estruturais e formas para comunicação escrita que sejam atrativas e agradáveis ao leitor. Para projetos de interfaces, é preciso sempre escolher fontes levando em consideração clareza e legibilidade.</p>
+            <p>As fontes são comumente agrupadas nas classificações mencionadas a seguir.</p>
+            <div class="no-print" aria-hidden="true">
+              <p>Clique ou toque para visualizar o conteúdo.</p>
+              <div class="panel-group" id="accordion2" role="tablist" aria-multiselectable="true">
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading6">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                        <i>Serif</i>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse6" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading6">
+                    <div class="panel-body">
+                      <p>As fontes com serifa (serifadas ou <i>serif</i>) são as que apresentam alongamentos e pequenos traços na estruturação das letras.</p>
+                      <img src="imgs/figura_14.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_14.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_14.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 14 – Fonte Times New Roman<br>
+                        Fonte: Senac EAD (2023)
+                      </p>
+                      <p>As fontes serifadas são utilizadas com uma grande frequência para escritas que envolvam textos longos, pois, em razão dos tracejados existentes na fonte, as palavras são lidas com fluidez e união, de forma a promover maior conforto aos olhos durante longas leituras. É possível encontrar essa fonte frequentemente em livros, jornais e revistas. Alguns exemplos de fonte serifadas são: Times New Roman, Georgia, Roboto Serif, entre outras.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading7">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                        <i>Sans serif</i>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
+                    <div class="panel-body">
+                      <p>As fontes com serifa (serifadas ou <i>serif</i>) são as que apresentam alongamentos e pequenos traços na estruturação das letras.</p>
+                      <img src="imgs/figura_15.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_15.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_15.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 15 – Fonte Arial<br>
+                        Fonte: Senac EAD (2023)
+                      </p>
+                      <p>Por ser uma fonte bastante objetiva e de clara leitura, ela costuma ser utilizada principalmente para textos curtos.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading8">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                        <i>Script</i>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
+                    <div class="panel-body">
+                      <p>A tipografia <i>script</i> (cursiva ou manuscrita) é um estilo de fonte que simula a escrita à mão. Por isso, estas normalmente são as fontes que apresentam elegância e suavidade. Aparecem frequentemente em convites de formatura, casamento e títulos de produtos e <i>sites</i> que representem luxo, classe ou delicadeza. Deve-se evitar esse tipo de fonte para a elaboração de textos, pois torna a leitura mais cansativa em razão da sua complexidade visual.</p>
+                      <img src="imgs/figura_16.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_16.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_16.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 16 – Fonte Euphoria Script<br>
+                        Fonte: Senac EAD (2023)
+                      </p>
+                      <p>Alguns exemplos dessa fonte são: Pacifico, Waterfall, Lobster etc.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="panel-heading" role="tab" id="heading9">
+                    <h4 class="panel-title">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                        <i>Display</i>
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapse9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9">
+                    <div class="panel-body">
+                      <p>A tipografia de classificação <i>display</i> consiste em fontes de letras mais artísticas e estilizadas, as quais não podem ser classificadas em nenhum dos exemplos apresentados anteriormente. Nessa estrutura, as letras têm uma decoração diferenciada, podendo conter até mesmo símbolos.</p>
+                      <img src="imgs/figura_17.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_17.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_17.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 17 – Fonte Press Start 2P<br>
+                        Fonte: Senac EAD (2023)
+                      </p>
+                      <p>Pode ser utilizada como forma representativa de uma marca ou empresa, normalmente vinculada a temas mais lúdicos e recreativos, embora também existam fontes um pouco menos estilizadas nessa categoria. Alguns exemplos dessa fonte são: Acma, Tilt Prism, Rampart One, Comfortaa etc.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="acessivel print">
+              <h5><i>Serif</i></h5>
+              <p>As fontes com serifa (serifadas ou <i>serif</i>) são as que apresentam alongamentos e pequenos traços na estruturação das letras.</p>
+              <img src="imgs/figura_14.png" class="center-block img-responsive print">
+              <p class="legenda-imagem">
+                Figura 14 – Fonte Times New Roman<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="no-print">Fonte Times New Roman com destaque circular nos tracejados nas letras T (maiúscula), i (minúscula), s (minúscula), N (maiúscula), w (minúscula), R (maiúscula) e n (minúscula).</p>
+              <p>As fontes serifadas são utilizadas com uma grande frequência para escritas que envolvam textos longos, pois, em razão dos tracejados existentes na fonte, as palavras são lidas com fluidez e união, de forma a promover maior conforto aos olhos durante longas leituras. É possível encontrar essa fonte frequentemente em livros, jornais e revistas. Alguns exemplos de fonte serifadas são: Times New Roman, Georgia, Roboto Serif, entre outras.</p>
+              <h5><i>Sans serif</i></h5>
+              <p>As fontes com serifa (serifadas ou <i>serif</i>) são as que apresentam alongamentos e pequenos traços na estruturação das letras.</p>
+              <img src="imgs/figura_15.png" class="center-block img-responsive print">
+              <p class="legenda-imagem">
+                Figura 15 – Fonte Arial<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="no-print">Fonte Arial com destaque circular nas letras A (maiúscula), i (minúscula), a (maiúscula) e l (minúscula), representando onde haveria tracejados caso a fonte fosse serifada.</p>
+              <p>Por ser uma fonte bastante objetiva e de clara leitura, ela costuma ser utilizada principalmente para textos curtos.</p>
+              <h5><i>Script</i></h5>
+              <p>A tipografia <i>script</i> (cursiva ou manuscrita) é um estilo de fonte que simula a escrita à mão. Por isso, estas normalmente são as fontes que apresentam elegância e suavidade. Aparecem frequentemente em convites de formatura, casamento e títulos de produtos e <i>sites</i> que representem luxo, classe ou delicadeza. Deve-se evitar esse tipo de fonte para a elaboração de textos, pois torna a leitura mais cansativa em razão da sua complexidade visual.</p>
+              <img src="imgs/figura_16.png" class="center-block img-responsive print">
+              <p class="legenda-imagem">
+                Figura 16 – Fonte Euphoria Script<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="no-print">Texto Euphoria Script com fonte estilizada como se fosse escrita à mão.</p>
+              <p>Alguns exemplos dessa fonte são: Pacifico, Waterfall, Lobster etc.</p>
+              <h5><i>Display</i></h5>
+              <p>A tipografia de classificação <i>display</i> consiste em fontes de letras mais artísticas e estilizadas, as quais não podem ser classificadas em nenhum dos exemplos apresentados anteriormente. Nessa estrutura, as letras têm uma decoração diferenciada, podendo conter até mesmo símbolos.</p>
+              <img src="imgs/figura_17.png" class="center-block img-responsive print">
+              <p class="legenda-imagem">
+                Figura 17 – Fonte Press Start 2P<br>
+                Fonte: Senac EAD (2023)
+              </p>
+              <p class="no-print">Texto “Press Start 2P” com fonte estilizada “pixelada”.</p>
+              <p>Pode ser utilizada como forma representativa de uma marca ou empresa, normalmente vinculada a temas mais lúdicos e recreativos, embora também existam fontes um pouco menos estilizadas nessa categoria. Alguns exemplos dessa fonte são: Acma, Tilt Prism, Rampart One, Comfortaa etc.</p>
+            </div>
+
+            <h4>Dicas gerais sobre tipografia</h4>
+            <div class="info1">
+              <img src="imgs/img_infografico.png" class="no-print" aria-hidden="true">
+              <ul class="checklist">
+                <li>Utilize o tamanho ideal para as suas fontes. Quando você desejar dar destaque, como em termos específicos ou títulos, use uma fonte maior. </li>
+                <li>Pesquise a fonte adequada com atenção! A fonte Press Start 2P, por exemplo, seria mais adequada em um <i>site</i> com temática de jogos do que em um <i>site</i> de medicina.</li>
+                <li>Evite utilizar muitas fontes diferentes em sua página <i>web</i>. Vários tipos de fonte diferentes podem poluir visualmente o seu <i>site</i>. Busque uma fonte para títulos e outra para o texto. Caso seja necessário, inclua somente mais uma fonte para variações.</li>
+                <li>Combine as cores da sua fonte com o <i>layout</i>.</li>
+              </ul>
+            </div>
+            <p>Muitos <i>designers</i> dedicam-se a criar fontes e disponibilizam-nas na Internet, proporcionando interessantes galerias de fontes. Veja, a seguir, algumas dessas galerias gratuitas:</p>
+            <div class="info2" aria-hidden="true">
+              <img src="imgs/bt_fonts_font.png">
+              <img src="imgs/bt_fonts_monotype.png">
+              <img src="imgs/bt_fonts_veer.png">
+              <img src="imgs/bt_fonts_myfonts.png">
+              <img src="imgs/bt_fonts_adobe.png">
+              <img src="imgs/bt_fonts_google.png">
+            </div>
+            <div class="only-print">
+              <p>Fontshop – http://fontshop.com/</p>
+              <p>Monotype – http://fonts.com</p>
+              <p>Veer – http://veer.com/products/fonts/</p>
+              <p>Myfonts – http://myfonts.com/</p>
+              <p>Adobe Fonts – http://adobe.com/types</p>
+              <p>Google Fonts – https://fonts.google.com/</p>
+            </div>
+            <p>Para buscar mais fontes gratuitas, basta pesquisar em seu buscador por “fontes gratuito <i>download</i>” e você encontrará vários <i>sites</i> que podem ajudar. Seja sempre cauteloso em suas buscas para não realizar o <i>download</i> de nenhum arquivo prejudicial para o seu computador. Verifique sempre a integridade dos <i>sites</i> que estiver acessando.</p>
+          </div>
+          <div class="parallax" data-parallax="scroll" data-image-src="imgs/paralaxe_3_bitmap.png"></div>
+          <div class="container">
+            <h3><i>Bitmap</i> e imagens vetoriais</h3>
+            <p>No desenvolvimento e na organização dos elementos visuais de uma aplicação <i>web</i>, é possível optar por <i>bitmaps</i> ou por imagens vetoriais. As imagens em <i>bitmap</i> são as mais comuns na <i>web</i>. Elas são compostas de <i>pixels</i> coloridos (<i>pixel</i> é a menor unidade de uma imagem digital). As imagens formadas por <i>bitmaps</i> são comuns em fotografias digitais, em que há transições sutis de cores. Milhares de <i>pixels</i> coloridos podem ocorrer na formação de imagens. Pode-se dizer que quanto mais <i>pixels</i> houver em uma imagem, maior será a resolução dela.</p>
+            <p>Os arquivos <i>bitmaps</i> são formados <i>pixel</i> a <i>pixel</i>; portanto, se tiverem o seu tamanho aumentado, sofrem distorções consideráveis. Cada ponto é transformado em blocos maiores, preenchidos por mais <i>pixels</i> de cores intermediárias, o que consequentemente deixa a imagem deformada. </p>
+            <p>O que define, portanto, a resolução de uma imagem <i>bitmap</i> é a quantidade de <i>pixels</i> por polegada (ppp). Veja, na figura a seguir, uma mesma imagem com diferentes resoluções.</p>
+            <img src="imgs/figura_18.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_18.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_18.png" class="center-block img-responsive"></a>
+            <p class="legenda-imagem">
+              Figura 18 – Representação de qualidade de imagens com base em <i>pixels</i> por polegada<br>
+              Fonte: RicKardo ([s. d.])
+            </p>
+            <p class="acessivel no-print">Seis imagens de um “capricórnio”. A imagem superior esquerda está em 300 ppp e é a que tem melhor resolução; à sua direita, imagens com 200 e 100 ppp, que já aparentam mais pixeladas. Abaixo à esquerda, a imagem em 72 ppp, seguida de 40 ppp e 20 ppp, esta última pixelada e manchada, de baixa qualidade.</p>
+            <p>Vale mencionar alguns exemplos de imagens em <i>bitmaps</i> de acordo com suas extensões. Veja na sequência:</p>
+            <div class="table-responsive">
+              <table class="senac">
+                <tbody>
+                  <tr>
+                    <td>JPG/JPEG</td>
+                    <td>JPG e JPEG (<i>joint photographic experts group</i>) suportam 16 <i>bits</i> e 24 <i>bits</i> (aproximadamente 16,7 milhões de cores). Seu uso é indicado para imagens que precisam de tons contínuos, como fotografias. A extensão JPG é a mais popular, sendo gerada por celulares e câmeras digitais, além de ser o padrão de fotografias para as redes sociais.</td>
+                    <td>
+                      <img src="imgs/figura_19.jpg" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_19.jpg" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_19.jpg" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 19 – JPG de alta qualidade<br>
+                        Fonte: We Do Logos (2019)
+                      </p>
+                      <p class="acessivel no-print">Foto de uma flor em alta qualidade, representando foto JPG.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>GIF</td>
+                    <td>GIF (<i>graphics interchange format</i>) suporta até 8 bits (256 cores). Seu uso é recomendado para imagens gráficas com poucas cores. Os arquivos GIF também permitem combinar imagens ou quadros, criando animações básicas. Este é seu uso mais comum atualmente.</td>
+                    <td>
+                      <img src="imgs/figura_20.gif" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_20.gif" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_20.gif" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 20 – GIF animado<br>
+                        Fonte: Wikimedia Commons (2023c)
+                      </p>
+                      <p class="acessivel no-print">Animação do planeta Terra girando.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>PNG</td>
+                    <td>PNG (<i>portable network graphics</i>) suporta entre 256 e 16,7 milhões de cores, além de canal de transparência (canal alfa). Sucessor do GIF, pode-se dizer que o PNG é o formato ideal para a Internet, aparecendo em logomarcas com transparências e animações.</td>
+                    <td>
+                      <img src="imgs/figura_21.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_21.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_21.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 21 – Imagem em PNG<br>
+                        Fonte: Wikimedia Commons (2023b)
+                      </p>
+                      <p class="acessivel no-print">Três dados coloridos em fundo transparente.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>TIF/TIFF</td>
+                    <td>TIF/TIFF (<i>tagged image file format</i>) proporciona imagens sem nenhuma perda na resolução. Trabalha com 32 <i>bits</i> (24 <i>bits</i> de cores e escala de cinza com 8 <i>bits</i>) e canal alfa. Por ter uma baixa compressão, ou quase nenhuma, a imagem não perde em detalhes, como o JPG, porém os arquivos são bem maiores e mais pesados. É o formato ideal para imprimir imagens.</td>
+                    <td>
+                      <img src="imgs/figura_22.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_22.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_22.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 22 – Imagem TIF/TIFF<br>
+                        Fonte: Wikimedia Commons (2023a)
+                      </p>
+                      <p class="acessivel no-print">Imagem de navio representando o estilo de imagem TIF/TIFF.</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>WebP</td>
+                    <td>WebP é um formato criado pela Google, sendo um formato de imagem moderno que oferece compactação superior com e sem perda para imagens na <i>web</i>. Com ele, é possível criar imagens menores, mais detalhadas e que tornam a navegação mais rápida nos <i>sites</i>.</td>
+                    <td>
+                      <img src="imgs/figura_23.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                      <a href="imgs/figura_23.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_23.png" class="center-block img-responsive"></a>
+                      <p class="legenda-imagem">
+                        Figura 23 – Imagem WebP<br>
+                        Fonte: Stack Overflow (2021)
+                      </p>
+                      <p class="acessivel no-print">Imagem de cenário representando tipo de imagem WebP.</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="legenda-imagem">
+              Tabela 2 – Imagens em <i>bitmaps</i> de acordo com suas extensões<br>
+              Fonte: Senac EAD (2023)
+            </p>
+
+            <h4>Imagem vetorial</h4>
+            <p>As imagens vetoriais são formadas por contornos e formas geométricas que combinam segmentos de linhas e pontos, criando formas sobre o plano bidimensional. O desenho em vetores pode ser feito à mão livre com uma mesa digitalizadora ou com o uso do <i>mouse</i>.</p>
+            <img src="imgs/figura_24.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_24.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_24.png" class="center-block img-responsive"></a>
+            <p class="legenda-imagem">
+              Figura 24 – Comparação entre rasterização (<i>bitmaps</i>), à esquerda, e vetorização, à direita<br>
+              Fonte: adaptado de Wikipedia (2022)
+            </p>
+            <p class="acessivel no-print">À esquerda, uma pequena letra S aumentada: o S fica cheio de pixels. À direita, a letra S aumentada mostra um S grande sem pixels e com linhas perfeitas.</p>
+            <p>As imagens vetoriais são mais recorrentes em elementos de identidade visual, como a criação de um logotipo. Também são muito utilizadas em ilustrações, <i>motion design</i>, animações etc.</p>
+            <p>A escolha pela criação de imagens vetoriais envolve a necessidade de reproduzi-las em várias peças de formatos diferentes. Além disso, a grande vantagem no uso de imagens vetoriais é a possibilidade de aumentá-las ou reduzi-las sem perder a resolução. Diferentemente das imagens em <i>bitmap</i>, as imagens vetoriais aparecem sem o serrilhado dos <i>pixels</i>, tanto em 100% quanto em 800% de ampliação. </p>
+            <p>Um exemplo de uso é um cliente que solicita a colocação do logotipo da empresa no <i>site</i> mas só dispõe de uma imagem de pouca resolução. O ideal nesse caso é montar uma imagem vetorial baseada na original. <i>Softwares</i> de edição de imagem como Corel Draw e Illustrator contam com ferramentas de vetorização (Power Trace no primeiro e Live Trace no segundo).</p>
+            <img src="imgs/figura_25.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/figura_25.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_25.png" class="center-block img-responsive"></a>
+            <p class="legenda-imagem">
+              Figura 25 – Transformando <i>bitmap</i> em vetor usando <i>software</i> de edição de imagem<br>
+              Fonte: adaptado de Vector Magic ([s. d.])
+            </p>
+            <p class="acessivel no-print">À esquerda uma imagem de um tornado amarelo em desenho contornado de azul. À sua direita, um detalhe do contorno exibindo vários pixels. À direita a versão vetorizada, com linhas contínuas.</p>
+            <p>As figuras compostas de vetores têm como facilidades o armazenamento dos elementos, a fácil manipulação e a simplificação de alterações. O tamanho das imagens, que podem ser muito grandes, é uma possível desvantagem.</p>
+            <p><strong>Busca em bancos de imagens</strong></p>
+            <p>Em <i>web design</i>, imagens relevantes são essenciais para acrescentar interesse ao <i>layout</i> e realçar o conteúdo. A recomendação para chegar ao conceito que se deseja é produzir a própria fotografia, embora seja evidente que isso demanda ter bons equipamentos e também ser um bom fotógrafo. Quando isso não é possível, pode-se recorrer aos bancos de imagens disponíveis na Internet, nos quais é possível encontrar fotografias e até mesmo imagens vetorizadas, criadas para uso geral. </p>
+            <p>Alguns bancos contêm imagens gratuitas e outras com taxa de licenciamento. É importante observar a licença de uso da imagem – se ela é livre para uso e modificação (licença Creative Commons, por exemplo) ou se está protegida, sendo exigidos pagamentos de <i>royalties</i> pelo uso. </p>
+            <p>É importante discutir também o que não se deve fazer. Pode parecer tentador buscar imagens no Google, tratá-las em um editor de imagem e realizar modificações. No entanto, essa prática não é correta. A menos que as imagens estejam especificamente identificadas como gratuitas para uso ou disponíveis ao domínio público, é necessário pedir a autorização do proprietário do <i>site</i> que detém os direitos autorais.</p>
+            <p>Veja, a seguir, alguns <i>sites</i> que têm uma ampla gama de imagens disponíveis para uso:</p>
+            <div class="info2" aria-hidden="true">
+              <img src="imgs/bt_imgs_unsplash.png">
+              <img src="imgs/bt_imgs_freeimages.png">
+              <img src="imgs/bt_imgs_pixa.png">
+              <img src="imgs/bt_imgs_freepik.png">
+              <img src="imgs/bt_imgs_freeicons.png">
+              <img src="imgs/bt_imgs_flaticon.png">
+              <img src="imgs/bt_imgs_icons8.png">
+            </div>
+            <div class="only-print">
+              <p>https://unsplash.com/pt-br</p>
+              <p>https://www.freeimages.com/</p>
+              <p>https://pixabay.com/pt/</p>
+              <p>https://br.freepik.com/</p>
+              <p>https://freeicons.io/</p>
+              <p>https://www.flaticon.com/br/</p>
+              <p>https://icons8.com.br/</p>
+            </div>
+            <p>Utilize como recurso o uso de imagens e ilustrações sempre que possível, pois elas tendem a trazer mais vivacidade à composição. Delegue a utilização das cores para <i>menus</i>, botões e títulos no seu projeto.</p>
+          </div>
+          <div class="parallax" data-parallax="scroll" data-image-src="imgs/paralaxe_4_encerramento.png"></div>
+          <div class="container">
+            <h3>Encerramento</h3>
+            <p class="icone-concluindo">Caro aluno, o conteúdo aqui apresentado vai auxiliar você a desenvolver uma identidade visual para o seu <i>site</i>. Faça sempre uma análise dos conceitos que seu cliente deseja apresentar e do que pode atrair mais o público-alvo, para escolher adequadamente um esquema de cores e uma tipografia e utilizar adequadamente as imagens. Não se esqueça: você pode até desenvolver perfeitamente as funcionalidades de uma página, porém o usuário também precisa ser atraído visualmente!</p>
+          </div>
+
+        </section>
+<!-- - - - - - - - - - - - - - - - não alterar abaixo- - - - - - - - - - - - -->
+        <footer class="text-center no-print">
+          
+          <ul class="pagination">
+
+          </ul>
+         
+        </footer>
+
+    </div>
+
+    <!--  Em caso de footer personalizado utilizar esse elemento e adicionar a classe customizada
+    <footer>
+    </footer>
+	-->
+<!-- carrega todas as imagens dos icones nesta div
+ caso queira adicionar mais imagens de novos icones do css,
+ ou qualquer imagem que deva ser contabilizada durante a fase
+ de loading, referenciar aqui.
+ -->
+<div class="ico-div-loader">
+	<img src="../template/images/atencao.png">
+    <img src="../template/images/bg-content.jpg">
+    <img src="../template/images/bg-topo.jpg">
+    <img src="../template/images/black-zoom-in-256.png">
+    <img src="../template/images/concluindo.png">
+    <img src="../template/images/curtir.png">
+    <img src="../template/images/desafio.png">
+    <img src="../template/images/dica.png">
+    <img src="../template/images/doc.png">
+    <img src="../template/images/fundamental.png">
+    <img src="../template/images/icon-03.png">
+    <img src="../template/images/importante.png">
+    <img src="../template/images/lightbulb.png">
+    <img src="../template/images/link.png">
+    <img src="../template/images/link_pdf_hover.png">
+    <img src="../template/images/link_pdf_normal.png">
+    <img src="../template/images/logo-senac.png">
+    <img src="../template/images/mark-icon.png">
+    <img src="../template/images/mark-icon02.png">
+    <img src="../template/images/midia.png">
+    <img src="../template/images/monitor.png">
+    <img src="../template/images/nao_curtir.png">
+    <img src="../template/images/pergunta.png">
+    <img src="../template/images/pesquisa.png">
+    <img src="../template/images/play.png">
+    <img src="../template/images/radio_flat.png">
+    <img src="../template/images/refletir.png">
+    <img src="../template/images/saiba_mais.png">
+    <img src="../template/images/senac_loader.png">
+    <img src="../template/images/tanamidia.png">
+    <img src="../template/images/transcricao.png">
+    <img src="../template/images/transcricao_small.png">
+    <img src="../template/images/tv.png">
+    <img src="../template/images/tv_bottom.png">
+    <img src="../template/images/zoom.png">
+    <img src="../template/images/zoom_ie.cur">
+    <img src="../template/images/zoom_ie.png">
+    <!-- adicionar as imagens customizadas aqui abaixo -->
+  </div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../template/js/jquery.min.js"></script>
+    <script src="../template/js/bootstrap.min.js"></script>
+    <script src="../template/js/jquery.magnific-popup.min.js"></script>
+    <script src="../template/js/print.js"></script>
+    <script src="../template/js/template.config.js"></script>
+    <script src="../template/js/images.loader.js"></script>
+    <script src="../template/js/highlight.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <noscript>
+      <style media="screen">
+        .over-loader { display: none;}    
+      </style>
+    </noscript>
+  <script>
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelectorAll('pre code').forEach((el) => {
+        hljs.highlightElement(el);
+      });
+    });
+    //inicializa zoom na imagem
+    $('.zoom-imagem').magnificPopup({
+     type: 'image',
+       mainClass: 'mfp-with-zoom', // this class is for CSS animation below
+      zoom: {
+      enabled: true, // By default it's false, so don't forget to enable it
+  
+      duration: 300, // duration of the effect, in milliseconds
+      easing: 'ease-in-out', // CSS transition easing function
+  
+      // The "opener" function should return the element from which popup will be zoomed in
+      // and to which popup will be scaled down
+      // By defailt it looks for an image tag:
+      opener: function(openerElement) {
+        // openerElement is the element on which popup was initialized, in this case its <a> tag
+        // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+        return openerElement.is('img') ? openerElement : openerElement.find('img');
+      }
+      },
+       image: {
+        markup: '<div class="mfp-figure">'+
+            '<div class="mfp-close"></div>'+
+            '<div class="mfp-img"></div>'+ // Floated left
+            '<div class="mfp-bottom-bar">'+'<figcaption>'+'<div class="mfp-title" style="text-align:center"></div>'+
+              '<div class="mfp-counter"></div>'+'</figcaption>'+
+            '</div>'+
+            '</div>', // Popup HTML markup. `.mfp-img` div will be replaced with img tag, `.mfp-close` by close button
+  
+        cursor: 'mfp-zoom-out-cur', // Class that adds zoom cursor, will be added to body. Set to null to disable zoom out cursor.
+  
+        tError: '<a href="%url%">A imagem</a> não pode ser carregada.' // Error message
+       }
+    });
+  
+    //inicializa popover
+    $(function () {
+      $('[data-toggle="popover"]').popover()
+    })
+    //inicializa tooltip
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  
+  
+    /*------- Script de animação do botão -------*/
+    var root = document.documentElement;
+    root.className += ' js';
+  
+    function boxTop(idBox) {
+      var boxOffset = $(idBox).offset().top;
+      return boxOffset;
+    }
+  
+    $(document).ready(function() {
+      var $target = $('.animeStart'),
+          $target2 = $('.animeStop'),
+          targetBox = $('.box'),
+          animationClass = 'anime-init',
+          windowHeight = $(window).height(),
+          offset = windowHeight - (windowHeight / 4);
+  
+      function animeScroll() {
+        var documentTop = $(document).scrollTop();
+        $target.each(function() {
+          if (documentTop > boxTop(this) - offset) {
+            targetBox.addClass(animationClass);
+          } else {
+            targetBox.removeClass(animationClass);
+          }
+          if (documentTop > boxTop($target2) - offset) {
+            targetBox.removeClass(animationClass);
+          } 
+        });
+      }
+      animeScroll();
+  
+      $(document).scroll(function() {
+        animeScroll();
+      });
+    });
+  
+  
+  </script>
+  
+  <script>
+    var scriptElem=document.createElement("script");
+    scriptElem.src="https://plugin.handtalk.me/web/latest/handtalk.min.js",
+    scriptElem.charset="UTF-8",
+    scriptElem.onload=function(){
+          window.ht = new HT({
+              token:"bf5b7efb148a829a126a0e0c9fd533bf",
+              align:"top",
+              videoEnabled: true,
+              ytEmbedReplace: true,           
+              mobileConfig:{align:"right",
+                            actionsAlign:"top",
+                            customButtonStyle:{
+                                  borderRadius:"6px",
+                                  size:"38px",
+                                  horizontalMargin:"13px",
+                                  bottomMargin:"140px",
+                                  rightMargin:"40px"}
+                            }
+            });        
+        $('.ht-skip').attr("aria-hidden","true")
+      },
+    document.body.appendChild(scriptElem);
+  </script>
+  </body>
+</html>
