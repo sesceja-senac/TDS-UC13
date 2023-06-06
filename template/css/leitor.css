@@ -328,6 +328,7 @@ td pre {
   max-width: 300px;
 }
 
-.legenda-imagem{
-  font-size: 6pt;
+.textolegenda{
+  font-size: 10pt!important;
+  text-align: center!important;
 }

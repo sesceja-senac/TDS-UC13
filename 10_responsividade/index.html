@@ -123,8 +123,10 @@
             <p>Observou-se, ainda, que a responsividade não deve se limitar a alterar <i>layouts</i> de acordo com o tamanho das telas, mas, sim, inverter o pensamento corrente de desenhar um <i>site</i> pensando primeiro nas dimensões de uma tela de <i>desktop</i> para depois reescalar para telas menores. Ao invés disso, a ideia seria pensar primeiro nas menores telas para progressivamente evoluir para as telas maiores – hoje esse conceito é conhecido como <i><strong>mobile first</strong></i> (mobile primeiro).</p>
             <div class="caixa-destaque-livre borda-primaria-03 mt-40"> 
               <p>Responsividade é, portanto, uma técnica de montagem de páginas usando HTML e CSS em que o <i>site</i> se adapta ao navegador e ao tamanho de tela utilizados sem precisar definir diversos <i>layouts</i> e diversos códigos HTML e CSS para cada tamanho específico.</p>
-              <img src="../10_responsividade/imgs/01.png" class="img-responsive center-block mt-40 imprime-menor">
-                <p class="legenda-imagem">
+              <img src="imgs/01.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <a href="imgs/01.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/01.png" class="center-block img-responsive"></a>
+                <p class="textolegenda text-center">
                   Figura 1 – <i>Site</i> não responsivo <i>versus site</i> responsivo em telas de <i>smartphone</i> <br>
                   Fonte: PT Legal ([s. d.])
                 </p>
@@ -138,64 +140,76 @@
               <li>As imagens precisam ser otimizadas e redimensionadas quando necessário, tanto para adaptação à tela quanto para economia de dados de Internet.</li>
               <li>Botões, <i>links</i> e <i>menus</i> precisam ser adaptados para que possam ser utilizados com toque, além de <i>mouse</i>.</li>
             </ul>
+            <div class="dsktp">
             <div class="row no-print">
             <div class="col-lg-4 col-sm-4 col-xs-4">
-              <img src="../10_responsividade/imgs/02a.png" class="img-responsive center-block mt-20" aria-hidden="true">
+            <img src="imgs/02a.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+            <a href="imgs/02a.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/02a.png" class="center-block img-responsive bordaimagem"></a>
             </div>
             <div class="col-lg-2 col-sm-2 col-xs-2">
-              <img src="../10_responsividade/imgs/02b.png" class="img-responsive center-block mt-20" aria-hidden="true">
+              <img src="../10_responsividade/imgs/02b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
             </div>
             <div class="col-lg-4 col-sm-4 col-xs-4">
-              <img src="../10_responsividade/imgs/03a.png" class="img-responsive center-block mt-20" aria-hidden="true">
+              <img src="../10_responsividade/imgs/03a.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
             </div>
             <div class="col-lg-2 col-sm-2 col-xs-2">
-              <img src="../10_responsividade/imgs/03b.png" class="img-responsive center-block mt-20" aria-hidden="true">
+              <img src="../10_responsividade/imgs/03b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
             </div>
           </div>
 
           <div class="row">
             <div class="legenda-imagem col-lg-6 col-sm-6 col-xs-6 no-print">
-              <p>Figura 2 – O <i>site</i> do Senac EAD é responsivo: à esquerda em um <i>desktop</i> e à direita em uma tela de <i>smartphone</i> <br>
+              <p class="textolegenda text-center">Figura 2 – O <i>site</i> do Senac EAD é responsivo: à esquerda em um <i>desktop</i> e à direita em uma tela de <i>smartphone</i> <br>
                 Fonte: adaptado de Senac EAD (c2018)
               </p>
               <p class="acessivel no-print">Site do Senac EAD à esquerda mostrado em versão desktop: no topo logo e ícones, abaixo, um menu com links, abaixo um carrossel com imagens grandes e abaixo uma grade de cursos em destaque (mostrando 4 cursos lado a lado). À direita, a versão mobile do site: no topo o logo e um ícone para mostrar menu de links, abaixo um carrossel com imagem à largura da tela e abaixo cursos em destaque mostrando apenas um curso (os outros cursos vem abaixo desse).</p>
             </div>
             <div class="legenda-imagem col-lg-6 col-sm-6 col-xs-6 no-print">
-              <p>Figura 3 – <i>Site</i> não responsivo: à direita em <i>desktop</i> e à esquerda em <i>mobile</i> <br>
+              <p class="textolegenda text-center">Figura 3 – <i>Site</i> não responsivo: à direita em <i>desktop</i> e à esquerda em <i>mobile</i> <br>
                 Fonte: Deque University (c2015)
               </p>
               <p class="acessivel no-print">À direita, site em tela desktop mostra um título “Deque University”, uma lista de links na horizontal abaixo, abaixo um título de texto e mais abaixo um texto com uma figura à esquerda e uma lista de tópicos à direita. À esquerda, o mesmo site em tela de mobile, se diferencia apenas no tamanho redimensionado da imagem (proporcional à largura da tela) e no texto que fica com fonte menor.</p>
             </div>
           </div>
+          </div>
 
-          <div class="hidden only-print">
+          <div class="mbile">
+          <div class="print">
           <div class="row">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
             <div class="col-lg-8 col-sm-8 col-xs-8">
-              <img src="../10_responsividade/imgs/02a.png" class="img-responsive center-block mt-20" aria-hidden="true">
+            <img src="imgs/02a.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <a href="imgs/02a.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/02a.png" class="center-block img-responsive bordaimagem"></a>
             </div>
             <div class="col-lg-4 col-sm-4 col-xs-4">
-              <img src="../10_responsividade/imgs/02b.png" class="img-responsive center-block mt-20" aria-hidden="true">
+              <img src="imgs/02b.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <a href="imgs/02b.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/02b.png" class="center-block img-responsive bordaimagem"></a>
             </div>
           </div>
           <div class="row text-center col-lg-12 col-sm-12 col-xs-12">
             <div class="legenda-imagem">
-              <p>Figura 2 – O <i>site</i> do Senac EAD é responsivo: à esquerda em um <i>desktop</i> e à direita em uma tela de <i>smartphone</i> <br>
+              <p class="textolegenda text-center">Figura 2 – O <i>site</i> do Senac EAD é responsivo: à esquerda em um <i>desktop</i> e à direita em uma tela de <i>smartphone</i> <br>
                 Fonte: adaptado de Senac EAD (c2018)
               </p>
             </div>
           <div class="row print">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
             <div class="col-lg-8 col-sm-8 col-xs-8">
-              <img src="../10_responsividade/imgs/03a.png" class="img-responsive center-block mt-20" aria-hidden="true">
+              <img src="imgs/03a.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <a href="imgs/03a.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/03a.png" class="center-block img-responsive bordaimagem"></a>
             </div>
             <div class="col-lg-4 col-sm-4 col-xs-4">
-              <img src="../10_responsividade/imgs/03b.png" class="img-responsive center-block mt-20" aria-hidden="true">
+              <img src="imgs/03b.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <a href="imgs/03b.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/03b.png" class="center-block img-responsive bordaimagem"></a>
             </div>
           </div>
           <div class="row text-center col-lg-12 col-sm-12 col-xs-12">
           <div class="legenda-imagem">
-            <p>Figura 3 – <i>Site</i> não responsivo: à direita em <i>desktop</i> e à esquerda em <i>mobile</i> <br>
+            <p class="textolegenda text-center">Figura 3 – <i>Site</i> não responsivo: à direita em <i>desktop</i> e à esquerda em <i>mobile</i> <br>
               Fonte: Deque University (c2015)
             </p>
+          </div>
           </div>
           </div>
           </div>
@@ -240,16 +254,19 @@
           </pre>
           <p>Note, pela figura a seguir, que a página se mantém mais ou menos com o mesmo <i>layout</i> no <i>desktop</i> e no <i>mobile</i>, tornando a experiência menos agradável na tela pequena. </p>
           <div class="row center-block">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
             <div class="col-lg-8 col-sm-8 col-xs-8">
-              <img src="../10_responsividade/imgs/04a.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+            <img src="imgs/04a.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <a href="imgs/04a.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/04a.png" class="center-block img-responsive bordaimagem"></a>
             </div>
             <div class="col-lg-4 col-sm-4 col-xs-4">
-              <img src="../10_responsividade/imgs/04b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+            <img src="imgs/04b.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <a href="imgs/04b.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/04b.png" class="center-block img-responsive bordaimagem"></a>
             </div>
           </div>
           <div class="row text-center col-lg-12 col-sm-12 col-xs-12">
           <div class="legenda-imagem">
-            <p>Figura 4 – Página criada sem <strong>&lt;meta name=”viewport”></strong> <br>
+            <p class="textolegenda text-center">Figura 4 – Página criada sem <strong>&lt;meta name=”viewport”></strong> <br>
                 Fonte: Senac EAD (2023) 
             </p>
           </div>
@@ -276,15 +293,18 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
             </code>
           </pre>
           <div class="row center-block">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
             <div class="col-lg-8 col-sm-8 col-xs-8">
-              <img src="../10_responsividade/imgs/05a.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+              <img src="imgs/05a.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/05a.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/05a.png" class="center-block img-responsive bordaimagem"></a>
             </div>
             <div class="col-lg-4 col-sm-4 col-xs-4">
-              <img src="../10_responsividade/imgs/05b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+              <img src="imgs/05b.png" class="center-block img-responsive hidden-sm hidden-xs print bordaimagem">
+            <a href="imgs/05b.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/05b.png" class="center-block img-responsive bordaimagem"></a>
             </div>
           </div>
           <div class="legenda-imagem">
-            <p>Figura 5 – Página criada com <strong>&lt;meta name=”viewport”></strong> <br>
+            <p class="textolegenda text-center">Figura 5 – Página criada com <strong>&lt;meta name=”viewport”></strong> <br>
                 Fonte: Senac EAD (2023) 
             </p>
             <p class="acessivel no-print">À esquerda uma página em desktop com um título, imagem alinhada à esquerda e abaixo um texto. À direita, uma página em mobile com o título, e a imagem abaixo está mais ajustada à tela e o texto vem abaixo da imagem.  </p>
@@ -312,15 +332,18 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               </code>
             </pre>
             <div class="row center-block">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
               <div class="col-lg-8 col-sm-8 col-xs-8">
-                <img src="../10_responsividade/imgs/06a.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+                <img src="imgs/06a.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <a href="imgs/06a.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/06a.png" class="center-block img-responsive bordaimagem"></a>
               </div>
               <div class="col-lg-4 col-sm-4 col-xs-4">
-                <img src="../10_responsividade/imgs/06b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+                <img src="imgs/06b.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/06b.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/06b.png" class="center-block img-responsive bordaimagem"></a>
               </div>
             </div>
             <div class="legenda-imagem">
-              <p>Figura 6 – Imagem modificada para largura a 100% da tela  <br>
+              <p class="textolegenda text-center">Figura 6 – Imagem modificada para largura a 100% da tela  <br>
                   Fonte: Senac EAD (2023) 
               </p>
               <p class="acessivel no-print"> À esquerda uma página em desktop com um título, imagem alinhada à esquerda com largura que ocupa toda a largura da tela e abaixo um texto. À direita, uma página em mobile com o título, a imagem abaixo está também com a largura ajustada à largura da tela, ajustando também a altura proporcionalmente e o texto vem abaixo da imagem. </p>
@@ -332,15 +355,18 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               </code>
             </pre>
             <div class="row">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
               <div class="col-lg-8 col-sm-8 col-xs-8">
-                <img src="../10_responsividade/imgs/07a.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+                <img src="imgs/07a.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <a href="imgs/07a.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/07a.png" class="center-block img-responsive bordaimagem"></a>
               </div>
               <div class="col-lg-4 col-sm-4 col-xs-4">
-                <img src="../10_responsividade/imgs/07b.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+                <img src="imgs/07b.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <a href="imgs/07b.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/07b.png" class="center-block img-responsive bordaimagem"></a>
               </div>
             </div>
             <div class="legenda-imagem">
-              <p>Figura 7 – Página com estilo <strong>max-width</strong> aplicado à imagem   <br>
+              <p class="textolegenda text-center">Figura 7 – Página com estilo <strong>max-width</strong> aplicado à imagem   <br>
                   Fonte: Senac EAD (2023) 
               </p>
               <p class="acessivel no-print"> Página dos exemplos anteriores, mas agora à direita no desktop a imagem não ocupa a largura toda da tela e está alinhada à esquerda. À esquerda a página em tela de mobile mostra a imagem com a largura da tela.  </p>
@@ -375,18 +401,22 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
             </pre>
             <p>Dois itens são decisivos para usar essa solução. O primeiro é a <i>tag</i> <strong>&lt;source></strong>, que permite usar opções de figuras para uma mesma imagem. O outro é o atributo <strong>media</strong> de HTML5, em que se consegue especificar condições para usar uma figura ou outra de acordo com propriedades do dispositivo sendo usado. Nesse caso, usa-se como condição a largura da tela: se ela for de até 600 px, usará a imagem do arquivo <strong>“imagem-320x213.jpg”</strong>; caso a largura da tela seja de até 1.000 px, a imagem virá de <strong>“imagem-480x320.jpg”</strong>; caso contrário, por padrão, usará a imagem original <strong>“imagem-teste.jpg”</strong> (que tem dimensões 640 x 425). </p>
             <div class="row center-block">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
               <div class="col-lg-5 col-sm-5 col-xs-5">
-                <img src="../10_responsividade/imgs/08a.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+                <img src="imgs/08a.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <a href="imgs/08a.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/08a.png" class="center-block img-responsive bordaimagem"></a>
               </div>
               <div class="col-lg-4 col-sm-4 col-xs-4">
-                <img src="../10_responsividade/imgs/08b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+                <img src="imgs/08b.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <a href="imgs/08b.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/08b.png" class="center-block img-responsive bordaimagem"></a>
               </div>
               <div class="col-lg-3 col-sm-3 col-xs-3">
-                <img src="../10_responsividade/imgs/08c.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+                <img src="imgs/08c.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <a href="imgs/08c.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/08c.png" class="center-block img-responsive bordaimagem"></a>
               </div>
             </div>
             <div class="legenda-imagem">
-              <p>Figura 8 – Comportamento da imagem em três larguras diferentes de telas  <br>
+              <p class="textolegenda text-center">Figura 8 – Comportamento da imagem em três larguras diferentes de telas  <br>
                   Fonte: Senac EAD (2023) 
               </p>
               <p class="acessivel no-print"> À esquerda uma tela desktop com resolução mais larga, a imagem está ocupando mais da metade da largura tela. No meio, tela desktop com largura média e a imagem está menor, ocupando metade da tela. À direita, tela mobile com largura estreita, e a imagem ocupa quase toda a largura da tela. </p>
@@ -447,18 +477,22 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
             </pre>
             <p>No trecho destacado, há a primeira consulta verificando se a tela tem tamanho mínimo de 600 px (<strong>@media screen and (min-width:600px)</strong>). Se sim, mudará a cor de fundo da página. Em seguida, é verificado se a tela tem o mínimo de 1.000 px de largura. Caso afirmativo, também se modifica a fonte do texto em negrito na página. </p>
             <div class="row">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
               <div class="col-lg-3 col-sm-3 col-xs-3">
-                <img src="../10_responsividade/imgs/09a.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+                <img src="imgs/09a.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <a href="imgs/09a.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/09a.png" class="center-block img-responsive bordaimagem"></a>
               </div>
               <div class="col-lg-4 col-sm-4 col-xs-4">
-                <img src="../10_responsividade/imgs/09b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+                <img src="imgs/09b.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <a href="imgs/09b.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/09b.png" class="center-block img-responsive bordaimagem"></a>
               </div>
               <div class="col-lg-5 col-sm-5 col-xs-5">
-                <img src="../10_responsividade/imgs/09c.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
+                <img src="imgs/09c.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <a href="imgs/09c.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/09c.png" class="center-block img-responsive bordaimagem"></a>
               </div>
             </div>
             <div class="legenda-imagem">
-              <p>Figura 9 – Comparação da página mostrada em telas com 460 px, 665 px e 1.110 px  <br>
+              <p class="textolegenda text-center">Figura 9 – Comparação da página mostrada em telas com 460 px, 665 px e 1.110 px  <br>
                   Fonte: Senac EAD (2023) 
               </p>
               <p class="acessivel no-print"> À esquerda, tela estreita com a página dos exemplos; no meio, tela de largura média com fundo em tom de verde; à direita, tela larga com fundo em tom verde e título com fonte maios, cor azul e tipo Arial.  </p>
@@ -522,15 +556,18 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
             </pre>
             <p>No exemplo, estão sendo definidas regras-padrão para os elementos <strong>ul</strong> e <strong>li</strong>, que formam o <i>menu</i> de <i>links</i>, por meio das quais se define que o <i>menu</i> terá cor de fundo e <i>links</i> lado a lado. Com base no <i>media query</i>, se a tela tiver largura maior que 600 px, os <i>links</i> ficam alinhados na vertical (<strong>float:none</strong> sobrescreverá o <strong>float:left</strong> padrão) e posicionados à esquerda da página (<strong>float:left</strong> para o elemento <strong>nav</strong>)</p>
             <div class="row">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
               <div class="col-lg-8 col-sm-8 col-xs-8">
-                <img src="../10_responsividade/imgs/10a.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+                <img src="imgs/10a.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <a href="imgs/10a.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/10a.png" class="center-block img-responsive bordaimagem"></a>
               </div>
               <div class="col-lg-4 col-sm-4 col-xs-4">
-                <img src="../10_responsividade/imgs/10b.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+                <img src="imgs/10b.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <a href="imgs/10b.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/10b.png" class="center-block img-responsive bordaimagem"></a>
               </div>
             </div>
             <div class="legenda-imagem">
-              <p>Figura 10 – <i>Menu</i> para <i>desktop</i> e para <i>mobile</i>  <br>
+              <p class="textolegenda text-center">Figura 10 – <i>Menu</i> para <i>desktop</i> e para <i>mobile</i>  <br>
                   Fonte: Senac EAD (2023) 
               </p>
               <p class="acessivel no-print"> À esquerda, a página de testes em tela desktop mostra menu à esquerda do conteúdo com três links um abaixo do outro; à direita, a mesma página mostra o menu acima do conteúdo e os links alinhados horizontalmente.  </p>
@@ -556,11 +593,15 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                 <div class="panel-body">
                   Biblioteca <i>open-source</i> com coleção de pequenos componentes CSS que seguem a premissa <i>mobile first</i> e que podem ser usados em qualquer projeto <i>web</i>. Bastante leve, não tem dependência com bibliotecas JavaScript como o JQuery (e por isso não traz componentes mais complexos como o Bootstrap); baseia-se no CSS padrão e é extensível. Uma vantagem é ser disponível em módulos, que podem ser obtidos separadamente para o projeto. 
-                  <img src="../10_responsividade/imgs/11.png" class="img-responsive center-block mt-40 imprime-menor">
-                  <p class="legenda-imagem">
+                  <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                  <img src="imgs/11.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                  <a href="imgs/11.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/11.png" class="center-block img-responsive bordaimagem"></a>
+                  <div>
+                  <p class="textolegenda text-center">
                     Figura 11 – Página inicial do Pure CSS  <br>
                     Fonte: Pure CSS (c2014) 
                   </p>
+                  </div>
                 </div>
               </div>
               </div>
@@ -575,11 +616,15 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
               <div class="panel-body">
                 <i>Framework open-source</i> flexível com funcionalidades semelhantes ao Bootstrap, oferecendo uma gama alta de ferramentas de <i>design</i> e componentes reutilizáveis. Conta com sistema de <i>grids</i>, tipografia, componentes UI, <i>plugins</i> JavaScript e outros. Pode ser customizado, mas sua curva de aprendizado pode ser mais acentuada por ter muitos recursos. 
-                <img src="../10_responsividade/imgs/12.png" class="img-responsive center-block mt-40 imprime-menor">
-                  <p class="legenda-imagem">
+                <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                  <img src="imgs/12.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                  <a href="imgs/12.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/12.png" class="center-block img-responsive bordaimagem"></a>
+                <div>
+                <p class="textolegenda text-center">
                     Figura 12 – Página inicial do Foundation <br>
                     Fonte: Foundation (c1998-2023) 
                   </p>
+                </div>  
               </div>
               </div>
               </div>
@@ -594,8 +639,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
               <div class="panel-body">
                 É outra ferramenta CSS <i>open-source</i> que usa esquema de <i>grids</i> para responsividade e conta com uma série de componentes, como tabelas, navegação e tipografia. Dividido em módulos, o desenvolvedor pode escolher quais funcionalidades deseja importar ao projeto, incluindo apenas as folhas de estilo necessárias para isso. Também é pensado para que funcione bem em navegadores novos e antigos. 
-                <img src="../10_responsividade/imgs/13.png" class="img-responsive center-block mt-40 imprime-menor">
-                  <p class="legenda-imagem">
+                <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                  <img src="imgs/13.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                  <a href="imgs/13.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/13.png" class="center-block img-responsive bordaimagem"></a>
+                  <p class="textolegenda text-center">
                     Figura 13 – Página inicial do Cascade <br>
                     Fonte: Cascade (c2023) 
                   </p>
@@ -619,8 +666,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 
             <h4>Bootstrap</h4>
             <p>Lançado em 2011 por iniciativa do Twitter, o <i>framework open-source</i> Bootstrap estabelece uma série de padrões, componentes e classes CSS que elevam a consistência do projeto, facilitam a manipulação do estilo, agilizam a programação de funcionalidades comuns de <i>front-end</i> e auxiliam na comunicação do código-fonte (alguém com conhecimento em Bootstrap saberá o que o seu código intenciona ao ler as classes no HTML, o que nem sempre é verdade quando se criam estilos CSS próprios). Essas facilidades em conjunto com a necessidade de adaptar a <i>web</i> para a realidade dos <i>smartphones</i>, que se expandia na época, tornaram a ferramenta uma das mais utilizadas em <i>design</i> de páginas desde então. </p>
-            <img src="../10_responsividade/imgs/14.png" class="img-responsive center-block mt-40 imprime-menor">
-              <p class="legenda-imagem">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                  <img src="imgs/14.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                  <a href="imgs/14.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/14.png" class="center-block img-responsive bordaimagem"></a>
+              <p class="textolegenda text-center">
                 Figura 14 – Página inicial do Bootstrap <br>
                 Fonte: Bootstrap ([s. d.]) 
               </p>
@@ -634,15 +683,19 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
                 <li>Usando <i>links</i> CDN (<i>content delivery network</i>). </li>
               </ol>
             <p>Se você optar <strong>por baixar a biblioteca</strong>, na página principal do projeto (procure por “get Bootstrap”), há uma linha que mostra o número da versão (na data de produção deste material, a versão mais atual é 5.3) e um <i>link</i> para <i>download</i>. Ele levará a uma página de <i>downloads</i>. Nessa página, há uma seção <strong>Compiled CSS and JS</strong> e um botão <strong>Download</strong>. Clica-se nesse botão para baixar um arquivo de nome <strong>bootstrap-&lt;versão>-dist.zip</strong> ou algo semelhante.  </p>
-            <img src="../10_responsividade/imgs/15.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                  <img src="imgs/15.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                  <a href="imgs/15.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/15.png" class="center-block img-responsive bordaimagem"></a>
+            <p class="textolegenda text-center">
               Figura 15 – Página de <i>download</i> do Bootstrap  <br>
               Fonte: Senac EAD (2023) 
             </p>
             <p class="acessivel no-print">A página tem um menu lateral na esquerda com diversos links e a região principal inicia com título “Download” e mais abaixo uma seção com título “Compiled CSS and JS” e um pequeno texto de detalhes. Abaixo, um botão roxo “Download”. A página segue com outras seções abaixo. </p>
             <p>No arquivo compactado que foi baixado, serão encontrados todos os arquivos CSS e JavaScript necessários para o <i>framework</i>. Extraia o conteúdo diretamente para a pasta onde ficarão as páginas HTML e troque o nome da nova pasta extraída para <strong>bootstrap</strong>. É importante que dentro dessa pasta <strong>bootstrap</strong> estejam as pastas <strong>css</strong> e <strong>js</strong>. </p>
-            <img src="../10_responsividade/imgs/16.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <img src="imgs/16.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/16.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/16.png" class="center-block img-responsive bordaimagem"></a>
+            <p class="textolegenda text-center">
               Figura 16 – Hierarquia de pastas para o Bootstrap <br>
               Fonte: Senac EAD (2023) 
             </p>
@@ -666,8 +719,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               </code>
             </pre>
             <p>Abra no navegador e você verá uma página bastante simples. </p>
-            <img src="../10_responsividade/imgs/17.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                  <img src="imgs/17.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                  <a href="imgs/17.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/17.png" class="center-block img-responsive bordaimagem"></a>
+            <p class="textolegenda text-center">
               Figura 17 – Página para testes criada, sem estilo <br>
               Fonte: Senac EAD (2023) 
             </p>
@@ -692,8 +747,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 &lt;/html> 
               </code>
             </pre>
-            <img src="../10_responsividade/imgs/18.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+                  <img src="imgs/18.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                  <a href="imgs/18.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/18.png" class="center-block img-responsive bordaimagem"></a>
+            <p class="textolegenda text-center">
               Figura 18 – Página de teste agora com Bootstrap  <br>
               Fonte: Senac EAD (2023) 
             </p>
@@ -724,8 +781,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
             <p>Antes de realizar novos experimentos, veja alguns dos conceitos mais marcantes do <i>framework</i> Bootstrap. </p>
             <h4>Sistema de grade</h4>
             <p>O Bootstrap usa um sistema de grade (ou <i>grid system</i>) para posicionamento de elementos da página HTML, organizando <i>containers</i> como <strong>&lt;div></strong> em uma disposição de linhas e colunas. Imagine que uma seção do <i>site</i> precisa mostrar três imagens e um texto abaixo de cada uma. Nesse caso, seria definido, usando classes do Bootstrap, que você quer três colunas para essa região da página. A grade é dividida em 12 colunas e é nisso que seu <i>layout</i> deverá se basear.  </p>
-            <img src="../10_responsividade/imgs/19.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <img src="imgs/19.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/19.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/19.png" class="center-block img-responsive bordaimagem"></a>
+            <p class="textolegenda text-center">
               Figura 19 – Grid do Bootstrap aplicado a uma página. O elemento destacado superior ocupa nove colunas, enquanto o elemento destacado inferior ocupa três colunas <br>
               Fonte: Kind PNG (2019) 
             </p>
@@ -736,6 +795,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               <li>O <strong>container</strong> incluirá elementos com classe <strong>row</strong>. </li>
               <li>Os elementos <strong>row</strong> incluem colunas, cuja largura é definida especificando-se o número de células que ela abrange usando uma classe <strong>col-sm.*</strong>, na qual <strong>*</strong> é esse número. Por exemplo, quatro elementos <strong>&lt;div></strong> com classe <strong>col-sm-3</strong> resultariam em quatro colunas igualmente espaçadas (o número 3 em <strong>col-sm-3</strong> indica que <strong>&lt;div></strong> está usando o espaço de 3 das 12 colunas definidas pela estrutura de <i>grid</i> do Bootstrap). </li>
             </ul>
+            <p class="no-print visible-xs" aria-hidden="true">Mova a tabela para visualizar as demais colunas.</p>
             <div class="table-responsive">
             <table class="table senac tabela1">
               <tr>
@@ -766,13 +826,14 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               </tr>
             </table>
           </div>
-            <p class="legenda-tabela">
+            <p class="textolegenda text-center">
               Tabela 1 – Esquema de grid do Bootstrap <br>
               Fonte: Senac EAD 
             </p>
             <p>Veja na tabela 1 que, se você quiser usar 12 colunas, aplicará a classe <strong>col-sm-1</strong> para cada um dos 12 elementos que representarem essas colunas. Por outro lado, se quiser uma seção que ocupe 8 das 12 colunas, <strong>usará col-sm-8</strong>, e assim por diante. </p>
             <p>Os <i>grids</i> se adaptam de acordo com a resolução da tela. Para telas mais largas, as células aparecem dispostas lado a lado como mostrado na figura 1. Em telas mais estreitas, elas aparecem uma abaixo da outra. </p>
             <p>O termo <strong>sm</strong>, usado no nome da classe do exemplo, é relativo à responsividade e indica que o <i>layout</i> é pensado para telas pequenas (<i>small</i>) e ficará em células lado a lado em resoluções de, no mínimo, 540 px – resoluções menores transformarão as células em linhas. Além de <strong>sm</strong>, tem-se também <strong>md</strong>, <strong>lg</strong> e <strong>xl</strong>, como mostra a tabela 1, que se comportam de maneira análoga dependendo da resolução que representam. </p>
+            <p class="no-print visible-xs" aria-hidden="true">Mova a tabela para visualizar as demais colunas.</p>
             <div class="table-responsive">
               <table class="table senac tabela1">
                 <tr>
@@ -800,7 +861,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
                 </tr>
               </table>
             </div>
-            <p class="legenda-tabela">
+            <p class="textolegenda text-center">
               Tabela 2 – Esquemas de classes de coluna do Bootstrap para cada faixa de resolução de tela <br>
               Fonte: Senac EAD (2023) 
             </p>
@@ -832,8 +893,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               </code>
             </pre>
             <p>Note que há uma <strong>&lt;div></strong> com classe <strong>container</strong> e, dentro dele, outro com classe <strong>row</strong> (a linha). Dentro dessa <strong>&lt;div></strong>, há duas outras <strong>&lt;div></strong> com classe <strong>col-md-6</strong>, especificando que cada coluna ocupará metade do <strong>container</strong>. </p>
-            <img src="../10_responsividade/imgs/20.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <img src="imgs/20.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/20.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/20.png" class="center-block img-responsive bordaimagem"></a>
+            <p class="textolegenda text-center">
               Figura 20 – Teste com colunas do Bootstrap <br>
               Fonte: Senac EAD (2023) 
             </p>
@@ -909,15 +972,18 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
             </pre>
             <p>Observe com atenção o código acima. Nele, estão sendo definidos um <strong>container</strong> e três linhas. A <strong>&lt;div></strong> com <strong>id "linha-titulo"</strong> usa a classe <strong>col-sm-12</strong>, pois deseja-se que o título ocupe toda essa linha (ou seja, as 12 colunas do <i>grid</i>). Já a <strong>&lt;div></strong> de <strong>id "linha-destaques"</strong>  tem dois elementos, cada um ocupando 6 colunas (ou seja, metade do <strong>container</strong>). Na terceira linha, com <strong>id "linha-produtos"</strong>, desejam-se quatro itens e, por isso, a classe <strong>col-sm-3</strong> (pois 12 dividido por 4 é igual a 3) é usada. Note, pela figura 21, que os itens se rearranjam em telas menores. </p>
             <div class="row">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
               <div class="col-lg-9 col-sm-9 col-xs-9">
-                <img src="../10_responsividade/imgs/21a.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+                <img src="imgs/21a.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/21a.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/21a.png" class="center-block img-responsive bordaimagem"></a>
               </div>
               <div class="col-lg-3 col-sm-3 col-xs-3">
-                <img src="../10_responsividade/imgs/21b.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+                <img src="imgs/21b.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/21b.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/21b.png" class="center-block img-responsive bordaimagem"></a>
               </div>
             </div>
             <div class="legenda-imagem">
-              <p>Figura 21 – Página de teste em tela <i>desktop</i> e em tela <i>mobile</i> <br>
+              <p class="textolegenda text-center">Figura 21 – Página de teste em tela <i>desktop</i> e em tela <i>mobile</i> <br>
                   Fonte: Senac EAD (2023) 
               </p>
               <p class="acessivel no-print">À esquerda tela de desktop mostrando a página com o título “nossos produtos”, dois produtos (imagem e descrição) lado a lado abaixo e mais abaixo 4 produtos, um ao lado do outro. À direita, tela do smartphone mostrando os produtos um embaixo do outro. </p>
@@ -959,15 +1025,18 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
             </pre>
             <p>Em cada coluna de <strong>linha-destaques</strong> é incluído um <strong>container</strong>, uma linha e duas colunas, que se ajustarão dinamicamente de acordo com a largura da tela. </p>
             <div class="row">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
               <div class="col-lg-9 col-sm-9 col-xs-9">
-                <img src="../10_responsividade/imgs/22a.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+              <img src="imgs/22a.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/22a.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/22a.png" class="center-block img-responsive bordaimagem"></a>
               </div>
               <div class="col-lg-3 col-sm-3 col-xs-3">
-                <img src="../10_responsividade/imgs/22b.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
+                <img src="imgs/22b.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                <a href="imgs/22b.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/22b.png" class="center-block img-responsive bordaimagem"></a>
               </div>
             </div>
             <div class="legenda-imagem">
-              <p>Figura 22 – Página vitrine ajustada <br>
+              <p class="textolegenda text-center">Figura 22 – Página vitrine ajustada <br>
                   Fonte: Senac EAD (2023) 
               </p>
               <p class="acessivel no-print">À esquerda, a página em tela desktop como visto anteriormente. À direita, a página com a imagem do produto destaque e abaixo a descrição, não mais ao lado como antes. </p>
@@ -975,10 +1044,12 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
             <div class="caixa-destaque iconedesafio borda-primaria-03 mt-40">
               Usando o sistema de <i>grid</i> do Bootstrap, crie uma página como a da imagem a seguir. Use <strong>&lt;divs></strong> com propriedades <strong>height</strong> e <strong>background-color</strong> configuradas.
               <img src="../10_responsividade/imgs/desafio 1.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+              <div>
+            <p class="textolegenda text-center">
               Figura 23 – Exemplo <br>
               Fonte: Senac EAD (2023) 
             </p>
+              </div>
             <p class="acessivel no-print"> Duas linhas, na primeira um retângulo vermelho com texto “height:150px” ocupa 2/3 da tela e um verde à esquerda com texto “height:150px” ocupa 1/3 da tela. Na segunda linha um retângulo amarelo com texto “height:150px” ocupa 1/3 da tela; ao lado, um retângulo com 2 linhas ocupa 1/3 da tela, na linha 1 deste está o texto “height:75px” e a cor laranja e na linha 2 está o texto “height:75px” e a cor cyan; ao lado, um retângulo com texto “height:150px” e cor cinza ocupa 1/3 da tela. </p>
             </div>
             <h4>Texto e tipografia</h4>
@@ -999,8 +1070,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 &lt;/div> 
                 </code>
               </pre>
-            <img src="../10_responsividade/imgs/23.png" class="img-responsive center-block mt-40 imprime-menor bordaimagem">
-            <p class="legenda-imagem">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <img src="imgs/23.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/23.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/23.png" class="center-block img-responsive bordaimagem"></a>
+            <p class="textolegenda text-center">
               Figura 24 – Alinhamentos de texto  <br>
               Fonte: Senac EAD (2023) 
             </p>
@@ -1023,11 +1096,15 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               &lt;p>E este parágrafo também é comum&lt;/p> 
                 </code>
               </pre>
-              <img src="../10_responsividade/imgs/24.png" class="img-responsive center-block mt-40 imprime-menor bordaimagem">
-              <p class="legenda-imagem">
+              <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <img src="imgs/24.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/24.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/24.png" class="center-block img-responsive bordaimagem"></a>
+              <div>
+              <p class="textolegenda text-center">
                 Figura 25 – Parágrafo com ênfase <br>
                 Fonte: Senac EAD (2023) 
               </p>
+              </div>
               <p class="acessivel no-print"> Uma frase “Este parágrafo está diferente” com uma fonte maior e mais destacada e abaixo as duas outras frases com formatação comum. </p>
               </li>
             </ul>
@@ -1051,8 +1128,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               </pre>
               </li>
               <li class="mt-40">Para deixar uma imagem centralizada, pode-se usar a classe <strong>text-center</strong>. 
-                <img src="../10_responsividade/imgs/25.png" class="img-responsive center-block mt-40 imprime-menor bordaimagem">
-                <p class="legenda-imagem">
+                <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <img src="imgs/25.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/25.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/25.png" class="center-block img-responsive"></a>
+                <p class="textolegenda text-center">
                   Figura 26 – Imagem centralizada e com borda arredondada <br>
                   Fonte: Senac EAD (2023) 
                 </p>
@@ -1116,8 +1195,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
                 &lt;/table> 
               </code>
             </pre>
-            <img src="../10_responsividade/imgs/26.png" class="img-responsive center-block mt-40 imprime-menor bordaimagem">
-                <p class="legenda-imagem">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <img src="imgs/26.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/26.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/26.png" class="center-block img-responsive"></a>
+                <p class="textolegenda text-center">
                   Figura 27 – Tabela zebrada com borda <br>
                   Fonte: Senac EAD (2023) 
                 </p>
@@ -1145,8 +1226,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 &lt;/div> 
               </code>
             </pre>
-            <img src="../10_responsividade/imgs/27.png" class="img-responsive center-block mt-40 imprime-menor bordaimagem">
-                <p class="legenda-imagem">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <img src="imgs/27.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/27.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/27.png" class="center-block img-responsive"></a>
+                <p class="textolegenda text-center">
                   Figura 28 – Formulário estilizado com Bootstrap  <br>
                   Fonte: Senac EAD (2023) 
                 </p>
@@ -1220,8 +1303,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 &lt;/ul> 
               </code>
             </pre>
-            <img src="../10_responsividade/imgs/28.png" class="img-responsive center-block mt-40 imprime-menor">
-              <p class="legenda-imagem">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <img src="imgs/28.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/28.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/28.png" class="center-block img-responsive bordaimagem"></a>
+              <p class="textolegenda text-center">
                 Figura 29 – <i>Menu</i> de navegação com três <i>links</i>   <br>
                 Fonte: Senac EAD (2023) 
               </p>
@@ -1275,8 +1360,10 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               <li>A classe <strong>modal-body</strong> define o conteúdo principal do painel. Aqui poderia ser incluída uma mensagem de erro, uma orientação ao usuário, imagens ou mesmo um formulário. </li>
               <li>A classe <strong>modal-footer</strong> define um rodapé para o painel, podendo trazer botões de interação. Note mais uma vez o atributo <strong>data-bs-dismiss</strong> com valor <strong>modal</strong>. </li>
             </ul>
-            <img src="../10_responsividade/imgs/29.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
+              <img src="imgs/29.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <a href="imgs/29.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/29.png" class="center-block img-responsive bordaimagem"></a>
+            <p class="textolegenda text-center">
               Figura 30 – Modal em ação <br>
               Fonte: Senac EAD (2023) 
             </p>
