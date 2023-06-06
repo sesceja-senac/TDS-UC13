@@ -138,7 +138,7 @@
               <li>As imagens precisam ser otimizadas e redimensionadas quando necessário, tanto para adaptação à tela quanto para economia de dados de Internet.</li>
               <li>Botões, <i>links</i> e <i>menus</i> precisam ser adaptados para que possam ser utilizados com toque, além de <i>mouse</i>.</li>
             </ul>
-            <div class="row">
+            <div class="row no-print">
             <div class="col-lg-4 col-sm-4 col-xs-4">
               <img src="../10_responsividade/imgs/02a.png" class="img-responsive center-block mt-20" aria-hidden="true">
             </div>
@@ -154,13 +154,13 @@
           </div>
 
           <div class="row">
-            <div class="legenda-imagem col-lg-6 col-sm-6 col-xs-6">
+            <div class="legenda-imagem col-lg-6 col-sm-6 col-xs-6 no-print">
               <p>Figura 2 – O <i>site</i> do Senac EAD é responsivo: à esquerda em um <i>desktop</i> e à direita em uma tela de <i>smartphone</i> <br>
                 Fonte: adaptado de Senac EAD (c2018)
               </p>
               <p class="acessivel no-print">Site do Senac EAD à esquerda mostrado em versão desktop: no topo logo e ícones, abaixo, um menu com links, abaixo um carrossel com imagens grandes e abaixo uma grade de cursos em destaque (mostrando 4 cursos lado a lado). À direita, a versão mobile do site: no topo o logo e um ícone para mostrar menu de links, abaixo um carrossel com imagem à largura da tela e abaixo cursos em destaque mostrando apenas um curso (os outros cursos vem abaixo desse).</p>
             </div>
-            <div class="legenda-imagem col-lg-6 col-sm-6 col-xs-6">
+            <div class="legenda-imagem col-lg-6 col-sm-6 col-xs-6 no-print">
               <p>Figura 3 – <i>Site</i> não responsivo: à direita em <i>desktop</i> e à esquerda em <i>mobile</i> <br>
                 Fonte: Deque University (c2015)
               </p>
@@ -168,6 +168,38 @@
             </div>
           </div>
 
+          <div class="hidden only-print">
+          <div class="row">
+            <div class="col-lg-8 col-sm-8 col-xs-8">
+              <img src="../10_responsividade/imgs/02a.png" class="img-responsive center-block mt-20" aria-hidden="true">
+            </div>
+            <div class="col-lg-4 col-sm-4 col-xs-4">
+              <img src="../10_responsividade/imgs/02b.png" class="img-responsive center-block mt-20" aria-hidden="true">
+            </div>
+          </div>
+          <div class="row text-center col-lg-12 col-sm-12 col-xs-12">
+            <div class="legenda-imagem">
+              <p>Figura 2 – O <i>site</i> do Senac EAD é responsivo: à esquerda em um <i>desktop</i> e à direita em uma tela de <i>smartphone</i> <br>
+                Fonte: adaptado de Senac EAD (c2018)
+              </p>
+            </div>
+          <div class="row print">
+            <div class="col-lg-8 col-sm-8 col-xs-8">
+              <img src="../10_responsividade/imgs/03a.png" class="img-responsive center-block mt-20" aria-hidden="true">
+            </div>
+            <div class="col-lg-4 col-sm-4 col-xs-4">
+              <img src="../10_responsividade/imgs/03b.png" class="img-responsive center-block mt-20" aria-hidden="true">
+            </div>
+          </div>
+          <div class="row text-center col-lg-12 col-sm-12 col-xs-12">
+          <div class="legenda-imagem">
+            <p>Figura 3 – <i>Site</i> não responsivo: à direita em <i>desktop</i> e à esquerda em <i>mobile</i> <br>
+              Fonte: Deque University (c2015)
+            </p>
+          </div>
+          </div>
+          </div>
+          </div>
           <p>Pelos exemplos das figuras 1, 2 e 3, é possível verificar que responsividade não significa mostrar um <i>site</i> exatamente da mesma maneira em uma tela e em outra. Pelo contrário, adaptações são necessárias para que o usuário acesse as mesmas informações com boa usabilidade. </p>
           <h3 id="t2"><i>Front-end</i> para <i>mobile</i></h3>
           <p>Alguns elementos de HTML5 e de CSS3 ajudam na criação de páginas responsivas. Eles permitem redimensionar automaticamente, ocultar elementos e aumentar ou diminuir itens visuais de acordo com a tela em que o <i>site</i> é visualizado, deixando-o com boa aparência em diversos dispositivos. </p>
@@ -215,12 +247,14 @@
               <img src="../10_responsividade/imgs/04b.png" class="img-responsive center-block mt-20 bordaimagem" aria-hidden="true">
             </div>
           </div>
+          <div class="row text-center col-lg-12 col-sm-12 col-xs-12">
           <div class="legenda-imagem">
             <p>Figura 4 – Página criada sem <strong>&lt;meta name=”viewport”></strong> <br>
                 Fonte: Senac EAD (2023) 
             </p>
-            <p class="acessivel no-print">À esquerda uma página em desktop com um título, imagem alinhada à esquerda e abaixo um texto. À direita, uma página em mobile com o mesmo layout, e a imagem na página está espremida à esquerda.</p>
           </div>
+          </div>
+            <p class="acessivel no-print">À esquerda uma página em desktop com um título, imagem alinhada à esquerda e abaixo um texto. À direita, uma página em mobile com o mesmo layout, e a imagem na página está espremida à esquerda.</p>
           <p>Agora, inclua a <i>tag</i> <strong>&lt;meta></strong> com <strong>viewport</strong> e depois visualize a diferença na figura 5</p>
           <pre>
             <code class="language-html">

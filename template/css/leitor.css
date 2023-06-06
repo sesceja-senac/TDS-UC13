@@ -321,4 +321,13 @@ p.legenda-imagem{
   margin: 10px auto !important;
   display: block !important;
   text-align: center !important;
+  
+}
+
+td pre {
+  max-width: 300px;
+}
+
+.legenda-imagem{
+  font-size: 6pt;
 }
