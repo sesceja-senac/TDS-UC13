@@ -107,7 +107,7 @@
              <div class="container">
              <div class="row responsividade">
             <div class="col-lg-7 col-sm-12 col-xs-12 textoresponsividade">
-            <h2>Responsividade: conceito, front-end para ambiente mobile, técnicas e ferramentas</h2>
+            <h2>Responsividade: conceito, <i>front-end</i> para ambiente <i>mobile</i>, técnicas e ferramentas</h2>
             <p><i>Front-end</i>, sendo uma camada de apresentação e de interação, precisa ser desenvolvido com especial atenção às diferentes telas e resoluções que os usuários possam aplicar. A ascensão dos <i>smartphones</i> popularizou um conceito que hoje é fundamental: a responsividade, ou seja, a capacidade de uma página ser apresentada correta e agradavelmente em diversas telas diferentes sem prejuízo à experiência do usuário. Este conteúdo discute esse conceito e aplica recursos de HTML (<i>hyper text markup language</i>), CSS (<i>cascading style sheets</i>) e biblioteca Bootstrap para alcançar responsividade.</p>
             </div>
             <div class="col-lg-5">
@@ -130,7 +130,7 @@
                 </p>
                 <p class="acessivel no-print">À esquerda uma tela de smartphone mostra página com layout semelhante à de desktop, com menu lateral vertical, imagem, texto com fonte muito pequena. À direita, o mesmo site adaptado para smartphone: o menu fica no topo e torna-se horizontal, a imagem é adaptada à largura da tela e o texto fica com fonte adequada.</p>
             </div>
-            <p>Algumas das características observadas em um design de site responsivo são as seguintes:</p>
+            <p>Algumas das características observadas em um <i>design</i> de <i>site</i> responsivo são as seguintes:</p>
             <ul>
               <li>O <i>layout</i> da página deve se adaptar à resolução usada na visualização.</li>
               <li>O <i>layout</i> deve ser fluido e evitar medidas fixas (quantidade de <i>pixels</i> para medir tamanho, por exemplo).</li>
@@ -168,7 +168,7 @@
             </div>
           </div>
 
-          <p>Pelos exemplos das figuras 1, 2 e 3, é possível verificar que responsividade não significa mostrar um site exatamente da mesma maneira em uma tela e em outra. Pelo contrário, adaptações são necessárias para que o usuário acesse as mesmas informações com boa usabilidade. </p>
+          <p>Pelos exemplos das figuras 1, 2 e 3, é possível verificar que responsividade não significa mostrar um <i>site</i> exatamente da mesma maneira em uma tela e em outra. Pelo contrário, adaptações são necessárias para que o usuário acesse as mesmas informações com boa usabilidade. </p>
           <h3 id="t2"><i>Front-end</i> para <i>mobile</i></h3>
           <p>Alguns elementos de HTML5 e de CSS3 ajudam na criação de páginas responsivas. Eles permitem redimensionar automaticamente, ocultar elementos e aumentar ou diminuir itens visuais de acordo com a tela em que o <i>site</i> é visualizado, deixando-o com boa aparência em diversos dispositivos. </p>
           <h4><i>Tag</i> viewport</h4>
@@ -221,7 +221,7 @@
             </p>
             <p class="acessivel no-print">À esquerda uma página em desktop com um título, imagem alinhada à esquerda e abaixo um texto. À direita, uma página em mobile com o mesmo layout, e a imagem na página está espremida à esquerda.</p>
           </div>
-          <p>Agora, inclua a tag &lt;meta> com viewport e depois visualize a diferença na figura 5</p>
+          <p>Agora, inclua a <i>tag</i> <strong>&lt;meta></strong> com <strong>viewport</strong> e depois visualize a diferença na figura 5</p>
           <pre>
             <code class="language-html">
 &lt;!DOCTYPE html> 
@@ -291,7 +291,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               </p>
               <p class="acessivel no-print"> À esquerda uma página em desktop com um título, imagem alinhada à esquerda com largura que ocupa toda a largura da tela e abaixo um texto. À direita, uma página em mobile com o título, a imagem abaixo está também com a largura ajustada à largura da tela, ajustando também a altura proporcionalmente e o texto vem abaixo da imagem. </p>
             </div>
-            <p>Pode haver um inconveniente em indicar a largura em 100%: se a imagem tem uma largura menor que a da tela, pode ser conveniente manter a dimensão original quando não for necessário. Para isso, é possível usar a propriedade de estilo <strong>max-width</strong> para definir a largura máxima, de maneira que a imagem possa escalar para um valor menor, mas nunca maior ao especificado. Veja, a seguir, o trecho com a tag &lt;img> do exemplo anterior usando esse recurso.  </p>
+            <p>Pode haver um inconveniente em indicar a largura em 100%: se a imagem tem uma largura menor que a da tela, pode ser conveniente manter a dimensão original quando não for necessário. Para isso, é possível usar a propriedade de estilo <strong>max-width</strong> para definir a largura máxima, de maneira que a imagem possa escalar para um valor menor, mas nunca maior ao especificado. Veja, a seguir, o trecho com a <i>tag</i> <strong> &lt;img></strong> do exemplo anterior usando esse recurso.  </p>
             <pre>
               <code class="language-html">
                 &lt;img src="imagem-teste.jpg" alt="teste" style="max-width:100%; height:auto;"/>
@@ -360,7 +360,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
             <div class="caixa-destaque iconedesafio borda-primaria-03 mt-40"> 
               Para ilustrar melhor o que você viu até agora, monte uma página e use a <i>tag</i> <strong>&lt;picture></strong> para mostrar três imagens completamente diferentes de acordo com a largura da tela. Também use a <i>tag</i> de dimensão <strong>max-width</strong> para que ajuste a 100% da largura da tela. Teste encolhendo e expandindo a tela do navegador e usando o recurso de simulação de tela de dispositivos da ferramenta de desenvolvedor do navegador. 
             </div>
-            <h4>Media queries</h4>
+            <h4><i>Media queries</i></h4>
             <p>No exemplo anterior, você experimentou um pouco do que é um <i>media query</i> (ou consulta de mídia): verificou por meio do atributo <strong>media</strong> um valor relativo ao dispositivo em que a imagem seria mostrada. <i>Media queries</i> são propriedades de CSS que permitem realizar testes sobre o dispositivo e aplicar regras específicas de estilo para esse dispositivo.  </p>
             <p>A sintaxe é a seguinte: </p>
             <pre>
@@ -506,7 +506,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               Crie uma página e use <i>media query</i> para mostrar todo o conteúdo em fonte Arial, quando estiver em tela de <i>mobile</i>, e em fonte Georgia com tamanho maior, quando estiver em tela de <i>desktop</i>. 
             </div>
             <h3 id="t3">Técnicas e ferramentas</h3>
-            <p>Algumas ferramentas ajudam na tarefa de montar design web responsivo de maneira mais prática. A principal e mais reconhecida no mercado é o Bootstrap, que será tratado com mais detalhes adiante. </p>
+            <p>Algumas ferramentas ajudam na tarefa de montar <i>design</i> <i>web</i> responsivo de maneira mais prática. A principal e mais reconhecida no mercado é o Bootstrap, que será tratado com mais detalhes adiante. </p>
             <p>Antes, veja algumas alternativas (recomenda-se que você busque e teste essas outras ferramentas). </p>
             <div class="no-print" aria-hidden="true">
               <p>Clique ou toque para visualizar o conteúdo.</p>
@@ -514,7 +514,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingOne">
               <h4 class="panel-title">
-                <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   Pure CSS 
                 </a>
               </h4>
@@ -533,7 +533,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingTwo">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   Foundation 
                 </a>
               </h4>
@@ -552,7 +552,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               <div class="panel panel-default">
               <div class="panel-heading" role="tab" id="headingThree">
               <h4 class="panel-title">
-                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   Cascade 
                 </a>
               </h4>
@@ -696,7 +696,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               Fonte: Kind PNG (2019) 
             </p>
             <p class="acessivel no-print">Uma página com uma barra de título, uma seção Download e um texto ocupa ¾ da largura da tela. Abaixo, seções com título “bootstrap”, “Source code” e “Sass”, uma do lado da outra, cada uma com um texto e um botão abaixo do título. Cada uma ocupa ¼ da largura da tela. Estão destacadas a seção “Download” e está marcado um texto “9 colunas” e a seção “Bootstrap”, com a marcação “3 colunas”. Sobre a página, há 12 barras translucidas, uma do lado da outra.</p>
-            <p>Algumas instruções devem ser seguidas na hora de montar página com grid: </p>
+            <p>Algumas instruções devem ser seguidas na hora de montar página com <i>grid</i>: </p>
             <ul>
               <li>O <i>grid</i> estará em um elemento HTML com classe <strong>container</strong>. </li>
               <li>O <strong>container</strong> incluirá elementos com classe <strong>row</strong>. </li>
@@ -873,7 +873,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 &lt;/html>  
               </code>
             </pre>
-            <p>Observe com atenção o código acima. Nele, estão sendo definidos um <strong>container</strong> e três linhas. A &lt;div> com id "linha-titulo" usa a classe <strong>col-sm-12</strong>, pois deseja-se que o título ocupe toda essa linha (ou seja, as 12 colunas do <i>grid</i>). Já a <strong>&lt;div></strong> de <strong>id "linha-destaques"</strong>  tem dois elementos, cada um ocupando 6 colunas (ou seja, metade do <strong>container</strong>). Na terceira linha, com <strong>id "linha-produtos"</strong>, desejam-se quatro itens e, por isso, a classe <strong>col-sm-3</strong> (pois 12 dividido por 4 é igual a 3) é usada. Note, pela figura 21, que os itens se rearranjam em telas menores. </p>
+            <p>Observe com atenção o código acima. Nele, estão sendo definidos um <strong>container</strong> e três linhas. A <strong>&lt;div></strong> com <strong>id "linha-titulo"</strong> usa a classe <strong>col-sm-12</strong>, pois deseja-se que o título ocupe toda essa linha (ou seja, as 12 colunas do <i>grid</i>). Já a <strong>&lt;div></strong> de <strong>id "linha-destaques"</strong>  tem dois elementos, cada um ocupando 6 colunas (ou seja, metade do <strong>container</strong>). Na terceira linha, com <strong>id "linha-produtos"</strong>, desejam-se quatro itens e, por isso, a classe <strong>col-sm-3</strong> (pois 12 dividido por 4 é igual a 3) é usada. Note, pela figura 21, que os itens se rearranjam em telas menores. </p>
             <div class="row">
               <div class="col-lg-9 col-sm-9 col-xs-9">
                 <img src="../10_responsividade/imgs/21a.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
@@ -923,7 +923,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
 &lt;/div> 
               </code>
             </pre>
-            <p>Em cada coluna de <strong>linha-destaques</strong> é incluído um <strnog>container</strnog>, uma linha e duas colunas, que se ajustarão dinamicamente de acordo com a largura da tela. </p>
+            <p>Em cada coluna de <strong>linha-destaques</strong> é incluído um <strong>container</strong>, uma linha e duas colunas, que se ajustarão dinamicamente de acordo com a largura da tela. </p>
             <div class="row">
               <div class="col-lg-9 col-sm-9 col-xs-9">
                 <img src="../10_responsividade/imgs/22a.png" class="img-responsive mt-20 center-block bordaimagem" aria-hidden="true">
@@ -1117,7 +1117,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
                   Fonte: Senac EAD (2023) 
                 </p>
                 <p class="acessivel no-print">Campos de texto com bordar cinzas e arredondadas, botão azul.</p>
-            <p>Campos &lt;select> contam com uma classe específica form-select. </p>
+            <p>Campos <strong>&lt;select></strong> contam com uma classe específica <strong>form-select</strong>. </p>
             <pre>
               <code class="language-html">
 &lt;form method="post" action="#"> 
@@ -1254,7 +1254,7 @@ Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lo
               myModal.show(); 
               </code>
             </pre>
-            <p>Dentre as chaves, podem ser informadas algumas opções, como possibilitar ou bloquear o fechamento do modal pela tecla <strogn>Esc</strogn> (<strong>keyboard: true</strong> ou <strong>keyboard: false</strong>). </p>
+            <p>Dentre as chaves, podem ser informadas algumas opções, como possibilitar ou bloquear o fechamento do modal pela tecla <strong>Esc</strong> (<strong>keyboard: true</strong> ou <strong>keyboard: false</strong>). </p>
             <div class="caixa-destaque iconedesafio borda-primaria-03 mt-40">
               Pesquise na documentação do Bootstrap e teste os recursos a seguir um a um: 
               <ul>

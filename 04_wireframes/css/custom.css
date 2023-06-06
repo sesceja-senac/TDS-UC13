@@ -156,6 +156,8 @@ ul{
   animation-fill-mode: both;
 }
 
+
+
 @keyframes animLinha{
   0%{
     height: 0;
