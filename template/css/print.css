@@ -207,8 +207,17 @@ h5 {
   .panel {
     page-break-inside: avoid;
   }
+  .tituloprincipal{
+    padding:30px;
+  }
   
-  
+  .novapagina{
+    page-break-before: always;
+  }
+
+  .listajq{
+    margin-top: 30px;
+  }
   .table-responsive, table{
     width: 100% !important;
     margin: 0 !important;

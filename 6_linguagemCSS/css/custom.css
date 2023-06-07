@@ -131,3 +131,21 @@ table.senac{width: 100%;}
     margin-right: -20px;
   }
 }
+
+@media screen and (max-width: 780px){
+  .parte1{
+    min-width: 100px !important;
+    font-size: 10pt;
+  }
+  .parte2{
+    min-width: 70px !important;
+    font-size: 10pt;
+  }
+  .parte3{
+  max-width: 230px !important;
+  font-size: 10pt;
+  }
+  .tabelapropriedade td {
+    font-size: 10pt;
+  }
+}
