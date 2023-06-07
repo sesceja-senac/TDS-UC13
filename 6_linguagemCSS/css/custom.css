@@ -138,9 +138,13 @@ table.senac{width: 100%;}
     margin-left: -20px;
     margin-right: -20px;
   }
+  .tabelapropriedade td {
+    font-size: 10pt;
+  }
+  
 }
 
-@media screen and (max-width: 780px){
+@media screen and (min-width: 700px){
   .parte1{
     min-width: 100px !important;
     font-size: 10pt;
