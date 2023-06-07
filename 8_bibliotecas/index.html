@@ -219,6 +219,7 @@
                 <div class="caixa-destaque-livre icone-importante">
                   <p>O código acima pode ser copiado em &lt;thttps://releases.jquery.com>, clicando na versão do jQuery que deseja em <i>uncompressed</i>.</p>
                   <p>É recomendado colocar os <i>scripts</i> antes do fechamento da <i>tag</i> <strong>&lt;body></strong>, conforme o exemplo:</p>
+                  <p class="no-print visible-sm visible-xs" aria-hidden="true">Mova a tabela para visualizar as demais colunas.</p>
                   <div class="table-responsive">
                     <table class="senac">
                       <thead>
@@ -298,20 +299,20 @@
                     </code>
                   </pre>
                   <p>É possível dividir nas seguintes partes:</p>
+                  <p class="no-print visible-xs" aria-hidden="true">Mova a tabela para visualizar as demais colunas.</p>
                   <div class="table-responsive">
                     <table class="senac">
-                      <thead>
+                      
                         <th>Função jQuery</th>
                         <th>Seletor</th>
                         <th>Ação</th>
                         <th>Parâmetros</th>
-                      </thead>
-                      <tbody>
+                        <tr>
                         <td>$</td>
                         <td>(“p”)</td>
                         <td>.css()</td>
                         <td>"background-color","#FFFFFF"</td>
-                      </tbody>
+                        </tr>
                     </table>
                   </div>
                   <ul>
@@ -1016,9 +1017,9 @@
                   <p>No exemplo, remove-se a classe <strong>destaque</strong> do elemento <strong>&lt;p></strong> após o usuário dispensar a caixa de alerta que aparece ao carregar a página. Se a classe não estiver associada a <strong>&lt;p></strong>, então o código acima não terá nenhum efeito.</p>
                   <div class="row">
                     <div class="col-lg-6 col-xs-12">
-                      <img src="imgs/imagem.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <img src="imgs/figura_5.png" class="center-block img-responsive hidden-sm hidden-xs print">
                       <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
-                      <a href="imgs/imagem.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/imagem.png" class="center-block img-responsive"></a>
+                      <a href="imgs/figura_5.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/imagem.png" class="center-block img-responsive"></a>
                       <p class="legenda-imagem">
                         Figura 5 – Resultado do exemplo antes de executar <strong>removeClass()</strong><br>
                         Fonte: Senac EAD (2023)
@@ -1026,9 +1027,9 @@
                       <p class="acessivel no-print">A imagem mostra a frase “Tag com a classe Destaque”, com fundo em tom de laranja e fonte vermelha.</p>
                     </div>
                     <div class="col-lg-6 col-xs-12">
-                      <img src="imgs/imagem.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <img src="imgs/figura_6.png" class="center-block img-responsive hidden-sm hidden-xs print">
                       <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
-                      <a href="imgs/imagem.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/imagem.png" class="center-block img-responsive"></a>
+                      <a href="imgs/figura_6.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/imagem.png" class="center-block img-responsive"></a>
                       <p class="legenda-imagem">
                         Figura 6 – Resultado após executar <strong>removeClass()</strong><br>
                         Fonte: Senac EAD (2023)
@@ -1119,13 +1120,14 @@
                 </div>
                 <div class="caixa-destaque-livre2 icone-desafio2">
                   <p>Monte uma página HTML com elementos de texto, duas classes css, uma chamada <strong>“tema-claro”</strong>, definindo fundo branco e letras pretas, e outra chamada <strong>“tema-escuro”</strong>, definindo fundo preto e letras brancas. Inclua na página dois botões, um para acionar via jQuery o tema branco e outro para o tema escuro. A classe deve ser aplicada a <strong>&lt;body></strong>.</p>
+                  <p class="no-print visible-sm visible-xs" aria-hidden="true">Mova a tabela para visualizar as demais colunas.</p>
                   <div class="table-responsive">
-                    <table class="senac">
+                    <table class="senac tabelafuncao">
                       <tbody>
                         <tr>
-                          <td>Função <strong>hide()</strong></td>
-                          <td>Essa função esconde/oculta um elemento. No exemplo ao lado, quando o usuário clicar no parágrafo, este é ocultado. O usuário não enxergará mais esse parágrafo, entretanto ele continua presente na página e poderá tornar-se visível usando a função <strong>show()</strong>.</td>
-                          <td>
+                          <td class="parte1">Função <strong>hide()</strong></td>
+                          <td class="parte2">Essa função esconde/oculta um elemento. No exemplo ao lado, quando o usuário clicar no parágrafo, este é ocultado. O usuário não enxergará mais esse parágrafo, entretanto ele continua presente na página e poderá tornar-se visível usando a função <strong>show()</strong>.</td>
+                          <td class="parte3">
                             <pre>
                               <code class="language-js"> 
       $('p').click(function(){    

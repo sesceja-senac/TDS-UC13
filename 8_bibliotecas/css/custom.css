@@ -352,6 +352,17 @@ header{
 }
 @media screen and (max-width: 780px){
   .parallax{display: none;}
+  .destaque-cheklist {
+   display: none;
+  }
+  .parte1{
+    min-width: 100px;
+  }
+  .parte2
+  {
+    min-width:130px;
+  }
+
 }
 @media screen and (max-width: 480px) {
   .caixa-destaque code{
@@ -363,4 +374,29 @@ header{
   .scroll-bar {
     overflow-y: auto;
   }
+  .destaque-cheklist{
+    display: none;
+  }
+  .icone-desafio2{
+    padding: unset;
+    padding-top: 80px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+  }
+ 
+  .parte1{
+    min-width: 100px !important;
+  }
+  .parte2{
+    min-width: 130px !important;
+  }
+  .parte3{
+    min-width: 100px !important;
+  }
+  }
+  .tabelafuncao{
+    font-size: 6pt;
+
 }
+

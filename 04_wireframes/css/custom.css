@@ -181,4 +181,9 @@ ul{
 
 @media screen and (max-width: 780px){
   .parallax{display: none;}
+  .img-encerramento{display: none;}
+}
+
+@media screen and (max-width: 1030px){
+  .img-encerramento{display: none;}
 }

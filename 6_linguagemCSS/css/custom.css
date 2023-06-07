@@ -109,8 +109,16 @@ table.senac{width: 100%;}
   .bloco-branco, .bloco-cinza{
     padding: 50px 100px;
   }
+
 }
 
+@media screen and (max-width: 1030px){
+  body{
+    background: none;
+  }
+  
+
+}
 @media screen and (max-width: 480px){
   .caixa-destaque code{
     word-break: break-word;

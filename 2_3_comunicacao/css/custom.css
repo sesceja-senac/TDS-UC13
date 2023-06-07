@@ -113,3 +113,8 @@ ul.checklist li{
     padding-top: 120px;
     padding-left: 5px;
   }}
+
+  @media screen and (max-width: 1000px){
+    .parallax {display: none;}
+   
+  }
