@@ -346,6 +346,17 @@ header{
   padding: 20px;
 }
 
+.parte1{
+  min-width: 100px;
+}
+.parte2
+{
+  min-width:130px;
+}
+.parte3{
+  min-width:130px;
+}
+
 @media screen and (max-width: 980px){
   .icone-importante, .icone-concluindo, .icone-dica, .icone-desafio{
     background-position: top 10px center;
@@ -363,7 +374,7 @@ header{
   }
   .parte2
   {
-    min-width:130px;
+    min-width:150px !important;
   }
 
 }
