@@ -347,6 +347,9 @@
               <div class="caixa-destaque-livre icone-importante">
                 <p>Tenha cuidado ao usar o seletor universal. Apesar de ser útil e simples o seu uso, ele tem uma especificidade baixa e, com isso, outros seletores sobrescreverão o que foi definido nele. Então, pense bem no que colocar nele como formatações gerais e até mesmo avalie se vale a pena utilizar!</p>
               </div>
+
+              <iframe class="desafio" src="tpl-editor-css-main-v2/index-desafio1-css.html" frameborder="0"></iframe>
+
             </div>
             <div class="bloco-branco">
               <h4>Classes</h4>
@@ -480,6 +483,8 @@
               </p>
               <p class="acessivel no-print">Na imagem, há três caixas com bordas, uma abaixo da outra. A primeira com bordas verdes e a frase “Aqui é a nossa caixa verde!”. Abaixo, com bordas azuis e a frase “Aqui é a caixa azul”. Abaixo, com bordas vermelhas e a frase “Aqui é a nossa caixa vermelha”.</p>
               <p>Com isso, consegue-se compreender uma grande gama de conhecimentos e técnicas para iniciar o CSS. Estrutura-se tudo no HTML e, a partir disso, parte-se diretamente para a estilização. O CSS torna tudo muito mais vivo dentro das páginas, e dominar os conceitos dos seletores fará toda a diferença.</p>
+
+              <iframe class="desafio" src="tpl-editor-css-main-v2/index-desafio2-css.html" frameborder="0"></iframe>
             </div>
           </div>
           <div class="pagina">
@@ -1029,6 +1034,7 @@
                 Fonte: Senac EAD (2023)         
               </p>
               <p class="acessivel no-print">Acima, veja um quadro contornado de preto ocupando metade da largura da página e que contém uma imagem de uma rosa à esquerda e um texto à direita da imagem. Abaixo, outro quadro com um texto à esquerda e uma imagem de violetas à direita.</p>
+              <iframe onload="iframeLoaded()" class="desafio" src="tpl-editor-css-main-v2/index-desafio3-css.html" frameborder="0"></iframe>
               <div class="caixa-destaque-livre icone-desafio">
                 <p>Agora que você tem o conhecimento mais abrangente de <strong>margin</strong> e <strong>padding</strong>, é interessante praticar! Tente emular uma estrutura 3x3 de blocos, tendo uma imagem, um título e um texto em cada um dos blocos. Exemplo visual:</p>
                 <img src="imgs/fig_19.png" class="center-block img-responsive hidden-sm hidden-xs print">
@@ -1326,6 +1332,25 @@
     .over-loader { display: none;}    
   </style>
 </noscript>
+<script type="text/javascript">
+  // function iframeLoaded() {
+  //     var iFrameID = document.querySelector('.desafio-3');
+  //     console.log(iFrameID)
+  //     if(iFrameID) {
+  //           // here you can make the height, I delete it first, then I make it again
+  //           iFrameID.height = "";
+  //           iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + 50 + "px";
+  //     }
+  // }
+  window.addEventListener('load', function(){
+    var iframes = document.querySelectorAll('.desafio');
+      for (var i=0;i<iframes.length; i++){
+        iframes[i].height = "";
+        iframes[i].height = iframes[i].contentWindow.document.body.scrollHeight + 50 + "px";
+      }
+  })
+  
+</script>   
 </body>
 </html>
 <script>

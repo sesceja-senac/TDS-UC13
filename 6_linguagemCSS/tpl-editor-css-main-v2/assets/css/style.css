@@ -1,0 +1,52 @@
+html {
+    background-color: transparent;
+}
+
+body {
+    padding-top: 20px;
+    padding-bottom: 0px;
+    border-radius: 15px;
+}
+
+.desafio {
+    background-color: transparent;
+}
+
+.text-titulo {
+    background-color: #2875c5;
+    border-radius: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.img-titulo.position-absolute {
+    width: 212px;
+    top: -20px;
+    left: 19px;
+}
+
+.bg-complete {
+    color: white;
+    background-color: #2b2a2a;
+    font-size: 20px;
+}
+
+.item-complete {
+    line-height: 35px;
+}
+
+.espacinho {
+    margin-left: 50px;
+}
+
+.modal-header-correto {
+    background-color: rgb(0, 97, 0);
+    color: white;
+    border: none;
+}
+
+.modal-header-incorreto {
+    background-color: rgb(204, 0, 0);
+    color: white;
+    border: none;
+}
