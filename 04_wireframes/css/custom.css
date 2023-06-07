@@ -156,6 +156,24 @@ ul{
   animation-fill-mode: both;
 }
 
+.obj-link {
+  background-color: #3e6bad;
+  display: block;
+  width: fit-content;
+  color: white;
+  font-size: 24px;
+  padding: 25px;
+  border-radius: 15px;
+  margin: 35px auto;
+  text-align: center;
+  border-bottom: 6px solid rgba(162, 207, 255, .4);
+}
+.obj-link:hover {
+  transform: translateY(-5px);
+  color: white;
+  text-decoration: none;
+}
+
 @keyframes animLinha{
   0%{
     height: 0;

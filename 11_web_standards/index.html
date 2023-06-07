@@ -73,29 +73,29 @@
           <!-- - - - - - - - cada página é independente  - - - - - - - - - - -->
           <div class="pagina">
             <p class="acessivel no-print">Como sugestão, configure a opção de leitura de caracteres e de pontuação de seu leitor de tela para o grau máximo de leitura, a fim de que os códigos disponibilizados neste material sejam lidos corretamente. No caso do NVDA (NonVisual Desktop Access), para localizar a opção Grau de pontuação/símbolos, acesse Preferências – Configurações – Fala. Altere o padrão Pouco para Tudo. Dessa forma, o leitor passará a ler os segmentos de código em sua totalidade. </p>
-            <img src="imgs/img.png" class="img-inicio">
+            <img src="imgs/img.png" class="img-inicio no-print">
             <div class="inicio">
               <h2><i>Web standards</i>: padrões sugeridos pelo World Wide Web Consortium (W3C) e recomendações de boas práticas</h2>
               <h3><i>Web standards</i>: W3C</h3>
               <p>A história da criação do World Wide Web Consortium (W3C) começa em 1989, quando Tim Berners-Lee, um cientista da computação britânico que trabalhava no CERN, o laboratório de física de partículas na Suíça, propôs a criação de um sistema de hipertexto que permitisse o compartilhamento de informações entre cientistas em diferentes instituições. Ele desenvolveu o que hoje se conhece como a World Wide Web (WWW), que é a base da Internet moderna.</p>
-              <img src="imgs/figura_1.png" class="center-block img-responsive hidden-sm hidden-xs print">
+              <img src="imgs/figura_1.png" class="center-block img-responsive hidden-sm hidden-xs print size-limit">
               <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
               <a href="imgs/figura_1.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_1.png" class="center-block img-responsive"></a>
-              <p class="legenda-imagem">
+              <figcaption>
                 Figura 1 – Tim Berners-Lee, criador da WWW<br>
                 Fonte: Tietz (2018)
-              </p>
+              </figcaption>
               <p class="acessivel no-print">Na imagem, à esquerda, Tim Berners-Lee e, à esquerda, um monitor de computador do tipo CRT com algumas páginas web abertas.</p>
             </div>
             <p>No início dos anos 1990, a popularidade da <i>web</i> cresceu rapidamente e surgiram muitos navegadores e servidores <i>web</i> diferentes, cada um com as próprias tecnologias e os próprios recursos. Isso tornou difícil para os desenvolvedores criar <i>sites</i> que funcionassem bem em todos os navegadores e dispositivos.</p>
             <p>Para abordar esse problema, Tim Berners-Lee fundou o <strong>W3C</strong>, em 1994, consórcio composto de empresas, organizações e indivíduos que trabalham juntos para desenvolver padrões abertos e tecnologias para a <i>web</i>. A missão do W3C é liderar a <i>web</i> para a sua plena potencialidade, desenvolvendo protocolos e diretrizes que promovam sua evolução e garantam sua acessibilidade a todos.</p>
-            <img src="imgs/figura_2.png" class="center-block img-responsive hidden-sm hidden-xs print">
+            <img src="imgs/figura_2.png" class="center-block img-responsive hidden-sm hidden-xs print size-limit">
             <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
             <a href="imgs/figura_2.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_2.png" class="center-block img-responsive"></a>
-            <p class="legenda-imagem">
+            <figcaption>
               Figura 2 – O primeiro servidor <i>web</i> (no adesivo, é possível ver a mensagem “This machine is a server, do not power down”, em uma tradução livre, “Esta máquina é um servidor, não desligar”).<br>
               Fonte: Wikipédia (2005)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Na imagem, um gabinete de servidor do tipo NEXT e um monitor de computador do tipo CRT, ambos na cor preta. No Gabinete do servidor, um adesivo colado por Tim Berners-Lee que diz: “This machine is a server, DO NOT POWER DOWN!!”, em uma tradução livre, “Esta máquina é um servidor, NÃO DESLIGAR!!”.</p>
             <p>Ao longo dos anos, o W3C desenvolveu muitas especificações técnicas importantes, como o HTML (<i>hypertext markup language</i>), CSS (<i>cascading style sheets</i>), XML (<i>extensible markup language</i>), entre outros. Esses padrões ajudaram a tornar a <i>web</i> mais acessível e aprimoraram a experiência do usuário. A W3C também é uma organização ativa em questões de privacidade e segurança na <i>web</i>.</p>
             <p>Em resumo, a W3C é uma organização líder no desenvolvimento de padrões para a <i>web</i>. Por meio de suas especificações técnicas e recomendações de boas práticas, a W3C ajuda a garantir que a <i>web</i> seja acessível, usável e interoperável em todos os dispositivos e navegadores.</p>
@@ -163,17 +163,18 @@
             <ol>
               <li>Use HTML semântico – O HTML semântico é uma prática que envolve o uso de elementos HTML para fornecer significado e estrutura ao conteúdo de uma página da <i>web</i>. Isso torna o conteúdo mais fácil de ler e entender para os usuários e também ajuda os mecanismos de busca a entenderem o que é importante em uma página. Sempre que possível, use <i>tags</i> HTML apropriadas, como <strong>&lt;header></strong>, <strong>&lt;main></strong>, <strong>&lt;section></strong>, <strong>&lt;article></strong>, <strong>&lt;nav></strong> e <strong>&lt;footer></strong> para estruturar o conteúdo da sua página.</li>
               <li>Valide o seu código – A validação de código é um processo que verifica se o HTML, CSS e JavaScript são escritos de acordo com as especificações da W3C. Isso ajuda a garantir que seus <i>sites</i> sejam acessíveis e compatíveis com diferentes navegadores e dispositivos. Você pode usar ferramentas <i>on-line</i>, como o validador W3C, para verificar se o seu código é válido.</li>
-              <li>Use CSS para estilizar seu site – O CSS é uma linguagem de estilo que permite definir a aparência do seu site. Use CSS para criar layouts responsivos, tornar seu site acessível para usuários com deficiência visual e para manter a consistência visual em todo ele.</li>
+              <li>Use CSS para estilizar seu <em>site</em> – O CSS é uma linguagem de estilo que permite definir a aparência do seu <em>site</em>. Use CSS para criar <em>layouts</em> responsivos, tornar seu <em>site</em> acessível para usuários com deficiência visual e para manter a consistência visual em todo ele.</li>
               <li>Certifique-se de que seu <i>site</i> seja acessível – A acessibilidade na <i>web</i> é importante para garantir que todos os usuários possam acessar e interagir com seu <i>site</i>. Siga as diretrizes de acessibilidade da W3C, como o <i>Web Content Accessibility Guidelines</i> (WCAG), para garantir que seu <i>site</i> seja acessível para usuários com deficiências visuais, auditivas ou motoras.</li>
               <li>Teste seu <i>site</i> em diferentes navegadores e dispositivos – Para garantir que seu <i>site</i> seja compatível com diferentes navegadores e dispositivos, teste-o em diferentes plataformas e dispositivos. Isso ajuda a identificar problemas e corrigi-los antes que os usuários encontrem problemas ao acessar seu <i>site</i>.</li>
               <li>
+                <br>
                 <img src="imgs/figura_3.png" class="center-block img-responsive hidden-sm hidden-xs print">
                 <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
                 <a href="imgs/figura_3.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_3.png" class="center-block img-responsive"></a>
-                <p class="legenda-imagem">
+                <figcaption>
                   Figura 3 – Um mesmo <i>site</i> aberto em dois navegadores diferentes<br>
                   Fonte: adaptado de TechHut (c2023)
-                </p>
+                </figcaption>
                 <p class="acessivel no-print">Na imagem, um mesmo site (https://www.techhut.com.br/) aberto em dois navegadores diferentes, à esquerda o navegador Microsoft-Edge e à direita o navegador Firefox. É possível ver que a renderização e o espaçamento do topo do site com os artigos abaixo encontram-se diferentes.</p>
                 <p>Seguir as recomendações de boas práticas acima pode ajudar a garantir que seu <i>site</i> seja acessível, usável e compatível com diferentes navegadores e dispositivos. Além disso, essas práticas podem melhorar a experiência do usuário e tornar seu <i>site</i> mais atraente e profissional.</p>
                 <p>Ao escrever seus códigos usando as recomendações da W3C, é possível levar em consideração as seguintes boas práticas de escrita de código e indentação para HTML, CSS e JavaScript.</p>
@@ -323,10 +324,10 @@
                 <img src="imgs/figura_4.png" class="center-block img-responsive hidden-sm hidden-xs print">
                 <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
                 <a href="imgs/figura_4.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_4.png" class="center-block img-responsive"></a>
-                <p class="legenda-imagem">
+                <figcaption>
                   Figura 4 – Validando código no <i>site</i> do W3C<br>
                   Fonte: Senac EAD (2023)
-                </p>
+                </figcaption>
                 <p class="acessivel no-print">Página mostra aba “Validate by Direct Input” em destaque, com HTML proposto já colado em uma área de texto abaixo. Abaixo, um botão “Check”.</p>
               </li>
               <li>Clique no botão <strong>Check</strong>.</li>
@@ -335,10 +336,10 @@
                 <img src="imgs/figura_5.png" class="center-block img-responsive hidden-sm hidden-xs print">
                 <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
                 <a href="imgs/figura_5.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_5.png" class="center-block img-responsive"></a>
-                <p class="legenda-imagem">
+                <figcaption>
                   Figura 5 – Erros encontrados pelo validador<br>
                   Fonte: Senac EAD (2023)
-                </p>
+                </figcaption>
                 <p class="acessivel no-print">Página com variadas mensagens de erro, listadas em detalhe a seguir no texto.</p>
               </li>
             </ol>

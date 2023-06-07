@@ -253,7 +253,7 @@
               </code>
             </pre>
             <h4>Testando o serviço</h4>
-            <p>Você pode testar se tudo está certo usando no browser a URL &lt;http://localhost:3000/cadastros>.</p>
+            <p>Você pode testar se tudo está certo usando no <em>browser</em> a URL &lt;http://localhost:3000/cadastros>.</p>
             <img src="../09_preparacao_integracao_front_back/imgs/02.png" class="img-responsive center-block mt-40 imprime-menor">
               <p class="legenda-imagem">
                 Figura 2 – Acessando serviço de cadastros <br>
@@ -355,8 +355,8 @@
 }
             </code>
             </pre>
-            <p>Nesse caso, um serviço que lida com “notícias” está sendo configurado, ou seja, está sendo simulado um back-end em que há cadastro de manipulação de dados de notícias (informações como título e conteúdo são registradas). </p>
-            <p>Após editar o arquivo, no prompt de comando use o seguinte comando:</p>
+            <p>Nesse caso, um serviço que lida com “notícias” está sendo configurado, ou seja, está sendo simulado um <em>back-end</em> em que há cadastro de manipulação de dados de notícias (informações como título e conteúdo são registradas). </p>
+            <p>Após editar o arquivo, no <em>prompt</em> de comando use o seguinte comando:</p>
             <pre>
             <code class="language-json">
               json-server --watch db.json
@@ -563,6 +563,7 @@ $.get("http://localhost:3000/noticias", function(data, status){
 });
               </code>
             </pre>
+            <p>Veja os detalhes do código acima:</p>
             <div class="caixadestaquecinza mt-40"> 
               <ol>
                 <li>Quando ocorrer a submissão do cadastro de notícias, o evento <strong>preventDefault()</strong> subscreve o evento <strong>submit</strong> do formulário para que ocorra agora a submissão pelo jQuery (linha 5).</li>
@@ -816,6 +817,7 @@ $.get("http://localhost:3000/noticias", function(data, status){
                   title="O nome de usuário deve conter apenas letras minúsculas no máximo com 15 caracteres. ex: john">&lt;/input>&lt;/p>                  
               </code>
             </pre>
+            <p>Agora, o título está incluído com a mensagem-padrão:  </p>
             <img src="../09_preparacao_integracao_front_back/imgs/12.png" class="img-responsive center-block mt-40 imprime-menor">
             <p class="legenda-imagem">
               Figura 12 – Mensagem de erro na validação <br>

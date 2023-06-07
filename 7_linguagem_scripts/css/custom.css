@@ -96,6 +96,28 @@ table.senac{width: 100%;}
   background-size: 132px 77px;
   padding-left: 150px;
 }
+
+.gaitinha .panel.panel-default .panel-heading .panel-title a {
+  border: 2px solid white !important;
+  color: white !important;
+  border-radius: 10px;
+  padding: 1.2rem;
+}
+.gaitinha .panel.panel-default .panel-heading .panel-title a.collapsed {
+  background: transparent !important;
+  color: white !important;
+}
+
+.gaitinha .panel.panel-default .panel-body {
+  border-left: 2px solid white !important;
+}
+
+figcaption {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 1024px){
   .fundo-tecnicos{
     padding-left: 150px;
