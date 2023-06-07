@@ -1138,9 +1138,9 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Função <strong>show()</strong></td>
-                          <td>Essa função faz o oposto de <strong>hide()</strong>. Se um elemento está escondido, é possível torná-lo visível chamando a função <strong>show()</strong>.</td>
-                          <td>
+                          <td class="parte1">Função <strong>show()</strong></td>
+                          <td class="parte2">Essa função faz o oposto de <strong>hide()</strong>. Se um elemento está escondido, é possível torná-lo visível chamando a função <strong>show()</strong>.</td>
+                          <td class="parte3">
                             <pre>
                               <code class="language-js"> 
       $('#botao').click(function(){ 
@@ -1151,9 +1151,9 @@
                           </td>
                         </tr>
                         <tr>
-                          <td>Função <strong>attr()</strong></td>
-                          <td>Essa função permite alterar um atributo de um elemento. No exemplo ao lado, usou-se a função <strong>attr</strong> para alterar a largura da imagem toda vez que o <i>mouse</i> passa sobre ela. Quando sai de cima da imagem, altera-se a largura para o tamanho original.</td>
-                          <td>
+                          <td class="parte1">Função <strong>attr()</strong></td>
+                          <td class="parte2">Essa função permite alterar um atributo de um elemento. No exemplo ao lado, usou-se a função <strong>attr</strong> para alterar a largura da imagem toda vez que o <i>mouse</i> passa sobre ela. Quando sai de cima da imagem, altera-se a largura para o tamanho original.</td>
+                          <td class="parte3">
                             <pre>
                               <code class="language-js"> 
       $(document).ready(function () {
@@ -1333,7 +1333,7 @@
                     <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Função val()</a></li>
                   </ul>
                   <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="home">
+                    <div role="tabpanel" class="tab-pane active painelftext" id="home">
                       <p>Essa função permite obter o texto dentro de uma <i>tag</i> ou colocar um outro texto dentro dela. A seguir, 
                         veja um exemplo de uma função que copia o texto do segundo parágrafo para o primeiro. Veja que o comando 
                         <strong>$("#p2").text()</strong> usa a função <strong>text()</strong> sem passar nenhum parâmetro, o que significa que se deseja que ele 
@@ -1372,7 +1372,7 @@
       <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
                       </pre>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="profile">
+                    <div role="tabpanel" class="tab-pane painelftext" id="profile">
                       <p>Similar à função <strong>text()</strong>, a função <strong>html()</strong> permite copiar tanto o texto contido dentro da <i>tag</i> como também todo o código HTML. No exemplo a seguir, o conteúdo do segundo parágrafo é copiado para o primeiro parágrafo, substituindo seu conteúdo original.</p>
                       <pre class="codigo-destaque">
                         <span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
@@ -1412,7 +1412,7 @@
                       </pre>
                       <p>Nesse exemplo, o conteúdo de <strong>p2</strong>, incluindo o código HTML interno (com as <i>tags</i> <strong>&lt;b></strong> e <strong>&lt;i></strong>), será copiado para <strong>p1</strong>, ficando ambos exatamente idênticos.</p>
                     </div>
-                    <div role="tabpanel" class="tab-pane" id="messages">
+                    <div role="tabpanel" class="tab-pane painelftext" id="messages">
                       <p>A função <strong>val()</strong> é utilizada para as <i>tags</i> <strong>input</strong> e <strong>select</strong>. Ela permite definir um valor para <strong>input</strong> ou retornar o valor contido dentro de <strong>input</strong>. A função <strong>val()</strong> funciona como <strong>get</strong>, quando não se passa nenhum valor como parâmetro. Por outro lado, quando o parâmetro é especificado, a função <strong>val()</strong> funciona como um método <strong>set()</strong>. Esse comportamento se repete em várias outras funções do jQuery.</p>
                       <pre>
                         <code class="language-html">

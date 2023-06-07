@@ -342,6 +342,9 @@ header{
   background: #b1c9f0;
 }
 
+.painelftext{
+  padding: 20px;
+}
 
 @media screen and (max-width: 980px){
   .icone-importante, .icone-concluindo, .icone-dica, .icone-desafio{
@@ -384,19 +387,20 @@ header{
     padding-right: 5px;
 
   }
- 
   .parte1{
     min-width: 100px !important;
+    font-size: 10pt;
   }
   .parte2{
     min-width: 130px !important;
+    font-size: 10pt !important;
   }
   .parte3{
     min-width: 100px !important;
+    font-size: 10pt !important;
   }
-  }
-  .tabelafuncao{
-    font-size: 6pt;
+ 
+   
 
 }
 
