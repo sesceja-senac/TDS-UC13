@@ -230,9 +230,12 @@ table.senac th {
 background-color:#2875C6 !important;}
 
 .bordaimagem{
-  border:3px solid;
+  border:2px solid;
+  color:#b0b0b0
 }
-
+.textolegenda{
+  font-size: 11pt;
+}
 .legenda-tabela{
   font-size: 10px;
   text-align: center;
@@ -251,8 +254,19 @@ background-color:#2875C6 !important;}
 
 @media screen and (max-width: 480px){
   .iconedesafio{ 
-  word-break: break-word;
+  word-break: break-word;}
+  .textolegenda{
+    font-size: 9pt;
+  }
+  .dsktp{
+    display: none;
+  }
 }
+
+@media screen and (min-width:500px){
+  .mbile{
+    display: none;
+  }
 }
 
 @media screen and (max-width: 980px){

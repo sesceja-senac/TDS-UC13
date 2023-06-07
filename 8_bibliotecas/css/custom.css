@@ -20,6 +20,7 @@ pre {
   overflow-x: auto;
   padding: 1em;
 }
+
 .code-destaque{
   background-color: #071772 !important;
 }
@@ -260,6 +261,14 @@ header{
   background-color: #4170B4;
   position: relative;
 }
+.caixa-destaque-livre2{
+  background-color: #ffff;
+  position: relative;
+  word-break: break-word;
+}
+.caixa-destaque-livre2 p{
+  color: #000!important; }
+
 .destaque-cheklist{
   position: absolute;
   top: -40px;
@@ -320,6 +329,20 @@ header{
   background-size: 186px 81px;
   padding-left: 220px;
 }
+.icone-desafio2{
+  background-image: url('../imgs/ico_desafio.png');
+  background-position: top 20px center;
+  background-repeat: no-repeat;
+  padding: 80px;
+}
+.funcoes{
+  background: #567baf;
+}
+.funcoes2{
+  background: #b1c9f0;
+}
+
+
 @media screen and (max-width: 980px){
   .icone-importante, .icone-concluindo, .icone-dica, .icone-desafio{
     background-position: top 10px center;
@@ -329,6 +352,17 @@ header{
 }
 @media screen and (max-width: 780px){
   .parallax{display: none;}
+  .destaque-cheklist {
+   display: none;
+  }
+  .parte1{
+    min-width: 100px;
+  }
+  .parte2
+  {
+    min-width:130px;
+  }
+
 }
 @media screen and (max-width: 480px) {
   .caixa-destaque code{
@@ -340,4 +374,29 @@ header{
   .scroll-bar {
     overflow-y: auto;
   }
+  .destaque-cheklist{
+    display: none;
+  }
+  .icone-desafio2{
+    padding: unset;
+    padding-top: 80px;
+    padding-left: 5px;
+    padding-right: 5px;
+
+  }
+ 
+  .parte1{
+    min-width: 100px !important;
+  }
+  .parte2{
+    min-width: 130px !important;
+  }
+  .parte3{
+    min-width: 100px !important;
+  }
+  }
+  .tabelafuncao{
+    font-size: 6pt;
+
 }
+

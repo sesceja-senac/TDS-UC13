@@ -321,6 +321,33 @@ p.legenda-imagem{
   margin: 10px auto !important;
   display: block !important;
   text-align: center !important;
+  
+}
+
+td pre {
+  max-width: 300px;
+}
+
+.textolegenda{
+  font-size: 10pt!important;
+  text-align: center!important;
+}
+
+.size-limit {
+  max-width: 400px;
+}
+figcaption {
+  text-align: center;
+  
+}
+
+td pre {
+  max-width: 300px;
+}
+
+.textolegenda{
+  font-size: 10pt!important;
+  text-align: center!important;
 }
 
 .size-limit {

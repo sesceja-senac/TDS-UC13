@@ -101,4 +101,20 @@ ul.checklist li{
   .caixa-destaque code{
     word-break: break-word;
   }
+  .icons8{
+    margin-left: unset;
+  }
 }
+
+
+@media screen and (max-width: 980px){
+  .icone-concluindo {
+    background-position: top 10px center;
+    padding-top: 120px;
+    padding-left: 5px;
+  }}
+
+  @media screen and (max-width: 1000px){
+    .parallax {display: none;}
+   
+  }

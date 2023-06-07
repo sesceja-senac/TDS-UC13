@@ -123,7 +123,7 @@
                     <p>As principais vantagens de utilizar biblioteca são: funções predefinidas; mais agilidade, pois é possível usar programas distintos; códigos menores e mais organizados, o que reduz as chances de erros de códigos; e facilidade de atualização de programas diversos.</p>
                     <p>Merecem destaque as bibliotecas Bootstrap, jQuery, Angular e React, porém existem diversas outras.</p>
                   </div>
-                  <div class="col-lg-6 visible-lg">
+                  <div class="col-lg-6 visible-lg no-print">
                     <img src="imgs/img_lateral.png">
                   </div>
                 </div>
@@ -219,6 +219,7 @@
                 <div class="caixa-destaque-livre icone-importante">
                   <p>O código acima pode ser copiado em &lt;thttps://releases.jquery.com>, clicando na versão do jQuery que deseja em <i>uncompressed</i>.</p>
                   <p>É recomendado colocar os <i>scripts</i> antes do fechamento da <i>tag</i> <strong>&lt;body></strong>, conforme o exemplo:</p>
+                  <p class="no-print visible-sm visible-xs" aria-hidden="true">Mova a tabela para visualizar as demais colunas.</p>
                   <div class="table-responsive">
                     <table class="senac">
                       <thead>
@@ -298,20 +299,20 @@
                     </code>
                   </pre>
                   <p>É possível dividir nas seguintes partes:</p>
+                  <p class="no-print visible-xs" aria-hidden="true">Mova a tabela para visualizar as demais colunas.</p>
                   <div class="table-responsive">
                     <table class="senac">
-                      <thead>
+                      
                         <th>Função jQuery</th>
                         <th>Seletor</th>
                         <th>Ação</th>
                         <th>Parâmetros</th>
-                      </thead>
-                      <tbody>
+                        <tr>
                         <td>$</td>
                         <td>(“p”)</td>
                         <td>.css()</td>
                         <td>"background-color","#FFFFFF"</td>
-                      </tbody>
+                        </tr>
                     </table>
                   </div>
                   <ul>
@@ -722,7 +723,7 @@
                           <p>No exemplo, remove-se a classe <strong>destaque</strong> do elemento <strong>&lt;p></strong> após o usuário dispensar a caixa de alerta que aparece ao carregar a página. Se a classe não estiver associada a <strong>&lt;p></strong>, então o código acima não terá nenhum efeito.</p>
                           <div class="row">
                             <div class="col-lg-6 col-xs-12">
-                              <img src="imgs/figura_5.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                              <img src="../8_bibliotecas/imgs/figura_5.png" class="center-block img-responsive hidden-sm hidden-xs print">
                               <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
                               <a href="imgs/figura_5.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/figura_5.png" class="center-block img-responsive"></a>
                               <p class="legenda-imagem">
@@ -1016,9 +1017,9 @@
                   <p>No exemplo, remove-se a classe <strong>destaque</strong> do elemento <strong>&lt;p></strong> após o usuário dispensar a caixa de alerta que aparece ao carregar a página. Se a classe não estiver associada a <strong>&lt;p></strong>, então o código acima não terá nenhum efeito.</p>
                   <div class="row">
                     <div class="col-lg-6 col-xs-12">
-                      <img src="imgs/imagem.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <img src="imgs/figura_5.png" class="center-block img-responsive hidden-sm hidden-xs print">
                       <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
-                      <a href="imgs/imagem.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/imagem.png" class="center-block img-responsive"></a>
+                      <a href="imgs/figura_5.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/imagem.png" class="center-block img-responsive"></a>
                       <p class="legenda-imagem">
                         Figura 5 – Resultado do exemplo antes de executar <strong>removeClass()</strong><br>
                         Fonte: Senac EAD (2023)
@@ -1026,9 +1027,9 @@
                       <p class="acessivel no-print">A imagem mostra a frase “Tag com a classe Destaque”, com fundo em tom de laranja e fonte vermelha.</p>
                     </div>
                     <div class="col-lg-6 col-xs-12">
-                      <img src="imgs/imagem.png" class="center-block img-responsive hidden-sm hidden-xs print">
+                      <img src="imgs/figura_6.png" class="center-block img-responsive hidden-sm hidden-xs print">
                       <p class="no-print visible-sm visible-xs" aria-hidden="true">Toque na imagem para ampliá-la.</p>
-                      <a href="imgs/imagem.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/imagem.png" class="center-block img-responsive"></a>
+                      <a href="imgs/figura_6.png" target="_blank" class="no-print visible-sm visible-xs" aria-hidden="true"><img src="imgs/imagem.png" class="center-block img-responsive"></a>
                       <p class="legenda-imagem">
                         Figura 6 – Resultado após executar <strong>removeClass()</strong><br>
                         Fonte: Senac EAD (2023)
@@ -1117,15 +1118,16 @@
                   <p>Contudo, não é isso que se quer. O objetivo é aplicar apenas no <strong>p</strong> que recebeu o clique. E é exatamente isso que o comando <strong>this</strong> faz: definir que o <strong>&lt;p></strong> que terá o <strong>toggleClass</strong> aplicado é apenas aquele que recebeu o clique.</p>
                   <p>A referência <strong>this</strong> deixa o código mais genérico, pois permite trabalhar com uma grande quantidade de elementos, sem que se saiba, a princípio, determinar qual é o elemento.</p>
                 </div>
-                <div class="caixa-destaque-livre icone-desafio">
+                <div class="caixa-destaque-livre2 icone-desafio2">
                   <p>Monte uma página HTML com elementos de texto, duas classes css, uma chamada <strong>“tema-claro”</strong>, definindo fundo branco e letras pretas, e outra chamada <strong>“tema-escuro”</strong>, definindo fundo preto e letras brancas. Inclua na página dois botões, um para acionar via jQuery o tema branco e outro para o tema escuro. A classe deve ser aplicada a <strong>&lt;body></strong>.</p>
+                  <p class="no-print visible-sm visible-xs" aria-hidden="true">Mova a tabela para visualizar as demais colunas.</p>
                   <div class="table-responsive">
-                    <table class="senac">
+                    <table class="senac tabelafuncao">
                       <tbody>
                         <tr>
-                          <td>Função <strong>hide()</strong></td>
-                          <td>Essa função esconde/oculta um elemento. No exemplo ao lado, quando o usuário clicar no parágrafo, este é ocultado. O usuário não enxergará mais esse parágrafo, entretanto ele continua presente na página e poderá tornar-se visível usando a função <strong>show()</strong>.</td>
-                          <td>
+                          <td class="parte1">Função <strong>hide()</strong></td>
+                          <td class="parte2">Essa função esconde/oculta um elemento. No exemplo ao lado, quando o usuário clicar no parágrafo, este é ocultado. O usuário não enxergará mais esse parágrafo, entretanto ele continua presente na página e poderá tornar-se visível usando a função <strong>show()</strong>.</td>
+                          <td class="parte3">
                             <pre>
                               <code class="language-js"> 
       $('p').click(function(){    
@@ -1324,6 +1326,7 @@
                 <p>As funções <strong>text()</strong>, <strong>html()</strong> e <strong>val()</strong> permitem obter e alterar o conteúdo de um elemento. A seguir, você verá a diferença entre cada um.</p>
                 <div class="no-print" aria-hidden="true">
                   <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class="funcoes">
                   <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Função text()</a></li>
                     <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Função html()</a></li>
@@ -1549,6 +1552,7 @@
                   </pre>
                   <p>Nesse caso, usa-se a função <strong>val()</strong> como <strong>get</strong> para obter o valor digitado pelo usuário no <strong>input #nome</strong> e, em seguida, aplica-se esse valor como cor de fundo na <i>tag</i> <strong>body</strong>.</p>
                 </div>
+              </div>
                 <div class="caixa-destaque-livre icone-desafio">
                   <p>Partindo do exemplo anterior, inclua o seguinte parágrafo (<strong>&lt;p></strong>) após a <i>tag</i> <strong>&lt;input></strong>.</p>
                   <code>&lt;p> Olá &lt;span id=”spnNome”> [seu nome] &lt;span>, tudo bem?&lt;/p></code>
@@ -2137,6 +2141,7 @@
                 <p>A respeito da função <strong>ajax()</strong>, esta permite gerar requisições do tipo GET ou POST para um servidor de forma assíncrona, isto é, sem a necessidade de bloquear a interface do usuário até o retorno da resposta. Para fazer uma chamada assíncrona, é preciso definir alguns parâmetros, os quais você verá a seguir.</p>
                 <div class="no-print" aria-hidden="true">
                   <p>Clique ou toque para visualizar o conteúdo.</p>
+                  <div class="funcoes2">
                   <ul class="nav nav-tabs" role="tablist">
                     <li role="presentation" class="active"><a href="#url" aria-controls="url" role="tab" data-toggle="tab">URL</a></li>
                     <li role="presentation"><a href="#contexto" aria-controls="contexto" role="tab" data-toggle="tab">Contexto</a></li>
@@ -2157,6 +2162,7 @@
                       <p>Define a função <strong>callback</strong>, que é executada após a resposta do servidor. </p>
                     </div>
                   </div>
+                </div>
                 </div>
                 <div class="acessivel print">
                   <h4>URL</h4>
