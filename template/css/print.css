@@ -110,6 +110,10 @@
 .only-print, .apenas-print, .apenas-imprimir {
   display: none;
 }
+figcaption {
+  text-align: center;
+  font-size: 10pt;
+}
 /* FIM-/CLASSE PARA EXIBIR ELEMENTO APENAS NA IMPRESSÃO */
 
 

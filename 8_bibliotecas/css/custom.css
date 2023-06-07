@@ -376,7 +376,14 @@ header{
   {
     min-width:150px !important;
   }
-
+  .parte4{
+    max-width: 250px !important;
+    font-size: 10pt;
+  }
+  .parte5{
+    max-width: 200px !important;
+    font-size: 10pt;
+  }
 }
 @media screen and (max-width: 480px) {
   .caixa-destaque code{
