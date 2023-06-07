@@ -519,6 +519,9 @@ h5 {
     page-break-inside: avoid;
   }
 
+  .size-limit {
+    max-width: 400px !important;
+  }
   
  /* FIM-/TAGS .print e .no-print */
 
