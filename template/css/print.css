@@ -110,6 +110,7 @@ figcaption {
   text-align: center;
   font-size: 10pt;
 }
+
 /* FIM-/CLASSE PARA EXIBIR ELEMENTO APENAS NA IMPRESSÃO */
 
 
@@ -121,7 +122,8 @@ figcaption {
     padding-right: unset;
   }
 
-
+  
+  
   header {
     display: none;
   }
@@ -232,7 +234,12 @@ h5 {
     text-align: justify;
     text-align-last: left;
   }
-
+  .textolegenda {
+    font-size: 10pt !important;
+    text-align: center !important;
+    align-items: center !important;
+    text-align-last: unset;
+  }
   p.legenda-imagem{
     text-align: center;
     text-align-last: unset;
