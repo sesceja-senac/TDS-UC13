@@ -55,6 +55,9 @@ table.senac{width: 100%;}
   margin-left: 0;
 }
 
+.tabelafor{
+  color:#000 !important;
+}
 .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
   color: #fff;
   cursor: default;
