@@ -75,9 +75,10 @@ li{
 .iconedesafio{
   background-image: url('../imgs/ico_desafio.png');
   background-repeat: no-repeat;
-  background-position: left 10px center;
+  background-position: 50% 15px;
   background-size: 170px 84px;
-  padding-left: 200px;
+  padding: 20px;
+  padding-top: 100px;
 }
 
 .btn-topo {
@@ -109,6 +110,9 @@ li{
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 25px;
+}
+.caixacinza p {
+  font-family: monospace;
 }
 .horizontal-line{
   background-color:#2875C6;
@@ -150,6 +154,13 @@ li{
   padding-bottom: 25px;
 }
 
+.nav-tabs {
+  margin-left: 0;
+}
+figcaption {
+  text-align: center;
+  margin-top: 15px;
+}
 @media screen and (max-width: 1024px){
   .bloco-branco, .bloco-cinza{
     padding: 50px 100px;
@@ -169,6 +180,10 @@ li{
   }
   .bloco-branco, .bloco-cinza{
     padding: 50px;
+  }
+  ol {
+    margin-left: 0;
+    padding-left: 0;
   }
 }
 
@@ -191,5 +206,10 @@ li{
  @media screen and (max-width: 1000px){
         .horizontal-line{
           display: none;
+        }
+        .fundo-tecnicos {
+          margin: 0;
+          width: 100%;
+          max-width: 100%;
         }
       }

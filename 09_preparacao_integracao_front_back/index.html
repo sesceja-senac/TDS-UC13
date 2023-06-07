@@ -158,11 +158,13 @@
             <ul>
               <li> Acesse o <i>site</i> oficial do Node.js, pesquisando por “Node.js” em seu buscador. </li>
               <li> Conforme mostra a imagem a seguir, o <i>site</i> reconhece o sistema operacional automaticamente (Windows, neste caso) e sugere duas versões para <i>download</i>: LTS e Current. Priorize o <i>download</i> de versões LTS (<i>long-term support</i>, ou suporte de longo prazo), que são as versões mais estáveis com mais suporte.
-                <img src="../09_preparacao_integracao_front_back/imgs/01.png" class="img-responsive center-block mt-40 imprime-menor">
-                <p class="legenda-imagem">
+                <img src="../09_preparacao_integracao_front_back/imgs/01.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+                <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+                <a href="../09_preparacao_integracao_front_back/imgs/01.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/01.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+                <figcaption>
                   Figura 1 – Instalando NPM – Node.js <br>
                   Fonte: Senac EAD (2023)
-                </p>
+                </figcaption>
                 <p class="acessivel no-print">Imagem do navegador de Internet que exibe um menu na opção “Downloads”. No centro da tela são exibidas as opções LTS e Current e os links para download nos sistemas operacionais.</p>
               </li>
               <li>Após a instalação do Node.js, você pode verificar tanto a versão do Node.js quanto a versão do NPM instaladas, executando os seguintes comandos: <strong>node -v</strong> e <strong>npm -v</strong>.
@@ -253,12 +255,14 @@
               </code>
             </pre>
             <h4>Testando o serviço</h4>
-            <p>Você pode testar se tudo está certo usando no browser a URL &lt;http://localhost:3000/cadastros>.</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/02.png" class="img-responsive center-block mt-40 imprime-menor">
-              <p class="legenda-imagem">
+            <p>Você pode testar se tudo está certo usando no <em>browser</em> a URL &lt;http://localhost:3000/cadastros>.</p>
+            <img src="../09_preparacao_integracao_front_back/imgs/02.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/02.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/02.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
                 Figura 2 – Acessando serviço de cadastros <br>
                 Fonte: Senac EAD (2023)
-              </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe dados de cadastros com login, senha e id.</p>
             <h3 id="t5">Protocolo HTTP – GET e POST</h3>
             <p>O HTTP é o protocolo responsável pela comunicação de <i>sites</i> na <i>web</i>. Quando um <i>site</i> é acessado, esse é o protocolo utilizado. O HTTP oferece suporte a muitos métodos para transferir dados ou executar qualquer operação no servidor, como GET, POST, PUT, DELETE, PATCH, entre outros. </p>
@@ -289,18 +293,22 @@
               </code>
             </pre>
             <p>No formulário, ao dados estão sendo informados como <i>login</i> “supervisor” e senha “321”.</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/03.png" class="img-responsive center-block mt-40 imprime-menor">
-              <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/03.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/03.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/03.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
                 Figura 3 – Tela de <i>login</i> <br>
                 Fonte: Senac EAD (2023)
-              </p>
+              </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário com os campos Login e Senha e o botão Enviar.</p>
             <p>Após clicar no botão <strong>Enviar</strong>, o evento <strong>submit</strong> é disparado. É possível ver, na imagem a seguir, que os dados passados no método <strong>GET</strong> ficam bem visíveis na barra de endereço, o que pode comprometer a segurança. Como o método GET retorna dados, então é exibido um <i>array</i> vazio.</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/04.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/04.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/04.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/04.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 4 – Tela de envio de dados (requisição GET) <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe no topo uma URL de acesso http://localhost:3000/cadastros?login=supervisor&senha=321, no centro tela com array vazio.</p>
             <p>Veja, agora, o mesmo formulário, porém alterado o método para <strong>POST</strong>:</p>
             <pre>
@@ -325,11 +333,13 @@
             </code>
             </pre>
             <p>Ao informar os mesmos dados do exemplo anterior e após clicar no botão <strong>Enviar</strong>, ao contrário do GET, o POST envia os parâmetros no corpo da requisição do HTTP, escondendo os dados da URI. Observe que o servidor recebe os dados, processa e retorna ao <i>front-end</i> os dados cadastrados.</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/05.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/05.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/05.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/05.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 5 – Tela de envio de dados (requisição POST) <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe no topo uma URL http://localhost:3000/cadastros, no centro tela os dados que foram cadastrados via requisição POST.</p>
             <p>Por isso, é fundamental que o valor dos atributos <strong>name</strong> das <i>tags</i> no HTML sejam exatamente iguais ao do servidor. </p>
             <p>Exemplo: o campo <i>login</i> no <i>back-end</i> (servidor) não tem acento, é no singular e todo em minúsculo. Então, não se pode ter na <i>tag</i> do HTML do formulário “Login”, “LOGIN”, “Logín”. É necessário ser exatamente igual. Isso evita que o servidor esteja esperando informação dos campos, porém não receba em razão de o nome da <i>tag</i> do campo ser trocado ou inexistente no HTML do cadastro. Essa dica pode evitar muita “dor de cabeça” e até mesmo horas de trabalho.</p>
@@ -355,8 +365,8 @@
 }
             </code>
             </pre>
-            <p>Nesse caso, um serviço que lida com “notícias” está sendo configurado, ou seja, está sendo simulado um back-end em que há cadastro de manipulação de dados de notícias (informações como título e conteúdo são registradas). </p>
-            <p>Após editar o arquivo, no prompt de comando use o seguinte comando:</p>
+            <p>Nesse caso, um serviço que lida com “notícias” está sendo configurado, ou seja, está sendo simulado um <em>back-end</em> em que há cadastro de manipulação de dados de notícias (informações como título e conteúdo são registradas). </p>
+            <p>Após editar o arquivo, no <em>prompt</em> de comando use o seguinte comando:</p>
             <pre>
             <code class="language-json">
               json-server --watch db.json
@@ -376,11 +386,13 @@
             </code>
             </pre>
             <p>Você pode testar se tudo está certo usando no <i>browser</i> a URL &lt;http://localhost:3000/noticias>. Nos próximos exemplos, essa URL será usada para simular as requisições.</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/06.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/06.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/06.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/06.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 6 – Acessando serviço de notícias <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe dados de notícias com título, conteúdo e id.</p>
             <h3 id="t7">Solicitações GET e POST</h3>
             <p>Inicialmente, é preciso criar uma página em HTML que o navegador possa exibir. Adote-a com o nome de <strong>index.html</strong>. A página HTML não tem conteúdo visual, ela será utilizada apenas para carregar o arquivo <strong>js.js</strong> para que seja possível ver as requisições e as respostas no console do navegador.</p>
@@ -498,11 +510,13 @@ $.get("http://localhost:3000/noticias", function(data, status){
             <p>Como pode ser visto no código acima, o método <strong>$.get()</strong> recebeu a URL &lt;http://localhost:3000/noticias> e uma função de <strong>callback</strong> anônima como seus parâmetros.</p>
             <p>Por meio da função de retorno de chamada, você pode acessar os dados da solicitação (<strong>data</strong>) e o <i>status</i> da solicitação (<strong>status</strong>). Sendo assim, é possível percorrer agora todos os itens retornados (em um <strong>for</strong>) e criar uma lista de notícias com título e conteúdo, usando a função <strong>$('#news').append()</strong>.</p>
             <p>Veja a lista de notícias exibidas na página <strong>index.html</strong>: </p>
-            <img src="../09_preparacao_integracao_front_back/imgs/07.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/07.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/07.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/07.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 7 – Listando notícias (solicitação GET usando jQuery) <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe os dados em uma lista das notícias pelo título e conteúdo.</p>
             <h4>Como enviar uma solicitação POST em Java Script usando jQuery</h4>
             <p>Agora, crie um arquivo chamado <strong>cadastro.html</strong>. Nele, haverá um formulário de cadastro de notícias com os campos <strong>título</strong> e <strong>conteúdo</strong> e a <strong>&lt;div id="result">&lt;/div></strong>, que receberá uma mensagem de confirmação de cadastro sem a necessidade de atualizar a tela.</p>
@@ -563,6 +577,7 @@ $.get("http://localhost:3000/noticias", function(data, status){
 });
               </code>
             </pre>
+            <p>Veja os detalhes do código acima:</p>
             <div class="caixadestaquecinza mt-40"> 
               <ol>
                 <li>Quando ocorrer a submissão do cadastro de notícias, o evento <strong>preventDefault()</strong> subscreve o evento <strong>submit</strong> do formulário para que ocorra agora a submissão pelo jQuery (linha 5).</li>
@@ -573,11 +588,13 @@ $.get("http://localhost:3000/noticias", function(data, status){
               </ol>
             </div>
             <p>Veja, a seguir, o exemplo de solicitação por POST em jQuery usando AJAX de um cadastro de notícias que retorna do servidor uma confirmação de registro salvo, sem a necessidade de atualizar a tela.</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/08.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/08.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/08.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/08.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 8 – Solicitação assíncrona por POST <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário de cadastro de notícias com o campo Título informando “JQuery com AJAX” e o campo Conteúdo com a informação “Exemplo de requisição POST” seguido do botão “Cadastrar”. No final da tela é mostrado o texto “Registro salvo!” em razão do retorno de sucesso da operação de cadastrar a notícia.</p>
             <h3 id="t10">Validações</h3>
             <p>A validação de formulário é de vital importância para a segurança de uma aplicação, bem como para a usabilidade dela. O processo de validação avalia se o valor de entrada está no formato correto antes de enviá-lo ao servidor. Por exemplo, se houver um campo de entrada para um endereço de <i>e-mail</i>, o valor certamente deve conter um endereço de <i>e-mail</i> válido, deve começar com uma letra ou um número, seguido do símbolo do @, e deve terminar com um nome de domínio.</p>
@@ -718,11 +735,13 @@ $.get("http://localhost:3000/noticias", function(data, status){
               </code>
             </pre>
             <p>Veja, a seguir, a execução no navegador de Internet.</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/09.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/09.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/09.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/09.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 9 – Formulário de cadastro com validação <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário contendo os campos Nome, Sobrenome, Idade, Data de Nascimento e Hora, seguido do botão Cadastrar. No campo Sobrenome, está habilitada uma modal de alerta com a mensagem “Preencha este campo” e no campo “Data de nascimento” uma modal de alerta com a mensagem “O valor deve ser 01/01/1990 ou posterior”.</p>
             <p>Agora, <strong>defina uma regra para adicionar expressões regulares no atributo pattern</strong>. Nesse caso, será especificado que o nome de usuário deve consistir apenas em letras minúsculas, não permitindo letras maiúsculas, números ou outros caracteres especiais. Além disso, o tamanho do nome do usuário não deve ter mais que 15 caracteres. A expressão regular dessa regra pode ser expressa como <strong>[a-z]{1,15}</strong>.</p>
             <pre>
@@ -788,11 +807,13 @@ $.get("http://localhost:3000/noticias", function(data, status){
               </code>
             </pre>
             <p>Veja, a seguir, a execução no navegador de Internet. </p>
-            <img src="../09_preparacao_integracao_front_back/imgs/10.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/10.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/10.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/10.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 10 – Formulário de cadastro com validação <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário contendo os campos Usarname, Endereço, Número, Telefone e Valor seguido do botão Cadastrar. Em todos os campos é exibida uma modal de alerta com a mensagem “É preciso que o formato corresponda ao exibido”, exceto o campo “E-mail” que exibe uma modal de alerta com a mensagem “Inclua um '@' no endereço de e-mail, 'asdasdas' está com um '@' faltando”.</p>
             <h4>Utilize placeholders</h4>
             <p>Lembre-se de usar o <strong>placeholder</strong> nos campos em que você precise “dar alguma dica” para o usuário de como ele deve preenchê-lo: </p>
@@ -801,11 +822,13 @@ $.get("http://localhost:3000/noticias", function(data, status){
                 &lt;p>Telefone: &lt;br>&lt;input type="text" required maxlength="15" name="telefone"  placeholder="(XX) XXXX-XXXX" pattern="\([0-9]{2}\) [0-9]{4,6}-[0-9]{4}$" />&lt;/p>
               </code>
             </pre>
-            <img src="../09_preparacao_integracao_front_back/imgs/11.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/11.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/11.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/11.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 11 – Campo de telefone com <strong>placeholder</strong> <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário contendo o campo Telefone e uma caixa onde será inserido um telefone. Essa caixa apresenta um placeholder, que é uma dica de preenchimento, com o texto “(XX) XXXX-XXXX”.</p>
             <h4>Personalizar as mensagens de validação</h4>
             <p>Felizmente, é possível personalizar a mensagem para ser mais útil, e existem algumas maneiras de fazer isso. A abordagem mais fácil é especificar o atributo <strong>title</strong> dentro do elemento de entrada:</p>
@@ -816,11 +839,14 @@ $.get("http://localhost:3000/noticias", function(data, status){
                   title="O nome de usuário deve conter apenas letras minúsculas no máximo com 15 caracteres. ex: john">&lt;/input>&lt;/p>                  
               </code>
             </pre>
-            <img src="../09_preparacao_integracao_front_back/imgs/12.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <p>Agora, o título está incluído com a mensagem-padrão:  </p>
+            <img src="../09_preparacao_integracao_front_back/imgs/12.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/12.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/12.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 12 – Mensagem de erro na validação <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe o campo Username. No campo é inserida uma sequência de texto e números, na qual é gerada uma mensagem em alerta sobre o campo informado: “É preciso que o formato corresponda ao exigido. O nome de usuário deve conter apenas letras minúsculas no máximo com 15 caracteres .ex: john”.</p>
             <p>Ainda assim, a mensagem pop-up apresenta a mensagem-padrão “É preciso que o formato corresponda ao exigido”.</p>
             <h4>Substituindo a mensagem-padrão de validação do HTML5</h4>
@@ -873,21 +899,25 @@ $.get("http://localhost:3000/noticias", function(data, status){
               </code>
             </pre>
             <p>Encontre a mensagem personalizada substituindo perfeitamente o padrão.</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/13.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/13.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/13.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/13.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 13 – Personalizando a mensagem-padrão de erro <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe o campo Username. No campo Username é exibida uma mensagem em alerta sobre o campo: “O nome de usuário deve conter apenas letras minúsculas no máximo com 15 caracteres. ex: senac”.</p>
             <h3 id="t11">Validação com jQuery Validation</h3>
             <p>Usar o <i>plugin</i> do jQuery Validation para validar formulários serve a muitos propósitos. Ele oferece recursos adicionais, como exibir facilmente mensagens de erro personalizadas e adicionar lógica condicional à validação de formulário HTML. As condições de validação podem ser adicionadas, removidas ou modificadas a qualquer momento com facilidade.</p>
             <p>Antes de começar a usar o <i>plugin</i> em seus campos, é preciso incluir os arquivos necessários. Por isso, crie o arquivo <strong>registrar.html</strong> e inclua a biblioteca <strong>jQuery</strong> e o <i>plugin</i> <strong>jQuery Validation</strong> dentro da <i>tag</i> <strong>head</strong> do HTML.</p>
             <p>O <i>link</i> do <i>plugin</i> do jQuery Validation poderá ser obtido diretamente no <i>site</i> (digite “jQuery Validation” em seu buscador), na opção “Latest files on jsDelivr CDN”. No momento da escrita deste conteúdo, encontra-se na versão 1.19.5, conforme a figura a seguir.</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/14.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/14.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/14.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/14.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 14 – <i>Site</i> do <i>plugin</i> jQuery Validation <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe um site no qual no conteúdo central tem uma opção “Latest files on jsDelivr CDN”, com uma listagem de opções de links do plugin para ser incluído no código HTML. Considerar a primeira opção.</p>
             <p>Após obter o <i>link</i> do <i>plugin</i>, será preciso criar um formulário de cadastramento com os campos <i>nome</i>, <i>e-mail</i> e senha. Além disso, crie o arquivo <strong>validar.js</strong> para começar a validar o formulário com o método <strong>validade</strong>.</p>
             <pre>
@@ -929,11 +959,13 @@ $.get("http://localhost:3000/noticias", function(data, status){
             </pre>
             <p>Como é possível ver no código acima, <strong>#frmRegistro</strong> refere-se ao formulário, no qual declara-se a <i>tag</i> <strong>id=“frmRegistro”</strong>, portanto o <i>plugin</i> <strong>Validate</strong> está no controle do formulário. Como definiu-se um único método de validação, o <i>plugin</i> entende que valida cada campo com base em suas características. Por exemplo: o campo <i>e-mail</i> está marcando em HTML com <strong>type=“email”</strong> e <strong>“required”</strong>, então a validação permitirá que apenas endereços de <i>e-mail</i> válidos e obrigatórios sejam introduzidos. Se você não definir como obrigatório para o campo de <i>e-mail</i>, então a validação aceitará apenas entrada de <i>e-mail</i> válida, não obrigatória.</p>
             <p>Para visualizar a validação, acesse no seu navegador a página <strong>registrar.html</strong> e tente enviar o formulário clicando no botão <strong>Cadastrar</strong>. Você deve obter um resultado conforme a imagem a seguir:</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/15.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/15.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/15.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/15.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 15 – Resultado da validação <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário de cadastro com os campos Nome, E-mail e Senha, com a mensagem ao lado de cada campo “This field is required” seguido do botão “Cadastrar”.</p>
             <h4>Adicionando regras de validação para campos de entrada</h4>
             <p>Você também pode passar algumas regras para o método <strong>validate()</strong> para determinar como os valores de entrada são validados. O valor do parâmetro <strong>rules</strong> deve ser um objeto com pares chave-valor. A chave em cada caso é o nome do elemento que se quer validar. O valor dessa chave é um objeto que contém um conjunto de regras que serão usadas para validação.</p>
@@ -1059,22 +1091,26 @@ $.get("http://localhost:3000/noticias", function(data, status){
             <p>Por exemplo, definir <strong>required</strong> como <strong>true</strong> tornará o elemento necessário para o envio do formulário. Definir <strong>minlength</strong> um valor como 6 forçará o usuário a inserir pelo menos seis caracteres na entrada de texto.</p>
             <h4>Personalizando as mensagens de validação</h4>
             <p>Assim como as <strong>rules</strong>, é possível personalizar as mensagens de erro de validação por meio do parâmetro <strong>messages</strong>. Por exemplo, o campo da senha acionará <strong>required</strong> caso seja deixado em branco, e a mensagem definida “campo senha é obrigatório” será exibida. De outra forma, caso a quantidade de caracteres informada seja inferior a seis caracteres ou superior a 12, será exibida a mensagem “A senha deve ter ao menos 6 caracteres” ou “A senha deve ter no máximo 12 caracteres”, respectivamente.</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/16.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/16.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/16.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/16.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 16 – Personalização da mensagem de erro <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário de cadastro com os campos Nome, E-mail e Senha, com a mensagem ao lado de cada campo, respectivamente, “campo nome é obrigatório”, “campo e-mail é obrigatório”. No campo Senha tem a informação “ab” e a mensagem “A senha deve ter ao menos 3 caracteres”, seguida do botão “Cadastrar”.</p>
             <h3 id="t12">Máscaras</h3>
             <p>Ao lidar com dados, provenientes do preenchimento de um formulário, você pode querer que eles sejam formatados de uma determinada maneira. Sem dúvida, você pode fornecer instruções em cada campo, mas haverá uma grande variedade de usuários preenchendo o formulário. Nem todos podem inserir os dados no formato desejado. Além disso, o usuário pode não querer manter a formatação dos dados.</p>
             <p>Por isso, adotam-se máscaras nos formulários em HTML, o que possibilita uma redução de inconsistências nas entradas de dados. </p>
             <p>O <strong>jQuery Mask</strong> é um <i>plugin</i> leve, muito simples de adicionar e implementar e que cria máscaras para entrada de dados em campos de formulário e elementos HTML. Esse <i>plugin</i> é útil para obter dados, números, números de telefone, CPF, CNPJ, datas, entre outros. </p>
             <p>O <i>link</i> do <i>plugin</i> do jQuery Mask poderá ser obtido diretamente no <i>site</i> (digite “jQuery Mask Pluigin” em seu buscador), na opção “CDNjs”. No momento da escrita deste conteúdo, encontra-se na versão 1.14.16, conforme a imagem a seguir:</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/17.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/17.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/17.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/17.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 17 – <i>Site</i> do <i>plugin</i> jQuery Mask <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe um site no qual no conteúdo central tem uma opção “CDNjs”, com um link do plugin para ser incluído no código HTML.</p>
             <p>Para exemplificar, veja como criar o arquivo <strong>Formulario.html</strong>. Inclua a biblioteca <strong>jQuery</strong> e o <i>plugin</i> <strong>jQuery Mask</strong> dentro da <i>tag</i> <strong>head</strong> do HTML. Deverá ser criado um formulário de cadastramento com os campos telefone, CEP, CPF, CNPJ e data.</p>
             <pre>
@@ -1135,11 +1171,13 @@ $.get("http://localhost:3000/noticias", function(data, status){
               </code>
             </pre>
             <p>Esse código tem máscaras nos campos aplicado diretamente na <i>tag</i> <strong>script</strong>. Como pode ser visto, simplesmente é informado o nome do campo pela <i>tag</i> <strong>id</strong> do formulário, por exemplo <strong>id=”telefone”</strong>, e então você pode aplicar a máscara usando a função <strong>mask</strong> e informar o formato, nesse caso (00) 00000-00.</p>
-            <img src="../09_preparacao_integracao_front_back/imgs/18.png" class="img-responsive center-block mt-40 imprime-menor">
-            <p class="legenda-imagem">
+            <img src="../09_preparacao_integracao_front_back/imgs/18.png" class="img-responsive center-block mt-40 imprime-menor hidden-xs">
+            <p class="hidden-lg hidden-md hidden-sm">Toque na imagem para ampliá-la.</p>
+            <a href="../09_preparacao_integracao_front_back/imgs/18.png" class="hidden-lg hidden-md hidden-sm"><img src="../09_preparacao_integracao_front_back/imgs/18.png" class="img-responsive center-block mt-40 imprime-menor"></a>
+            <figcaption>
               Figura 18 – Exemplo de máscara de entrada de dados <br>
               Fonte: Senac EAD (2023)
-            </p>
+            </figcaption>
             <p class="acessivel no-print">Imagem do navegador de Internet que exibe um formulário de cadastro com os campos Telefone, CEP, CPF, CNPJ e Data. Cada campo tem informações digitadas com suas respectivas máscaras. No final é exibido o botão “Cadastrar”.</p>
             <h3 id="t13"> Encerramento</h3>
             <div class="icone-concluindo">

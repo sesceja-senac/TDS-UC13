@@ -323,12 +323,31 @@ background-color:#2875C6 !important;}
   z-index: 99;
 }
 
+figcaption {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
 @media screen and (max-width: 450px){
+  .caixadestaquecinza {
+    width: 100%;
+  }
+  .caixadestaquecinza ol {
+    margin-left: 0;
+    padding-left: 0;
+  }
   .topodesktop{
     display: none;
   }
   .bloco-branco, .bloco-cinza{
     padding: 30px 60px;
+  }
+  .icone-concluindo {
+    padding-left: unset;
+    background-position: top center;
+    padding-top: 80px;
+    margin-top: 30px;
   }
 }
 
